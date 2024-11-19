@@ -1,36 +1,75 @@
-  <div *ngIf="quiz">
-    <h1>Practice Quiz</h1>
-    <div *ngFor="let question of quiz.math; let i = index">
-      <h3>Math Question {{ i + 1 }}</h3>
-      <p>{{ question.Question }}</p>
-      <ul>
-        <li>{{ question.Option_1 }}</li>
-        <li>{{ question.Option_2 }}</li>
-        <li>{{ question.Option_3 }}</li>
-        <li>{{ question.Option_4 }}</li>
-      </ul>
-    </div>
-    
-    <div *ngFor="let question of quiz.chemistry; let i = index">
-      <h3>Chemistry Question {{ i + 1 }}</h3>
-      <p>{{ question.Question }}</p>
-      <ul>
-        <li>{{ question.Option_1 }}</li>
-        <li>{{ question.Option_2 }}</li>
-        <li>{{ question.Option_3 }}</li>
-        <li>{{ question.Option_4 }}</li>
-      </ul>
-    </div>
-    
-    <div *ngFor="let question of quiz.physics; let i = index">
-      <h3>Physics Question {{ i + 1 }}</h3>
-      <p>{{ question.Question }}</p>
-      <ul>
-        <li>{{ question.Option_1 }}</li>
-        <li>{{ question.Option_2 }}</li>
-        <li>{{ question.Option_3 }}</li>
-        <li>{{ question.Option_4 }}</li>
-      </ul>
+<div *ngIf="!quizStarted" class="overlay">
+  <div class="start-container">
+    <h2>Welcome to the Quiz!</h2>
+    <p>Please read the instructions before starting:</p>
+    <ul>
+      <li>You have 90 minutes to complete the quiz.</li>
+      <li>You can navigate between questions.</li>
+      <li>You must submit the quiz before the timer runs out.</li>
+    </ul>
+    <button class="btn btn-start" (click)="startQuiz()">Start Quiz</button>
+  </div>
+</div>
+
+<div *ngIf="quizStarted" class="quiz-container">
+  <div class="header">
+    <div class="section-title">
+      <h2>{{ currentSection | titlecase }} Section</h2>
+      <div class="timer">Time Left: <span>{{ timer | date: 'mm:ss' }}</span></div>
     </div>
   </div>
-  
+
+  <div class="content">
+    <div class="question-box">
+      <h3>Question {{ currentQuestionIndex + 1 }}</h3>
+      <p>{{ currentQuestion?.Question }}</p>
+      <div class="options">
+        <label *ngFor="let option of ['Option_1', 'Option_2', 'Option_3', 'Option_4']; let idx = index">
+          <input
+            type="radio"
+            name="options"
+            [value]="option"
+            (change)="selectOption(option)"
+            [checked]="
+              currentSection === 'physics' && physicsAnswers[currentQuestionIndex] === option ||
+              currentSection === 'chemistry' && chemistryAnswers[currentQuestionIndex] === option ||
+              currentSection === 'math' && mathAnswers[currentQuestionIndex] === option
+            "
+          />
+          {{ currentQuestion?.[option] }}
+        </label>
+      </div>
+    </div>
+
+    <div class="question-navigator">
+      <h3>Question Navigator</h3>
+      <div class="navigator">
+        <button
+          *ngFor="let question of quiz[currentSection]; let i = index"
+          [ngClass]="getQuestionClass(i)"
+          (click)="currentQuestionIndex = i; currentQuestion = quiz[currentSection][i]"
+          class="navigator-btn"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation-buttons">
+    <button class="btn btn-secondary" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
+      Previous
+    </button>
+    <button class="btn btn-review" (click)="markForReview()">Mark for Review</button>
+    <button class="btn btn-primary" (click)="nextQuestion()">
+      Next
+    </button>
+    <button
+      class="btn btn-submit"
+      *ngIf="currentSection === 'math' && currentQuestionIndex === quiz.math.length - 1"
+      (click)="submitQuiz()"
+    >
+      Submit
+    </button>
+  </div>
+</div>
