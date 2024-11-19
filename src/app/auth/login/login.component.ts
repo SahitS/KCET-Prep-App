@@ -21,6 +21,7 @@ export class LoginComponent {
       (response: { token: string }) => {
         // Store the received token (MongoDB `_id`) in localStorage
         localStorage.setItem('userToken', response.token);
+        console.log(localStorage.getItem('userToken'));
   
         // Navigate to the home page
         this.router.navigate(['/home']);

@@ -1,4 +1,36 @@
-<div>
-    <h2>Your Token</h2>
-    <p>{{ getUserToken() }}</p>
+  <div *ngIf="quiz">
+    <h1>Practice Quiz</h1>
+    <div *ngFor="let question of quiz.math; let i = index">
+      <h3>Math Question {{ i + 1 }}</h3>
+      <p>{{ question.Question }}</p>
+      <ul>
+        <li>{{ question.Option_1 }}</li>
+        <li>{{ question.Option_2 }}</li>
+        <li>{{ question.Option_3 }}</li>
+        <li>{{ question.Option_4 }}</li>
+      </ul>
+    </div>
+    
+    <div *ngFor="let question of quiz.chemistry; let i = index">
+      <h3>Chemistry Question {{ i + 1 }}</h3>
+      <p>{{ question.Question }}</p>
+      <ul>
+        <li>{{ question.Option_1 }}</li>
+        <li>{{ question.Option_2 }}</li>
+        <li>{{ question.Option_3 }}</li>
+        <li>{{ question.Option_4 }}</li>
+      </ul>
+    </div>
+    
+    <div *ngFor="let question of quiz.physics; let i = index">
+      <h3>Physics Question {{ i + 1 }}</h3>
+      <p>{{ question.Question }}</p>
+      <ul>
+        <li>{{ question.Option_1 }}</li>
+        <li>{{ question.Option_2 }}</li>
+        <li>{{ question.Option_3 }}</li>
+        <li>{{ question.Option_4 }}</li>
+      </ul>
+    </div>
   </div>
+  

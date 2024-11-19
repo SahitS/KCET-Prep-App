@@ -10,7 +10,7 @@ const router = express.Router();
 // Rate limiter for login route
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 login attempts per windowMs
+  max: 50000, // Limit each IP to 5 login attempts per windowMs
   message: 'Too many login attempts. Please try again later.',
 });
 
@@ -81,8 +81,17 @@ router.post(
         return res.status(401).json({ error: 'Invalid password' });
       }
 
+      let token = user.token || user._id.toString();
+
+      if (!user.token) {
+        user.token = token;
+        await user.save();
+      }
+      
+      console.log("Generated Token:", token);
+
       // Return the `token` (MongoDB `_id`) to the client
-      res.json({ token: user.token });
+      res.json({ token });
     } catch (error) {
       res.status(500).json({ error: 'Login error' });
     }

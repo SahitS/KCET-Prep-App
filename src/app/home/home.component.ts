@@ -7,6 +7,7 @@ import { AuthService } from '../auth.service';
   selector: 'app-home',
   standalone: true, 
   imports: [RouterModule], 
+  providers: [AuthService],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {

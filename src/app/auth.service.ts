@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:5000/api/auth';
+  private apiUrl = 'http://127.0.0.1:5000';
 
   constructor(private http: HttpClient, private router: Router) {}
   login(username: string, password: string) {
@@ -22,10 +23,40 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('token'); // Check if token exists
+    console.log(localStorage.getItem('userToken'));
+    return !!localStorage.getItem('userToken');
   }
 
   getToken(): string | null {
     return localStorage.getItem('token');
   }  
+
+  generateQuiz() {
+    const token = localStorage.getItem('userToken') || ''; // Retrieve the token from localStorage
+    //console.log('Token from localStorage:', token); // Debug log
+  
+    if (!token) {
+      //console.error('Authorization token is missing!');
+      //return;
+    }
+  
+    return this.http.post(`${this.apiUrl}/generate_quiz`, {}, {
+      headers: {
+        Authorization: token // Add the token to the header
+      }
+    });
+  }
+  
+  
+  
+  getQuiz() {
+    const token = localStorage.getItem('userToken') || '';
+    //console.log('Quiz being fetched for', token);
+    return this.http.get(`${this.apiUrl}/get_quiz`, {
+      headers: {
+        Authorization: token
+      }
+    });
+  }
+  
 }
