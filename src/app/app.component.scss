@@ -1,0 +1,28 @@
+.full-page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1; /* Grow to fill available space */
+  }
+  
+  .banner {
+    background-color: #FFD700; /* Yellow color */
+    color: black; /* Text color for better contrast */
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

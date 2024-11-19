@@ -1,0 +1,49 @@
+<div class="container-fluid vh-100 d-flex align-items-center">
+  <div class="row w-100">
+    <!-- Left Column (Signup Form) -->
+    <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+      <div class="mx-auto" style="max-width: 400px;">
+        <img src="assets/your-logo.png" alt="Logo" class="mb-4" width="150">
+        <h2 class="mb-3">Create an account</h2>
+        <p class="text-muted mb-4">Sign up with your email</p>
+
+        <!-- Signup Form -->
+        <form (ngSubmit)="onSignup()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+          </div>
+          <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+          </div>
+          <p class="text-center text-muted">OR</p>
+          <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
+          <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+        </form>
+
+        <p class="text-center text-muted mt-4">
+          Already have an account? <a routerLink="/login">Login</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column (Image and Text) -->
+    <div class="col-md-6 d-none d-md-block bg-light p-0">
+      <div class="h-100 d-flex align-items-center justify-content-center" style="background: url('assets/your-image.png') center/cover;">
+        <div class="text-white text-center p-5" style="background-color: rgba(0, 0, 0, 0.5);">
+          <h2>Get Certified. Get Ahead.</h2>
+          <p>Get started with your immersive learning experience</p>
+          <ul class="list-unstyled text-white">
+            <li>5M+ careers advanced</li>
+            <li>1500+ Live classes every month</li>
+            <li>85% report promotion or a new job</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid vh-100 d-flex align-items-center">
+  <div class="row w-100">
+    <!-- Left Column (Login Form) -->
+    <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+      <div class="mx-auto" style="max-width: 400px;">
+        <img src="../../assets/pictures/Learnify.png" alt="Logo" class="mb-4" width="150"> <!-- Replace with your logo image -->
+        <h2 class="mb-3">Welcome back!</h2>
+        <p class="text-muted mb-4">Log in with your email</p>
+
+        <!-- Login Form -->
+        <form (ngSubmit)="onLogin()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember Me</label>
+          </div>
+          <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+          </div>
+          <p class="text-center text-muted">OR</p>
+          <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
+          <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+        </form>
+
+        <p class="mt-4 text-center">
+          <a href="#" class="text-muted">Forgot Password?</a>
+        </p>
+        <p class="text-center text-muted">
+          Don't have an account? <a routerLink="/signup">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column (Image and Text) -->
+    <div class="col-md-6 d-none d-md-block bg-light p-0">
+      <div class="h-100 d-flex align-items-center justify-content-center" style="background: url('assets/your-image.png') center/cover;">
+        <div class="text-white text-center p-5" style="background-color: rgba(0, 0, 0, 0.5);">
+          <h2>Get Ready for KCET Success</h2>
+          <p>Prepare with our customized learning platform and achieve your dream score</p>
+          <ul class="list-unstyled text-white">
+            <li>Comprehensive practice questions and tests</li>
+            <li>Personalized study plans based on performance</li>
+            <li>Real-time progress tracking and feedback</li>
+            <li>Boost your confidence and maximize your potential</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
