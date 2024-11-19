@@ -144,4 +144,35 @@ export class PracticeComponent implements OnInit {
     alert('Quiz submitted successfully!');
     clearInterval(this.timerInterval);
   }
+
+    // New method to switch between sections
+    switchSection(section: string): void {
+      this.currentSection = section;
+      this.currentQuestionIndex = 0;
+      this.currentQuestion = this.quiz[this.currentSection][this.currentQuestionIndex];
+    }
+  
+    // Navigate to a specific question
+    goToQuestion(index: number): void {
+      this.currentQuestionIndex = index;
+      this.currentQuestion = this.quiz[this.currentSection][this.currentQuestionIndex];
+    }
+  
+    // Trigger submit button logic
+    triggerSubmit(): void {
+      if (
+        this.currentSection !== 'math' ||
+        this.currentQuestionIndex !== this.quiz.math.length - 1
+      ) {
+        const confirmSubmit = confirm(
+          "The quiz isn't over yet. Are you sure you want to submit?"
+        );
+        if (confirmSubmit) {
+          this.submitQuiz();
+        }
+      } else {
+        this.submitQuiz();
+      }
+    }
+  
 }

@@ -2,37 +2,52 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background: #f7f7f7;
+    padding: 2rem;
   
     .start-container {
       text-align: center;
+      max-width: 600px;
       background: #ffffff;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   
-      h2 {
-        font-size: 1.5rem;
+      h1 {
+        font-size: 2rem;
         color: #4a4a4a;
+        margin-bottom: 1rem;
       }
   
-      ul {
-        margin: 1rem 0;
+      p {
+        font-size: 1rem;
+        color: #4a4a4a;
+        margin-bottom: 1rem;
         text-align: left;
       }
   
+      ul {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+  
+        li {
+          font-size: 1rem;
+          color: #4a4a4a;
+        }
+      }
+  
       .btn-start {
-        background: #6c63ff;
+        background: #007bff;
         color: white;
         padding: 0.75rem 1.5rem;
+        font-size: 1rem;
         border: none;
         border-radius: 4px;
-        font-size: 1rem;
         cursor: pointer;
   
         &:hover {
-          background: #5a52d4;
+          background: #0056b3;
         }
       }
     }
@@ -45,20 +60,37 @@
     .header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 1rem;
   
-      .section-title {
-        h2 {
-          color: #333;
-        }
+      h2 {
+        color: #333;
+        margin: 0;
+      }
   
-        .timer {
-          font-weight: bold;
-          color: #d9534f;
+      .section-switcher {
+        display: flex;
+        gap: 1rem;
   
-          span {
-            font-size: 1.2rem;
+        .btn-secondary {
+          background: #6c757d;
+          color: white;
+          border-radius: 4px;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+  
+          &:hover {
+            background: #5a6268;
           }
+        }
+      }
+  
+      .timer {
+        font-weight: bold;
+        color: #d9534f;
+  
+        span {
+          font-size: 1.2rem;
         }
       }
     }
@@ -75,6 +107,11 @@
   
         h3 {
           font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        p {
+          margin-bottom: 1rem;
         }
   
         .options {
@@ -127,7 +164,7 @@
             }
   
             &.review {
-              background: #ffeb3b;
+              background: #ffc107;
               color: #333;
             }
   

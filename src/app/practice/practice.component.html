@@ -1,22 +1,47 @@
 <div *ngIf="!quizStarted" class="overlay">
   <div class="start-container">
-    <h2>Welcome to the Quiz!</h2>
-    <p>Please read the instructions before starting:</p>
-    <ul>
-      <li>You have 90 minutes to complete the quiz.</li>
-      <li>You can navigate between questions.</li>
-      <li>You must submit the quiz before the timer runs out.</li>
-    </ul>
-    <button class="btn btn-start" (click)="startQuiz()">Start Quiz</button>
+    <h1>KCET Practice Test</h1>
+    <p>Time: 2 hours</p>
+    <p>
+      This practice test simulates the experience you will have taking the KCET
+      on test day.
+    </p>
+    <p>
+      When you finish the test, we will give you a score estimate which will
+      help you predict how well you would do on the actual KCET. You'll also be
+      able to review your answers and see the video explanations.
+    </p>
+    <p>
+      Preparation:
+      <ul>
+        <li>
+          Use a pen or pencil and scratch paper to write notes and work out
+          problems.
+        </li>
+        <li>
+          An on-screen calculator is provided for the sections where one is
+          allowed.
+        </li>
+        <li>
+          Set aside about 2 hours for a full test. Let your family and friends
+          know not to interrupt you during this time. :)
+        </li>
+      </ul>
+      We recommend taking the entire test in one sitting to practice your
+      pacing and build your test-taking stamina. Good luck!
+    <button class="btn btn-start" (click)="startQuiz()">Continue Practice Test</button>
   </div>
 </div>
 
 <div *ngIf="quizStarted" class="quiz-container">
   <div class="header">
-    <div class="section-title">
-      <h2>{{ currentSection | titlecase }} Section</h2>
-      <div class="timer">Time Left: <span>{{ timer | date: 'mm:ss' }}</span></div>
+    <h2>{{ currentSection | titlecase }} Section</h2>
+    <div class="section-switcher">
+      <button class="btn btn-secondary" (click)="switchSection('physics')">Physics</button>
+      <button class="btn btn-secondary" (click)="switchSection('chemistry')">Chemistry</button>
+      <button class="btn btn-secondary" (click)="switchSection('math')">Math</button>
     </div>
+    <div class="timer">Time Left: {{ timer | date: 'mm:ss' }}</div>
   </div>
 
   <div class="content">
@@ -47,7 +72,7 @@
         <button
           *ngFor="let question of quiz[currentSection]; let i = index"
           [ngClass]="getQuestionClass(i)"
-          (click)="currentQuestionIndex = i; currentQuestion = quiz[currentSection][i]"
+          (click)="goToQuestion(i)"
           class="navigator-btn"
         >
           {{ i + 1 }}
@@ -64,11 +89,7 @@
     <button class="btn btn-primary" (click)="nextQuestion()">
       Next
     </button>
-    <button
-      class="btn btn-submit"
-      *ngIf="currentSection === 'math' && currentQuestionIndex === quiz.math.length - 1"
-      (click)="submitQuiz()"
-    >
+    <button class="btn btn-submit" (click)="triggerSubmit()">
       Submit
     </button>
   </div>
