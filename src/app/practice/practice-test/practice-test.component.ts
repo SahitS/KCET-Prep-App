@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 type SectionAnswers = {
   physicsAnswers: string[];
@@ -35,7 +36,7 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
 
   quizStarted: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,private router: Router) {}
 
   ngOnInit(): void {
     this.authService.generateQuiz().subscribe({
@@ -193,7 +194,7 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
     this.authService.submitAnswers(payload).subscribe({
       next: () => {
         alert('Quiz submitted successfully!');
-        clearInterval(this.timerInterval);
+        this.router.navigate(['/results']);
       },
       error: (err) => {
         console.error('Error submitting quiz:', err);

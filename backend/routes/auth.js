@@ -135,4 +135,40 @@ router.post('/submit-answers', async (req, res) => {
   }
 });
 
+// Endpoint to get quiz results
+router.get('/get-results', async (req, res) => {
+  try {
+    // Retrieve the token from the request headers
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    // Find the user by token
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Calculate scores for each subject
+    const calculateScore = (answers) =>
+      answers.reduce((score, answer) => (answer.isCorrect ? score + 1 : score), 0);
+
+    const physicsScore = calculateScore(user.answers.physicsAnswers || []);
+    const chemistryScore = calculateScore(user.answers.chemistryAnswers || []);
+    const mathScore = calculateScore(user.answers.mathAnswers || []);
+
+    return res.status(200).json({
+      physics: physicsScore,
+      chemistry: chemistryScore,
+      math: mathScore,
+    });
+  } catch (error) {
+    console.error('Error fetching results:', error);
+    return res.status(500).json({ error: 'An error occurred while fetching results' });
+  }
+});
+
+
 module.exports = router;

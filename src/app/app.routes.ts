@@ -10,6 +10,7 @@ import { AccountComponent } from './account/account.component';
 import { PracticeTestComponent } from './practice/practice-test/practice-test.component';
 import { CustomPracticeComponent } from './practice/custom-practice/custom-practice.component';
 import { ReviewQuestionsComponent } from './practice/review-questions/review-questions.component';
+import { ShowResultComponent } from './practice/show-result/show-result.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'practice-test', component: PracticeTestComponent, canActivate: [AuthGuard] },
   { path: 'custom-practice', component: CustomPracticeComponent, canActivate: [AuthGuard] },
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
+  { path: 'results', component: ShowResultComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }, // Catch-all route for invalid paths
 ];

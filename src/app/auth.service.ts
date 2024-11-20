@@ -63,4 +63,17 @@ export class AuthService {
       },
     });
   }
+
+  getResults() {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get<{ physics: number; chemistry: number; math: number }>(
+      `${this.baseUrl}/get-results`,
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  }
+  
 }
