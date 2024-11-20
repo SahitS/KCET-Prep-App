@@ -12,10 +12,17 @@ const QuestionSchema = new mongoose.Schema({
   Difficulty_Level: { type: String, required: true },
 });
 
+const AnswerSchema = new mongoose.Schema({
+  section: { type: String, required: true }, 
+  questionIndex: { type: Number, required: true }, 
+  selectedOption: { type: String, required: true }, 
+  isCorrect: { type: Boolean, required: true }, 
+});
+
 const QuizSchema = new mongoose.Schema({
-  math: [QuestionSchema], // Array of Math questions
-  chemistry: [QuestionSchema], // Array of Chemistry questions
-  physics: [QuestionSchema], // Array of Physics questions
+  math: [QuestionSchema], 
+  chemistry: [QuestionSchema], 
+  physics: [QuestionSchema],
 });
 
 const UserSchema = new mongoose.Schema({
@@ -23,6 +30,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   token: { type: String },
   quiz: QuizSchema,
+  answers: [AnswerSchema],
 });
 
 module.exports = mongoose.model('User', UserSchema);

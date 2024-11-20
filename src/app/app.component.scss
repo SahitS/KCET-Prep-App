@@ -25,4 +25,17 @@
     background-color: #dc3545;
     color: #fff;
   }
+  .navbar .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+  }
+  
+  .navbar .dropdown-menu .dropdown-item {
+    color: #fff;
+  }
+  
+  .navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #495057;
+  }
+  
   

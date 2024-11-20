@@ -98,4 +98,45 @@ router.post(
   }
 );
 
+// Endpoint to save quiz answers
+router.post('/submit-answers', async (req, res) => {
+  console.log('Request received at /submit-answers');
+  console.log('Request body:', req.body);
+
+  const { token, answers } = req.body;
+
+  
+  console.log('Payload received:', {
+    token,
+    answers,
+  });
+
+  try {
+    
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      console.error('User not found for token:', token); 
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    console.log('User found:', user.username); 
+
+    
+    user.answers = answers;
+
+    console.log('Answers being saved:', answers); 
+
+    await user.save();
+
+    console.log('Answers saved successfully for user:', user.username); 
+    return res.status(200).json({ message: 'Answers saved successfully' });
+  } catch (error) {
+    console.error('Error occurred while saving answers:', error); 
+    return res.status(500).json({ message: 'An error occurred while saving answers' });
+  }
+});
+
+
+
 module.exports = router;

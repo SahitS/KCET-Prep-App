@@ -21,8 +21,28 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/lessons">Lessons</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/practice">Practice</a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="practiceDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Practice
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="practiceDropdown">
+              <li>
+                <a class="dropdown-item" routerLink="/practice-test">Practice Test</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/custom-practice">Custom Practice</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/review-questions">Review Questions</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/progress">Progress</a>

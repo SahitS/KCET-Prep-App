@@ -23,7 +23,6 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    console.log(localStorage.getItem('userToken'));
     return !!localStorage.getItem('userToken');
   }
 
@@ -46,9 +45,7 @@ export class AuthService {
       }
     });
   }
-  
-  
-  
+
   getQuiz() {
     const token = localStorage.getItem('userToken') || '';
     //console.log('Quiz being fetched for', token);
@@ -56,6 +53,15 @@ export class AuthService {
       headers: {
         Authorization: token
       }
+    });
+  }
+
+  submitAnswers(payload: { token: string|null; answers: any[] }) {
+    console.log('hi');
+    return this.http.post(`${this.baseUrl}/submit-answers`, payload, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
   }
   
