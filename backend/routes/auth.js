@@ -105,38 +105,34 @@ router.post('/submit-answers', async (req, res) => {
 
   const { token, answers } = req.body;
 
-  
-  console.log('Payload received:', {
-    token,
-    answers,
-  });
-
   try {
-    
+    // Find the user by token
     const user = await User.findOne({ token });
 
     if (!user) {
-      console.error('User not found for token:', token); 
+      console.error('User not found for token:', token);
       return res.status(404).json({ message: 'User not found' });
     }
 
-    console.log('User found:', user.username); 
+    // Use the provided arrays directly
+    const { physicsAnswers, chemistryAnswers, mathAnswers } = answers;
 
-    
-    user.answers = answers;
+    // Save the answers into separate fields in the user document
+    user.answers = {
+      physicsAnswers,
+      chemistryAnswers,
+      mathAnswers,
+    };
 
-    console.log('Answers being saved:', answers); 
+    console.log('Saving answers:', { physicsAnswers, chemistryAnswers, mathAnswers });
 
     await user.save();
 
-    console.log('Answers saved successfully for user:', user.username); 
     return res.status(200).json({ message: 'Answers saved successfully' });
   } catch (error) {
-    console.error('Error occurred while saving answers:', error); 
+    console.error('Error occurred while saving answers:', error);
     return res.status(500).json({ message: 'An error occurred while saving answers' });
   }
 });
-
-
 
 module.exports = router;

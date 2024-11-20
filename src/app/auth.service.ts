@@ -56,13 +56,13 @@ export class AuthService {
     });
   }
 
-  submitAnswers(payload: { token: string|null; answers: any[] }) {
-    console.log('hi');
+  submitAnswers(payload: { token: string | null; answers: any }) {
     return this.http.post(`${this.baseUrl}/submit-answers`, payload, {
       headers: {
         'Content-Type': 'application/json',
       },
     });
   }
+  
   
 }

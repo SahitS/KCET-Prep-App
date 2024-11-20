@@ -13,10 +13,9 @@ const QuestionSchema = new mongoose.Schema({
 });
 
 const AnswerSchema = new mongoose.Schema({
-  section: { type: String, required: true }, 
-  questionIndex: { type: Number, required: true }, 
-  selectedOption: { type: String, required: true }, 
-  isCorrect: { type: Boolean, required: true }, 
+  questionIndex: { type: Number, required: true },
+  selectedOption: { type: String, required: true },
+  isCorrect: { type: Boolean, required: true },
 });
 
 const QuizSchema = new mongoose.Schema({
@@ -30,7 +29,11 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   token: { type: String },
   quiz: QuizSchema,
-  answers: [AnswerSchema],
+  answers: {
+    physicsAnswers: [AnswerSchema],
+    chemistryAnswers: [AnswerSchema],
+    mathAnswers: [AnswerSchema],
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);

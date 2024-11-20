@@ -141,33 +141,47 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
   }
 
   submitQuiz(): void {
-    const allAnswers: {
-      section: string;
-      questionIndex: number;
-      selectedOption: string;
-      isCorrect: boolean;
-    }[] = [];
-
-    // Combine all answers with metadata
+    const physicsAnswers: any[] = [];
+    const chemistryAnswers: any[] = [];
+    const mathAnswers: any[] = [];
+  
     ['physics', 'chemistry', 'math'].forEach((section) => {
       const sectionKey = `${section}Answers` as keyof SectionAnswers;
       const answersArray = this[sectionKey] as string[];
       answersArray.forEach((answer, index) => {
         if (answer !== null) {
           const question = this.quiz[section][index];
-          allAnswers.push({
-            section,
+          const answerObj = {
             questionIndex: index,
             selectedOption: answer,
             isCorrect: answer === question.Correct_Option,
-          });
+          };
+  
+          if (section === 'physics') physicsAnswers.push(answerObj);
+          if (section === 'chemistry') chemistryAnswers.push(answerObj);
+          if (section === 'math') mathAnswers.push(answerObj);
         }
       });
     });
-
+  
     const token = localStorage.getItem('userToken');
-    console.log(token);
-    this.authService.submitAnswers({ token, answers: allAnswers }).subscribe({
+    if (!token) {
+      alert('Token is missing. Please log in again.');
+      return;
+    }
+  
+    const payload = {
+      token,
+      answers: {
+        physicsAnswers,
+        chemistryAnswers,
+        mathAnswers,
+      },
+    };
+  
+    console.log('Payload being sent:', payload);
+  
+    this.authService.submitAnswers(payload).subscribe({
       next: () => {
         alert('Quiz submitted successfully!');
         clearInterval(this.timerInterval);
@@ -177,6 +191,7 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
       },
     });
   }
+  
   
     // New method to switch between sections
     switchSection(section: string): void {
