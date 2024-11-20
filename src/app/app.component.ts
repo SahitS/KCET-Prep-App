@@ -16,7 +16,7 @@ export class AppComponent {
 
   onLogout() {
     // Clear any authentication tokens or user data
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('userToken');
     
     // Redirect to login page
     this.router.navigate(['/login']);
