@@ -35,9 +35,19 @@ def generate_quiz():
             return jsonify({"error": "User not found"}), 404
 
         # Proceed with quiz generation...
-        math_sample = math_questions.sample(30).to_dict(orient='records')
-        chemistry_sample = chemistry_questions.sample(30).to_dict(orient='records')
-        physics_sample = physics_questions.sample(30).to_dict(orient='records')
+        math_sample = math_questions.sample(30).reset_index(drop=True).to_dict(orient='records')
+        chemistry_sample = chemistry_questions.sample(30).reset_index(drop=True).to_dict(orient='records')
+        physics_sample = physics_questions.sample(30).reset_index(drop=True).to_dict(orient='records')
+
+        # Add `questionIndex` to each question
+        for idx, question in enumerate(math_sample):
+            question["questionIndex"] = idx
+
+        for idx, question in enumerate(chemistry_sample):
+            question["questionIndex"] = idx
+
+        for idx, question in enumerate(physics_sample):
+            question["questionIndex"] = idx
 
         quiz = {"math": math_sample, "chemistry": chemistry_sample, "physics": physics_sample}
 

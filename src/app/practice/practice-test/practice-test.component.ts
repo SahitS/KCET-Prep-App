@@ -151,10 +151,19 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
       answersArray.forEach((answer, index) => {
         if (answer !== null) {
           const question = this.quiz[section][index];
+          
+          // Debug logs for selected option and correct option
+          console.log(`Section: ${section}, Question Index: ${index}`);
+          console.log(`Selected Option: ${answer}`);
+          console.log(`Correct Option: ${question.Correct_Option}`);
+          
+          const isCorrect = answer === question.Correct_Option;
+          console.log(`Is Correct: ${isCorrect}`);
+          
           const answerObj = {
             questionIndex: index,
             selectedOption: answer,
-            isCorrect: answer === question.Correct_Option,
+            isCorrect: isCorrect,
           };
   
           if (section === 'physics') physicsAnswers.push(answerObj);

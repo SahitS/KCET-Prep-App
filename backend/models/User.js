@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const QuestionSchema = new mongoose.Schema({
+  questionIndex: { type: Number, required: true },
   Question: { type: String, required: true },
   Option_1: { type: String, required: true },
   Option_2: { type: String, required: true },
