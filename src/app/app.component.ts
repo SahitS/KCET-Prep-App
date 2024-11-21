@@ -19,11 +19,7 @@ export class AppComponent {
     localStorage.removeItem('userToken');
     
     // Redirect to login page
-    this.router.navigate(['/login']);
-  }
-  login(){
-    console.log('hi');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
 }

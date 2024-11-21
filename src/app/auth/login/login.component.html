@@ -1,55 +1,77 @@
-<div class="container-fluid vh-100 d-flex align-items-center">
-  <div class="row w-100">
-    <!-- Left Column (Login Form) -->
-    <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
-      <div class="mx-auto" style="max-width: 400px;">
-        <img src="D:\codebase\KCETPrepApp\src\assets\Learnify.png" alt="Logo" class="mb-4" width="150">
-        <h2 class="mb-3">Welcome back!</h2>
-        <p class="text-muted mb-4">Log in with your email</p>
+<div class="section-container container">
+  <div class="row vh-100 align-items-center justify-content-center">
+    <!-- Outer Box -->
+    <div class="content-box col-lg-10 p-5">
+      <div class="row">
+        <!-- Left Column (Login Form) -->
+        <div class="col-lg-6 p-5 d-flex flex-column justify-content-center">
+          <div class="mx-auto" style="max-width: 400px;">
+            <img src="assets/Learnify.png" alt="Logo" class="mb-4" width="150">
+            <h2 class="mb-3 text-center">Welcome Back!</h2>
+            <p class="text-center text-muted mb-4">
+              Log in to continue your journey to KCET success
+            </p>
 
-        <!-- Login Form -->
-        <form (ngSubmit)="onLogin()">
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
-          </div>
-          <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="rememberMe">
-            <label class="form-check-label" for="rememberMe">Remember Me</label>
-          </div>
-          <div class="d-grid mb-3">
-            <button type="submit" class="btn btn-primary btn-lg">Login</button>
-          </div>
-          <p class="text-center text-muted">OR</p>
-          <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
-          <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
-        </form>
+            <!-- Login Form -->
+            <form (ngSubmit)="onLogin()">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  [(ngModel)]="username"
+                  name="username"
+                  class="form-control"
+                  placeholder="Enter your username"
+                  required
+                >
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  [(ngModel)]="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                  required
+                >
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember Me</label>
+              </div>
+              <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">Boost Your KCET Preparation</button>
+              </div>
+              <p class="text-center text-muted">OR</p>
+              <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
+              <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+            </form>
 
-        <p class="mt-4 text-center">
-          <a href="#" class="text-muted">Forgot Password?</a>
-        </p>
-        <p class="text-center text-muted">
-          Don't have an account? <a routerLink="/signup">Sign Up</a>
-        </p>
-      </div>
-    </div>
+            <p class="mt-4 text-center">
+              <a href="#" class="text-muted">Forgot Password?</a>
+            </p>
+            <p class="text-center text-muted">
+              Don't have an account? <a routerLink="/signup">Sign Up</a>
+            </p>
+          </div>
+        </div>
 
-    <!-- Right Column (Image and Text) -->
-    <div class="col-md-6 d-none d-md-block bg-light p-0">
-      <div class="h-100 d-flex align-items-center justify-content-center" style="background: url('assets/your-image.png') center/cover;">
-        <div class="text-white text-center p-5" style="background-color: rgba(0, 0, 0, 0.5);">
-          <h2>Get Ready for KCET Success</h2>
-          <p>Prepare with our customized learning platform and achieve your dream score</p>
-          <ul class="list-unstyled text-white">
-            <li>Comprehensive practice questions and tests</li>
-            <li>Personalized study plans based on performance</li>
-            <li>Real-time progress tracking and feedback</li>
-            <li>Boost your confidence and maximize your potential</li>
-          </ul>
+        <!-- Right Column (Interactive Section) -->
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <div class="text-white text-center p-5 interactive-box">
+            <h2>Why Learnify?</h2>
+            <p>Join 10,000+ students who have boosted their KCET scores!</p>
+            <ul class="list-unstyled text-white">
+              <li><i class="bi bi-check2-circle"></i> Personalized study plans</li>
+              <li><i class="bi bi-check2-circle"></i> Expert guidance from top educators</li>
+              <li><i class="bi bi-check2-circle"></i> Real-time progress analytics</li>
+              <li><i class="bi bi-check2-circle"></i> Mock exams with instant feedback</li>
+            </ul>
+            <p class="mt-3">New to Learnify? <a routerLink="/signup" class="btn btn-outline-warning">Sign Up Now</a></p>
+          </div>
         </div>
       </div>
     </div>

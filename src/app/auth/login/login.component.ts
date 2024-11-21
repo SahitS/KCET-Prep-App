@@ -8,7 +8,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   selector: 'app-login',
   standalone: true, // Mark this component as standalone
   imports: [FormsModule], 
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrl:'./login.component.scss'
 })
 export class LoginComponent {
   username = '';
