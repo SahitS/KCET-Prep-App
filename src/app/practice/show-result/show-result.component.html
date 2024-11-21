@@ -1,40 +1,55 @@
 <div class="results-container">
-  <!-- Total Score -->
-  <div class="total-score-box">
-    <h1>Total Score</h1>
-    <h2>{{ totalScore }}/90</h2>
-  </div>
+  <!-- Header -->
+  <h1>Your Results</h1>
 
-  <!-- Subject Scores -->
-  <div class="subject-scores">
-    <div class="subject-box" (click)="showDetailedResults('physics')">
-      <h3>Physics</h3>
-      <p>{{ scores.physics }}/30</p>
-    </div>
-    <div class="subject-box" (click)="showDetailedResults('chemistry')">
-      <h3>Chemistry</h3>
-      <p>{{ scores.chemistry }}/30</p>
-    </div>
-    <div class="subject-box" (click)="showDetailedResults('math')">
-      <h3>Mathematics</h3>
-      <p>{{ scores.math }}/30</p>
-    </div>
-  </div>
-
-  <!-- Detailed Results -->
-  <div *ngIf="selectedSubject" class="detailed-results">
-    <h2>{{ selectedSubject | titlecase }} Detailed Results</h2>
-    <div class="result-list">
-      <div class="result-item" *ngFor="let result of detailedResults">
-        <p><strong>Q:</strong> {{ result.question }}</p>
-        <p><strong>Correct Answer:</strong> {{ result.correctAnswer }}</p>
-        <p><strong>Your Answer:</strong> {{ result.userAnswer }}</p>
-        <p [class.correct]="result.status === 'Correct'" [class.incorrect]="result.status === 'Incorrect'">
-          Status: {{ result.status }}
-        </p>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Left: Subject Scores -->
+    <div class="subject-scores">
+      <div class="subject-box" (click)="showDetailedResults('physics')">
+        <h3>Physics</h3>
+        <p>{{ scores.physics }}/30</p>
+      </div>
+      <div class="subject-box" (click)="showDetailedResults('chemistry')">
+        <h3>Chemistry</h3>
+        <p>{{ scores.chemistry }}/30</p>
+      </div>
+      <div class="subject-box" (click)="showDetailedResults('math')">
+        <h3>Mathematics</h3>
+        <p>{{ scores.math }}/30</p>
       </div>
     </div>
-    <button class="btn-back" (click)="resetSelection()">Back to Scores</button>
+
+    <!-- Right: Pie Chart -->
+    <div class="pie-chart-container">
+      <ngx-charts-pie-chart
+        [results]="pieChartData"
+        [view]="[300, 300]"
+        [scheme]="'vivid'"
+        [labels]="true"
+        [legend]="false"
+        [doughnut]="true"
+      >
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+
+  <!-- Detailed Results (Overlay) -->
+  <div class="overlay" *ngIf="selectedSubject">
+    <div class="overlay-content">
+      <h2>{{ selectedSubject | titlecase }} Detailed Results</h2>
+      <div class="result-list">
+        <div class="result-item" *ngFor="let result of detailedResults">
+          <p><strong>Q:</strong> {{ result.question }}</p>
+          <p><strong>Correct Answer:</strong> {{ result.correctAnswer }}</p>
+          <p><strong>Your Answer:</strong> {{ result.userAnswer }}</p>
+          <p [class.correct]="result.status === 'Correct'" [class.incorrect]="result.status === 'Incorrect'">
+            Status: {{ result.status }}
+          </p>
+        </div>
+      </div>
+      <button class="btn-back" (click)="resetSelection()">Close</button>
+    </div>
   </div>
 
   <!-- Back to Dashboard -->
