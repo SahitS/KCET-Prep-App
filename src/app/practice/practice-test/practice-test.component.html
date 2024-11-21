@@ -1,38 +1,25 @@
-<div *ngIf="!quizStarted" class="overlay">
+<div class="section-container">
+  <!-- Overlay Section -->
+  <div *ngIf="!quizStarted" class="overlay">
     <div class="start-container">
       <h1>KCET Practice Test</h1>
       <p>Time: 2 hours</p>
       <p>
-        This practice test simulates the experience you will have taking the KCET
-        on test day.
+        This practice test simulates the experience you will have taking the KCET on test day.
       </p>
       <p>
-        When you finish the test, we will give you a score estimate which will
-        help you predict how well you would do on the actual KCET. You'll also be
-        able to review your answers and see the video explanations.
+        When you finish the test, we will provide a score estimate to help you predict your performance and review your answers.
       </p>
-      <p>
-        Preparation:
-        <ul>
-          <li>
-            Use a pen or pencil and scratch paper to write notes and work out
-            problems.
-          </li>
-          <li>
-            An on-screen calculator is provided for the sections where one is
-            allowed.
-          </li>
-          <li>
-            Set aside about 2 hours for a full test. Let your family and friends
-            know not to interrupt you during this time. :)
-          </li>
-        </ul>
-        We recommend taking the entire test in one sitting to practice your
-        pacing and build your test-taking stamina. Good luck!
-      <button class="btn btn-start" (click)="startQuiz()">Continue Practice Test</button>
+      <ul>
+        <li>Use a pen or paper for notes and calculations.</li>
+        <li>Set aside 2 hours and avoid interruptions.</li>
+        <li>Complete the test in one sitting to build stamina.</li>
+      </ul>
+      <button class="btn btn-primary" (click)="startQuiz()">Start Practice Test</button>
     </div>
   </div>
-  
+
+  <!-- Quiz Section -->
   <div *ngIf="quizStarted" class="quiz-container">
     <div class="header">
       <h2>{{ currentSection | titlecase }} Section</h2>
@@ -43,7 +30,7 @@
       </div>
       <div class="timer">Time Left: {{ timer | date: 'mm:ss' }}</div>
     </div>
-  
+
     <div class="content">
       <div class="question-box">
         <h3>Question {{ currentQuestionIndex + 1 }}</h3>
@@ -65,7 +52,7 @@
           </label>
         </div>
       </div>
-  
+
       <div class="question-navigator">
         <h3>Question Navigator</h3>
         <div class="navigator">
@@ -80,7 +67,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="navigation-buttons">
       <button class="btn btn-secondary" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
         Previous
@@ -90,8 +77,8 @@
         Next
       </button>
       <button class="btn btn-submit" (click)="triggerSubmit()">
-        Submit
+        Submit Quiz
       </button>
     </div>
   </div>
-  
+</div>

@@ -15,7 +15,10 @@ export class HomeComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   login(){
-    console.log('hi');
     this.router.navigate(['/login']);
+  }
+  
+  signup(){
+    this.router.navigate(['/signup']);
   }
 }
