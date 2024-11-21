@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
   standalone: true, 
   imports: [FormsModule], 
   providers: [AuthService],
-  templateUrl: './signup.component.html'
+  templateUrl: './signup.component.html',
+  styleUrl:'./signup.component.scss'
 })
 export class SignupComponent {
   username = '';

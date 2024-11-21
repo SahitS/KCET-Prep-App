@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
-  {path: 'dashboard', component:DashboardComponent},
+  {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
   { path: 'lessons', component: LessonsComponent, canActivate: [AuthGuard] },
   { path: 'practice', component: PracticeComponent, canActivate: [AuthGuard] },
   { path: 'progress', component: ProgressComponent, canActivate: [AuthGuard] },
@@ -29,5 +29,5 @@ export const routes: Routes = [
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
   { path: 'results', component: ShowResultComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' }, // Catch-all route for invalid paths
+  { path: '**', redirectTo: 'home' },
 ];

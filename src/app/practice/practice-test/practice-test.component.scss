@@ -1,3 +1,9 @@
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
+
 .overlay {
   display: flex;
   align-items: center;
@@ -53,6 +59,25 @@
     }
   }
 }
+
+.btn-back {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: $yellow;
+  color: $black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+
+  &:hover {
+    background: $black;
+    color: $yellow;
+  }
+}
+
 
 .quiz-container {
   padding: 2rem;
@@ -228,3 +253,113 @@
     }
   }
 }
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    /* Default Grey Button */
+    &-secondary {
+      background-color: #d6d6d6;
+      color: $black;
+      border: none;
+
+      &:hover {
+        background-color: $black;
+        color: $yellow;
+      }
+
+      &:disabled {
+        background-color: #e0e0e0;
+        color: #999999;
+        cursor: not-allowed;
+      }
+    }
+
+    /* Yellow Button for Review */
+    &-review {
+      background-color: $yellow;
+      color: $black;
+      border: none;
+
+      &:hover {
+        background-color: $black;
+        color: $yellow;
+      }
+    }
+
+    /* Primary Black Button */
+    &-primary {
+      background-color: $black;
+      color: $yellow;
+      border: none;
+
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+      }
+    }
+
+    /* Submit Button */
+    &-submit {
+      background-color: #28a745;
+      color: $white;
+      border: none;
+
+      &:hover {
+        background-color: #218838;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* Section Switcher Buttons */
+.section-switcher {
+  display: flex;
+  gap: 1rem;
+
+  button {
+    background-color: #d6d6d6;
+    color: $black;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+    }
+
+    &.active {
+      background-color: $black;
+      color: $yellow;
+    }
+  }
+}
+
+/* Mark for Review Button */
+.btn-review {
+  background-color: $yellow;
+  color: $black;
+
+  &:hover {
+    background-color: $black;
+    color: $yellow;
+  }
+}
+

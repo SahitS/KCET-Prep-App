@@ -1,5 +1,10 @@
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
 .results-container {
-  max-width: 900px; /* Increased max-width for better layout */
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Roboto', Arial, sans-serif;
@@ -7,15 +12,16 @@
   h1 {
     text-align: center;
     font-size: 2.5rem;
-    color: #007bff;
+    color: $black;
     margin-bottom: 1.5rem;
+    font-weight: bold;
   }
 
   .main-content {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1.5rem; /* Add spacing between items */
+    gap: 1.5rem;
 
     .subject-scores {
       display: flex;
@@ -39,12 +45,13 @@
 
         h3 {
           font-size: 1.5rem;
-          color: #333;
+          color: $black;
+          font-weight: bold;
         }
 
         p {
           font-size: 1.25rem;
-          color: #007bff;
+          color: $yellow;
           font-weight: bold;
         }
       }
@@ -53,7 +60,7 @@
     .pie-chart-container {
       flex: 1;
       min-width: 300px;
-      background: #ffffff;
+      background: $white;
       border: 1px solid #ddd;
       border-radius: 12px;
       padding: 1.5rem;
@@ -70,26 +77,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 
     .overlay-content {
-      background: #fff;
+      background: $white;
       border-radius: 12px;
       padding: 2rem;
       max-width: 700px;
-      max-height: 80%; /* Constrain height */
-      overflow-y: auto; /* Scrollable content */
+      max-height: 80%;
+      overflow-y: auto;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-align: left;
 
       h2 {
         font-size: 1.8rem;
-        color: #007bff;
+        color: $black;
         margin-bottom: 1.5rem;
+        font-weight: bold;
       }
 
       .result-list {
@@ -120,15 +128,17 @@
         margin-top: 1.5rem;
         display: inline-block;
         padding: 0.75rem 1.5rem;
-        background: #007bff;
-        color: white;
+        background: $yellow;
+        color: $black;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         text-align: center;
+        font-weight: bold;
 
         &:hover {
-          background: #0056b3;
+          background: $black;
+          color: $yellow;
         }
       }
     }
@@ -138,15 +148,17 @@
     margin-top: 2rem;
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #007bff;
-    color: white;
+    background: $yellow;
+    color: $black;
     border: none;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    font-weight: bold;
 
     &:hover {
-      background: #0056b3;
+      background: $black;
+      color: $yellow;
     }
   }
 }

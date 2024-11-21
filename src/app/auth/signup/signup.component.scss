@@ -1,16 +1,109 @@
-/* Adjust button color */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
+
+.section-container {
+  background-color: #e0e0e0;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.content-box {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+
+  h2 {
+    color: $black;
+    font-weight: bold;
   }
-  
-  /* Placeholder for Remember Me checkbox */
-  .form-check-input:checked {
-    background-color: #007bff;
+
+  .form-label {
+    color: $text-black;
+    font-weight: bold;
   }
-  
-  /* Styling for Right Column */
-  .bg-light {
-    background-color: #f8f9fa !important;
+
+  .btn-primary {
+    background-color: $yellow;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $black;
+      color: $yellow;
+    }
   }
-  
+
+  .btn-outline-secondary {
+    border: 2px solid $yellow;
+    color: $black;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+    }
+  }
+
+  a {
+    color: $yellow;
+    text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+/* Interactive Box */
+.interactive-box {
+  background-color: rgba(67, 64, 64, 0.85);
+  padding: 3rem;
+  border-radius: 12px;
+  color: $white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+
+      i {
+        color: $yellow;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .btn-outline-warning {
+    color: $yellow;
+    border: 2px solid $yellow;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .interactive-box {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
