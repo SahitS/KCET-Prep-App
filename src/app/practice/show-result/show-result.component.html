@@ -1,13 +1,28 @@
 <div class="results-container">
-    <h1>Your Results</h1>
-    <div class="score-card">
-      <p><strong>Physics:</strong> {{ scores.physics }}/30</p>
-      <p><strong>Chemistry:</strong> {{ scores.chemistry }}/30</p>
-      <p><strong>Math:</strong> {{ scores.math }}/30</p>
-    </div>
-    <div class="total-score">
-      <h2>Total Score: {{ totalScore }}/90</h2>
-    </div>
-    <button class="btn-back" (click)="goToHome()">Back to Dashboard</button>
-  </div>
+  <h1>Your Results</h1>
   
+  <!-- Total Score Section -->
+  <div class="total-score-card">
+    <h2>Total Score</h2>
+    <p>{{ totalScore }}/90</p>
+  </div>
+
+  <!-- Individual Scores Section -->
+  <div class="scores-section">
+    <div class="score-box">
+      <h3>Physics</h3>
+      <p>{{ scores.physics }}/30</p>
+    </div>
+    <div class="score-box">
+      <h3>Chemistry</h3>
+      <p>{{ scores.chemistry }}/30</p>
+    </div>
+    <div class="score-box">
+      <h3>Math</h3>
+      <p>{{ scores.math }}/30</p>
+    </div>
+  </div>
+
+  <!-- Back to Dashboard Button -->
+  <button class="btn-back" (click)="goToHome()">Back to Dashboard</button>
+</div>
