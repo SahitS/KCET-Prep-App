@@ -170,5 +170,53 @@ router.get('/get-results', async (req, res) => {
   }
 });
 
+// Endpoint to get detailed results for a subject
+router.get('/get-detailed-results/:subject', async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+    const subject = req.params.subject.toLowerCase();
+
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    // Validate user
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    if (!['physics', 'chemistry', 'math'].includes(subject)) {
+      return res.status(400).json({ error: 'Invalid subject' });
+    }
+
+    // Fetch questions and answers
+    const quizQuestions = user.quiz[subject]; 
+    const userAnswers = user.answers[`${subject}Answers`] || []; 
+
+    // Map questions with answers
+    const detailedResults = quizQuestions.map((question) => {
+      const userAnswer = userAnswers.find((answer) => answer.questionIndex === question.questionIndex);
+
+      return {
+        question: question.Question,
+        correctAnswer: question[question.Correct_Option],
+        userAnswer: userAnswer ? question[userAnswer.selectedOption] : 'Not Answered',
+        status: userAnswer
+          ? userAnswer.isCorrect
+            ? 'Correct'
+            : 'Incorrect'
+          : 'Not Answered',
+      };
+    });
+
+    return res.status(200).json(detailedResults);
+  } catch (error) {
+    console.error('Error fetching detailed results:', error);
+    return res.status(500).json({ error: 'An error occurred while fetching detailed results' });
+  }
+});
+
+
 
 module.exports = router;

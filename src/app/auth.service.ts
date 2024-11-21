@@ -75,5 +75,13 @@ export class AuthService {
       }
     );
   }
+
+  getDetailedResults(subject: string) {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get<any[]>(`${this.baseUrl}/get-detailed-results/${subject}`, {
+      headers: { Authorization: token },
+    });
+  }
+  
   
 }

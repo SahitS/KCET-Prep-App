@@ -1,88 +1,101 @@
 .results-container {
   max-width: 800px;
-  margin: 2rem auto;
-  text-align: center;
-  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0 auto;
   padding: 2rem;
-  background-color: #e0e0e0; 
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', Arial, sans-serif;
+  text-align: center;
 
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 2rem;
-  }
-
-  /* Total Score Card */
-  .total-score-card {
-    background: #ffd700;
-    color: #000;
-    padding: 1.5rem;
-    border-radius: 8px;
+  .total-score-box {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    h2 {
+    h1 {
       font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      color: #333;
     }
 
-    p {
-      font-size: 1.5rem;
-      font-weight: bold;
+    h2 {
+      font-size: 2.5rem;
+      color: #007bff;
     }
   }
 
-  /* Individual Scores Section */
-  .scores-section {
+  .subject-scores {
     display: flex;
     justify-content: space-around;
     margin-bottom: 2rem;
 
-    .score-box {
-      background: #ffffff;
+    .subject-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      width: 30%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      flex: 1;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      transition: transform 0.3s;
 
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
       }
 
       h3 {
         font-size: 1.5rem;
-        color: #007bff;
-        margin-bottom: 0.5rem;
+        color: #333;
       }
 
       p {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #333;
+        font-size: 1.25rem;
+        color: #007bff;
       }
     }
   }
 
-  /* Back to Dashboard Button */
+  .detailed-results {
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+
+    .result-list {
+      .result-item {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 1rem 0;
+        padding: 1rem;
+        text-align: left;
+
+        p {
+          margin: 0.5rem 0;
+
+          &.correct {
+            color: green;
+          }
+
+          &.incorrect {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
   .btn-back {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: #007bff;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: background 0.3s ease;
 
     &:hover {
       background: #0056b3;
