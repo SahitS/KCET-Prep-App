@@ -1,0 +1,174 @@
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
+
+/* Hero Section Styles */
+.hero-section {
+    background-color: $background-light;
+    text-align: center;
+    padding: 3rem 1rem;
+  
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  
+    .hero-text {
+      font-size: 1.25rem;
+      margin: 1rem 0;
+    }
+  
+    .btn-primary {
+      background-color: $yellow;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+  
+      &:hover {
+        background-color: $black;
+        color: $yellow;
+      }
+    }
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 3rem 1rem;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $black;
+      font-size: 2rem;
+    }
+  
+    .feature-card {
+      background-color: $white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+  
+      h3 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $text-black;
+      }
+    }
+  }
+  
+  /* Divider Between Sections */
+  .section-divider {
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 2rem 0;
+  }
+  
+  /* Testimonials Section */
+  .testimonials-section {
+    background-color: $background-light;
+    padding: 3rem 1rem;
+  
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $black;
+    }
+  
+    .testimonial-card {
+      background-color: $white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin: 1rem;
+  
+      p {
+        font-style: italic;
+      }
+  
+      footer {
+        margin-top: 1rem;
+        font-weight: bold;
+        color: $yellow;
+      }
+    }
+  }
+  
+  /* General Section Container with Light Gray Background */
+  /* Adjusted Section Background */
+  .section-container {
+    background-color: #d6d6d6; /* Lighter than navbar, darker than light gray */
+    padding: 3rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: $black;
+    }
+  
+    .content-box {
+      background-color: $white;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 1rem;
+    }
+  }
+  
+  
+  
+  /* Call-to-Action Section */
+  .cta-section {
+    background-color: $white;
+    color: $black;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .btn-primary {
+      background-color: $yellow;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+  
+      &:hover {
+        background-color: $black;
+        color: $yellow;
+      }
+    }
+  }

@@ -24,7 +24,7 @@ export class LoginComponent {
         console.log(localStorage.getItem('userToken'));
   
         // Navigate to the home page
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       },
       (error: HttpErrorResponse) => {
         console.error('Login error:', error);

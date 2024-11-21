@@ -1,41 +1,68 @@
-.full-page-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .main-content {
-    flex: 1; /* Grow to fill available space */
-  }
-  
-  .banner {
-    background-color: #FFD700; /* Yellow color */
-    color: black; /* Text color for better contrast */
-    text-align: center;
-    padding: 10px;
+/* Variables for General Theme Colors */
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
+
+/* Global Body Styles */
+body {
+  background-color: $background-light;
+  color: $text-black;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: $black;
+  padding: 1rem;
+
+  .navbar-brand {
+    color: $yellow;
     font-weight: bold;
+    font-size: 1.5rem;
   }
 
-  .btn-outline-danger {
-    border-color: #dc3545;
-    color: #dc3545;
+  .nav-link {
+    color: $yellow;
+    font-weight: 500;
+
+    &:hover {
+      color: $white;
+    }
   }
-  
-  .btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: #fff;
+
+  .btn-outline-warning {
+    border: 1px solid $yellow;
+    color: $yellow;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+    }
   }
-  .navbar .dropdown-menu {
-    background-color: #343a40;
-    border: none;
+}
+
+/* Limited Time Offer Banner */
+.banner {
+  background-color: $yellow;
+  color: $black;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: $black;
+  color: $yellow;
+  padding: 1rem;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
   }
-  
-  .navbar .dropdown-menu .dropdown-item {
-    color: #fff;
-  }
-  
-  .navbar .dropdown-menu .dropdown-item:hover {
-    background-color: #495057;
-  }
-  
-  
+}

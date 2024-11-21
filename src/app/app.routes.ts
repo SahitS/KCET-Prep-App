@@ -11,11 +11,14 @@ import { PracticeTestComponent } from './practice/practice-test/practice-test.co
 import { CustomPracticeComponent } from './practice/custom-practice/custom-practice.component';
 import { ReviewQuestionsComponent } from './practice/review-questions/review-questions.component';
 import { ShowResultComponent } from './practice/show-result/show-result.component';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
+  {path: 'dashboard', component:DashboardComponent},
   { path: 'lessons', component: LessonsComponent, canActivate: [AuthGuard] },
   { path: 'practice', component: PracticeComponent, canActivate: [AuthGuard] },
   { path: 'progress', component: ProgressComponent, canActivate: [AuthGuard] },
@@ -25,6 +28,6 @@ export const routes: Routes = [
   { path: 'custom-practice', component: CustomPracticeComponent, canActivate: [AuthGuard] },
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
   { path: 'results', component: ShowResultComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '**', redirectTo: 'login' }, // Catch-all route for invalid paths
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' }, // Catch-all route for invalid paths
 ];

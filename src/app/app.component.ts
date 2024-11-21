@@ -21,5 +21,9 @@ export class AppComponent {
     // Redirect to login page
     this.router.navigate(['/login']);
   }
+  login(){
+    console.log('hi');
+    this.router.navigate(['/login']);
+  }
 
 }
