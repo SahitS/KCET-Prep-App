@@ -217,6 +217,56 @@ router.get('/get-detailed-results/:subject', async (req, res) => {
   }
 });
 
+// Endpoint to get topic-wise and subtopic-wise analysis
+router.get('/get-analysis', async (req, res) => {
+  try {
+    const token = req.headers.authorization;
 
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const analysis = {};
+    const subjects = ['physics', 'chemistry', 'math'];
+
+    for (const subject of subjects) {
+      const questions = user.quiz[subject]; // All questions in the subject
+      const userAnswers = user.answers[`${subject}Answers`] || []; // User's answers for the subject
+
+      const topicData = {}; // Store analysis for each topic in this subject
+      for (const question of questions) {
+        const { Topic, Subtopic, questionIndex } = question;
+
+        if (!topicData[Topic]) {
+          topicData[Topic] = { total: 0, correct: 0, subtopics: {} };
+        }
+
+        if (!topicData[Topic].subtopics[Subtopic]) {
+          topicData[Topic].subtopics[Subtopic] = { total: 0, correct: 0 };
+        }
+
+        topicData[Topic].total++;
+        topicData[Topic].subtopics[Subtopic].total++;
+
+        const userAnswer = userAnswers.find((answer) => answer.questionIndex === questionIndex);
+        if (userAnswer && userAnswer.isCorrect) {
+          topicData[Topic].correct++;
+          topicData[Topic].subtopics[Subtopic].correct++;
+        }
+      }
+      analysis[subject] = topicData;
+    }
+
+    res.status(200).json(analysis);
+  } catch (error) {
+    console.error('Error fetching analysis:', error);
+    res.status(500).json({ error: 'An error occurred while fetching analysis' });
+  }
+});
 
 module.exports = router;

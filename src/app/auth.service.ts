@@ -82,6 +82,14 @@ export class AuthService {
       headers: { Authorization: token },
     });
   }
+
+  getAnalysis() {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get(`${this.baseUrl}/get-analysis`, {
+      headers: { Authorization: token },
+    });
+  }
+  
   
   
 }

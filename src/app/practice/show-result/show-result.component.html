@@ -1,6 +1,7 @@
 <div class="results-container">
   <!-- Header -->
   <h1>Your Results</h1>
+  <p class="total-score">Total Score: {{ totalScore }}/90</p>
 
   <!-- Main Content -->
   <div class="main-content">
@@ -29,21 +30,51 @@
         [labels]="true"
         [legend]="false"
         [doughnut]="true"
-      >
-      </ngx-charts-pie-chart>
+      ></ngx-charts-pie-chart>
     </div>
   </div>
 
-  <!-- Detailed Results (Overlay) -->
+  <!-- Analysis Section -->
+  <div class="analysis-section">
+    <h2>Performance Analysis</h2>
+    <div class="subject-analysis">
+      <div class="topic-graphs">
+        <div *ngFor="let subject of graphData">
+          <h3>{{ subject.subject | titlecase }}</h3>
+          <div class="grid-container">
+            <div *ngFor="let topic of subject.data" class="topic-graph">
+              <h4>{{ topic.name }}</h4>
+              <ul class="subtopics-list">
+                <li *ngFor="let series of topic.series" class="subtopic-item">
+                  <div class="bar-container">
+                    <div class="bar-label">{{ series.name }}</div>
+                    <div class="bar">
+                      <div class="bar-fill" [style.width.%]="series.value"></div>
+                    </div>
+                    <div class="percentage-label">{{ series.value.toFixed(2) }}%</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for Detailed Results -->
   <div class="overlay" *ngIf="selectedSubject">
     <div class="overlay-content">
       <h2>{{ selectedSubject | titlecase }} Detailed Results</h2>
       <div class="result-list">
         <div class="result-item" *ngFor="let result of detailedResults">
           <p><strong>Q:</strong> {{ result.question }}</p>
-          <p><strong>Correct Answer:</strong> {{ result.correctAnswer }}</p>
+          <p><strong>Expected Answer:</strong> {{ result.correctAnswer }}</p>
           <p><strong>Your Answer:</strong> {{ result.userAnswer }}</p>
-          <p [class.correct]="result.status === 'Correct'" [class.incorrect]="result.status === 'Incorrect'">
+          <p
+            [class.correct]="result.status === 'Correct'"
+            [class.incorrect]="result.status === 'Incorrect'"
+          >
             Status: {{ result.status }}
           </p>
         </div>
@@ -53,5 +84,5 @@
   </div>
 
   <!-- Back to Dashboard -->
-  <button class="btn-back" *ngIf="!selectedSubject" (click)="goToHome()">Back to Dashboard</button>
+  <button class="btn-back" (click)="goToHome()">Back to Dashboard</button>
 </div>
