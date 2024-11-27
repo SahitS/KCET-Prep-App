@@ -35,6 +35,7 @@ const UserSchema = new mongoose.Schema({
     chemistryAnswers: [AnswerSchema],
     mathAnswers: [AnswerSchema],
   },
+  custom_practice: [QuestionSchema],
 });
 
 module.exports = mongoose.model('User', UserSchema);

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -89,7 +90,19 @@ export class AuthService {
       headers: { Authorization: token },
     });
   }
-  
-  
-  
+
+  getTopics(subject: string): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.get(`${this.apiUrl}/get_topics?subject=${subject}`, {
+      headers: { Authorization: token || '' },
+    });
+  }
+
+  submitCustomPractice(data: any): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.post(`${this.apiUrl}/generate_custom_practice`, data, {
+      headers: { Authorization: token || '' },
+    });
+  }
+
 }

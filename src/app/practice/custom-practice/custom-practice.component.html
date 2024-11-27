@@ -1,1 +1,73 @@
-<p>custom-practice works!</p>
+<div class="custom-practice-container">
+    <h1 class="text-center">Custom Practice Session</h1>
+  
+    <!-- Subject Navbar -->
+    <div class="navbar-container">
+      <ul class="subject-navbar">
+        <li
+          *ngFor="let subject of subjects"
+          [class.active]="selectedSubject === subject"
+          (click)="fetchTopics(subject)"
+        >
+          {{ subject }}
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Topic and Subtopic Selection for the Selected Subject -->
+    <div *ngIf="selectedSubject" class="practice-options">
+      <h2>Select Topics and Subtopics for {{ selectedSubject }}</h2>
+  
+      <!-- Loading Indicator -->
+      <div *ngIf="isLoading" class="loading-spinner">
+        Loading topics...
+      </div>
+  
+      <!-- Topics and Subtopics -->
+      <div *ngIf="!isLoading">
+        <div class="topics-container">
+          <h3>Topics</h3>
+          <div class="checkbox-list">
+            <label *ngFor="let topic of topics">
+              <input
+                type="checkbox"
+                [value]="topic"
+                (change)="toggleTopic(topic)"
+                [checked]="selectedTopics.includes(topic)"
+              />
+              {{ topic }}
+            </label>
+          </div>
+        </div>
+  
+        <!-- Subtopics Clustered under Topics -->
+        <div class="subtopics-container" *ngFor="let topic of selectedTopics">
+          <h3>Subtopics for {{ topic }}</h3>
+          <div class="checkbox-list">
+            <label *ngFor="let subtopic of subtopics[topic]">
+              <input
+                type="checkbox"
+                [value]="subtopic"
+                (change)="toggleSubtopic(topic, subtopic)"
+                [checked]="selectedSubtopics[topic].includes(subtopic)"
+              />
+              {{ subtopic }}
+            </label>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Difficulty Selection -->
+      <div class="difficulty-container">
+        <h3>Select Difficulty</h3>
+        <select [(ngModel)]="selectedDifficulty">
+          <option *ngFor="let level of difficultyLevels" [value]="level">
+            {{ level }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Start Session Button -->
+      <button class="btn btn-primary" (click)="startSession()">Start Session</button>
+    </div>
+  </div>
