@@ -58,9 +58,11 @@ export class AuthService {
   }
 
   submitAnswers(payload: { token: string | null; answers: any }) {
+    const token = localStorage.getItem('userToken') || '';
     return this.http.post(`${this.baseUrl}/submit-answers`, payload, {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization : token,
+        //'Content-Type': 'application/json',
       },
     });
   }

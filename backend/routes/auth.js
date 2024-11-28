@@ -106,27 +106,34 @@ router.post('/submit-answers', async (req, res) => {
   const { token, answers } = req.body;
 
   try {
-    // Find the user by token
-    const user = await User.findOne({ token });
+    const userToken = req.headers.authorization;
+
+    if (!userToken) {
+      return res.status(401).json({ message: 'Authorization token is required' });
+    }
+
+    // Fetch the user document
+    const user = await User.findOne({ token: userToken });
 
     if (!user) {
       console.error('User not found for token:', token);
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Use the provided arrays directly
+    // Update only the answers field
     const { physicsAnswers, chemistryAnswers, mathAnswers } = answers;
 
-    // Save the answers into separate fields in the user document
-    user.answers = {
-      physicsAnswers,
-      chemistryAnswers,
-      mathAnswers,
-    };
+    user.answers.physicsAnswers = physicsAnswers;
+    user.answers.chemistryAnswers = chemistryAnswers;
+    user.answers.mathAnswers = mathAnswers;
 
-    console.log('Saving answers:', { physicsAnswers, chemistryAnswers, mathAnswers });
+    console.log('Saving answers:', user.answers);
 
-    await user.save();
+    // Save only the `answers` field
+    await User.updateOne(
+      { token: userToken },
+      { $set: { answers: user.answers } }
+    );
 
     return res.status(200).json({ message: 'Answers saved successfully' });
   } catch (error) {
