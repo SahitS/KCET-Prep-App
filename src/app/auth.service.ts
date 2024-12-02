@@ -25,11 +25,7 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('userToken');
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('token');
-  }  
+  } 
 
   generateQuiz() {
     const token = localStorage.getItem('userToken') || ''; // Retrieve the token from localStorage
@@ -120,6 +116,21 @@ export class AuthService {
       `${this.baseUrl}/verify-answer`,
       { questionIndex, selectedOption },
       { headers: { Authorization: localStorage.getItem('userToken') || '' } }
+    );
+  }
+  //Saving custom practice session history
+  saveSessionHistory(performanceData: any) {
+    const token = localStorage.getItem('userToken');
+    console.log('Saving session history with payload:', { token, performanceData });
+    console.log(token);
+    return this.http.post(`${this.baseUrl}/save-session-history`, { token, performanceData });
+  }
+  //Fetching custom practice session history for displaying 
+  getHistory() {
+    const token = localStorage.getItem('userToken');
+    return this.http.get<{ topic: string; subtopic: string; accuracy: number }[]>(
+      `${this.baseUrl}/get-history`,
+      { headers: { Authorization: token || '' } }
     );
   }
 }

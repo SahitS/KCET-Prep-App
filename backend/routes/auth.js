@@ -348,4 +348,51 @@ router.post('/verify-answer', async (req, res) => {
   }
 });
 
+//Endpoint to save a custom practice sessions history
+router.post('/save-session-history', async (req, res) => {
+  try {
+    const { token, performanceData } = req.body;
+
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Append performance data directly using $push
+    await User.updateOne(
+      { token },
+      { $push: { history: { $each: performanceData } } }
+    );
+
+    res.status(200).json({ message: 'Performance history updated successfully' });
+  } catch (error) {
+    console.error('Error saving session history:', error);
+    res.status(500).json({ error: 'An error occurred while saving session history' });
+  }
+});
+
+//Endpoint to fetch the history
+router.get('/get-history', async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.status(200).json(user.history);
+  } catch (error) {
+    console.error('Error fetching history:', error);
+    res.status(500).json({ error: 'An error occurred while fetching history' });
+  }
+});
+
 module.exports = router;

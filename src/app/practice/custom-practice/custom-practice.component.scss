@@ -41,6 +41,61 @@ $gray-light: #e0e0e0;
     }
   }
 
+  .history-container {
+    margin-bottom: 2rem;
+    background-color: $white;
+    border: 1px solid $gray-light;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $black;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+  
+      .history-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+  
+        .history-details {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.2rem;
+          color: $black;
+  
+          .history-topic,
+          .history-subtopic,
+          .history-accuracy {
+            margin: 0;
+          }
+        }
+  
+        .history-bar {
+          background-color: $gray-light;
+          height: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+  
+          .progress-bar {
+            background-color: $yellow;
+            height: 100%;
+            transition: width 0.3s ease;
+          }
+        }
+      }
+    }
+  }  
+
   .practice-options,
   .question-container {
     margin: 0 auto;

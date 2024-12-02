@@ -33,11 +33,29 @@ export class CustomPracticeComponent implements OnInit {
   selectedOption: string | null = null;
   isAnswered: boolean = false;
   isAnswerCorrect: boolean | null = null;
+  // Track performance during session
+  sessionPerformance: {
+    topic: string;
+    subtopic: string;
+    totalQuestions: number;
+    correctAnswers: number;
+  }[] = [];
+  history: { topic: string; subtopic: string; accuracy: number }[] = [];
 
   constructor(private authService: AuthService) {}
+  
 
   ngOnInit(): void {
     console.log('Custom Practice Component Initialized');
+    this.authService.getHistory().subscribe({
+      next: (response) => {
+        console.log('Fetched performance history:', response);
+        this.history = response;
+      },
+      error: (err) => {
+        console.error('Error fetching history:', err);
+      }
+    });
   }
 
   fetchTopics(subject: string): void {
@@ -84,6 +102,7 @@ export class CustomPracticeComponent implements OnInit {
   }
 
   startSession(): void {
+    this.sessionPerformance = [];
     console.log('Starting session with payload:', {
       subject: this.selectedSubject,
       topics: this.selectedTopics,
@@ -142,20 +161,46 @@ export class CustomPracticeComponent implements OnInit {
       alert('Please select an option before submitting.');
       return;
     }
-
-    console.log('Submitting answer for question:', this.currentQuestion);
+  
     this.authService.verifyAnswer(this.currentQuestion.questionIndex, this.selectedOption).subscribe({
       next: (response: { isCorrect: boolean }) => {
         this.isAnswered = true;
         this.isAnswerCorrect = response.isCorrect;
-        console.log('Answer submitted. Validation response:', response);
+  
+        // Update session performance
+        const topic = this.currentQuestion.Topic;
+        const subtopic = this.currentQuestion.Subtopic;
+  
+        // Find the performance entry for this topic/subtopic
+        let performanceEntry = this.sessionPerformance.find(
+          (entry) => entry.topic === topic && entry.subtopic === subtopic
+        );
+  
+        if (!performanceEntry) {
+          // Add new entry if not already present
+          performanceEntry = {
+            topic,
+            subtopic,
+            totalQuestions: 0,
+            correctAnswers: 0,
+          };
+          this.sessionPerformance.push(performanceEntry);
+        }
+  
+        // Update stats
+        performanceEntry.totalQuestions += 1;
+        if (response.isCorrect) {
+          performanceEntry.correctAnswers += 1;
+        }
+  
+        console.log('Updated session performance:', this.sessionPerformance);
       },
       error: (err) => {
         console.error('Error verifying answer:', err);
         alert('An error occurred while verifying your answer.');
       }
     });
-  }
+  }  
 
   nextQuestion(): void {
     if (this.currentQuestionIndex < this.customPractice.length - 1) {
@@ -169,11 +214,35 @@ export class CustomPracticeComponent implements OnInit {
   }
 
   finishPractice(): void {
-    console.log('Finishing practice session.');
+    console.log('Finishing practice session. Saving performance data:', this.sessionPerformance);
+  
+    const performanceData = this.sessionPerformance.map((entry) => ({
+      ...entry,
+      accuracy: ((entry.correctAnswers / entry.totalQuestions) * 100).toFixed(2), // Calculate accuracy
+    }));
+    console.log('Performance data to be saved:', performanceData);
+  
+    this.authService.saveSessionHistory(performanceData).subscribe({
+      next: (response) => {
+        console.log('Session performance saved successfully:', response);
+        alert('Session completed and performance saved.');
+      },
+      error: (err) => {
+        console.error('Error saving session performance:', err);
+        alert('An error occurred while saving session performance.');
+      }
+    });
+  
+    // Reset session state
     this.isSessionStarted = false;
     this.resetSessionState();
     this.resetTopicsAndSubtopics();
+    this.customPractice = [];
+    this.currentQuestion = null;
+    this.currentQuestionIndex = 0;
+    this.resetQuestionState();
   }
+  
 
   private resetQuestionState(): void {
     this.selectedOption = null; // Reset selected option

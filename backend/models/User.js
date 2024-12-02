@@ -36,6 +36,19 @@ const UserSchema = new mongoose.Schema({
     mathAnswers: [AnswerSchema],
   },
   custom_practice: [QuestionSchema],
+  history: {
+    type: [
+      {
+        topic: String,
+        subtopic: String,
+        totalQuestions: Number,
+        correctAnswers: Number,
+        accuracy: Number,
+        date: { type: Date, default: Date.now },
+      },
+    ],
+    default: [],
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);
