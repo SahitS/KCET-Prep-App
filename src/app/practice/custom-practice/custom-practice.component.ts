@@ -91,14 +91,8 @@ export class CustomPracticeComponent implements OnInit {
       difficulty: this.selectedDifficulty,
     });
 
-    // Reset state variables for a new session
-    this.customPractice = [];
-    this.currentQuestion = null;
-    this.currentQuestionIndex = 0; // Reset question index
-    this.selectedOption = null;
-    this.isAnswered = false;
-    this.isAnswerCorrect = null;
-    this.isSessionStarted = false;
+    // Reset session state
+    this.resetSessionState();
 
     // Generate custom practice questions
     this.authService.submitCustomPractice({
@@ -177,14 +171,12 @@ export class CustomPracticeComponent implements OnInit {
   finishPractice(): void {
     console.log('Finishing practice session.');
     this.isSessionStarted = false;
-    this.customPractice = [];
-    this.currentQuestion = null;
-    this.currentQuestionIndex = 0;
-    this.resetQuestionState();
+    this.resetSessionState();
+    this.resetTopicsAndSubtopics();
   }
 
   private resetQuestionState(): void {
-    this.selectedOption = null;
+    this.selectedOption = null; // Reset selected option
     this.isAnswered = false;
     this.isAnswerCorrect = null;
     console.log('Resetting question state:', {
@@ -192,5 +184,19 @@ export class CustomPracticeComponent implements OnInit {
       isAnswered: this.isAnswered,
       isAnswerCorrect: this.isAnswerCorrect,
     });
+  }
+  
+
+  private resetSessionState(): void {
+    this.customPractice = [];
+    this.currentQuestion = null;
+    this.currentQuestionIndex = 0;
+    this.resetQuestionState();
+  }
+
+  private resetTopicsAndSubtopics(): void {
+    this.selectedTopics = [];
+    this.selectedSubtopics = {};
+    console.log('Resetting topics and subtopics.');
   }
 }

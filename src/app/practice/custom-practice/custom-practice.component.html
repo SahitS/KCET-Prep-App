@@ -78,6 +78,7 @@
           type="radio"
           name="options"
           [value]="option"
+          [checked]="selectedOption === option"
           [disabled]="isAnswered"
           (change)="selectOption(option)"
         />
