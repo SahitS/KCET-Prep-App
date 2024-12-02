@@ -1,5 +1,5 @@
 <div class="custom-practice-container">
-  <h1 class="text-center">Custom Practice Session</h1>
+  <h1>Custom Practice Session</h1>
 
   <!-- Subject Navbar -->
   <div class="navbar-container">
@@ -14,15 +14,14 @@
     </ul>
   </div>
 
-  <!-- Topic and Subtopic Selection for the Selected Subject -->
+  <!-- Topic and Subtopic Selection -->
   <div *ngIf="selectedSubject && !isSessionStarted" class="practice-options">
     <h2>Select Topics and Subtopics for {{ selectedSubject }}</h2>
 
-    <!-- Loading Indicator -->
     <div *ngIf="isLoading" class="loading-spinner">Loading topics...</div>
 
-    <!-- Topics and Subtopics -->
     <div *ngIf="!isLoading">
+      <!-- Topics -->
       <div class="topics-container">
         <h3>Topics</h3>
         <div class="checkbox-list">
@@ -38,6 +37,7 @@
         </div>
       </div>
 
+      <!-- Subtopics -->
       <div class="subtopics-container" *ngFor="let topic of selectedTopics">
         <h3>Subtopics for {{ topic }}</h3>
         <div class="checkbox-list">
@@ -54,6 +54,7 @@
       </div>
     </div>
 
+    <!-- Difficulty -->
     <div class="difficulty-container">
       <h3>Select Difficulty</h3>
       <select [(ngModel)]="selectedDifficulty">
@@ -69,7 +70,7 @@
   <!-- Practice Session -->
   <div *ngIf="isSessionStarted" class="question-container">
     <h2>Question {{ currentQuestionIndex + 1 }}</h2>
-    <p>{{ currentQuestion.Question }}</p>
+    <p class="question-text">{{ currentQuestion.Question }}</p>
 
     <!-- Options -->
     <div class="options">
