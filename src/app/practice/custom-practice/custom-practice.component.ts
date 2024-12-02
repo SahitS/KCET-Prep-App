@@ -1,25 +1,38 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../auth.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+interface AnswerValidationResponse {
+  isCorrect: boolean;
+}
 
 @Component({
   selector: 'app-custom-practice',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './custom-practice.component.html',
   styleUrls: ['./custom-practice.component.scss']
 })
 export class CustomPracticeComponent implements OnInit {
   subjects: string[] = ['Mathematics', 'Physics', 'Chemistry'];
   topics: string[] = [];
-  subtopics: { [key: string]: string[] } = {}; // Store subtopics grouped by topic
+  subtopics: { [key: string]: string[] } = {};
   selectedSubject: string = '';
   selectedTopics: string[] = [];
-  selectedSubtopics: { [key: string]: string[] } = {}; // Store selected subtopics by topic
+  selectedSubtopics: { [key: string]: string[] } = {};
   difficultyLevels: string[] = ['Easy', 'Medium', 'Hard', 'Very Hard'];
   selectedDifficulty: string = 'Easy';
   isLoading: boolean = false;
+
+  // State for practice session
+  isSessionStarted: boolean = false;
+  customPractice: any[] = [];
+  currentQuestion: any = null;
+  currentQuestionIndex: number = 0;
+  selectedOption: string | null = null;
+  isAnswered: boolean = false;
+  isAnswerCorrect: boolean | null = null;
 
   constructor(private authService: AuthService) {}
 
@@ -28,21 +41,21 @@ export class CustomPracticeComponent implements OnInit {
   }
 
   fetchTopics(subject: string): void {
+    console.log(`Fetching topics for subject: ${subject}`);
     this.isLoading = true;
     this.selectedSubject = subject;
-    console.log(`Fetching topics for subject: ${subject}`);
 
     this.authService.getTopics(subject).subscribe({
       next: (response) => {
         this.topics = response.topics;
         this.subtopics = response.subtopics;
         this.isLoading = false;
-        console.log('Topics and Subtopics fetched successfully:', response);
+        console.log('Topics and subtopics fetched:', response);
       },
       error: (err) => {
         console.error('Error fetching topics:', err);
         this.isLoading = false;
-      },
+      }
     });
   }
 
@@ -50,45 +63,134 @@ export class CustomPracticeComponent implements OnInit {
     const index = this.selectedTopics.indexOf(topic);
     if (index > -1) {
       this.selectedTopics.splice(index, 1);
-      delete this.selectedSubtopics[topic]; // Clear subtopics when topic is deselected
+      delete this.selectedSubtopics[topic];
     } else {
       this.selectedTopics.push(topic);
-      this.selectedSubtopics[topic] = []; // Initialize empty array for subtopics
+      this.selectedSubtopics[topic] = [];
     }
-    console.log('Selected Topics:', this.selectedTopics);
+    console.log('Selected topics:', this.selectedTopics);
+    console.log('Selected subtopics:', this.selectedSubtopics);
   }
 
   toggleSubtopic(topic: string, subtopic: string): void {
-    if (!this.selectedSubtopics[topic]) {
-      this.selectedSubtopics[topic] = []; // Ensure an empty array for the topic
-    }
-    const index = this.selectedSubtopics[topic].indexOf(subtopic);
+    const subtopics = this.selectedSubtopics[topic] || [];
+    const index = subtopics.indexOf(subtopic);
     if (index > -1) {
-      this.selectedSubtopics[topic].splice(index, 1); // Deselect subtopic
+      subtopics.splice(index, 1);
     } else {
-      this.selectedSubtopics[topic].push(subtopic); // Select subtopic
+      subtopics.push(subtopic);
     }
-    console.log('Selected Subtopics:', this.selectedSubtopics);
+    console.log('Updated subtopics for topic:', topic, subtopics);
   }
 
   startSession(): void {
-    const payload = {
+    console.log('Starting session with payload:', {
       subject: this.selectedSubject,
       topics: this.selectedTopics,
       subtopics: this.selectedSubtopics,
       difficulty: this.selectedDifficulty,
-    };
+    });
 
-    console.log('Starting session with payload:', payload);
+    // Reset state variables for a new session
+    this.customPractice = [];
+    this.currentQuestion = null;
+    this.currentQuestionIndex = 0; // Reset question index
+    this.selectedOption = null;
+    this.isAnswered = false;
+    this.isAnswerCorrect = null;
+    this.isSessionStarted = false;
 
-    this.authService.submitCustomPractice(payload).subscribe({
-      next: (response) => {
-        console.log('Custom Practice Questions Generated Successfully:', response);
-        alert('Custom Practice Session Created Successfully!');
+    // Generate custom practice questions
+    this.authService.submitCustomPractice({
+      subject: this.selectedSubject,
+      topics: this.selectedTopics,
+      subtopics: this.selectedSubtopics,
+      difficulty: this.selectedDifficulty,
+    }).subscribe({
+      next: (generateResponse) => {
+        console.log('Custom practice generation response:', generateResponse);
+
+        // Fetch the generated custom practice questions
+        this.authService.getCustomPracticeTest().subscribe({
+          next: (fetchResponse: any) => {
+            console.log('Fetched custom practice questions:', fetchResponse);
+
+            if (fetchResponse.questions && fetchResponse.questions.length > 0) {
+              this.customPractice = fetchResponse.questions;
+              this.currentQuestion = this.customPractice[this.currentQuestionIndex];
+              this.isSessionStarted = true;
+              console.log('Session started. First question:', this.currentQuestion);
+            } else {
+              alert('No questions found for the selected filters. Please adjust your selection.');
+              this.isSessionStarted = false;
+            }
+          },
+          error: (fetchError) => {
+            console.error('Error fetching custom practice questions:', fetchError);
+            alert('An error occurred while fetching custom practice questions. Please try again.');
+          },
+        });
+      },
+      error: (generateError) => {
+        console.error('Error generating custom practice:', generateError);
+        alert('An error occurred while generating the custom practice. Please try again.');
+      },
+    });
+  }
+
+  selectOption(option: string): void {
+    this.selectedOption = option;
+    console.log('Selected option:', this.selectedOption);
+  }
+
+  submitAnswer(): void {
+    if (!this.selectedOption) {
+      alert('Please select an option before submitting.');
+      return;
+    }
+
+    console.log('Submitting answer for question:', this.currentQuestion);
+    this.authService.verifyAnswer(this.currentQuestion.questionIndex, this.selectedOption).subscribe({
+      next: (response: { isCorrect: boolean }) => {
+        this.isAnswered = true;
+        this.isAnswerCorrect = response.isCorrect;
+        console.log('Answer submitted. Validation response:', response);
       },
       error: (err) => {
-        console.error('Error generating custom practice:', err);
-      },
+        console.error('Error verifying answer:', err);
+        alert('An error occurred while verifying your answer.');
+      }
+    });
+  }
+
+  nextQuestion(): void {
+    if (this.currentQuestionIndex < this.customPractice.length - 1) {
+      this.currentQuestionIndex++;
+      this.currentQuestion = this.customPractice[this.currentQuestionIndex];
+      console.log('Moving to next question:', this.currentQuestion);
+      this.resetQuestionState();
+    } else {
+      alert('You have completed all questions.');
+    }
+  }
+
+  finishPractice(): void {
+    console.log('Finishing practice session.');
+    this.isSessionStarted = false;
+    this.customPractice = [];
+    this.currentQuestion = null;
+    this.currentQuestionIndex = 0;
+    this.resetQuestionState();
+  }
+
+  private resetQuestionState(): void {
+    this.selectedOption = null;
+    this.isAnswered = false;
+    this.isAnswerCorrect = null;
+    console.log('Resetting question state:', {
+      selectedOption: this.selectedOption,
+      isAnswered: this.isAnswered,
+      isAnswerCorrect: this.isAnswerCorrect,
     });
   }
 }

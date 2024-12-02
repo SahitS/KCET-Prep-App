@@ -276,4 +276,76 @@ router.get('/get-analysis', async (req, res) => {
   }
 });
 
+// Endpoint to fetch custom practice test
+router.get('/get-custom-practice', async (req, res) => {
+  try {
+    console.log('Request received at /get-custom-practice'); // Log endpoint hit
+
+    const token = req.headers.authorization; // Authorization token
+    if (!token) {
+      console.error('Authorization token is missing'); // Log missing token
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    console.log(`Token received: ${token}`); // Log the token
+
+    // Fetch user from the database
+    const user = await User.findOne({ token });
+    if (!user) {
+      console.error('User not found for the provided token'); // Log user not found
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    console.log('User found:', user.username); // Log the username of the user
+
+    // Get custom practice questions
+    const customPractice = user.custom_practice || [];
+    console.log('Custom Practice Questions Retrieved:', customPractice); // Log retrieved questions
+
+    // Check if custom practice questions exist
+    if (!customPractice || customPractice.length === 0) {
+      console.warn('No custom practice questions found'); // Log no questions found
+      return res.status(404).json({
+        message: 'No questions found for the selected filters.',
+      });
+    }
+
+    console.log('Sending custom practice questions to the frontend'); // Log before sending response
+    res.status(200).json({ questions: customPractice }); // Return as JSON
+  } catch (error) {
+    console.error('Error fetching custom practice test:', error); // Log errors
+    res.status(500).json({
+      error: 'An error occurred while fetching custom practice test',
+    });
+  }
+});
+
+//Endpoint to verifying custom practice questions on the go
+router.post('/verify-answer', async (req, res) => {
+  try {
+    const { questionIndex, selectedOption } = req.body;
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const question = user.custom_practice.find(q => q.questionIndex === questionIndex);
+    if (!question) {
+      return res.status(404).json({ error: 'Question not found' });
+    }
+
+    const isCorrect = question.Correct_Option === selectedOption;
+    res.status(200).json({ isCorrect });
+  } catch (error) {
+    console.error('Error verifying answer:', error);
+    res.status(500).json({ error: 'An error occurred while verifying answer' });
+  }
+});
+
 module.exports = router;

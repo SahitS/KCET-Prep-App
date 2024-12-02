@@ -107,4 +107,19 @@ export class AuthService {
     });
   }
 
+  getCustomPracticeTest() {
+    console.log('Hi');
+    return this.http.get(`${this.baseUrl}/get-custom-practice`, {
+      headers: { Authorization: localStorage.getItem('userToken') || '' },
+    });
+  }
+
+  // Submit user answer and verify correctness
+  verifyAnswer(questionIndex: number, selectedOption: string): Observable<{ isCorrect: boolean }> {
+    return this.http.post<{ isCorrect: boolean }>(
+      `${this.baseUrl}/verify-answer`,
+      { questionIndex, selectedOption },
+      { headers: { Authorization: localStorage.getItem('userToken') || '' } }
+    );
+  }
 }

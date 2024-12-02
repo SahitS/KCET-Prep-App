@@ -104,28 +104,27 @@ def get_topics():
     except Exception as e:
         print("Error occurred:", e)
         return jsonify({"error": str(e)}), 500
-
 #endpoint to generate custom practice questions
 @app.route('/generate_custom_practice', methods=['POST'])
 def generate_custom_practice():
     try:
-        # Get the JSON data from the request body
+        print('Request received at /generate_custom_practice')  # Debug log
         data = request.json
+        print('Request body:', data)  # Debug log
 
-        # Retrieve the token from the 'Authorization' header
         token = request.headers.get('Authorization')
-        if not token:
-            return jsonify({"error": "Authorization token is required"}), 401
+        print('Token received:', token)  # Debug log
 
-        # Validate the token in the database
         user = users_collection.find_one({"token": token})
         if not user:
+            print('User not found for token:', token)  # Debug log
             return jsonify({"error": "User not found"}), 404
 
         # Get selected topics and subtopics from the request data
         selected_topics = data.get('topics', [])
         selected_subtopics = data.get('subtopics', {})
 
+        # Validate topics and subtopics
         if not selected_topics:
             return jsonify({"error": "Topics are required"}), 400
 
@@ -145,23 +144,22 @@ def generate_custom_practice():
                     else:
                         # If no subtopics are selected, include all questions under the topic
                         filtered_questions = df[df['Topic'] == topic]
-                    
+
                     # Add the filtered questions to the questions list
                     questions.extend(filtered_questions.to_dict(orient='records'))
 
-        # Before saving the new questions, reinitialize the `custom_practice` array
-        users_collection.update_one({"token": token}, {"$set": {"custom_practice": []}})  # Clear the previous data
+        # **Reinitialize the custom_practice array for the user**
+        users_collection.update_one({"token": token}, {"$set": {"custom_practice": []}})  # Clear the previous session
 
         # Store the new custom practice data in the database
         users_collection.update_one({"token": token}, {"$set": {"custom_practice": questions}})
 
+        print('Questions saved successfully')  # Debug log
         return jsonify({"message": "Custom practice questions stored successfully"}), 200
 
     except Exception as e:
-        # Return an error response in case of an exception
+        print('Error in /generate_custom_practice:', str(e))  # Debug log
         return jsonify({"error": str(e)}), 500
-
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
