@@ -128,9 +128,20 @@ export class AuthService {
   //Fetching custom practice session history for displaying 
   getHistory() {
     const token = localStorage.getItem('userToken');
-    return this.http.get<{ topic: string; subtopic: string; accuracy: number }[]>(
-      `${this.baseUrl}/get-history`,
-      { headers: { Authorization: token || '' } }
-    );
+    return this.http.get<{
+      subject: string;
+      accuracy: number;
+      topics: {
+        topic: string;
+        accuracy: number;
+        subtopics: {
+          subtopic: string;
+          accuracy: number;
+        }[];
+      }[];
+    }[]>(`${this.baseUrl}/get-history`, {
+      headers: { Authorization: token || '' },
+    });
   }
+  
 }

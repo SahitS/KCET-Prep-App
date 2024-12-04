@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 interface AnswerValidationResponse {
   isCorrect: boolean;
 }
@@ -10,7 +11,7 @@ interface AnswerValidationResponse {
 @Component({
   selector: 'app-custom-practice',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatExpansionModule, MatProgressBarModule],
   templateUrl: './custom-practice.component.html',
   styleUrls: ['./custom-practice.component.scss']
 })
@@ -35,29 +36,41 @@ export class CustomPracticeComponent implements OnInit {
   isAnswerCorrect: boolean | null = null;
   // Track performance during session
   sessionPerformance: {
+    subject: string;
     topic: string;
     subtopic: string;
     totalQuestions: number;
     correctAnswers: number;
   }[] = [];
-  history: { topic: string; subtopic: string; accuracy: number }[] = [];
+  history: {
+    subject: string;
+    accuracy: number;
+    topics: {
+      topic: string;
+      accuracy: number;
+      subtopics: {
+        subtopic: string;
+        accuracy: number;
+      }[];
+    }[];
+  }[] = [];
+  
 
   constructor(private authService: AuthService) {}
   
-
   ngOnInit(): void {
     console.log('Custom Practice Component Initialized');
     this.authService.getHistory().subscribe({
       next: (response) => {
-        console.log('Fetched performance history:', response);
-        this.history = response;
+        console.log('Fetched hierarchical performance history:', response);
+        this.history = response; // Ensure the backend matches this structure
       },
       error: (err) => {
         console.error('Error fetching history:', err);
       }
     });
   }
-
+  
   fetchTopics(subject: string): void {
     console.log(`Fetching topics for subject: ${subject}`);
     this.isLoading = true;
@@ -179,6 +192,7 @@ export class CustomPracticeComponent implements OnInit {
         if (!performanceEntry) {
           // Add new entry if not already present
           performanceEntry = {
+            subject: this.selectedSubject, // Include the subject here
             topic,
             subtopic,
             totalQuestions: 0,
@@ -200,7 +214,8 @@ export class CustomPracticeComponent implements OnInit {
         alert('An error occurred while verifying your answer.');
       }
     });
-  }  
+  }
+   
 
   nextQuestion(): void {
     if (this.currentQuestionIndex < this.customPractice.length - 1) {
@@ -242,7 +257,6 @@ export class CustomPracticeComponent implements OnInit {
     this.currentQuestionIndex = 0;
     this.resetQuestionState();
   }
-  
 
   private resetQuestionState(): void {
     this.selectedOption = null; // Reset selected option
@@ -267,5 +281,5 @@ export class CustomPracticeComponent implements OnInit {
     this.selectedTopics = [];
     this.selectedSubtopics = {};
     console.log('Resetting topics and subtopics.');
-  }
+  }  
 }

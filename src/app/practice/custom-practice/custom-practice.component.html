@@ -13,27 +13,32 @@
       </li>
     </ul>
   </div>
-  
-  <!-- Performance History -->
-  <div class="history-container" *ngIf="history.length > 0">
-    <h2>Performance History</h2>
-    <div class="history-list">
-      <div class="history-item" *ngFor="let item of history">
-        <div class="history-details">
-          <p class="history-topic">Topic: {{ item.topic }}</p>
-          <p class="history-subtopic">Subtopic: {{ item.subtopic }}</p>
-          <p class="history-accuracy">Accuracy: {{ item.accuracy }}%</p>
-        </div>
-        <div class="history-bar">
-          <div
-            class="progress-bar"
-            [style.width.%]="item.accuracy"
-          ></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+  <div class="hierarchical-history" *ngIf="history.length > 0">
+    <h2>Performance History</h2>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let subject of history">
+        <mat-expansion-panel-header>
+          {{ subject.subject }} (Accuracy: {{ subject.accuracy }}%)
+        </mat-expansion-panel-header>
+  
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let topic of subject.topics">
+            <mat-expansion-panel-header>
+              {{ topic.topic }} (Accuracy: {{ topic.accuracy }}%)
+            </mat-expansion-panel-header>
+  
+            <ul>
+              <li *ngFor="let subtopic of topic.subtopics">
+                {{ subtopic.subtopic }}: {{ subtopic.accuracy }}%
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  
   <!-- Topic and Subtopic Selection -->
   <div *ngIf="selectedSubject && !isSessionStarted" class="practice-options">
     <h2>Select Topics and Subtopics for {{ selectedSubject }}</h2>

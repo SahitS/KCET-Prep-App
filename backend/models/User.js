@@ -19,6 +19,16 @@ const AnswerSchema = new mongoose.Schema({
   isCorrect: { type: Boolean, required: true },
 });
 
+const HistorySchema = new mongoose.Schema({
+  subject: { type: String, required: true },
+  topic: { type: String, required: true },
+  subtopic: { type: String, required: true },
+  totalQuestions: { type: Number, required: true },
+  correctAnswers: { type: Number, required: true },
+  accuracy: { type: Number, required: true },
+  date: { type: Date, default: Date.now },
+});
+
 const QuizSchema = new mongoose.Schema({
   math: [QuestionSchema], 
   chemistry: [QuestionSchema], 
@@ -36,19 +46,7 @@ const UserSchema = new mongoose.Schema({
     mathAnswers: [AnswerSchema],
   },
   custom_practice: [QuestionSchema],
-  history: {
-    type: [
-      {
-        topic: String,
-        subtopic: String,
-        totalQuestions: Number,
-        correctAnswers: Number,
-        accuracy: Number,
-        date: { type: Date, default: Date.now },
-      },
-    ],
-    default: [],
-  },
+  history: [HistorySchema],
 });
 
 module.exports = mongoose.model('User', UserSchema);

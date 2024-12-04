@@ -363,9 +363,18 @@ router.post('/save-session-history', async (req, res) => {
     }
 
     // Append performance data directly using $push
+    const formattedData = performanceData.map(entry => ({
+      subject: entry.subject || "Unknown Subject", // Default to "Unknown Subject" if missing
+      topic: entry.topic,
+      subtopic: entry.subtopic,
+      totalQuestions: entry.totalQuestions,
+      correctAnswers: entry.correctAnswers,
+      accuracy: entry.accuracy,
+    }));    
+
     await User.updateOne(
       { token },
-      { $push: { history: { $each: performanceData } } }
+      { $push: { history: { $each: formattedData } } }
     );
 
     res.status(200).json({ message: 'Performance history updated successfully' });
@@ -379,6 +388,7 @@ router.post('/save-session-history', async (req, res) => {
 router.get('/get-history', async (req, res) => {
   try {
     const token = req.headers.authorization;
+
     if (!token) {
       return res.status(401).json({ error: 'Authorization token is required' });
     }
@@ -388,11 +398,59 @@ router.get('/get-history', async (req, res) => {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    res.status(200).json(user.history);
+    // Use MongoDB aggregation to create the hierarchy
+    const historyHierarchy = await User.aggregate([
+      { $match: { token } },
+      { $unwind: "$history" },
+      {
+        $group: {
+          _id: {
+            subject: "$history.subject",
+            topic: "$history.topic",
+            subtopic: "$history.subtopic",
+          },
+          accuracy: { $avg: "$history.accuracy" },
+        },
+      },
+      {
+        $group: {
+          _id: { subject: "$_id.subject", topic: "$_id.topic" },
+          subtopics: {
+            $push: { subtopic: "$_id.subtopic", accuracy: "$accuracy" },
+          },
+          topicAccuracy: { $avg: "$accuracy" },
+        },
+      },
+      {
+        $group: {
+          _id: "$_id.subject",
+          topics: {
+            $push: {
+              topic: "$_id.topic",
+              accuracy: "$topicAccuracy",
+              subtopics: "$subtopics",
+            },
+          },
+          subjectAccuracy: { $avg: "$topicAccuracy" },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          subject: "$_id",
+          accuracy: "$subjectAccuracy",
+          topics: 1,
+        },
+      },
+    ]);
+
+    res.status(200).json(historyHierarchy);
   } catch (error) {
-    console.error('Error fetching history:', error);
+    console.error('Error fetching hierarchical history:', error);
     res.status(500).json({ error: 'An error occurred while fetching history' });
   }
 });
+
+
 
 module.exports = router;

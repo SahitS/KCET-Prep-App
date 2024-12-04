@@ -94,7 +94,48 @@ $gray-light: #e0e0e0;
         }
       }
     }
-  }  
+    .hierarchical-history {
+  margin: 20px;
+
+  mat-accordion {
+    margin-bottom: 20px;
+
+    mat-expansion-panel-header {
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+  } 
+  .hierarchical-history {
+    margin: 20px;
+  
+    mat-accordion {
+      margin-bottom: 20px;
+  
+      mat-expansion-panel-header {
+        font-weight: bold;
+      }
+  
+      ul {
+        padding-left: 20px;
+  
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+  
+   
 
   .practice-options,
   .question-container {
