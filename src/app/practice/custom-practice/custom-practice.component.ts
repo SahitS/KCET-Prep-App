@@ -73,9 +73,15 @@ export class CustomPracticeComponent implements OnInit {
   
   fetchTopics(subject: string): void {
     console.log(`Fetching topics for subject: ${subject}`);
+
+    if (this.selectedSubject === subject) {
+      this.clearSubjectSelection();
+      return;
+    }
+
     this.isLoading = true;
     this.selectedSubject = subject;
-
+    
     this.authService.getTopics(subject).subscribe({
       next: (response) => {
         this.topics = response.topics;
@@ -256,6 +262,15 @@ export class CustomPracticeComponent implements OnInit {
     this.currentQuestion = null;
     this.currentQuestionIndex = 0;
     this.resetQuestionState();
+  }
+
+  clearSubjectSelection(): void {
+    this.selectedSubject = '';
+    this.topics = [];
+    this.subtopics = {};
+    this.selectedTopics = [];
+    this.selectedSubtopics = {};
+    console.log('Subject deselected. Resetting state.');
   }
 
   private resetQuestionState(): void {

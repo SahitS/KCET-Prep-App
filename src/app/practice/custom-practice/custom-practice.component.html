@@ -14,7 +14,8 @@
     </ul>
   </div>
 
-  <div class="hierarchical-history" *ngIf="history.length > 0">
+  <!-- Performance History (hidden when a subject is selected) -->
+  <div class="hierarchical-history" *ngIf="!selectedSubject && history.length > 0">
     <h2>Performance History</h2>
     <mat-accordion>
       <mat-expansion-panel *ngFor="let subject of history">
