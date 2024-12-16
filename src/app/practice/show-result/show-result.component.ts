@@ -103,6 +103,11 @@ export class ShowResultComponent implements OnInit {
     this.selectedSubject = null;
   }
 
+  goToStudyPlan(): void {
+    this.router.navigate(['/study-plan']);
+  }
+  
+
   goToHome(): void {
     this.router.navigate(['/dashboard']);
   }

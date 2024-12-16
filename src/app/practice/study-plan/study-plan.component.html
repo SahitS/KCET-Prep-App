@@ -1,0 +1,87 @@
+<div class="study-plan-container">
+    <h1>Personalized Study Plan</h1>
+  
+    <!-- Input Date Section -->
+    <div *ngIf="!studyPlan.length">
+      <p>Please enter your KCET exam date and preferences to generate a study plan:</p>
+      
+      <!-- Exam Date Input -->
+      <mat-form-field appearance="outline">
+        <mat-label>Exam Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="examDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <!-- Daily Hour Preferences -->
+      <mat-form-field appearance="outline">
+        <mat-label>Weekday Study Hours</mat-label>
+        <input type="number" matInput [(ngModel)]="preferences.weekdayHours" />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Weekend Study Hours</mat-label>
+        <input type="number" matInput [(ngModel)]="preferences.weekendHours" />
+      </mat-form-field>
+      
+      <!-- Stress Handling -->
+      <mat-checkbox [(ngModel)]="preferences.stressHandling">Enable Stress Handling (Lighter load on stressful days)</mat-checkbox>
+      
+      <button class="btn-generate" (click)="generateStudyPlan()">Generate Study Plan</button>
+    </div>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="loading-spinner">
+      <p>Loading...</p>
+    </div>
+  
+    <!-- Study Plan Details -->
+    <div *ngIf="studyPlan.length && !isLoading">
+      <button class="btn-back" *ngIf="selectedDay || selectedSubject" (click)="resetView()">Back</button>
+  
+      <!-- Top-Level View: Days -->
+      <div *ngIf="!selectedDay">
+        <h2>Study Plan Details</h2>
+        <p>Days Left: {{ daysLeft }}</p>
+        <p>Recommended Study Hours per Day: {{ dailyHours }}</p>
+  
+        <div 
+          *ngFor="let day of studyPlan" 
+          class="day-card" 
+          (click)="selectDay(day)"
+        >
+          <h3>{{ day.date }}</h3>
+          <p>Total Hours: {{ day.totalHours }}</p>
+          <p *ngIf="day.mockTest" class="mock-test">Mock Test Scheduled</p>
+        </div>
+      </div>
+  
+      <!-- Subject-Level View -->
+      <div *ngIf="selectedDay && !selectedSubject">
+        <h2>{{ selectedDay.date }}</h2>
+  
+        <div 
+          *ngFor="let subject of selectedDay.subjects" 
+          class="subject-card" 
+          (click)="selectSubject(subject)"
+        >
+          <h3>{{ subject.subject }}</h3>
+          <p>Total Hours: {{ getTotalHours([subject]) }}</p>
+        </div>
+      </div>
+  
+      <!-- Topic and Subtopic-Level View -->
+      <div *ngIf="selectedSubject">
+        <h2>{{ selectedSubject.subject }}</h2>
+        <div *ngFor="let topic of selectedSubject.topics" class="topic-card">
+          <h3>{{ topic.topic }}: {{ getTopicTotalHours([topic]) }} hours</h3>
+          <ul>
+            <li *ngFor="let subtopic of topic.subtopics">
+              {{ subtopic.subtopic }}: {{ subtopic.hours }} hours
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

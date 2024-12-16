@@ -143,5 +143,21 @@ export class AuthService {
       headers: { Authorization: token || '' },
     });
   }
+
+  generateStudyPlan(payload: {
+    examDate: Date;
+    weekdayHours: number;
+    weekendHours: number;
+    stressMode: boolean;
+  }): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    console.log('Token for study plan generation:', token); // Log token
+    console.log('Payload for study plan generation:', payload); // Log payload
+  
+    return this.http.post(`${this.apiUrl}/generate-study-plan`, payload, {
+      headers: { Authorization: token }
+    });
+  }
+  
   
 }

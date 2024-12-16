@@ -13,6 +13,7 @@ import { ReviewQuestionsComponent } from './practice/review-questions/review-que
 import { ShowResultComponent } from './practice/show-result/show-result.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudyPlanComponent } from './practice/study-plan/study-plan.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'practice-test', component: PracticeTestComponent, canActivate: [AuthGuard] },
   { path: 'custom-practice', component: CustomPracticeComponent, canActivate: [AuthGuard] },
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
+  { path: 'study-plan', component: StudyPlanComponent, canActivate: [AuthGuard] },
   { path: 'results', component: ShowResultComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },

@@ -253,4 +253,21 @@ $text-color: #333333;
       color: $primary-color;
     }
   }
+  .btn-study-plan {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffd700;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+  
+    &:hover {
+      background-color: #000000;
+      color: #ffd700;
+    }
+  }
+  
 }
