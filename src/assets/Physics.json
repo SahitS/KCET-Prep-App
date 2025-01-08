@@ -1,0 +1,1837 @@
+{
+  "Physics": {
+    "years": [
+      {
+        "year": "1st PUC",
+        "chapters": [
+          {
+            "name": "Physical World",
+            "flashcards": [
+              {
+                "title": "Nature of Physics",
+                "formulas": [],
+                "explanation": [
+                  "Physics: A branch of science that deals with the study of the natural world, including matter, energy, and their interactions.",
+                  "Objective: To understand the laws of nature and apply them to explain and predict natural phenomena.",
+                  "Examples: Laws of motion, thermodynamics, gravitation, optics, etc."
+                ]
+              },
+              {
+                "title": "Scope of Physics",
+                "formulas": [],
+                "explanation": [
+                  "Macroscopic Level: Deals with phenomena at large scales, like planetary motion, fluids, thermodynamics.",
+                  "Microscopic Level: Deals with atomic and subatomic phenomena, like quantum mechanics, nuclear physics.",
+                  "Interdisciplinary: Physics contributes to chemistry (quantum chemistry), biology (biophysics), geology (geophysics), etc."
+                ]
+              },
+              {
+                "title": "Fundamental Forces in Nature",
+                "formulas": [],
+                "explanation": [
+                  "Gravitational Force: Weakest force but acts over infinite range; governs planetary motion and tides.",
+                  "Electromagnetic Force: Acts between charged particles; responsible for electric and magnetic phenomena.",
+                  "Strong Nuclear Force: Strongest force; binds protons and neutrons in the nucleus.",
+                  "Weak Nuclear Force: Responsible for radioactive decay and certain nuclear reactions."
+                ]
+              },
+              {
+                "title": "Unification and Reductionism",
+                "formulas": [],
+                "explanation": [
+                  "Unification: Explaining diverse phenomena using a single set of laws (e.g., Maxwell's equations for electromagnetism).",
+                  "Reductionism: Breaking down complex systems into simpler components for better understanding (e.g., understanding matter at atomic levels)."
+                ]
+              },
+              {
+                "title": "Scientific Method",
+                "formulas": [],
+                "explanation": [
+                  "Steps: Observation → Hypothesis → Experiment → Theory → Law.",
+                  "Empirical Basis: Scientific theories and laws are based on experimental evidence.",
+                  "Predictability: Theories should predict phenomena and be falsifiable."
+                ]
+              },
+              {
+                "title": "Relation of Physics with Other Disciplines",
+                "formulas": [],
+                "explanation": [
+                  "Physics and Chemistry: Atomic structure, spectroscopy, and chemical bonding.",
+                  "Physics and Biology: Biophysics studies biological systems using physical principles.",
+                  "Physics and Astronomy: Astrophysics studies celestial objects using physics principles."
+                ]
+              },
+              {
+                "title": "Technology and Society",
+                "formulas": [],
+                "explanation": [
+                  "Technological Advances: Physics has led to inventions like computers, satellites, nuclear energy, and medical imaging.",
+                  "Impact on Society: Physics-based technologies have transformed transportation, communication, and healthcare."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Units and Measurements",
+            "flashcards": [
+              {
+                "title": "Fundamental and Derived Units",
+                "formulas": [],
+                "explanation": [
+                  "Fundamental Units: Basic units of measurement (e.g., meter, kilogram, second, ampere, kelvin, mole, candela).",
+                  "Derived Units: Units derived from fundamental units (e.g., velocity in m/s, force in N = kg·m/s²).",
+                  "SI Units: International System of Units is the standardized unit system used globally."
+                ]
+              },
+              {
+                "title": "Dimensional Analysis",
+                "formulas": [
+                  "[Force] = MLT⁻²",
+                  "[Energy] = ML²T⁻²",
+                  "[Pressure] = ML⁻¹T⁻²"
+                ],
+                "explanation": [
+                  "Dimensional Formula: Expresses a physical quantity in terms of fundamental dimensions (Mass [M], Length [L], Time [T]).",
+                  "Applications: To check dimensional consistency, derive relations, and convert units."
+                ]
+              },
+              {
+                "title": "Measurement of Length, Mass, and Time",
+                "formulas": [],
+                "explanation": [
+                  "Length: Measured using tools like meter scales, Vernier calipers, and screw gauges.",
+                  "Mass: Measured using beam balances or electronic balances.",
+                  "Time: Measured using mechanical clocks, digital clocks, and atomic clocks (high precision)."
+                ]
+              },
+              {
+                "title": "Accuracy, Precision, and Errors",
+                "formulas": [
+                  "Absolute Error: Δa = |aᵢ - ā|",
+                  "Relative Error: Δa / ā",
+                  "Percentage Error: (Δa / ā) × 100"
+                ],
+                "explanation": [
+                  "Accuracy: Closeness of a measured value to the true value.",
+                  "Precision: Closeness of repeated measurements to each other.",
+                  "Errors: Differences between the measured and true value (Systematic Error, Random Error)."
+                ]
+              },
+              {
+                "title": "Significant Figures",
+                "formulas": [],
+                "explanation": [
+                  "Significant Figures: Digits in a number that carry meaningful contributions to its measurement accuracy.",
+                  "Rules: Non-zero digits are always significant. Zeros between significant digits are significant. Leading zeros are not significant."
+                ]
+              },
+              {
+                "title": "Rounding Off Numbers",
+                "formulas": [],
+                "explanation": [
+                  "Rules: If the digit to be dropped is less than 5, leave the preceding digit unchanged. If the digit to be dropped is 5 or greater, increase the preceding digit by 1."
+                ]
+              },
+              {
+                "title": "Combination of Errors",
+                "formulas": [
+                  "Error in Sum/Difference: ΔZ = ΔA + ΔB",
+                  "Error in Product/Quotient: ΔZ / Z = (ΔA / A) + (ΔB / B)",
+                  "Error in Powers: ΔZ / Z = n(ΔA / A)"
+                ],
+                "explanation": [
+                  "Sum/Difference: Errors are added in absolute terms.",
+                  "Product/Quotient: Errors are added in relative terms.",
+                  "Powers: Errors are multiplied by the power of the quantity."
+                ]
+              },
+              {
+                "title": "Applications of Dimensional Analysis",
+                "formulas": [],
+                "explanation": [
+                  "Checking Consistency: Dimensional analysis helps verify the correctness of equations.",
+                  "Deriving Relations: Used to derive formulas by equating dimensions on both sides.",
+                  "Unit Conversion: Helps convert physical quantities from one unit system to another."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Motion in a Straight Line",
+            "flashcards": [
+              {
+                "title": "Basics of Motion",
+                "formulas": [],
+                "explanation": [
+                  "Position: The location of an object relative to a reference point.",
+                  "Path Length: Total distance traveled by an object irrespective of direction.",
+                  "Displacement: The shortest distance between the initial and final positions; a vector quantity."
+                ]
+              },
+              {
+                "title": "Average and Instantaneous Quantities",
+                "formulas": [
+                  "Average Velocity: v_avg = Δx / Δt",
+                  "Average Speed: speed_avg = total distance / total time",
+                  "Instantaneous Velocity: v = dx / dt",
+                  "Instantaneous Acceleration: a = dv / dt"
+                ],
+                "explanation": [
+                  "Average Velocity: Total displacement divided by total time.",
+                  "Average Speed: Total path length divided by total time.",
+                  "Instantaneous Velocity: Velocity at a specific instant of time.",
+                  "Instantaneous Acceleration: Acceleration at a specific instant of time."
+                ]
+              },
+              {
+                "title": "Equations of Motion for Uniform Acceleration",
+                "formulas": [
+                  "v = u + at",
+                  "x = ut + (1/2)at²",
+                  "v² = u² + 2ax",
+                  "x = ((u + v) / 2)t"
+                ],
+                "explanation": [
+                  "These equations describe the motion of an object under constant acceleration.",
+                  "u: Initial velocity, v: Final velocity, a: Acceleration, x: Displacement, t: Time."
+                ]
+              },
+              {
+                "title": "Graphical Representation of Motion",
+                "formulas": [],
+                "explanation": [
+                  "Position-Time Graph: Slope of the graph gives velocity.",
+                  "Velocity-Time Graph: Slope of the graph gives acceleration; area under the graph gives displacement.",
+                  "Acceleration-Time Graph: Area under the graph gives change in velocity."
+                ]
+              },
+              {
+                "title": "Relative Motion",
+                "formulas": [
+                  "v_AB = v_A - v_B"
+                ],
+                "explanation": [
+                  "Relative Velocity: The velocity of an object (A) relative to another object (B) is given by v_AB = v_A - v_B.",
+                  "Relative motion helps compare the motion of two objects in the same or opposite directions."
+                ]
+              },
+              {
+                "title": "Uniform and Non-Uniform Motion",
+                "formulas": [],
+                "explanation": [
+                  "Uniform Motion: Motion with constant velocity (a = 0).",
+                  "Non-Uniform Motion: Motion with changing velocity; acceleration is non-zero."
+                ]
+              },
+              {
+                "title": "Free Fall Motion",
+                "formulas": [
+                  "v = u + gt",
+                  "h = ut + (1/2)gt²",
+                  "v² = u² + 2gh"
+                ],
+                "explanation": [
+                  "Free Fall: Motion of an object under the influence of gravity alone.",
+                  "Acceleration due to gravity (g): Approximately 9.8 m/s² near Earth's surface."
+                ]
+              },
+              {
+                "title": "Key Differences between Distance and Displacement",
+                "formulas": [],
+                "explanation": [
+                  "Distance: Scalar quantity; total path traveled.",
+                  "Displacement: Vector quantity; shortest distance between initial and final positions.",
+                  "Distance is always positive, while displacement can be positive, negative, or zero."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Motion in a Plane",
+            "flashcards": [
+              {
+                "title": "Basics of Vector Quantities",
+                "formulas": [],
+                "explanation": [
+                  "Scalars: Quantities that have only magnitude (e.g., mass, time, speed).",
+                  "Vectors: Quantities that have both magnitude and direction (e.g., displacement, velocity, force).",
+                  "Representation: A vector is represented by an arrow; length represents magnitude, and arrowhead represents direction."
+                ]
+              },
+              {
+                "title": "Addition and Subtraction of Vectors",
+                "formulas": [
+                  "Resultant Vector: R = √(A² + B² + 2AB cos θ)",
+                  "Direction: tan θ = (B sin θ) / (A + B cos θ)"
+                ],
+                "explanation": [
+                  "Addition of Vectors: Using the triangle or parallelogram law.",
+                  "Subtraction of Vectors: Adding the negative of a vector (reverse its direction).",
+                  "Resultant Vector: Magnitude and direction are calculated using trigonometry."
+                ]
+              },
+              {
+                "title": "Resolution of Vectors",
+                "formulas": [
+                  "A_x = A cos θ",
+                  "A_y = A sin θ"
+                ],
+                "explanation": [
+                  "Resolution: Breaking a vector into components along mutually perpendicular directions.",
+                  "Components: Horizontal (A_x = A cos θ) and vertical (A_y = A sin θ).",
+                  "Applications: Simplifies vector addition and other calculations."
+                ]
+              },
+              {
+                "title": "Projectile Motion",
+                "formulas": [
+                  "Time of Flight: T = (2u sin θ) / g",
+                  "Maximum Height: H = (u² sin² θ) / (2g)",
+                  "Horizontal Range: R = (u² sin 2θ) / g"
+                ],
+                "explanation": [
+                  "Projectile Motion: Motion of an object under gravity with an initial velocity at an angle θ.",
+                  "Time of Flight: Total time the projectile remains in the air.",
+                  "Maximum Height: The highest vertical position reached by the projectile.",
+                  "Horizontal Range: The total horizontal distance covered by the projectile."
+                ]
+              },
+              {
+                "title": "Uniform Circular Motion",
+                "formulas": [
+                  "Centripetal Acceleration: a_c = v² / r",
+                  "Centripetal Force: F_c = mv² / r",
+                  "Angular Velocity: ω = v / r"
+                ],
+                "explanation": [
+                  "Uniform Circular Motion: Motion of an object in a circular path with constant speed.",
+                  "Centripetal Force: Force acting towards the center of the circle, required to keep the object in circular motion.",
+                  "Angular Velocity: Rate of change of angular displacement."
+                ]
+              },
+              {
+                "title": "Relative Motion in Two Dimensions",
+                "formulas": [
+                  "Relative Velocity: v_AB = v_A - v_B"
+                ],
+                "explanation": [
+                  "Relative Velocity: The velocity of an object A relative to another object B.",
+                  "In Two Dimensions: Components of velocities are subtracted separately along each axis."
+                ]
+              },
+              {
+                "title": "Motion Under Gravity in Two Dimensions",
+                "formulas": [
+                  "x = u_x t",
+                  "y = u_y t - (1/2) g t²",
+                  "v_x = u_x",
+                  "v_y = u_y - g t"
+                ],
+                "explanation": [
+                  "Horizontal Motion: Uniform motion with constant velocity, x = u_x t.",
+                  "Vertical Motion: Accelerated motion under gravity, y = u_y t - (1/2) g t².",
+                  "Velocity Components: v_x remains constant, v_y changes due to gravity."
+                ]
+              },
+              {
+                "title": "Displacement in Two Dimensions",
+                "formulas": [
+                  "R = √(x² + y²)",
+                  "tan θ = y / x"
+                ],
+                "explanation": [
+                  "Resultant Displacement: R = √(x² + y²), where x and y are components of displacement.",
+                  "Direction: Angle θ of the resultant vector is given by tan θ = y / x."
+                ]
+              }
+            ]
+          },                              
+          {
+            "name": "Laws of Motion",
+            "flashcards": [
+              {
+                "title": "Newton's Laws and Impulse",
+                "formulas": [
+                  "F = dp / dt = ma",
+                  "Impulse = FΔt = Δp"
+                ],
+                "explanation": [
+                  "Newton's First Law: A body continues in its state of rest or uniform motion unless acted upon by an external force.",
+                  "Newton's Second Law: The rate of change of momentum of a body is proportional to the applied force, F = ma.",
+                  "Impulse: The product of force and time, which equals the change in momentum, Impulse = FΔt = Δp."
+                ]
+              },
+              {
+                "title": "Newton's Third Law and Conservation of Momentum",
+                "formulas": [
+                  "F₁₂ = -F₂₁",
+                  "m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'",
+                  "ΣF = 0 (Equilibrium)"
+                ],
+                "explanation": [
+                  "Newton's Third Law: For every action, there is an equal and opposite reaction, F₁₂ = -F₂₁.",
+                  "Conservation of Linear Momentum: The total momentum of a system remains constant in the absence of external forces.",
+                  "Equilibrium: For a body in equilibrium, ΣF = 0."
+                ]
+              },
+              {
+                "title": "Points to Note on Frames of Reference",
+                "formulas": [
+                  "W = m(g ± a)"
+                ],
+                "explanation": [
+                  "Non-Inertial Frame: An accelerated frame where pseudo-forces need to be introduced.",
+                  "Weight Apparent in a Lift: Moving upward (W = m(g + a)), Moving downward (W = m(g - a)).",
+                  "Newton's Laws: Valid only in inertial frames."
+                ]
+              },
+              {
+                "title": "Friction and Its Types",
+                "formulas": [
+                  "fₖ = μₖN",
+                  "fₛ(max) = μₛN"
+                ],
+                "explanation": [
+                  "Kinetic Friction: Force opposing relative motion, fₖ = μₖN.",
+                  "Static Friction: Maximum force before motion begins, fₛ(max) = μₛN.",
+                  "Friction: Acts between surfaces in contact, opposing relative motion."
+                ]
+              },
+              {
+                "title": "Inertial and Non-Inertial Frames of Reference",
+                "formulas": [],
+                "explanation": [
+                  "Inertial Frame: A frame where objects move with constant velocity, and Newton's laws are valid.",
+                  "Non-Inertial Frame: A frame with acceleration where pseudo-forces are required to apply Newton's laws."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Work, Energy, and Power",
+            "flashcards": [
+              {
+                "title": "Work",
+                "formulas": [
+                  "W = F · s",
+                  "dW = F · ds"
+                ],
+                "explanation": [
+                  "Work: Defined as the dot product of force and displacement. For constant force, W = F · s, where F is force and s is displacement.",
+                  "For variable force: Work is given by dW = F · ds."
+                ]
+              },
+              {
+                "title": "Conservative and Non-Conservative Forces",
+                "formulas": [],
+                "explanation": [
+                  "Conservative Forces: Work done in a closed path is zero (e.g., gravitational force, electrical force).",
+                  "Non-Conservative Forces: Work done depends on the path taken (e.g., friction)."
+                ]
+              },
+              {
+                "title": "Kinetic and Potential Energy",
+                "formulas": [
+                  "KE = (1/2)mv²",
+                  "W = Kf - Ki",
+                  "ΔU = -∫F · dr"
+                ],
+                "explanation": [
+                  "Kinetic Energy: Energy possessed by a body due to motion, KE = (1/2)mv².",
+                  "Work-Energy Theorem: Net work done by external forces equals the change in kinetic energy, W = Kf - Ki.",
+                  "Potential Energy: Energy due to configuration or position, ΔU = -∫F · dr."
+                ]
+              },
+              {
+                "title": "Power and Conservation of Energy",
+                "formulas": [
+                  "P = F · v",
+                  "KE₁ + PE₁ + Eₑₓₜ = KE₂ + PE₂ + Eₑₓₜ"
+                ],
+                "explanation": [
+                  "Power: Rate of doing work, given by P = F · v, where F is force and v is velocity.",
+                  "Conservation of Energy: Total energy remains constant in the absence of external forces, KE₁ + PE₁ + Eₑₓₜ = KE₂ + PE₂ + Eₑₓₜ."
+                ]
+              },
+              {
+                "title": "Linear Momentum and Collisions",
+                "formulas": [
+                  "p = mv",
+                  "FΔt = Δp",
+                  "Σpₐ = Σpₓ"
+                ],
+                "explanation": [
+                  "Linear Momentum: Product of mass and velocity, p = mv.",
+                  "Impulse-Momentum Theorem: Change in momentum is equal to impulse, FΔt = Δp.",
+                  "Conservation of Momentum: Total momentum before and after collision remains constant, Σpₐ = Σpₓ."
+                ]
+              },
+              {
+                "title": "Elastic and Inelastic Collisions",
+                "formulas": [
+                  "v = (m₁u₁ + m₂u₂) / (m₁ + m₂)",
+                  "KEₐ ≠ KEₓ"
+                ],
+                "explanation": [
+                  "Elastic Collisions: Both momentum and kinetic energy are conserved.",
+                  "Inelastic Collisions: Momentum is conserved, but kinetic energy is not."
+                ]
+              },
+              {
+                "title": "Special Cases of Elastic Collisions",
+                "formulas": [
+                  "v₁ = [(m₁ - m₂) / (m₁ + m₂)]u₁ + [(2m₂) / (m₁ + m₂)]u₂",
+                  "v₂ = [(2m₁) / (m₁ + m₂)]u₁ - [(m₁ - m₂) / (m₁ + m₂)]u₂"
+                ],
+                "explanation": [
+                  "When m₁ = m₂: Velocities are exchanged after collision.",
+                  "When m₂ is at rest: Final velocities depend on the mass ratio and initial velocity of m₁."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "System of Particles and Rotational Motion",
+            "flashcards": [
+              {
+                "title": "Mechanics of System of Particles",
+                "formulas": [
+                  "Rₒ = ΣMᵢrᵢ / ΣMᵢ",
+                  "vₒ = ΣMᵢvᵢ / ΣMᵢ",
+                  "P = Mvₒ"
+                ],
+                "explanation": [
+                  "Centre of Mass (Rₒ): The point where the entire mass of the system can be assumed to be concentrated.",
+                  "Velocity of Centre of Mass (vₒ): The total momentum of a system of particles is equal to the total mass times the velocity of the centre of mass.",
+                  "Momentum Conservation: The total momentum in the motion of the centre of mass is conserved if no external force acts on the system."
+                ]
+              },
+              {
+                "title": "Rigid Body Dynamics - Angular Variables",
+                "formulas": [
+                  "θ = ωₒt + (1/2)αt²",
+                  "ω² = ωₒ² + 2αθ",
+                  "ω = ωₒ + αt"
+                ],
+                "explanation": [
+                  "Angular Displacement (θ): The angle swept by a body about a fixed axis.",
+                  "Angular Velocity (ω): The rate of change of angular displacement, ω = dθ/dt.",
+                  "Angular Acceleration (α): The rate of change of angular velocity, α = dω/dt."
+                ]
+              },
+              {
+                "title": "Moment of Inertia and Torque",
+                "formulas": [
+                  "I = Σmᵢrᵢ²",
+                  "τ = r × F",
+                  "τ = Iα"
+                ],
+                "explanation": [
+                  "Moment of Inertia (I): The rotational analog of mass, depends on the mass distribution relative to the axis of rotation.",
+                  "Torque (τ): The rotational analog of force, τ = r × F.",
+                  "Relation Between Torque and Angular Acceleration: τ = Iα."
+                ]
+              },
+              {
+                "title": "Rotational Energy and Work",
+                "formulas": [
+                  "KEᵣₒₜ = (1/2)Iω²",
+                  "W = τθ"
+                ],
+                "explanation": [
+                  "Rotational Kinetic Energy (KEᵣₒₜ): Energy due to rotation, given by KEᵣₒₜ = (1/2)Iω².",
+                  "Rotational Work Done (W): Work done by torque over an angular displacement, W = τθ."
+                ]
+              },
+              {
+                "title": "Angular Momentum and Its Conservation",
+                "formulas": [
+                  "L = r × p = Iω",
+                  "dL/dt = τ"
+                ],
+                "explanation": [
+                  "Angular Momentum (L): Product of moment of inertia and angular velocity, L = Iω.",
+                  "Law of Conservation of Angular Momentum: If the external torque is zero, the angular momentum of the system remains constant."
+                ]
+              },
+              {
+                "title": "Pure Rolling Motion",
+                "formulas": [
+                  "v = rω",
+                  "Eₑ = (1/2)mv² + (1/2)Iω² + mgh"
+                ],
+                "explanation": [
+                  "Pure Rolling: A combination of rotational and translational motion where v = rω.",
+                  "Total Energy in Rolling Motion (Eₑ): Sum of translational and rotational kinetic energy, Eₑ = (1/2)mv² + (1/2)Iω² + mgh."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Gravitation",
+            "flashcards": [
+              {
+                "title": "Newton's Law of Gravitation and Acceleration Due to Gravity",
+                "formulas": [
+                  "F = G * (m₁m₂ / r²)",
+                  "g = GM / R²"
+                ],
+                "explanation": [
+                  "Newton's Law of Gravitation: The force between two masses is proportional to their product and inversely proportional to the square of the distance between them.",
+                  "Acceleration Due to Gravity (g): At the Earth's surface, g is given by g = GM / R², where G is the gravitational constant, M is Earth's mass, and R is Earth's radius."
+                ]
+              },
+              {
+                "title": "Gravitational Potential Energy and Potential",
+                "formulas": [
+                  "PE = -GMm / (R + h)",
+                  "V = -GM / (R + h)"
+                ],
+                "explanation": [
+                  "Gravitational Potential Energy: The potential energy of a mass m at a height h above the Earth's surface is given by PE = -GMm / (R + h).",
+                  "Gravitational Potential (V): The potential at a height h is V = -GM / (R + h)."
+                ]
+              },
+              {
+                "title": "Kepler's Laws of Planetary Motion",
+                "formulas": [],
+                "explanation": [
+                  "Law of Orbits: Every planet revolves around the Sun in an elliptical orbit with the Sun at one focus.",
+                  "Law of Areas: A line joining the planet and the Sun sweeps out equal areas in equal time intervals.",
+                  "Law of Periods: The square of a planet's orbital period is proportional to the cube of its mean distance from the Sun, T² ∝ R³."
+                ]
+              },
+              {
+                "title": "Escape Velocity and Satellites",
+                "formulas": [
+                  "vₑ = √(2GM / R) = √(2gR)",
+                  "vₒ = √(gR)",
+                  "T = 2π √[(R + h)³ / gR²]"
+                ],
+                "explanation": [
+                  "Escape Velocity (vₑ): The minimum velocity required to escape Earth's gravitational field is vₑ = √(2GM / R) or vₑ = √(2gR).",
+                  "Orbital Velocity (vₒ): The velocity needed for a satellite to orbit Earth is vₒ = √(gR).",
+                  "Period of Satellites: The time period of a satellite in orbit is T = 2π √[(R + h)³ / gR²]."
+                ]
+              },
+              {
+                "title": "Variation of g with Altitude, Depth, and Latitude",
+                "formulas": [
+                  "gₐ = g(1 - 2h / R)",
+                  "gₓ = g(1 - d / R)",
+                  "gₗ = g - 0.037cos²ϕ"
+                ],
+                "explanation": [
+                  "With Altitude (gₐ): g decreases as the altitude (h) increases, gₐ = g(1 - 2h / R).",
+                  "With Depth (gₓ): g decreases linearly with depth (d), gₓ = g(1 - d / R).",
+                  "With Latitude (gₗ): g varies due to the Earth's rotation, gₗ = g - 0.037cos²ϕ."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Mechanical Properties of Solids",
+            "flashcards": [
+              {
+                "title": "Elasticity and Stress",
+                "formulas": [
+                  "Stress = F / A"
+                ],
+                "explanation": [
+                  "Elasticity: The ability of a body to regain its original shape and size when deforming force is removed.",
+                  "Stress: Force applied per unit area, Stress = F / A, where F is the applied force and A is the area of cross-section."
+                ]
+              },
+              {
+                "title": "Strain and Types",
+                "formulas": [
+                  "Longitudinal Strain = Δl / l",
+                  "Volume Strain = ΔV / V",
+                  "Shear Strain = Δx / h"
+                ],
+                "explanation": [
+                  "Strain: The ratio of change in dimension to the original dimension. It is a dimensionless quantity.",
+                  "Longitudinal Strain: Change in length per unit original length.",
+                  "Volume Strain: Change in volume per unit original volume.",
+                  "Shear Strain: Change in shape caused by shear stress."
+                ]
+              },
+              {
+                "title": "Hook's Law and Elastic Moduli",
+                "formulas": [
+                  "Stress / Strain = Constant",
+                  "Y = F / AΔl / l",
+                  "K = -VΔP / ΔV",
+                  "n = F / Aθ"
+                ],
+                "explanation": [
+                  "Hook's Law: Within elastic limit, stress is proportional to strain.",
+                  "Young's Modulus (Y): Ratio of tensile stress to longitudinal strain.",
+                  "Bulk Modulus (K): Ratio of volume stress to volume strain.",
+                  "Modulus of Rigidity (n): Ratio of shear stress to shear strain."
+                ]
+              },
+              {
+                "title": "Poisson's Ratio",
+                "formulas": [
+                  "σ = -ΔD / Δl"
+                ],
+                "explanation": [
+                  "Poisson's Ratio (σ): The ratio of lateral strain to longitudinal strain, constant for a given material."
+                ]
+              },
+              {
+                "title": "Strain Energy",
+                "formulas": [
+                  "E = ½ × Stress × Strain"
+                ],
+                "explanation": [
+                  "Strain Energy: Energy stored per unit volume in a strained body, given by E = ½ × Stress × Strain."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Mechanical Properties of Fluids",
+            "flashcards": [
+              {
+                "title": "Hydrostatics: Pressure and Principles",
+                "formulas": [
+                  "P = F / A",
+                  "P = ρgh",
+                  "P = P₀ + ρgh"
+                ],
+                "explanation": [
+                  "Fluid Pressure: The force exerted normally on a unit area, given by P = F / A.",
+                  "Hydrostatic Pressure: Pressure at depth in a fluid, P = ρgh, where ρ is density, g is gravity, and h is depth.",
+                  "Gauge Pressure: Total pressure in a fluid, P = P₀ + ρgh, where P₀ is atmospheric pressure."
+                ]
+              },
+              {
+                "title": "Archimedes' Principle and Upthrust",
+                "formulas": [],
+                "explanation": [
+                  "Archimedes' Principle: A body submerged in a fluid experiences an upward buoyant force equal to the weight of the displaced fluid.",
+                  "Upthrust: The weight of the displaced liquid determines the buoyant force acting on the body."
+                ]
+              },
+              {
+                "title": "Gas Laws",
+                "formulas": [
+                  "PV = constant",
+                  "V / T = constant"
+                ],
+                "explanation": [
+                  "Boyle's Law: For a constant temperature, the product of pressure and volume is constant (PV = constant).",
+                  "Charles' Law: For a constant pressure, the volume of a gas is directly proportional to its temperature (V / T = constant)."
+                ]
+              },
+              {
+                "title": "Hydrodynamics: Flow and Principles",
+                "formulas": [
+                  "p + ½ρv² + ρgh = constant",
+                  "A₁v₁ = A₂v₂"
+                ],
+                "explanation": [
+                  "Bernoulli’s Principle: The sum of pressure energy, kinetic energy, and potential energy per unit volume is constant for streamline flow.",
+                  "Continuity Equation: For an incompressible fluid, A₁v₁ = A₂v₂, where A is the cross-sectional area and v is the velocity."
+                ]
+              },
+              {
+                "title": "Viscosity and Stokes' Law",
+                "formulas": [
+                  "F = -ηA (dv / dx)",
+                  "F = 6πηrv"
+                ],
+                "explanation": [
+                  "Viscosity: Viscous force between fluid layers, F = -ηA (dv / dx), where η is the coefficient of viscosity.",
+                  "Stokes' Law: Viscous force on a spherical body, F = 6πηrv, where r is the radius and v is velocity."
+                ]
+              },
+              {
+                "title": "Poiseuille's Equation",
+                "formulas": [
+                  "Q = (πr⁴ΔP) / (8ηl)"
+                ],
+                "explanation": [
+                  "Poiseuille's Equation: The volume of liquid flowing through a capillary tube per second, Q = (πr⁴ΔP) / (8ηl), where r is radius, ΔP is pressure difference, and l is length."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Thermal Properties of Matter",
+            "flashcards": [
+              {
+                "title": "Thermal Expansion",
+                "formulas": [
+                  "α = (l₂ - l₁) / (l₁ΔT)",
+                  "lₜ = l₀(1 + αt)",
+                  "β = ΔA / A₀ΔT",
+                  "γ = ΔV / V₀ΔT"
+                ],
+                "explanation": [
+                  "Coefficient of Linear Expansion (α): Change in length per unit length per degree rise in temperature, α = (l₂ - l₁) / (l₁ΔT).",
+                  "Length at Temperature t (lₜ): lₜ = l₀(1 + αt), where l₀ is the length at 0°C.",
+                  "Coefficient of Superficial Expansion (β): β = ΔA / A₀ΔT, relates area change with temperature.",
+                  "Coefficient of Volume Expansion (γ): γ = ΔV / V₀ΔT, relates volume change with temperature."
+                ]
+              },
+              {
+                "title": "Measurement of Heat and Temperature",
+                "formulas": [
+                  "C = (F - 32) * (5 / 9)",
+                  "Rₜ = R₀(1 + αt)",
+                  "J = 4.2 J/cal"
+                ],
+                "explanation": [
+                  "Temperature Conversion: Celsius (C), Fahrenheit (F), and Kelvin (K) scales are related by C = (F - 32) * (5 / 9) and K = C + 273.",
+                  "Principle of Electrical Resistance: Rₜ = R₀(1 + αt), where Rₜ is resistance at temperature t°C.",
+                  "Joule's Mechanical Equivalent of Heat (J): J = 4.2 J/cal.",
+                  "Specific Heat: Heat required to raise the temperature of unit mass by 1°C."
+                ]
+              },
+              {
+                "title": "Heat Transfer",
+                "formulas": [
+                  "H = kA(T₁ - T₂) / L",
+                  "uₑₘ = σT⁴",
+                  "dt/dt = -bA(T - Tₛ)"
+                ],
+                "explanation": [
+                  "Thermal Conductivity (H): Rate of heat flow through a slab is H = kA(T₁ - T₂) / L, where k is the conductivity constant.",
+                  "Stefan-Boltzmann Law: Power radiated per unit area, uₑₘ = σT⁴, where σ is Stefan's constant.",
+                  "Newton’s Law of Cooling: The rate of cooling is proportional to the temperature difference, dt/dt = -bA(T - Tₛ)."
+                ]
+              },
+              {
+                "title": "Latent Heat and Calorimetry",
+                "formulas": [
+                  "Q = mL",
+                  "Heat Lost = Heat Gained"
+                ],
+                "explanation": [
+                  "Latent Heat: Energy required to change the state of unit mass without temperature change, Q = mL.",
+                  "Principle of Calorimetry: Heat lost by a hot body equals the heat gained by a cold body."
+                ]
+              },
+              {
+                "title": "Radiation and Kirchoff's Law",
+                "formulas": [
+                  "e = Q / A(T⁴ - Tₛ⁴)",
+                  "a = Energy Absorbed / Energy Incident"
+                ],
+                "explanation": [
+                  "Kirchoff’s Law: The emissive power of a body is equal to its absorptive power for the same wavelength and temperature.",
+                  "Emissivity (e): Ratio of energy emitted to that of a perfect blackbody."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Thermodynamics",
+            "flashcards": [
+              {
+                "title": "Thermodynamic States and Laws",
+                "formulas": [],
+                "explanation": [
+                  "Thermodynamic State: Defined by pressure, volume, and temperature of the system.",
+                  "Zeroth Law of Thermodynamics: If two systems are in thermal equilibrium with a third system, they are in equilibrium with each other.",
+                  "First Law of Thermodynamics: Heat energy given to the system equals the increase in internal energy and work done, Q = ΔU + W.",
+                  "Second Law of Thermodynamics: Heat cannot flow from a colder body to a hotter body without external work being done."
+                ]
+              },
+              {
+                "title": "Work in Volume Changes and Processes",
+                "formulas": [
+                  "W = P(V₂ - V₁)",
+                  "W = nRT ln(V₂ / V₁)",
+                  "PVᵧ = constant"
+                ],
+                "explanation": [
+                  "Work in Volume Changes: Work done when pressure remains constant, W = P(V₂ - V₁).",
+                  "Isothermal Process: Temperature remains constant; W = nRT ln(V₂ / V₁).",
+                  "Adiabatic Process: No heat transfer, PVᵧ = constant."
+                ]
+              },
+              {
+                "title": "Quasi-Static and Isochoric Processes",
+                "formulas": [],
+                "explanation": [
+                  "Quasi-Static Processes: System remains infinitesimally close to equilibrium throughout.",
+                  "Isochoric Process: Volume remains constant, ΔU = Q."
+                ]
+              },
+              {
+                "title": "Thermal Efficiency and Heat Engines",
+                "formulas": [
+                  "η = 1 - (Q₂ / Q₁)",
+                  "β = Q₂ / W = Q₂ / (Q₁ - Q₂)"
+                ],
+                "explanation": [
+                  "Thermal Efficiency of Heat Engine: Efficiency is η = 1 - (Q₂ / Q₁), where Q₁ is heat absorbed and Q₂ is heat rejected.",
+                  "Coefficient of Performance (COP) of Refrigerator: COP is β = Q₂ / W = Q₂ / (Q₁ - Q₂)."
+                ]
+              },
+              {
+                "title": "Carnot Theorem and Efficiency",
+                "formulas": [],
+                "explanation": [
+                  "Carnot's Theorem: No engine operating between two temperatures can be more efficient than a Carnot engine.",
+                  "Efficiency of Carnot Engine: Depends only on the source and sink temperatures, not on the working substance."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Kinetic Theory",
+            "flashcards": [
+              {
+                "title": "Gas Laws",
+                "formulas": [
+                  "PV = constant (Boyle's Law)",
+                  "V / T = constant (Charles' Law)"
+                ],
+                "explanation": [
+                  "Boyle's Law: At constant temperature, the volume of a given mass of gas is inversely proportional to pressure.",
+                  "Charles' Law: At constant pressure, the volume of a given mass of gas is directly proportional to its absolute temperature.",
+                  "Dalton's Law of Partial Pressures: Total pressure of a mixture of ideal gases is the sum of the partial pressures of the individual gases."
+                ]
+              },
+              {
+                "title": "Ideal Gas Equation",
+                "formulas": [
+                  "PV = nRT"
+                ],
+                "explanation": [
+                  "Ideal Gas Equation: Relates pressure (P), volume (V), number of moles (n), gas constant (R), and temperature (T)."
+                ]
+              },
+              {
+                "title": "Pressure of Gas",
+                "formulas": [
+                  "P = (1/3)ρvₘₛ²",
+                  "P = (1/3)Nmvₘₛ²"
+                ],
+                "explanation": [
+                  "Pressure of Gas: The pressure exerted by a gas is related to its density (ρ) and mean square speed (vₘₛ²).",
+                  "Alternate Form: P = (1/3)Nmvₘₛ², where N is the number of molecules and m is the mass of each molecule."
+                ]
+              },
+              {
+                "title": "Root Mean Square (RMS) Speed",
+                "formulas": [
+                  "vₘₛ = √(3P / ρ)",
+                  "vₘₛ = √(3RT / M)"
+                ],
+                "explanation": [
+                  "RMS Speed: The square root of the average of the squares of the velocities of gas molecules.",
+                  "Alternate Form: vₘₛ = √(3RT / M), where M is molar mass."
+                ]
+              },
+              {
+                "title": "Law of Equipartition of Energy",
+                "formulas": [
+                  "Energy per degree of freedom = (1/2)kT"
+                ],
+                "explanation": [
+                  "Law of Equipartition: Each degree of freedom has an average energy of (1/2)kT, where k is Boltzmann constant."
+                ]
+              },
+              {
+                "title": "Specific Heat Capacity",
+                "formulas": [
+                  "Cᵥ = (3/2)R (Monatomic Gases)",
+                  "Cᵥ = (5/2)R (Diatomic Gases)"
+                ],
+                "explanation": [
+                  "Specific Heat Capacity of Monatomic Gases: Cᵥ = (3/2)R, Cₚ = (5/2)R.",
+                  "Specific Heat Capacity of Diatomic Gases: Cᵥ = (5/2)R, Cₚ = (7/2)R."
+                ]
+              },
+              {
+                "title": "Mean Free Path",
+                "formulas": [
+                  "λ = v / (nσvₘₛ)",
+                  "λ = 1 / (nσ)"
+                ],
+                "explanation": [
+                  "Mean Free Path (λ): The average distance traveled by a molecule between successive collisions.",
+                  "Alternate Form: λ = 1 / (nσ), where n is the number density and σ is the collision cross-section."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Oscillations",
+            "flashcards": [
+              {
+                "title": "Simple Harmonic Motion (SHM)",
+                "formulas": [
+                  "F = -kx",
+                  "x(t) = A cos(ωt + φ)"
+                ],
+                "explanation": [
+                  "SHM: Restoring force is proportional to the displacement from equilibrium, F = -kx, where k is the force constant.",
+                  "Differential Equation of SHM: The solution is x(t) = A cos(ωt + φ), representing sinusoidal motion."
+                ]
+              },
+              {
+                "title": "Amplitude, Time Period, and Frequency",
+                "formulas": [
+                  "T = 2π / ω",
+                  "f = 1 / T"
+                ],
+                "explanation": [
+                  "Amplitude (A): The maximum displacement of the system from equilibrium.",
+                  "Time Period (T): Time taken to complete one oscillation, T = 2π / ω.",
+                  "Frequency (f): Number of oscillations per unit time, f = 1 / T."
+                ]
+              },
+              {
+                "title": "Velocity and Acceleration in SHM",
+                "formulas": [
+                  "v = -Aω sin(ωt + φ)",
+                  "a = -ω²x"
+                ],
+                "explanation": [
+                  "Velocity (v): Velocity of a particle in SHM varies as v = -Aω sin(ωt + φ).",
+                  "Acceleration (a): Acceleration is proportional to displacement but in the opposite direction, a = -ω²x."
+                ]
+              },
+              {
+                "title": "Energy in SHM",
+                "formulas": [
+                  "KE = (1/2)mω²(A² - x²)",
+                  "PE = (1/2)mω²x²",
+                  "TE = (1/2)mω²A²"
+                ],
+                "explanation": [
+                  "Kinetic Energy (KE): Energy associated with motion, KE = (1/2)mω²(A² - x²).",
+                  "Potential Energy (PE): Energy associated with position, PE = (1/2)mω²x².",
+                  "Total Energy (TE): Sum of kinetic and potential energy, TE = (1/2)mω²A²."
+                ]
+              },
+              {
+                "title": "Oscillations of a Spring-Mass System",
+                "formulas": [
+                  "T = 2π √(m / k)"
+                ],
+                "explanation": [
+                  "Spring-Mass System: Oscillates under Hooke's Law, with time period T = 2π √(m / k), where k is the spring constant."
+                ]
+              },
+              {
+                "title": "Simple and Compound Pendulum",
+                "formulas": [
+                  "T = 2π √(l / g)",
+                  "T = 2π √(I / mgl)"
+                ],
+                "explanation": [
+                  "Simple Pendulum: Time period depends only on length and gravity, T = 2π √(l / g).",
+                  "Compound Pendulum: Time period depends on moment of inertia and center of suspension, T = 2π √(I / mgl)."
+                ]
+              },
+              {
+                "title": "Damped and Forced Oscillations",
+                "formulas": [],
+                "explanation": [
+                  "Damped Oscillation: Amplitude of oscillation decreases over time due to dissipative forces like friction.",
+                  "Forced Oscillation and Resonance: If an external periodic force matches the natural frequency, resonance occurs."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Waves",
+            "flashcards": [
+              {
+                "title": "Introduction to Waves",
+                "formulas": [],
+                "explanation": [
+                  "Wave: A disturbance that travels through a medium due to periodic motion of particles. Examples: sound waves, light waves.",
+                  "Mechanical Waves: Require a material medium for propagation. Examples: sound waves, water waves.",
+                  "Non-Mechanical Waves: Do not require a material medium. Examples: light waves, X-rays, radio waves."
+                ]
+              },
+              {
+                "title": "Types of Waves",
+                "formulas": [],
+                "explanation": [
+                  "Transverse Waves: Displacement of particles is perpendicular to wave propagation. Example: water waves.",
+                  "Longitudinal Waves: Displacement of particles is parallel to wave propagation. Example: sound waves."
+                ]
+              },
+              {
+                "title": "Wave Equations and Properties",
+                "formulas": [
+                  "y(x,t) = A sin(ωt - kx)",
+                  "k = 2π / λ",
+                  "T = 1 / f",
+                  "v = λf"
+                ],
+                "explanation": [
+                  "Wave Equation: Describes displacement y at position x and time t, y(x,t) = A sin(ωt - kx).",
+                  "Wave Number (k): k = 2π / λ, where λ is wavelength.",
+                  "Time Period (T): Time taken for one complete oscillation, T = 1 / f.",
+                  "Speed of Wave: v = λf, where f is frequency."
+                ]
+              },
+              {
+                "title": "Speed of Waves",
+                "formulas": [
+                  "v = √(T / μ) (Transverse Waves)",
+                  "v = √(B / ρ) (Longitudinal Waves)"
+                ],
+                "explanation": [
+                  "Speed of Transverse Waves: Depends on tension (T) and linear mass density (μ), v = √(T / μ).",
+                  "Speed of Longitudinal Waves: Depends on bulk modulus (B) and density (ρ), v = √(B / ρ)."
+                ]
+              },
+              {
+                "title": "Principle of Superposition and Interference",
+                "formulas": [
+                  "y'(x,t) = y₁(x,t) + y₂(x,t)",
+                  "y'(x,t) = [2A cos(φ/2)] sin(ωt - kx)"
+                ],
+                "explanation": [
+                  "Superposition Principle: When two or more waves overlap, the resultant displacement is the sum of individual displacements.",
+                  "Interference: Two waves of same frequency interfere constructively or destructively depending on phase difference (φ)."
+                ]
+              },
+              {
+                "title": "Reflection and Standing Waves",
+                "formulas": [
+                  "y(x,t) = A sin(ωt + kx) (Open Boundary)",
+                  "y(x,t) = A sin(ωt - kx) (Rigid Boundary)"
+                ],
+                "explanation": [
+                  "Reflection of Waves: At a boundary, waves are reflected either in phase (open boundary) or out of phase (rigid boundary).",
+                  "Standing Waves: Formed due to superposition of two waves traveling in opposite directions."
+                ]
+              },
+              {
+                "title": "Normal Modes and Beats",
+                "formulas": [
+                  "fₙ = n(v / 2L)",
+                  "f_beat = |f₁ - f₂|"
+                ],
+                "explanation": [
+                  "Normal Modes: Frequencies of vibration in a stretched string are integral multiples of the fundamental frequency, fₙ = n(v / 2L).",
+                  "Beats: Interference between two waves of slightly different frequencies, f_beat = |f₁ - f₂|."
+                ]
+              },
+              {
+                "title": "Doppler Effect",
+                "formulas": [
+                  "f' = f(v + v₀) / (v - vₛ)"
+                ],
+                "explanation": [
+                  "Doppler Effect: Change in observed frequency due to relative motion of source and observer.",
+                  "Formula: f' = f(v + v₀) / (v - vₛ), where v₀ is observer's velocity and vₛ is source's velocity."
+                ]
+              }
+            ]
+          }                                                                                                    
+        ]
+      },
+      {
+        "year": "2nd PUC",
+        "chapters": [
+          {
+            "name": "Electric Charges and Fields",
+            "flashcards": [
+              {
+                "title": "Charge and Coulomb's Law",
+                "formulas": ["q = n * e", "q(net) = Σq", "F = k * (q1 * q2) / r^2"],
+                "explanation": [
+                  "Quantisation: q = n * e, where n = 0, 1, 2, ... and e is the charge of an electron (e = -1.6 * 10^-19 C).",
+                  "Additivity: Total charge q(net) is the algebraic sum of individual charges.",
+                  "Conservation: The total charge of an isolated system remains constant.",
+                  "Coulomb's Law: The electrostatic force between two charges q1 and q2 separated by a distance r is given by F = k * (q1 * q2) / r^2.",
+                  "Principle of Superposition: The net force acting on a charge is the vector sum of forces due to other charges."
+                ]
+              },
+              {
+                "title": "Electric Field and Intensity",
+                "formulas": ["E = F / q0", "E = k * (q / r^2)", "E = ΣEi"],
+                "explanation": [
+                  "Electric Field: The force experienced per unit positive test charge at a point, given by E = F / q0.",
+                  "Electric field due to a point charge: E = k * (q / r^2).",
+                  "Electric Field Intensity: It is the vector sum of electric fields due to all charges at a point.",
+                  "Principle of Superposition applies to calculate the net electric field intensity."
+                ]
+              },
+              {
+                "title": "Charge Density and Electric Flux",
+                "formulas": ["λ = Q / L", "σ = Q / A", "ρ = Q / V", "Φ = E · A * cosθ"],
+                "explanation": [
+                  "Linear charge density (λ): Charge per unit length.",
+                  "Surface charge density (σ): Charge per unit area.",
+                  "Volume charge density (ρ): Charge per unit volume.",
+                  "Electric Flux (Φ): The measure of electric field passing through a surface. Φ = E · A * cosθ, where θ is the angle between the field and the surface normal."
+                ]
+              },
+              {
+                "title": "Gauss's Theorem and Electrostatics in Conductors",
+                "formulas": ["∮E · da = q(enclosed) / ε", "E = 0 (inside conductor)"],
+                "explanation": [
+                  "Gauss's Theorem: The total electric flux through a closed surface equals the charge enclosed divided by the permittivity of the medium.",
+                  "Electrostatics in Conductors: Electric field inside a conductor is zero in electrostatic equilibrium, and all charge resides on the outer surface of the conductor."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electric Potential and Capacitance",
+            "flashcards": [
+              {
+                "title": "Electric Potential and Potential Energy",
+                "formulas": [
+                  "ΔU = -W",
+                  "U = (1 / 4πε₀) * (q1 * q2 / r)",
+                  "V = W / q",
+                  "V = (1 / 4πε₀) * (q / r)"
+                ],
+                "explanation": [
+                  "Electric potential energy (U) is the work done to move charges against the electric field.",
+                  "For a system of two charges: U = (1 / 4πε₀) * (q1 * q2 / r).",
+                  "Electric potential (V) is the work done per unit charge to move a test charge to a point.",
+                  "For a point charge: V = (1 / 4πε₀) * (q / r)."
+                ]
+              },
+              {
+                "title": "Electric Dipole",
+                "formulas": [
+                  "p = q * d",
+                  "V = (1 / 4πε₀) * (p * cosθ / r²)",
+                  "Eθ = (1 / 4πε₀) * (p * sinθ / r³)",
+                  "Er = (1 / 4πε₀) * (2p * cosθ / r³)"
+                ],
+                "explanation": [
+                  "An electric dipole consists of two charges of equal magnitude but opposite sign separated by a distance d.",
+                  "The potential due to a dipole: V = (1 / 4πε₀) * (p * cosθ / r²).",
+                  "The electric field due to a dipole: Er = (1 / 4πε₀) * (2p * cosθ / r³) along the axis, and Eθ = (1 / 4πε₀) * (p * sinθ / r³) perpendicular to the axis."
+                ]
+              },
+              {
+                "title": "Capacitance of a Capacitor",
+                "formulas": [
+                  "C = q / V",
+                  "C = (ε₀ * A) / d",
+                  "C = 4πε₀ * (ab / (b - a))"
+                ],
+                "explanation": [
+                  "Capacitance (C) is the ability of a system to store charge per unit potential difference.",
+                  "For parallel plate capacitors: C = (ε₀ * A) / d, where A is the plate area and d is the separation.",
+                  "For a spherical capacitor: C = 4πε₀ * (ab / (b - a)), where a and b are radii of inner and outer spheres."
+                ]
+              },
+              {
+                "title": "Energy Stored in a Capacitor and Forces",
+                "formulas": [
+                  "E = (1 / 2) * C * V²",
+                  "F = Q² / (2 * ε₀ * A)",
+                  "σ = Q / A"
+                ],
+                "explanation": [
+                  "Energy stored in a capacitor: E = (1 / 2) * C * V², representing the energy due to the electric field between the plates.",
+                  "Force between plates of a capacitor: F = Q² / (2 * ε₀ * A).",
+                  "Surface charge density (σ): Charge per unit area of the capacitor plates, given by σ = Q / A."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Current Electricity",
+            "flashcards": [
+              {
+                "title": "Electromotive Force and Electric Current",
+                "formulas": [
+                  "EMF = W / q",
+                  "I = q / t"
+                ],
+                "explanation": [
+                  "Electromotive Force (EMF): The total energy per unit charge when the cell is open and not supplying current.",
+                  "Electric Current (I): The rate of flow of electric charge, given by I = q / t, where q is charge and t is time."
+                ]
+              },
+              {
+                "title": "Drift Velocity and Resistivity",
+                "formulas": [
+                  "v_d = I / (n * e * A)",
+                  "ρ = m / (n * e² * τ)"
+                ],
+                "explanation": [
+                  "Drift Velocity (v_d): The velocity of electrons in a conductor, given by v_d = I / (n * e * A), where n is the number of electrons per unit volume, e is the charge of an electron, and A is the cross-sectional area.",
+                  "Resistivity (ρ): The intrinsic property of a material resisting current, given by ρ = m / (n * e² * τ), where m is electron mass and τ is relaxation time."
+                ]
+              },
+              {
+                "title": "Ohm's Law and Resistance",
+                "formulas": [
+                  "V = I * R",
+                  "R = ρ * (L / A)",
+                  "1 / R = 1 / R₁ + 1 / R₂ + ..."
+                ],
+                "explanation": [
+                  "Ohm's Law: Voltage across a conductor is directly proportional to current through it, given by V = I * R.",
+                  "Resistance (R): Depends on material resistivity (ρ), length (L), and cross-sectional area (A), given by R = ρ * (L / A).",
+                  "For resistors in parallel, the equivalent resistance is given by 1 / R = 1 / R₁ + 1 / R₂ + ...."
+                ]
+              },
+              {
+                "title": "Power, Temperature Effects, and Kirchhoff's Laws",
+                "formulas": [
+                  "P = V * I = I² * R = V² / R",
+                  "R = R₀ * (1 + α * (T - T₀))",
+                  "∑I = 0 (Kirchhoff's First Law)",
+                  "∑IR + ∑EMF = 0 (Kirchhoff's Second Law)"
+                ],
+                "explanation": [
+                  "Electrical Power (P): The rate at which electrical energy is consumed, given by P = V * I = I² * R = V² / R.",
+                  "Variation of Resistance: Resistance changes with temperature, given by R = R₀ * (1 + α * (T - T₀)).",
+                  "Kirchhoff's First Law: The algebraic sum of currents at any junction is zero.",
+                  "Kirchhoff's Second Law: The algebraic sum of voltage drops and EMFs in a closed loop is zero."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Moving Charges and Magnetism",
+            "flashcards": [
+              {
+                "title": "Biot-Savart Law and Magnetic Field",
+                "formulas": [
+                  "dB = (μ₀ / 4π) * (Idl × r̂) / r²",
+                  "B = (μ₀ * I) / (2πr)",
+                  "B = (μ₀ * I) / (2r)",
+                  "B = (μ₀ * n * I) / (2r)"
+                ],
+                "explanation": [
+                  "Biot-Savart Law: Magnetic field (dB) at a point due to current element is proportional to current and inversely proportional to the square of the distance.",
+                  "Magnetic Field due to Long Straight Current-Carrying Conductor: B = (μ₀ * I) / (2πr).",
+                  "Magnetic Field at Center of Circular Loop: B = (μ₀ * I) / (2r).",
+                  "Magnetic Field at Center of a Coil with n Turns: B = (μ₀ * n * I) / (2r)."
+                ]
+              },
+              {
+                "title": "Magnetic Field in Special Cases",
+                "formulas": [
+                  "B = (μ₀ * n * I * r²) / (2 * (r² + x²)^(3/2))",
+                  "B = μ₀ * n * I",
+                  "B = μ₀ * n * I (inside straight solenoid)"
+                ],
+                "explanation": [
+                  "Magnetic Field on Axis of Circular Loop: Depends on distance (x) from the center and radius (r).",
+                  "Magnetic Field Inside a Toroidal Solenoid: B = μ₀ * n * I.",
+                  "Magnetic Field Inside a Straight Solenoid: Uniform and parallel to the solenoid's axis, given by B = μ₀ * n * I."
+                ]
+              },
+              {
+                "title": "Force and Torque on Current-Carrying Conductors",
+                "formulas": [
+                  "F = q(v × B)",
+                  "F = I(l × B)",
+                  "F = (μ₀ * I₁ * I₂ * L) / (2πr)",
+                  "τ = m × B"
+                ],
+                "explanation": [
+                  "Force on Moving Charge in a Magnetic Field: F = q(v × B), perpendicular to both velocity (v) and magnetic field (B).",
+                  "Force on Current-Carrying Conductor: F = I(l × B), where l is the conductor length.",
+                  "Force Between Two Parallel Wires: Attractive or repulsive force depends on the direction of currents in the wires.",
+                  "Torque on a Current-Carrying Loop: τ = m × B, where m is the magnetic moment."
+                ]
+              },
+              {
+                "title": "Magnetic Dipole and Energy",
+                "formulas": [
+                  "m = q(2a)",
+                  "U = -mBcosθ",
+                  "τ = m × B"
+                ],
+                "explanation": [
+                  "Magnetic Dipole Moment: For a current loop, m = q(2a), where q is pole strength and 2a is the length of the dipole.",
+                  "Potential Energy of a Magnetic Dipole: U = -mBcosθ, depends on the angle between m and B.",
+                  "Torque on a Magnetic Dipole: τ = m × B, perpendicular to both m and B."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Magnetism and Matter",
+            "flashcards": [
+              {
+                "title": "Gauss's Law for Magnetism",
+                "formulas": [
+                  "Φ = ∮B · dA = 0"
+                ],
+                "explanation": [
+                  "Gauss's Law for Magnetic Fields: The net magnetic flux through any closed Gaussian surface is zero, as magnetic monopoles do not exist."
+                ]
+              },
+              {
+                "title": "Magnetic Dipole Moments",
+                "formulas": [
+                  "μ_s = -eS / m",
+                  "μ_l = -eL / (2m)"
+                ],
+                "explanation": [
+                  "Spin Magnetic Dipole Moment (μ_s): Depends on the spin angular momentum (S) of electrons.",
+                  "Orbital Magnetic Dipole Moment (μ_l): Depends on the orbital angular momentum (L) of electrons."
+                ]
+              },
+              {
+                "title": "Magnetic Properties of Materials",
+                "formulas": [],
+                "explanation": [
+                  "Diamagnetism: Materials develop a weak magnetization in a direction opposite to the applied magnetic field.",
+                  "Paramagnetism: Materials have unpaired electrons and develop weak magnetization in the direction of the magnetic field.",
+                  "Ferromagnetism: Materials exhibit strong magnetization in the direction of the magnetic field due to domain alignment."
+                ]
+              },
+              {
+                "title": "Maxwell's Extension of Ampere's Law",
+                "formulas": [
+                  "∮B · ds = μ₀ε₀(dp/dt)"
+                ],
+                "explanation": [
+                  "Maxwell's Extension: A changing electric field produces a magnetic field, given by the equation ∮B · ds = μ₀ε₀(dp/dt)."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electromagnetic Induction",
+            "flashcards": [
+              {
+                "title": "Magnetic Flux and Faraday's Law",
+                "formulas": [
+                  "Φ = B · A · cosθ",
+                  "e = -dΦ/dt",
+                  "e = -N(dΦ/dt)"
+                ],
+                "explanation": [
+                  "Magnetic Flux (Φ): The product of the magnetic field (B), area (A), and the cosine of the angle (θ) between them. Measured in Weber.",
+                  "Faraday's Law: The induced EMF is proportional to the rate of change of magnetic flux through a coil.",
+                  "For a coil with N turns: e = -N(dΦ/dt)."
+                ]
+              },
+              {
+                "title": "Lenz's Law and Self Induction",
+                "formulas": [
+                  "e = -L(di/dt)",
+                  "L = NΦ / i"
+                ],
+                "explanation": [
+                  "Lenz's Law: The direction of the induced current opposes the change in magnetic flux that produces it.",
+                  "Self Induction: The phenomenon of inducing an EMF in a coil due to a change in its own current.",
+                  "Inductance (L): For N turns, L = NΦ / i, where Φ is the flux and i is the current."
+                ]
+              },
+              {
+                "title": "Series RL Circuit and Magnetic Energy",
+                "formulas": [
+                  "i = (e / R) * (1 - e^(-t/τ))",
+                  "U = (1/2) * L * I²"
+                ],
+                "explanation": [
+                  "Series RL Circuit: The rise of current in an RL circuit is given by i = (e / R) * (1 - e^(-t/τ)), where τ = L / R is the time constant.",
+                  "Magnetic Energy: Energy stored in an inductor's magnetic field is U = (1/2) * L * I²."
+                ]
+              },
+              {
+                "title": "Mutual Induction and Magnetic Energy Density",
+                "formulas": [
+                  "e₂ = -M(di₁/dt)",
+                  "e₁ = -M(di₂/dt)",
+                  "u = B² / (2μ₀)"
+                ],
+                "explanation": [
+                  "Mutual Induction: The phenomenon of inducing EMF in one coil due to a change in current in a neighboring coil, given by e₂ = -M(di₁/dt) and e₁ = -M(di₂/dt).",
+                  "Magnetic Energy Density (u): Energy stored per unit volume in a magnetic field, given by u = B² / (2μ₀)."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Alternating Current",
+            "flashcards": [
+              {
+                "title": "Basics of Alternating Current",
+                "formulas": [
+                  "I = I₀sinωt",
+                  "Iₘ = 2I₀ / π",
+                  "Iᵣₘₛ = I₀ / √2"
+                ],
+                "explanation": [
+                  "Alternating Current: Its magnitude changes periodically and reverses direction. Represented as I = I₀sinωt, where I₀ is the peak value.",
+                  "Mean Value of A.C.: The average current over a cycle is Iₘ = 2I₀ / π.",
+                  "RMS Value: The root mean square current is Iᵣₘₛ = I₀ / √2."
+                ]
+              },
+              {
+                "title": "AC through Resistor, Inductor, and Capacitor",
+                "formulas": [
+                  "Xₗ = ωL = 2πfL",
+                  "Xc = 1 / ωC = 1 / (2πfC)"
+                ],
+                "explanation": [
+                  "A.C. through Resistor: The EMF is in phase with the current.",
+                  "A.C. through Inductor: The EMF leads the current by a phase angle of π/2. Inductive reactance is Xₗ = ωL.",
+                  "A.C. through Capacitor: The EMF lags the current by a phase angle of π/2. Capacitive reactance is Xc = 1 / ωC."
+                ]
+              },
+              {
+                "title": "Impedance and A.C. Circuits",
+                "formulas": [
+                  "Z = √(R² + (ωL)²)",
+                  "Z = √(R² + (1 / ωC)²)",
+                  "tanϕ = (ωL - 1 / ωC) / R"
+                ],
+                "explanation": [
+                  "For Series LR Circuit: Impedance Z = √(R² + (ωL)²).",
+                  "For Series CR Circuit: Impedance Z = √(R² + (1 / ωC)²).",
+                  "For Series LCR Circuit: The phase angle ϕ is given by tanϕ = (ωL - 1 / ωC) / R."
+                ]
+              },
+              {
+                "title": "Power and Transformers",
+                "formulas": [
+                  "Pₐᵥ = Iᵣₘₛ²R = EᵣₘₛIᵣₘₛcosϕ",
+                  "Vₛ / Vₚ = Nₛ / Nₚ",
+                  "Iₛ / Iₚ = Nₚ / Nₛ"
+                ],
+                "explanation": [
+                  "Power in A.C. Circuit: Average power is Pₐᵥ = Iᵣₘₛ²R = EᵣₘₛIᵣₘₛcosϕ, where ϕ is the power factor.",
+                  "Transformer Voltage: The ratio of secondary to primary voltage is Vₛ / Vₚ = Nₛ / Nₚ.",
+                  "Transformer Current: The ratio of secondary to primary current is Iₛ / Iₚ = Nₚ / Nₛ."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electromagnetic Waves",
+            "flashcards": [
+              {
+                "title": "Conduction and Displacement Currents",
+                "formulas": [
+                  "Iₚ = ε₀(dΦₑ / dt)"
+                ],
+                "explanation": [
+                  "Conduction Current: Current due to the flow of electrons through conducting wires in an electric circuit.",
+                  "Displacement Current (Iₚ): Arises due to the time rate of change of electric flux in a part of the circuit, given by Iₚ = ε₀(dΦₑ / dt)."
+                ]
+              },
+              {
+                "title": "Modified Ampere's Circuital Law",
+                "formulas": [
+                  "∮B · dl = μ₀(Ic + Iₚ)",
+                  "∮B · dl = μ₀(Ic + ε₀(dΦₑ / dt))"
+                ],
+                "explanation": [
+                  "Ampere's Circuital Law (Modified): The total magnetic field around a closed loop is due to both conduction current (Ic) and displacement current (Iₚ)."
+                ]
+              },
+              {
+                "title": "Maxwell's Equations",
+                "formulas": [
+                  "∮E · dA = q / ε₀",
+                  "∮B · dA = 0",
+                  "∮E · dl = -dΦB / dt",
+                  "∮B · dl = μ₀(Ic + ε₀(dΦₑ / dt))"
+                ],
+                "explanation": [
+                  "Gauss's Law in Electrostatics: The electric flux through a closed surface is proportional to the enclosed charge.",
+                  "Gauss's Law in Magnetism: The net magnetic flux through a closed surface is zero.",
+                  "Faraday's Law of Induction: The induced EMF is equal to the negative rate of change of magnetic flux.",
+                  "Ampere-Maxwell Law: Relates magnetic fields to both conduction and displacement currents."
+                ]
+              },
+              {
+                "title": "Velocity of EM Waves in Free Space",
+                "formulas": [
+                  "v = 1 / √(ε₀μ₀)"
+                ],
+                "explanation": [
+                  "The speed of electromagnetic waves in free space is given by v = 1 / √(ε₀μ₀) and is approximately 3 × 10⁸ m/s."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Ray Optics and Optical Instruments",
+            "flashcards": [
+              {
+                "title": "Laws of Reflection and Refraction",
+                "formulas": [
+                  "Angle of Incidence = Angle of Reflection",
+                  "sin(i) / sin(r) = μ₂ / μ₁"
+                ],
+                "explanation": [
+                  "Laws of Reflection: The incident ray, reflected ray, and normal lie on the same plane. The angle of incidence equals the angle of reflection.",
+                  "Laws of Refraction (Snell's Law): The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for two media. Mathematically, sin(i) / sin(r) = μ₂ / μ₁, where μ₂ and μ₁ are refractive indices of the two media."
+                ]
+              },
+              {
+                "title": "Mirror and Lens Formulas",
+                "formulas": [
+                  "1/f = 1/u + 1/v",
+                  "m = -v / u"
+                ],
+                "explanation": [
+                  "Mirror Formula: Relates the focal length (f), object distance (u), and image distance (v).",
+                  "Magnification (m): The ratio of the height of the image to the height of the object, given by m = -v / u."
+                ]
+              },
+              {
+                "title": "Spherical Refracting Surfaces and Lenses",
+                "formulas": [
+                  "P = (μ₂ - μ₁) / R",
+                  "1/f = (μ - 1)(1/R₁ - 1/R₂)"
+                ],
+                "explanation": [
+                  "Power of a Spherical Surface (P): Depends on the refractive indices of the two media and the radius of curvature (R).",
+                  "Lens Maker's Formula: Relates focal length (f) of a lens to its radii of curvature (R₁, R₂) and refractive index (μ)."
+                ]
+              },
+              {
+                "title": "Thin Lenses and Optical Instruments",
+                "formulas": [
+                  "P = P₁ + P₂",
+                  "m = m₁ * m₂"
+                ],
+                "explanation": [
+                  "For Thin Lenses in Contact: The equivalent power (P) is the sum of individual powers of the lenses, P = P₁ + P₂.",
+                  "Magnification of Combined Lenses: The total magnification is the product of individual magnifications, m = m₁ * m₂.",
+                  "Spherical Aberration: The inability of lenses to focus all rays to a single point, causing a blurry image."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Wave Optics",
+            "flashcards": [
+              {
+                "title": "Huygens' Principle and Interference",
+                "formulas": [
+                  "φ = 2nπ or x = nλ",
+                  "φ = (2n + 1)π or x = (2n + 1)λ / 2",
+                  "Iₘₐₓ / Iₘᵢₙ = (a + a')² / (a - a')²"
+                ],
+                "explanation": [
+                  "Huygens' Principle: Each point on a wavefront acts as a source of secondary wavelets, spreading in all directions.",
+                  "Condition for Maximum Intensity: φ = 2nπ or x = nλ.",
+                  "Condition for Minimum Intensity: φ = (2n + 1)π or x = (2n + 1)λ / 2.",
+                  "Ratio of Maximum to Minimum Intensity: Given by Iₘₐₓ / Iₘᵢₙ = (a + a')² / (a - a')², where a and a' are amplitudes of the interfering waves."
+                ]
+              },
+              {
+                "title": "Fringe Position and Angular Position",
+                "formulas": [
+                  "yₙ = nλD / d",
+                  "θₙ = yₙ / D = nλ / d",
+                  "y'ₙ = (2n + 1)λD / (2d)",
+                  "θ'ₙ = y'ₙ / D = (2n + 1)λ / (2d)",
+                  "β = λD / d"
+                ],
+                "explanation": [
+                  "Position of nth Bright Fringe: yₙ = nλD / d.",
+                  "Angular Position of nth Bright Fringe: θₙ = nλ / d.",
+                  "Position of nth Dark Fringe: y'ₙ = (2n + 1)λD / (2d).",
+                  "Angular Position of nth Dark Fringe: θ'ₙ = (2n + 1)λ / (2d).",
+                  "Fringe Width: β = λD / d."
+                ]
+              },
+              {
+                "title": "Diffraction of Light",
+                "formulas": [
+                  "sinθ = nλ / a",
+                  "θₘ = (2n + 1)λ / (2a)",
+                  "θₘ = 2λD / a"
+                ],
+                "explanation": [
+                  "Single Slit Diffraction: Condition for dark fringes is sinθ = nλ / a, where n = ±1, ±2, ±3, ....",
+                  "Width of Central Maximum: θₘ = 2λD / a, where D is the distance between slit and screen, and a is slit width.",
+                  "Grating: Maxima occur at angles θ where sinθ = nλ."
+                ]
+              },
+              {
+                "title": "Polarisation and Laws",
+                "formulas": [
+                  "μ = tan(p)",
+                  "I = I₀ cos²θ"
+                ],
+                "explanation": [
+                  "Brewster's Law: μ = tan(p), where μ is the refractive index of the medium, and p is the angle of polarisation.",
+                  "Law of Malus: I = I₀ cos²θ, where I₀ is the intensity of incident light, and θ is the angle between the polariser and analyser."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dual Nature of Radiation and Matter",
+            "flashcards": [
+              {
+                "title": "Energy of a Photon and Photoelectric Effect",
+                "formulas": [
+                  "E = hν",
+                  "hν = KEₘₐₓ + φ",
+                  "φ = hν₀"
+                ],
+                "explanation": [
+                  "Energy of a Photon: E = hν, where h is Planck's constant and ν is the frequency of light.",
+                  "Photoelectric Effect: The energy of incident light is used to overcome the work function (φ) and impart kinetic energy to the ejected electron.",
+                  "Work Function: φ = hν₀, where ν₀ is the threshold frequency for the metal."
+                ]
+              },
+              {
+                "title": "Compton Effect and de Broglie Wavelength",
+                "formulas": [
+                  "λ' - λ = λ_c(1 - cosφ)",
+                  "λ = h / mv"
+                ],
+                "explanation": [
+                  "Compton Effect: Describes the change in wavelength (λ' - λ) of X-rays scattered by a material, where λ_c = h / (mₑc) is the Compton wavelength.",
+                  "de Broglie Wavelength: The wavelength of matter waves is given by λ = h / mv, where m is mass and v is velocity."
+                ]
+              },
+              {
+                "title": "Wave and Group Velocity",
+                "formulas": [
+                  "y = A cos2π(vt - x / λ)",
+                  "vₚ = ω / k",
+                  "vₛ = dω / dk"
+                ],
+                "explanation": [
+                  "Wave Equation: The displacement of a wave is given by y = A cos2π(vt - x / λ).",
+                  "Phase Velocity (vₚ): The velocity of the wave phase is vₚ = ω / k.",
+                  "Group Velocity (vₛ): The velocity of the wave group or packet is vₛ = dω / dk."
+                ]
+              },
+              {
+                "title": "Uncertainty Principle",
+                "formulas": [
+                  "ΔxΔp ≥ h / 4π",
+                  "ΔEΔt ≥ h / 4π"
+                ],
+                "explanation": [
+                  "Heisenberg's Uncertainty Principle: It is impossible to precisely measure both the position and momentum (ΔxΔp) of a particle simultaneously.",
+                  "Uncertainty in Energy and Time: The uncertainty in energy (ΔE) and time (Δt) is related by ΔEΔt ≥ h / 4π."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Atoms",
+            "flashcards": [
+              {
+                "title": "Velocity and Energy of an Electron",
+                "formulas": [
+                  "v = e / √(4πε₀m r)",
+                  "E = -e² / (8πε₀r)"
+                ],
+                "explanation": [
+                  "Velocity of Electron in an Orbit: v = e / √(4πε₀m r), where r is the radius of the orbit, e is charge, m is mass, and ε₀ is permittivity.",
+                  "Total Energy of Hydrogen Atom: E = -e² / (8πε₀r), indicating that energy is inversely proportional to the orbit radius."
+                ]
+              },
+              {
+                "title": "Atomic Spectra and Rydberg Formula",
+                "formulas": [
+                  "1 / λ = R (1 / n₁² - 1 / n₂²)",
+                  "Lyman: n₁ = 1",
+                  "Balmer: n₁ = 2",
+                  "Paschen: n₁ = 3",
+                  "Brackett: n₁ = 4",
+                  "Pfund: n₁ = 5"
+                ],
+                "explanation": [
+                  "Atomic Spectra: Emission or absorption lines are due to electron transitions between energy levels.",
+                  "Rydberg Formula: 1 / λ = R (1 / n₁² - 1 / n₂²), where R is the Rydberg constant and n₁ < n₂.",
+                  "Lyman Series: Transitions to n₁ = 1.",
+                  "Balmer Series: Transitions to n₁ = 2.",
+                  "Paschen, Brackett, and Pfund Series: Transitions to n₁ = 3, 4, and 5, respectively."
+                ]
+              },
+              {
+                "title": "Orbital Wavelength and Stability",
+                "formulas": [
+                  "λ = h / e √(4πε₀r / m)",
+                  "nλ = 2πr"
+                ],
+                "explanation": [
+                  "Orbital Wavelength (Bohr Model): λ = h / e √(4πε₀r / m), where h is Planck's constant.",
+                  "Condition for Orbital Stability: nλ = 2πr, where n is the orbit number and r is the orbit radius."
+                ]
+              },
+              {
+                "title": "Orbital Radii in Bohr Atom",
+                "formulas": [
+                  "rₙ = n²h²ε₀ / (πme²)"
+                ],
+                "explanation": [
+                  "Orbital Radii: The radius of the nth orbit in a hydrogen atom is given by rₙ = n²h²ε₀ / (πme²), where n is the orbit number."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Nuclei",
+            "flashcards": [
+              {
+                "title": "Atomic Properties",
+                "formulas": [
+                  "1 u = 1.66054 × 10⁻²⁷ kg = 931 MeV",
+                  "R = R₀A^(1/3)"
+                ],
+                "explanation": [
+                  "Atomic Mass Unit (u): Defined as one-twelfth of the mass of a carbon-12 atom. 1 u = 1.66054 × 10⁻²⁷ kg = 931 MeV.",
+                  "Nuclear Radius: R = R₀A^(1/3), where R₀ = 1.2 × 10⁻¹⁵ m, and A is the mass number."
+                ]
+              },
+              {
+                "title": "Nuclear Density and Forces",
+                "formulas": [
+                  "ρ = (A × mₙ) / (4/3πR³)",
+                  "R = R₀A^(1/3)"
+                ],
+                "explanation": [
+                  "Nuclear Density (ρ): The density of a nucleus is given by ρ = (A × mₙ) / (4/3πR³), where A is the mass number, mₙ is the mass of a nucleon, and R is the nuclear radius.",
+                  "Nuclear Radius: R = R₀A^(1/3), where R₀ = 1.2 × 10⁻¹⁵ m.",
+                  "Nuclear Forces: Short-range attractive forces that hold nucleons together, overcoming the repulsion between protons."
+                ]
+              },
+              {
+                "title": "Mass Defect and Binding Energy",
+                "formulas": [
+                  "Δm = [Zmp + (A - Z)mn] - m",
+                  "BE = Δmc²",
+                  "BE/A"
+                ],
+                "explanation": [
+                  "Mass Defect (Δm): The difference between the mass of the nucleus and the sum of its nucleons.",
+                  "Binding Energy (BE): Energy equivalent to the mass defect, given by BE = Δmc².",
+                  "Binding Energy per Nucleon: BE/A, represents the stability of a nucleus."
+                ]
+              },
+              {
+                "title": "Radioactivity and Decay Laws",
+                "formulas": [
+                  "N = N₀e⁻λt",
+                  "T = ln(2) / λ",
+                  "Tₐᵥ = 1 / λ"
+                ],
+                "explanation": [
+                  "Radioactive Decay Law: The number of undecayed nuclei (N) decreases exponentially over time, given by N = N₀e⁻λt.",
+                  "Half-Life (T): The time taken for half the nuclei to decay, T = ln(2) / λ.",
+                  "Average Life (Tₐᵥ): The mean lifetime of a radioactive nucleus, Tₐᵥ = 1 / λ."
+                ]
+              }
+            ]
+          }                    
+        ]
+      }
+    ]
+  }
+}

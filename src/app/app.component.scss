@@ -51,7 +51,8 @@ body {
   text-align: center;
   padding: 10px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styles */
@@ -60,6 +61,7 @@ body {
   color: $yellow;
   padding: 1rem;
   text-align: center;
+  margin-top: 2rem; 
 
   p {
     margin: 0;

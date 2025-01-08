@@ -1,0 +1,2149 @@
+{
+  "Mathematics": {
+    "years": [
+      {
+        "year": "1st PUC",
+        "chapters": [
+          {
+            "name": "Sets",
+            "flashcards": [
+              {
+                "title": "Set Definitions and Types",
+                "formulas": [
+                  "A set is a well-defined collection of objects.",
+                  "A set is described either in set builder form or tabular form.",
+                  "A null set (Ø) has no elements.",
+                  "A singleton set contains a single element.",
+                  "A finite set has a definite number of elements; otherwise, it is infinite."
+                ],
+                "explanation": [
+                  "A set is defined as a collection of distinct objects.",
+                  "Sets can be represented using specific notation methods.",
+                  "A null set has no elements and is represented as Ø.",
+                  "A singleton set consists of exactly one element.",
+                  "Finite sets have a countable number of elements, while infinite sets do not."
+                ]
+              },
+              {
+                "title": "Set Operations and Subsets",
+                "formulas": [
+                  "If A and B are sets, A is a subset of B if every element of A is also in B.",
+                  "Union: A ∪ B = {x: x ∈ A or x ∈ B}.",
+                  "Intersection: A ∩ B = {x: x ∈ A and x ∈ B}.",
+                  "Difference: A - B = {x: x ∈ A and x ∉ B}.",
+                  "Complement: A' = {x: x ∈ U and x ∉ A}."
+                ],
+                "explanation": [
+                  "A subset means all elements of one set are contained in another.",
+                  "Union combines elements from two sets.",
+                  "Intersection finds common elements between two sets.",
+                  "Difference finds elements present in one set but not in another.",
+                  "Complement identifies elements in the universal set not in the given set."
+                ]
+              },
+              {
+                "title": "Intervals and Power Sets",
+                "formulas": [
+                  "Closed interval: [a, b] = {x: a ≤ x ≤ b}.",
+                  "Open interval: (a, b) = {x: a < x < b}.",
+                  "Semi-open interval: [a, b) = {x: a ≤ x < b}.",
+                  "Power set: P(A) = 2^n, where n is the number of elements in A."
+                ],
+                "explanation": [
+                  "Intervals define a range of real numbers with specific inclusions.",
+                  "Closed intervals include the endpoints, open intervals exclude them.",
+                  "Semi-open intervals include one endpoint but not the other.",
+                  "The power set of a set includes all its possible subsets."
+                ]
+              },
+              {
+                "title": "Laws of Sets",
+                "formulas": [
+                  "Idempotent laws: A ∪ A = A and A ∩ A = A.",
+                  "Identity laws: A ∪ Ø = A and A ∩ U = A.",
+                  "Commutative laws: A ∪ B = B ∪ A and A ∩ B = B ∩ A.",
+                  "Associative laws: (A ∪ B) ∪ C = A ∪ (B ∪ C) and (A ∩ B) ∩ C = A ∩ (B ∩ C).",
+                  "Distributive laws: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) and A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+                  "De Morgan's laws: (A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'."
+                ],
+                "explanation": [
+                  "Idempotent laws state that combining a set with itself results in the same set.",
+                  "Identity laws describe the effect of null and universal sets on union and intersection.",
+                  "Commutative laws show that the order of union or intersection doesn't matter.",
+                  "Associative laws allow grouping without affecting union or intersection results.",
+                  "Distributive laws explain the interaction between union and intersection.",
+                  "De Morgan's laws provide rules for complements of unions and intersections."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Relations and Functions",
+            "flashcards": [
+              {
+                "title": "Relations Basics and Cartesian Product",
+                "formulas": [
+                  "An ordered pair consists of two objects in a fixed order.",
+                  "(a1, b1) = (a2, b2) ⇔ a1 = a2 and b1 = b2.",
+                  "Cartesian product: A × B = {(a, b): a ∈ A, b ∈ B}.",
+                  "If A and B have m and n elements respectively, A × B has m × n elements.",
+                  "R = {(x, y): x, y ∈ R} defines all points in the xy-plane."
+                ],
+                "explanation": [
+                  "An ordered pair is a combination of two elements with a specific sequence.",
+                  "Equality in ordered pairs requires both elements to match in order.",
+                  "The Cartesian product combines every element of one set with every element of another.",
+                  "The number of elements in the Cartesian product equals the product of the sizes of the two sets.",
+                  "The set of all (x, y) points represents the xy-plane."
+                ]
+              },
+              {
+                "title": "Set Operations in Relations",
+                "formulas": [
+                  "A × (B ∪ C) = (A × B) ∪ (A × C).",
+                  "A × (B ∩ C) = (A × B) ∩ (A × C).",
+                  "A × (B − C) = A × B − A × C.",
+                  "If A = B, then A × B = B × A.",
+                  "(A × B) ∩ (B × A) = (A ∩ B) × (B ∩ A).",
+                  "A × (B ∪ C) = (A × B) ∪ (A × C)."
+                ],
+                "explanation": [
+                  "Union in Cartesian products is distributive.",
+                  "Intersection in Cartesian products is distributive.",
+                  "Difference in Cartesian products follows the same distributive property.",
+                  "If two sets are equal, their Cartesian product with each other is symmetric.",
+                  "The intersection of Cartesian products depends on the intersections of individual sets.",
+                  "Distributive properties hold for Cartesian products and unions."
+                ]
+              },
+              {
+                "title": "Relations and Domain/Range",
+                "formulas": [
+                  "A relation from A to B is a subset of A × B.",
+                  "If A and B are finite with m and n elements, there are 2^(m×n) possible relations.",
+                  "Domain(R) = {x: (x, y) ∈ R}.",
+                  "Range(R) = {y: (x, y) ∈ R}.",
+                  "Inverse relation R⁻¹ = {(b, a): (a, b) ∈ R}."
+                ],
+                "explanation": [
+                  "A relation links elements of one set to another based on specific conditions.",
+                  "The number of possible relations depends on the size of the Cartesian product.",
+                  "The domain of a relation is the set of all first elements.",
+                  "The range of a relation is the set of all second elements.",
+                  "The inverse of a relation swaps the order of elements in the pairs."
+                ]
+              },
+              {
+                "title": "Functions",
+                "formulas": [
+                  "A relation f from A to B is a function if for each a ∈ A, there exists a unique b ∈ B such that (a, b) ∈ f.",
+                  "Domain of f: Set A.",
+                  "Co-domain of f: Set B.",
+                  "Range of f: The set of all images of elements in the domain."
+                ],
+                "explanation": [
+                  "A function ensures that each input has a unique output.",
+                  "The domain is the set of all possible inputs to the function.",
+                  "The co-domain is the set containing all possible outputs.",
+                  "The range is the actual set of outputs generated by the function."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Trigonometric Functions",
+            "flashcards": [
+              {
+                "title": "Fundamental Trigonometric Identities",
+                "formulas": [
+                  "sin x = 1/cosec x or cosec x = 1/sin x",
+                  "cos x = 1/sec x or sec x = 1/cos x",
+                  "cot x = 1/tan x or tan x = 1/cot x",
+                  "tan x = sin x / cos x or cot x = cos x / sin x",
+                  "sin²x + cos²x = 1",
+                  "1 + tan²x = sec²x or sec²x - tan²x = 1",
+                  "1 + cot²x = cosec²x or cosec²x - cot²x = 1"
+                ],
+                "explanation": [
+                  "These equations define the reciprocal relationships between basic trigonometric functions.",
+                  "The Pythagorean identities relate sin, cos, tan, and sec to fundamental properties of a right triangle.",
+                  "Equations for tangent and cotangent are derived from sine and cosine."
+                ]
+              },
+              {
+                "title": "Negative Angle Identities",
+                "formulas": [
+                  "sin(-x) = -sin x or cosec(-x) = -cosec x",
+                  "cos(-x) = cos x or sec(-x) = sec x",
+                  "tan(-x) = -tan x or cot(-x) = -cot x"
+                ],
+                "explanation": [
+                  "These formulas show how trigonometric functions behave for negative angles.",
+                  "Sine, tangent, and cosecant are odd functions, meaning they change sign with a negative angle.",
+                  "Cosine and secant are even functions, meaning their value remains the same for negative angles."
+                ]
+              },
+              {
+                "title": "Supplementary Angle Identities",
+                "formulas": [
+                  "sin(π/2 - x) = cos x or cos(π/2 - x) = sin x",
+                  "tan(π/2 - x) = cot x or cot(π/2 - x) = tan x",
+                  "sec(π/2 - x) = cosec x or cosec(π/2 - x) = sec x"
+                ],
+                "explanation": [
+                  "These identities relate trigonometric functions of complementary angles (adding up to 90° or π/2 radians).",
+                  "The roles of sine and cosine, tangent and cotangent, secant and cosecant are interchanged."
+                ]
+              },
+              {
+                "title": "Periodicity and Even/Odd Properties",
+                "formulas": [
+                  "sin(2π - x) = -sin x, cos(2π - x) = cos x",
+                  "tan(2π - x) = -tan x, cot(2π - x) = -cot x",
+                  "sec(2π - x) = sec x, cosec(2π - x) = -cosec x",
+                  "Sine and Cosine are periodic with period 2π.",
+                  "Tangent and Cotangent are periodic with period π.",
+                  "Cosine and secant are even functions; others are odd functions."
+                ],
+                "explanation": [
+                  "These identities describe periodic behavior of trigonometric functions over their respective periods.",
+                  "Even functions remain unchanged with a negative angle, while odd functions invert their sign."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Principle of Mathematical Induction",
+            "flashcards": [
+              {
+                "title": "Definition of a Statement",
+                "formulas": [
+                  "A sentence or description which can be judged to be true or false is called a statement.",
+                  "Statements involving mathematical relations are called mathematical statements."
+                ],
+                "explanation": [
+                  "A statement is a logical sentence that can be evaluated as either true or false.",
+                  "Mathematical statements specifically involve relationships or expressions in mathematics."
+                ]
+              },
+              {
+                "title": "First Principle of Mathematical Induction",
+                "formulas": [
+                  "Let P(n) be a statement involving the natural number n such that:",
+                  "(i) P(1) is true.",
+                  "(ii) P(m + 1) is true whenever P(m) is true.",
+                  "Then, P(n) is true for all n ∈ N."
+                ],
+                "explanation": [
+                  "Defines the assumption of P(n) being a statement involving natural numbers.",
+                  "The base case ensures that the first step, P(1), is true.",
+                  "This proves that if P(m) is true, then P(m + 1) is also true.",
+                  "Concludes that P(n) is true for all natural numbers."
+                ]
+              },
+              {
+                "title": "Second Principle of Mathematical Induction",
+                "formulas": [
+                  "Let P(n) be a statement involving the natural number n such that:",
+                  "(i) P(1) is true.",
+                  "(ii) P(m + 1) is true whenever P(n) is true for all n ≤ m.",
+                  "Then, P(n) is true for all n ∈ N."
+                ],
+                "explanation": [
+                  "Defines the assumption of P(n) involving natural numbers for the second principle.",
+                  "The base case ensures that the first step, P(1), is true.",
+                  "Extends the assumption to cover all previous values (n ≤ m).",
+                  "Concludes that P(n) is true for all natural numbers using this principle."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Complex Numbers and Quadratic Equations",
+            "flashcards": [
+              {
+                "title": "Complex Numbers - Basics",
+                "formulas": [
+                  "√(-1) is an imaginary quantity denoted by i, and i² = -1.",
+                  "For any positive real number a, √a = a^(1/2).",
+                  "If a, b are real numbers, √(a + b) = √a + √b, provided at least one of a or b is positive."
+                ],
+                "explanation": [
+                  "The imaginary unit i is the foundation of complex numbers.",
+                  "Square roots of positive numbers can be expressed as fractional exponents.",
+                  "Square root operations involving addition are valid under specific conditions."
+                ]
+              },
+              {
+                "title": "Complex Numbers - Definitions",
+                "formulas": [
+                  "A complex number z = a + ib, where a is the real part and b is the imaginary part.",
+                  "z is purely real if Im(z) = 0.",
+                  "z is purely imaginary if Re(z) = 0."
+                ],
+                "explanation": [
+                  "A complex number consists of a real part and an imaginary part.",
+                  "A purely real complex number has no imaginary component.",
+                  "A purely imaginary complex number has no real component."
+                ]
+              },
+              {
+                "title": "Operations on Complex Numbers",
+                "formulas": [
+                  "Addition: z₁ + z₂ = (a₁ + a₂) + i(b₁ + b₂).",
+                  "Subtraction: z₁ - z₂ = (a₁ - a₂) + i(b₁ - b₂).",
+                  "Multiplication: z₁ * z₂ = (a₁a₂ - b₁b₂) + i(a₁b₂ + a₂b₁).",
+                  "Division: z₁ / z₂ = [(a₁a₂ + b₁b₂) / (a₂² + b₂²)] + i[(b₁a₂ - a₁b₂) / (a₂² + b₂²)]."
+                ],
+                "explanation": [
+                  "Addition combines the real and imaginary parts of the two numbers.",
+                  "Subtraction works similarly to addition but subtracts corresponding components.",
+                  "Multiplication involves both real and imaginary cross terms.",
+                  "Division uses the conjugate of the denominator to simplify the fraction."
+                ]
+              },
+              {
+                "title": "Quadratic Equations - Roots",
+                "formulas": [
+                  "Roots of ax² + bx + c = 0 are given by: α = [-b + √D] / 2a, β = [-b - √D] / 2a.",
+                  "Discriminant D = b² - 4ac.",
+                  "If D > 0, roots are real and distinct.",
+                  "If D = 0, roots are real and equal.",
+                  "If D < 0, roots are complex conjugates."
+                ],
+                "explanation": [
+                  "The quadratic formula gives the roots of a second-degree equation.",
+                  "The discriminant determines the nature of the roots.",
+                  "Positive D indicates distinct real roots.",
+                  "Zero D results in equal real roots.",
+                  "Negative D yields complex conjugate roots."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Linear Inequalities",
+            "flashcards": [
+              {
+                "title": "Basics of Linear Inequalities",
+                "formulas": [
+                  "A linear inequality in one variable is of the form ax + b > 0, ax + b < 0, ax + b ≥ 0, or ax + b ≤ 0.",
+                  "A linear inequality in two variables is of the form ax + by + c > 0, ax + by + c < 0, ax + by + c ≥ 0, or ax + by + c ≤ 0.",
+                  "Solution of a linear inequality in one variable is a set of real numbers satisfying the inequality.",
+                  "Solution of a linear inequality in two variables is a region in the Cartesian plane."
+                ],
+                "explanation": [
+                  "Linear inequalities are expressions with inequalities instead of equality.",
+                  "In two variables, the solution is a half-plane above or below the line.",
+                  "Solutions in one variable are intervals on the number line.",
+                  "For two variables, shading represents the solution region on the graph."
+                ]
+              },
+              {
+                "title": "Rules of Linear Inequalities",
+                "formulas": [
+                  "If a > b, then a + c > b + c for any c.",
+                  "If a > b, then a - c > b - c for any c.",
+                  "If a > b and c > 0, then ac > bc.",
+                  "If a > b and c < 0, then ac < bc."
+                ],
+                "explanation": [
+                  "Adding the same number to both sides of an inequality preserves it.",
+                  "Subtracting the same number from both sides of an inequality preserves it.",
+                  "Multiplying by a positive number preserves the inequality.",
+                  "Multiplying by a negative number reverses the inequality."
+                ]
+              },
+              {
+                "title": "Graphical Representation of Linear Inequalities",
+                "formulas": [
+                  "To graph ax + by + c > 0 or ax + by + c < 0, first plot the line ax + by + c = 0.",
+                  "Choose a test point not on the line to determine which side satisfies the inequality.",
+                  "For ax + by + c ≥ 0 or ax + by + c ≤ 0, include the line itself in the solution.",
+                  "The solution region is shaded based on the inequality."
+                ],
+                "explanation": [
+                  "The line ax + by + c = 0 divides the plane into two regions.",
+                  "A test point (usually (0, 0) if not on the line) helps identify the solution region.",
+                  "For '≥' or '≤', the boundary line is part of the solution.",
+                  "Shading indicates the valid region for the inequality."
+                ]
+              },
+              {
+                "title": "System of Linear Inequalities",
+                "formulas": [
+                  "The solution of a system of linear inequalities is the region common to all individual solutions.",
+                  "Graph each inequality and find the intersection of their solution regions.",
+                  "The region may be bounded or unbounded depending on the inequalities.",
+                  "For real-life problems, the feasible region often represents possible solutions."
+                ],
+                "explanation": [
+                  "Solving multiple inequalities together involves finding overlap in solutions.",
+                  "Each inequality contributes to shaping the feasible region.",
+                  "The solution region is the intersection of all individual inequality regions.",
+                  "Applications include optimization problems and resource allocation."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Permutations and Combinations",
+            "flashcards": [
+              {
+                "title": "Basics of Permutations",
+                "formulas": [
+                  "The product of the first n natural numbers is called n factorial: n! = 1 × 2 × 3 × ... × (n - 1) × n.",
+                  "Factorials of proper fractions and negative integers are not defined.",
+                  "n! + 1 is not divisible by any natural number between 2 and n.",
+                  "For a prime number p and natural number n, Ep(n) = [n/p] + [n/p²] + [n/p³] + ..."
+                ],
+                "explanation": [
+                  "n factorial (n!) is the total number of ways to arrange n distinct items.",
+                  "Factorials are only defined for non-negative integers.",
+                  "This property shows the uniqueness of factorial sums plus one.",
+                  "Ep(n) denotes the exponent of a prime number in n! (factorial)."
+                ]
+              },
+              {
+                "title": "Basics of Combinations",
+                "formulas": [
+                  "If n is a natural number and r is a non-negative integer such that 0 ≤ r ≤ n: nCr = n! / [r!(n - r)!].",
+                  "nCr × r! = nPr, where nPr = n! / (n - r)!.",
+                  "nCr + nC(r - 1) = n+1Cr.",
+                  "nCr = nC(n - r)."
+                ],
+                "explanation": [
+                  "nCr represents the number of ways to choose r items from n distinct items.",
+                  "The relation between permutations and combinations helps compute results.",
+                  "This property allows combinations to be recursively calculated.",
+                  "Combinations are symmetric: choosing r items is the same as excluding n - r items."
+                ]
+              },
+              {
+                "title": "Special Properties of Combinations",
+                "formulas": [
+                  "If n is an even natural number, the greatest among nC0, nC1, ..., nCn is nC(n/2).",
+                  "If n is an odd natural number, the greatest among nC0, nC1, ..., nCn is either nC(n//2) or nC(n//2 + 1).",
+                  "The number of ways to select r items from n distinct items is given by nCr = n! / [r!(n - r)!]."
+                ],
+                "explanation": [
+                  "For even n, the central combination is the greatest.",
+                  "For odd n, the greatest combination lies around the midpoint.",
+                  "This formula is the foundation for calculating combinations."
+                ]
+              },
+              {
+                "title": "Applications of Permutations and Combinations",
+                "formulas": [
+                  "Number of permutations of n items taken r at a time: nPr = n! / (n - r)!.",
+                  "Number of combinations of n items taken r at a time: nCr = n! / [r!(n - r)!].",
+                  "Total subsets of a set with n elements: 2^n.",
+                  "Number of permutations of n items where items are repeated: n! / (p1! × p2! × ... × pk!)."
+                ],
+                "explanation": [
+                  "Permutations count the number of ordered arrangements.",
+                  "Combinations count the number of unordered selections.",
+                  "The total subsets include all combinations of a set.",
+                  "This formula accounts for repetitions in permutations."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Sequence and Series",
+            "flashcards": [
+              {
+                "title": "Basics of Sequences",
+                "formulas": [
+                  "A sequence is an ordered list of numbers written as {a₁, a₂, a₃, ...}.",
+                  "Finite sequence: A sequence with a finite number of terms.",
+                  "Infinite sequence: A sequence with an infinite number of terms.",
+                  "General term of a sequence: aₙ = f(n), where n is the position of the term."
+                ],
+                "explanation": [
+                  "A sequence is a set of numbers arranged in a specific order.",
+                  "Finite sequences have a specific last term.",
+                  "Infinite sequences continue indefinitely without a final term.",
+                  "The general term represents a rule to find any term in the sequence."
+                ]
+              },
+              {
+                "title": "Arithmetic Progression (AP)",
+                "formulas": [
+                  "An AP is a sequence where the difference between consecutive terms is constant.",
+                  "nth term of an AP: aₙ = a + (n-1)d.",
+                  "Sum of the first n terms of an AP: Sₙ = (n/2)[2a + (n-1)d].",
+                  "Sum of the first n terms (alternative): Sₙ = (n/2)(a + l), where l is the last term."
+                ],
+                "explanation": [
+                  "In an AP, the difference between two consecutive terms is called the common difference (d).",
+                  "The nth term formula helps find any term in the AP.",
+                  "The sum formula calculates the total of the first n terms.",
+                  "An alternative formula can be used if the last term is known."
+                ]
+              },
+              {
+                "title": "Geometric Progression (GP)",
+                "formulas": [
+                  "A GP is a sequence where the ratio between consecutive terms is constant.",
+                  "nth term of a GP: aₙ = ar^(n-1).",
+                  "Sum of the first n terms of a GP (r ≠ 1): Sₙ = a(1 - rⁿ) / (1 - r).",
+                  "Sum of an infinite GP (|r| < 1): S = a / (1 - r)."
+                ],
+                "explanation": [
+                  "In a GP, the ratio between consecutive terms is called the common ratio (r).",
+                  "The nth term formula helps find any term in the GP.",
+                  "The sum formula calculates the total of the first n terms for r ≠ 1.",
+                  "For an infinite GP with |r| < 1, the sum converges to a specific value."
+                ]
+              },
+              {
+                "title": "Relationship Between AM, GM, and HM",
+                "formulas": [
+                  "Arithmetic Mean (AM): AM = (a + b) / 2.",
+                  "Geometric Mean (GM): GM = √(ab).",
+                  "Harmonic Mean (HM): HM = 2ab / (a + b).",
+                  "Relationship: AM ≥ GM ≥ HM."
+                ],
+                "explanation": [
+                  "AM is the average of two numbers.",
+                  "GM is the square root of the product of two numbers.",
+                  "HM is the reciprocal of the average of the reciprocals of two numbers.",
+                  "AM, GM, and HM follow an inequality relationship."
+                ]
+              },
+              {
+                "title": "Special Series",
+                "formulas": [
+                  "Sum of first n natural numbers: Sₙ = n(n + 1) / 2.",
+                  "Sum of squares of first n natural numbers: Sₙ = n(n + 1)(2n + 1) / 6.",
+                  "Sum of cubes of first n natural numbers: Sₙ = [n(n + 1) / 2]²."
+                ],
+                "explanation": [
+                  "The sum of natural numbers gives the total of the first n positive integers.",
+                  "The sum of squares calculates the total of the squares of the first n natural numbers.",
+                  "The sum of cubes is the square of the sum of the first n natural numbers."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Straight Lines",
+            "flashcards": [
+              {
+                "title": "Basics of Straight Lines",
+                "formulas": [
+                  "Every first-degree equation in x and y represents a straight line.",
+                  "The slope of a non-vertical line passing through (x₁, y₁) and (x₂, y₂) is m = (y₂ - y₁) / (x₂ - x₁).",
+                  "Slope of a horizontal line = 0, and slope of a vertical line is undefined."
+                ],
+                "explanation": [
+                  "Linear equations of the form ax + by + c = 0 represent straight lines.",
+                  "The slope measures the steepness of a line and is calculated using two points.",
+                  "Horizontal lines have no incline, and vertical lines have an undefined slope."
+                ]
+              },
+              {
+                "title": "Properties of Straight Lines",
+                "formulas": [
+                  "Two lines are parallel if their slopes are equal.",
+                  "Two lines are perpendicular if the product of their slopes is -1.",
+                  "Three points P, Q, and R are collinear if the slope of PQ = slope of QR."
+                ],
+                "explanation": [
+                  "Parallel lines have the same slope and never intersect.",
+                  "Perpendicular lines form a 90° angle, and their slopes multiply to -1.",
+                  "Collinear points lie on the same line, verified using their slopes."
+                ]
+              },
+              {
+                "title": "Forms of Equation of a Line",
+                "formulas": [
+                  "Slope-intercept form: y = mx + c, where m is the slope and c is the y-intercept.",
+                  "Point-slope form: y - y₁ = m(x - x₁), where m is the slope, and (x₁, y₁) is a point on the line.",
+                  "Two-point form: y - y₁ = [(y₂ - y₁) / (x₂ - x₁)](x - x₁).",
+                  "Intercept form: x/a + y/b = 1, where a and b are the x- and y-intercepts."
+                ],
+                "explanation": [
+                  "The slope-intercept form gives a direct relationship between x and y.",
+                  "The point-slope form is used when a point and slope are known.",
+                  "The two-point form calculates the equation from two given points.",
+                  "The intercept form uses the x- and y-intercepts to describe the line."
+                ]
+              },
+              {
+                "title": "Special Cases and Conditions",
+                "formulas": [
+                  "Equation of x-axis: y = 0.",
+                  "Equation of y-axis: x = 0.",
+                  "Equation of a line parallel to the x-axis: y = a.",
+                  "Equation of a line parallel to the y-axis: x = b."
+                ],
+                "explanation": [
+                  "The x-axis is a horizontal line where y = 0.",
+                  "The y-axis is a vertical line where x = 0.",
+                  "A line parallel to the x-axis is horizontal at a fixed y-value.",
+                  "A line parallel to the y-axis is vertical at a fixed x-value."
+                ]
+              },
+              {
+                "title": "Perpendicular Distance from a Point",
+                "formulas": [
+                  "Distance of a point (x₁, y₁) from a line ax + by + c = 0 is d = |ax₁ + by₁ + c| / √(a² + b²).",
+                  "Distance between parallel lines ax + by + c₁ = 0 and ax + by + c₂ = 0 is d = |c₂ - c₁| / √(a² + b²)."
+                ],
+                "explanation": [
+                  "The perpendicular distance formula gives the shortest distance from a point to a line.",
+                  "The distance between two parallel lines is constant and uses their difference in constants."
+                ]
+              },
+              {
+                "title": "Angle Between Two Lines",
+                "formulas": [
+                  "tan θ = |(m₂ - m₁) / (1 + m₁m₂)|, where m₁ and m₂ are the slopes of the two lines."
+                ],
+                "explanation": [
+                  "The angle between two lines depends on their slopes and is calculated using this formula."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Conic Sections",
+            "flashcards": [
+              {
+                "title": "Basics of Conic Sections",
+                "formulas": [
+                  "A conic section is the intersection of a plane with a double-napped cone.",
+                  "The different types of conic sections are: Circle, Parabola, Ellipse, and Hyperbola.",
+                  "General equation of a conic section: Ax² + Bxy + Cy² + Dx + Ey + F = 0."
+                ],
+                "explanation": [
+                  "Conic sections are obtained by cutting a cone at different angles.",
+                  "The type of conic depends on the angle between the plane and the cone.",
+                  "The general equation represents all conic sections, determined by the coefficients."
+                ]
+              },
+              {
+                "title": "Circle",
+                "formulas": [
+                  "Standard equation of a circle: (x - h)² + (y - k)² = r².",
+                  "Equation of a circle centered at the origin: x² + y² = r².",
+                  "General equation of a circle: x² + y² + 2gx + 2fy + c = 0."
+                ],
+                "explanation": [
+                  "The standard form represents a circle with a center (h, k) and radius r.",
+                  "If the center is at the origin, the equation simplifies to this form.",
+                  "The general form can be converted into standard form to find center and radius."
+                ]
+              },
+              {
+                "title": "Parabola",
+                "formulas": [
+                  "Standard equation of a parabola: y² = 4ax (opens right), x² = 4ay (opens up).",
+                  "Vertex: (0, 0); Focus: (a, 0) for y² = 4ax; (0, a) for x² = 4ay.",
+                  "Equation of directrix: x = -a for y² = 4ax; y = -a for x² = 4ay."
+                ],
+                "explanation": [
+                  "A parabola is the set of points equidistant from the focus and directrix.",
+                  "The vertex is the point of intersection of the axis of symmetry and parabola.",
+                  "The directrix is a line perpendicular to the axis of symmetry."
+                ]
+              },
+              {
+                "title": "Ellipse",
+                "formulas": [
+                  "Standard equation of an ellipse: (x²/a²) + (y²/b²) = 1 (horizontal major axis).",
+                  "Foci: (±c, 0), where c² = a² - b² for horizontal major axis.",
+                  "Eccentricity: e = c/a, where 0 < e < 1."
+                ],
+                "explanation": [
+                  "An ellipse is the set of points where the sum of distances from the foci is constant.",
+                  "The foci are the fixed points that define the shape of the ellipse.",
+                  "The eccentricity measures the deviation of the ellipse from being a circle."
+                ]
+              },
+              {
+                "title": "Hyperbola",
+                "formulas": [
+                  "Standard equation of a hyperbola: (x²/a²) - (y²/b²) = 1 (horizontal transverse axis).",
+                  "Foci: (±c, 0), where c² = a² + b² for horizontal transverse axis.",
+                  "Eccentricity: e = c/a, where e > 1."
+                ],
+                "explanation": [
+                  "A hyperbola is the set of points where the absolute difference of distances from the foci is constant.",
+                  "The foci are fixed points that define the hyperbola, located further apart than in an ellipse.",
+                  "The eccentricity of a hyperbola is always greater than 1, defining its open shape."
+                ]
+              },
+              {
+                "title": "Special Properties of Conics",
+                "formulas": [
+                  "Focus-Directrix Property: e = distance from focus / distance from directrix.",
+                  "For all conics, e = 1 (parabola), e < 1 (ellipse), e > 1 (hyperbola).",
+                  "Reflection Property: Light or sound from one focus reflects to the other focus."
+                ],
+                "explanation": [
+                  "This property relates the shape of the conic section to its eccentricity.",
+                  "The eccentricity classifies the conic as a parabola, ellipse, or hyperbola.",
+                  "The reflection property is unique to ellipses and hyperbolas."
+                ]
+              }
+            ]
+          },
+          {
+            "chapters": [
+              {
+                "name": "Introduction to Three Dimensional Geometry",
+                "flashcards": [
+                  {
+                    "title": "Basics of 3D Geometry",
+                    "formulas": [
+                      "In 3D, the coordinate axes are three mutually perpendicular lines: x, y, and z axes.",
+                      "The coordinate planes are: xy-plane, yz-plane, and zx-plane.",
+                      "The coordinates of a point P in 3D space are written as (x, y, z)."
+                    ],
+                    "explanation": [
+                      "The three axes divide the space into eight regions called octants.",
+                      "Each coordinate plane is formed by a pair of axes and divides the space further.",
+                      "The coordinates of a point represent its perpendicular distances from the coordinate planes."
+                    ]
+                  },
+                  {
+                    "title": "Point Representation",
+                    "formulas": [
+                      "Points on x-axis are of the form (x, 0, 0).",
+                      "Points on y-axis are of the form (0, y, 0).",
+                      "Points on z-axis are of the form (0, 0, z)."
+                    ],
+                    "explanation": [
+                      "Points on the x-axis have zero y and z coordinates.",
+                      "Points on the y-axis have zero x and z coordinates.",
+                      "Points on the z-axis have zero x and y coordinates."
+                    ]
+                  },
+                  {
+                    "title": "Distance Formula",
+                    "formulas": [
+                      "Distance between two points P(x₁, y₁, z₁) and Q(x₂, y₂, z₂):",
+                      "PQ = √[(x₂ - x₁)² + (y₂ - y₁)² + (z₂ - z₁)²]"
+                    ],
+                    "explanation": [
+                      "The distance formula calculates the straight-line distance between two points.",
+                      "It extends the 2D distance formula by including the z-coordinate differences."
+                    ]
+                  },
+                  {
+                    "title": "Division of Line Segment",
+                    "formulas": [
+                      "Coordinates of R dividing a line internally: R = [(mx₂ + nx₁) / (m + n), (my₂ + ny₁) / (m + n), (mz₂ + nz₁) / (m + n)].",
+                      "Coordinates of R dividing a line externally: R = [(mx₂ - nx₁) / (m - n), (my₂ - ny₁) / (m - n), (mz₂ - nz₁) / (m - n)]."
+                    ],
+                    "explanation": [
+                      "The internal division formula calculates a point dividing the line in a specific ratio inside the segment.",
+                      "The external division formula calculates a point dividing the line externally in a given ratio."
+                    ]
+                  },
+                  {
+                    "title": "Midpoint and Centroid",
+                    "formulas": [
+                      "Midpoint: M = [(x₁ + x₂) / 2, (y₁ + y₂) / 2, (z₁ + z₂) / 2].",
+                      "Centroid: G = [(x₁ + x₂ + x₃) / 3, (y₁ + y₂ + y₃) / 3, (z₁ + z₂ + z₃) / 3]."
+                    ],
+                    "explanation": [
+                      "The midpoint formula finds the point exactly halfway between two points.",
+                      "The centroid formula gives the center of mass of a triangle, assuming uniform density."
+                    ]
+                  },
+                  {
+                    "title": "Distance from Origin",
+                    "formulas": [
+                      "Distance of a point P(x, y, z) from the origin O(0, 0, 0):",
+                      "OP = √(x² + y² + z²)"
+                    ],
+                    "explanation": [
+                      "This formula calculates the straight-line distance from the origin to the point.",
+                      "It is derived from the Pythagorean theorem in three dimensions."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Limits and Derivatives",
+            "flashcards": [
+              {
+                "title": "Definition of Limits",
+                "formulas": [
+                  "lim f(x) as x → a = L if lim f(x) from left = lim f(x) from right = L",
+                  "lim (f(x) ± g(x)) = lim f(x) ± lim g(x)",
+                  "lim (f(x) * g(x)) = lim f(x) * lim g(x)",
+                  "lim (f(x) / g(x)) = lim f(x) / lim g(x), provided lim g(x) ≠ 0"
+                ],
+                "explanation": [
+                  "The limit of a function exists if the left-hand limit and right-hand limit are equal.",
+                  "The sum or difference of limits is the limit of their sum or difference.",
+                  "The product of limits is the limit of their product.",
+                  "The quotient of limits is the limit of their quotient, provided the denominator is non-zero."
+                ]
+              },
+              {
+                "title": "Special Limits",
+                "formulas": [
+                  "lim (1 + x)^(1/x) as x → 0 = e",
+                  "lim sin(x) / x as x → 0 = 1",
+                  "lim (1 - cos(x)) / x² as x → 0 = 1/2",
+                  "lim log(1 + x) / x as x → 0 = 1"
+                ],
+                "explanation": [
+                  "This is a fundamental limit defining the constant 'e'.",
+                  "The ratio of sin(x) to x approaches 1 as x tends to 0.",
+                  "The limit of (1 - cos(x)) divided by x² as x approaches 0 is 1/2.",
+                  "The logarithmic limit as x approaches 0 is 1."
+                ]
+              },
+              {
+                "title": "Definition of Derivatives",
+                "formulas": [
+                  "f'(x) = lim (h → 0) [(f(x + h) - f(x)) / h]",
+                  "dy/dx = lim (Δx → 0) [Δy / Δx]"
+                ],
+                "explanation": [
+                  "The derivative of a function is the limit of the average rate of change as the interval approaches 0.",
+                  "The derivative dy/dx represents the instantaneous rate of change of y with respect to x."
+                ]
+              },
+              {
+                "title": "Standard Derivatives",
+                "formulas": [
+                  "d/dx (xⁿ) = n * x^(n-1)",
+                  "d/dx (e^x) = e^x",
+                  "d/dx (sin(x)) = cos(x)",
+                  "d/dx (log(x)) = 1/x"
+                ],
+                "explanation": [
+                  "The derivative of xⁿ is n times x raised to the power of (n-1).",
+                  "The derivative of the exponential function is itself.",
+                  "The derivative of sin(x) is cos(x).",
+                  "The derivative of log(x) is 1 divided by x."
+                ]
+              },
+              {
+                "title": "Rules of Differentiation",
+                "formulas": [
+                  "d/dx [f(x) + g(x)] = f'(x) + g'(x)",
+                  "d/dx [f(x) * g(x)] = f(x)g'(x) + g(x)f'(x)",
+                  "d/dx [f(x) / g(x)] = [g(x)f'(x) - f(x)g'(x)] / [g(x)]²"
+                ],
+                "explanation": [
+                  "The derivative of a sum is the sum of the derivatives.",
+                  "The product rule states that the derivative of a product is given by this formula.",
+                  "The quotient rule gives the derivative of the division of two functions."
+                ]
+              },
+              {
+                "title": "Applications of Derivatives",
+                "formulas": [
+                  "Slope of tangent = dy/dx",
+                  "Rate of change = dy/dx"
+                ],
+                "explanation": [
+                  "The derivative represents the slope of the tangent line at a point on the curve.",
+                  "The derivative also gives the instantaneous rate of change of a quantity."
+                ]
+              }
+            ]
+          },
+          {
+            "chapters": [
+              {
+                "name": "Mathematical Reasoning",
+                "flashcards": [
+                  {
+                    "title": "Basic Concepts of Statements",
+                    "formulas": [],
+                    "explanation": [
+                      "A statement is a mathematically acceptable sentence that is either true or false but not both.",
+                      "The negation of a statement p is denoted by ~p and is read as 'not p'.",
+                      "A compound statement is made up of two or more simple statements connected by words like 'and', 'or', 'if-then', etc."
+                    ]
+                  },
+                  {
+                    "title": "Compound Statements with 'AND'",
+                    "formulas": [],
+                    "explanation": [
+                      "The compound statement with 'AND' is true if all its component statements are true.",
+                      "It is false if any one of its component statements is false."
+                    ]
+                  },
+                  {
+                    "title": "Compound Statements with 'OR'",
+                    "formulas": [],
+                    "explanation": [
+                      "The compound statement with 'OR' is true when at least one of its component statements is true.",
+                      "It is false only when all its component statements are false."
+                    ]
+                  },
+                  {
+                    "title": "Conditional Statements",
+                    "formulas": [],
+                    "explanation": [
+                      "A sentence with 'If p, then q' can be written as:",
+                      "i) p implies q (denoted by p → q).",
+                      "ii) p is a sufficient condition for q.",
+                      "iii) q is a necessary condition for p.",
+                      "iv) q only if p."
+                    ]
+                  },
+                  {
+                    "title": "Contrapositive, Converse, and Inverse",
+                    "formulas": [],
+                    "explanation": [
+                      "The contrapositive of p → q is q → ~p.",
+                      "The converse of p → q is q → p.",
+                      "The inverse of p → q is ~p → ~q."
+                    ]
+                  },
+                  {
+                    "title": "Quantifiers",
+                    "formulas": [],
+                    "explanation": [
+                      "The term 'for all' is called a universal quantifier.",
+                      "The term 'there exists' is called an existential quantifier."
+                    ]
+                  },
+                  {
+                    "title": "Validity of Statements",
+                    "formulas": [],
+                    "explanation": [
+                      "A statement is valid if it is true in all cases.",
+                      "A statement is invalid if it is false in any case."
+                    ]
+                  },
+                  {
+                    "title": "Logical Equivalences",
+                    "formulas": [],
+                    "explanation": [
+                      "The statement 'p and q' is true if both p and q are true.",
+                      "The statement 'p or q' is true if at least one of p or q is true.",
+                      "The statement 'if p, then q' is true in all cases except when p is true and q is false."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Statistics",
+            "flashcards": [
+              {
+                "title": "Measures of Dispersion",
+                "formulas": [],
+                "explanation": [
+                  "Dispersion measures the scatteredness around the central value.",
+                  "Measures of dispersion include Range, Quartile deviation, Mean deviation, and Standard deviation.",
+                  "Range is the difference between the greatest and least values of the variable."
+                ]
+              },
+              {
+                "title": "Mean Deviation for Individual Observations",
+                "formulas": [
+                  "M.D. = (1/n) Σ|xᵢ - a|, where a = mean, median, or mode.",
+                  "M.D. = a + h * (1/n) Σ|uᵢ|, where uᵢ = (xᵢ - a)/h"
+                ],
+                "explanation": [
+                  "Mean deviation is the average of the absolute deviations from a chosen central value (mean, median, or mode).",
+                  "The formula accounts for deviations scaled by a factor h."
+                ]
+              },
+              {
+                "title": "Mean Deviation for Discrete Frequency Distribution",
+                "formulas": [
+                  "M.D. = (1/N) Σfᵢ|xᵢ - a|, where a = mean, median, or mode.",
+                  "M.D. = a + h * (1/N) Σfᵢ|uᵢ|, where uᵢ = (xᵢ - a)/h"
+                ],
+                "explanation": [
+                  "Mean deviation for grouped data considers the frequency of each observation.",
+                  "The deviations are scaled and weighted by their frequencies."
+                ]
+              },
+              {
+                "title": "Standard Deviation",
+                "formulas": [
+                  "σ = √Variance"
+                ],
+                "explanation": [
+                  "Standard deviation is the square root of the variance and measures the spread of data points."
+                ]
+              },
+              {
+                "title": "Variance for Individual Observations",
+                "formulas": [
+                  "Variance(X) = (1/n) Σ(xᵢ - X̄)²",
+                  "Var(X) = h² * [(1/n) Σuᵢ² - ((1/n) Σuᵢ)²], where uᵢ = (xᵢ - a)/h"
+                ],
+                "explanation": [
+                  "Variance is the arithmetic mean of squared deviations from the mean.",
+                  "The formula with scaling factor h accounts for deviations in standardized units."
+                ]
+              },
+              {
+                "title": "Variance for Discrete Frequency Distribution",
+                "formulas": [
+                  "Variance(X) = (1/N) Σfᵢ(xᵢ - X̄)²",
+                  "Var(X) = h² * [(1/N) Σfᵢuᵢ² - ((1/N) Σfᵢuᵢ)²], where uᵢ = (xᵢ - a)/h"
+                ],
+                "explanation": [
+                  "Variance for grouped data considers the frequency of each observation.",
+                  "The formula accounts for frequency-weighted squared deviations from the mean."
+                ]
+              },
+              {
+                "title": "Coefficient of Variation",
+                "formulas": [
+                  "C.V. = (σ / X̄) * 100"
+                ],
+                "explanation": [
+                  "The coefficient of variation compares the variability of two or more frequency distributions.",
+                  "A higher coefficient of variation indicates greater variability around the central value."
+                ]
+              }
+            ]
+          },
+          {
+            "chapters": [
+              {
+                "name": "Probability",
+                "flashcards": [
+                  {
+                    "title": "Basic Concepts of Probability",
+                    "formulas": [],
+                    "explanation": [
+                      "An experiment whose outcomes cannot be predicted in advance is called a random experiment.",
+                      "Each outcome of a random experiment is called an elementary event.",
+                      "The set of all possible outcomes of a random experiment is called the sample space."
+                    ]
+                  },
+                  {
+                    "title": "Types of Events",
+                    "formulas": [],
+                    "explanation": [
+                      "An event is a subset of the sample space.",
+                      "A certain event always occurs in an experiment, while an impossible event never occurs.",
+                      "Two events are mutually exclusive if they cannot occur simultaneously."
+                    ]
+                  },
+                  {
+                    "title": "Probability Axioms",
+                    "formulas": [
+                      "0 ≤ P(ω) ≤ 1 for all ω ∈ S",
+                      "P(S) = 1",
+                      "P(A) = Σ P(ω) for ω ∈ A"
+                    ],
+                    "explanation": [
+                      "The probability of any event lies between 0 and 1.",
+                      "The probability of the entire sample space is 1.",
+                      "The probability of an event is the sum of probabilities of its elementary events."
+                    ]
+                  },
+                  {
+                    "title": "Classical Definition of Probability",
+                    "formulas": [
+                      "P(A) = m / n"
+                    ],
+                    "explanation": [
+                      "Probability is the ratio of favorable outcomes to the total number of outcomes in the sample space."
+                    ]
+                  },
+                  {
+                    "title": "Addition Rule of Probability",
+                    "formulas": [
+                      "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)",
+                      "If A and B are mutually exclusive, then P(A ∪ B) = P(A) + P(B)"
+                    ],
+                    "explanation": [
+                      "The probability of union of two events is the sum of their probabilities minus the probability of their intersection.",
+                      "For mutually exclusive events, the intersection probability is zero."
+                    ]
+                  },
+                  {
+                    "title": "Probability for Three Events",
+                    "formulas": [
+                      "P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - P(A ∩ B) - P(B ∩ C) - P(C ∩ A) + P(A ∩ B ∩ C)"
+                    ],
+                    "explanation": [
+                      "The probability of union of three events includes all individual probabilities, subtracts pairwise intersections, and adds the triple intersection."
+                    ]
+                  },
+                  {
+                    "title": "Special Cases for Two Events",
+                    "formulas": [
+                      "P(A ∩ B') = P(A) - P(A ∩ B)",
+                      "P(A' ∩ B) = P(B) - P(A ∩ B)",
+                      "P(A ∪ B) - P(A ∩ B) = P(A) + P(B) - 2P(A ∩ B)"
+                    ],
+                    "explanation": [
+                      "The probability of A and not B is the probability of A minus their intersection.",
+                      "The probability of not A and B is the probability of B minus their intersection.",
+                      "The probability of exactly one of A or B is calculated using this formula."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }                    
+        ]
+      },
+      {
+        "year": "2nd PUC",
+        "chapters": [
+          {
+            "name": "Relations and Functions",
+            "flashcards": [
+              {
+                "title": "Basic Concepts of Relations",
+                "formulas": [
+                  "A relation R from A to B is a subset of A × B.",
+                  "Domain of R: {a ∈ A | (a, b) ∈ R for some b ∈ B}.",
+                  "Range of R: {b ∈ B | (a, b) ∈ R for some a ∈ A}."
+                ],
+                "explanation": [
+                  "A relation is a subset of the Cartesian product of two sets.",
+                  "The domain of a relation is the set of all first elements in the ordered pairs.",
+                  "The range of a relation is the set of all second elements in the ordered pairs."
+                ]
+              },
+              {
+                "title": "Inverse and Composition of Relations",
+                "formulas": [
+                  "Inverse relation: R⁻¹ = {(b, a) | (a, b) ∈ R}.",
+                  "Composition of relations R and S: SoR = {(a, c) | (a, b) ∈ R and (b, c) ∈ S}."
+                ],
+                "explanation": [
+                  "The inverse of a relation swaps the elements in each pair.",
+                  "The composition of two relations creates a new relation linking the first set of one relation to the second set of the other."
+                ]
+              },
+              {
+                "title": "Properties of Relations",
+                "formulas": [
+                  "Reflexive: (a, a) ∈ R for all a ∈ A.",
+                  "Symmetric: (a, b) ∈ R ⇒ (b, a) ∈ R.",
+                  "Transitive: (a, b) ∈ R and (b, c) ∈ R ⇒ (a, c) ∈ R."
+                ],
+                "explanation": [
+                  "A relation is reflexive if every element is related to itself.",
+                  "A relation is symmetric if reversing the pair does not affect membership.",
+                  "A relation is transitive if chaining relations results in a new relation."
+                ]
+              },
+              {
+                "title": "Functions and Their Types",
+                "formulas": [
+                  "A function f: A → B maps each element of A to a unique element of B.",
+                  "One-to-One (Injective): f(a₁) = f(a₂) ⇒ a₁ = a₂.",
+                  "Onto (Surjective): Range(f) = Codomain(f).",
+                  "Bijective: A function is both injective and surjective."
+                ],
+                "explanation": [
+                  "A function maps elements from one set to another with unique assignments.",
+                  "Injective functions have distinct outputs for distinct inputs.",
+                  "Surjective functions cover the entire codomain.",
+                  "Bijective functions are both one-to-one and onto."
+                ]
+              },
+              {
+                "title": "Special Functions",
+                "formulas": [
+                  "Identity function: Iₐ(x) = x for all x ∈ A.",
+                  "Constant function: f(a) = c for all a ∈ A.",
+                  "Inverse function: f⁻¹(b) = a ⇔ f(a) = b.",
+                  "Composite function: (f ∘ g)(x) = f(g(x))."
+                ],
+                "explanation": [
+                  "The identity function maps each element to itself.",
+                  "A constant function assigns the same value to all inputs.",
+                  "An inverse function reverses the mapping of the original function.",
+                  "The composite function combines two functions into one."
+                ]
+              },
+              {
+                "title": "Binary Operations",
+                "formulas": [
+                  "A binary operation * on a set A satisfies: *: A × A → A.",
+                  "Commutative: a * b = b * a for all a, b ∈ A.",
+                  "Associative: (a * b) * c = a * (b * c) for all a, b, c ∈ A.",
+                  "Identity element e: a * e = e * a = a for all a ∈ A."
+                ],
+                "explanation": [
+                  "Binary operations combine two elements from a set to produce another element of the same set.",
+                  "Commutative operations have the same result regardless of the order of elements.",
+                  "Associative operations group elements without changing the result.",
+                  "An identity element leaves other elements unchanged when combined."
+                ]
+              },
+              {
+                "title": "Connecting Concepts",
+                "formulas": [
+                  "f: A → B and g: B → C ⇒ g ∘ f: A → C.",
+                  "Number of injections from A to B: P(m, n) = m! / (m - n)! (if |A| = n, |B| = m)."
+                ],
+                "explanation": [
+                  "Composition of functions links multiple mappings into one.",
+                  "The number of injective functions depends on the sizes of the sets."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Inverse Trigonometric Functions",
+            "flashcards": [
+              {
+                "title": "Domains and Ranges of Inverse Trigonometric Functions",
+                "formulas": [
+                  "sin⁻¹(x): Domain = [-1, 1], Range = [-π/2, π/2]",
+                  "cos⁻¹(x): Domain = [-1, 1], Range = [0, π]",
+                  "tan⁻¹(x): Domain = R, Range = (-π/2, π/2)",
+                  "cosec⁻¹(x): Domain = R \\ [-1, 1], Range = [-π/2, 0) ∪ (0, π/2]",
+                  "sec⁻¹(x): Domain = R \\ [-1, 1], Range = [0, π] \\ {π/2}",
+                  "cot⁻¹(x): Domain = R, Range = (0, π)"
+                ],
+                "explanation": [
+                  "Inverse trigonometric functions have specific domains and ranges to ensure they are one-to-one.",
+                  "The domain of sin⁻¹ and cos⁻¹ is restricted to [-1, 1] because sine and cosine values are in this range.",
+                  "Other functions like tan⁻¹ and cot⁻¹ are defined over all real numbers."
+                ]
+              },
+              {
+                "title": "Principal Value Branches",
+                "formulas": [
+                  "sin⁻¹(x): Principal value = [-π/2, π/2]",
+                  "cos⁻¹(x): Principal value = [0, π]",
+                  "tan⁻¹(x): Principal value = [-π/2, π/2]",
+                  "cosec⁻¹(x): Principal value = [-π/2, π/2] \\ {0}",
+                  "sec⁻¹(x): Principal value = [0, π] \\ {π/2}",
+                  "cot⁻¹(x): Principal value = (0, π)"
+                ],
+                "explanation": [
+                  "Principal value branches define unique values for inverse trigonometric functions within a specified range.",
+                  "For example, the principal value of sin⁻¹(x) lies in [-π/2, π/2], ensuring a unique output for each input."
+                ]
+              },
+              {
+                "title": "Graphs of Inverse Trigonometric Functions",
+                "formulas": [],
+                "explanation": [
+                  "The graph of sin⁻¹(x) is a reflection of y = sin(x) across the line y = x.",
+                  "Similarly, cos⁻¹(x), tan⁻¹(x), and other functions are obtained by reflecting their respective trigonometric functions."
+                ]
+              },
+              {
+                "title": "Connecting Concepts",
+                "formulas": [
+                  "sin⁻¹(x) + cos⁻¹(x) = π/2",
+                  "tan⁻¹(x) + cot⁻¹(x) = π/2",
+                  "sec⁻¹(x) + cosec⁻¹(x) = π/2",
+                  "2sin⁻¹(x) = sin⁻¹(2x√(1-x²)), |x| ≤ 1/√2",
+                  "2cos⁻¹(x) = cos⁻¹(2x²-1), |x| ≤ 1"
+                ],
+                "explanation": [
+                  "These identities relate pairs of inverse trigonometric functions.",
+                  "For example, sin⁻¹(x) + cos⁻¹(x) always equals π/2, showing their complementary nature.",
+                  "Other formulas express double angles and transformations in terms of inverse functions."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Chapter 3",
+            "flashcards": [
+              {
+                "title": "First Flashcard of chapter 3",
+                "formulas": ["formula1", "formula2", "formula3"],
+                "explanation": ["exp of formula1", "exp of formula2", "exp of formula3"]
+              },
+              {
+                "title": "Second Flashcard of chapter 3",
+                "formulas": ["formula1", "formula2"],
+                "explanation": ["exp of formula1", "exp of formula2"]
+              }
+            ]
+          },
+          {
+            "name": "Matrices",
+            "flashcards": [
+              {
+                "title": "Introduction to Matrices",
+                "formulas": [
+                  "A matrix is a rectangular array of numbers arranged in rows and columns.",
+                  "Order of a matrix: If a matrix has m rows and n columns, its order is m × n.",
+                  "A square matrix has an equal number of rows and columns.",
+                  "A null matrix has all its elements equal to zero."
+                ],
+                "explanation": [
+                  "Matrices are used to represent systems of linear equations and transformations.",
+                  "The order specifies the dimensions of the matrix.",
+                  "Square matrices are symmetric about their diagonal.",
+                  "The null matrix represents a matrix with no values other than zero."
+                ]
+              },
+              {
+                "title": "Special Types of Matrices",
+                "formulas": [
+                  "Diagonal Matrix: A matrix with non-zero elements only on its diagonal.",
+                  "Scalar Matrix: A diagonal matrix where all diagonal elements are equal.",
+                  "Unit Matrix (Identity Matrix): A square matrix with diagonal elements equal to 1.",
+                  "Upper Triangular Matrix: A matrix where all elements below the diagonal are zero.",
+                  "Lower Triangular Matrix: A matrix where all elements above the diagonal are zero."
+                ],
+                "explanation": [
+                  "Diagonal matrices simplify operations as only diagonal elements are non-zero.",
+                  "Scalar matrices are a subset of diagonal matrices with uniform diagonal values.",
+                  "Identity matrices act as the multiplicative identity in matrix operations.",
+                  "Upper and lower triangular matrices have zero elements either above or below the diagonal."
+                ]
+              },
+              {
+                "title": "Matrix Operations",
+                "formulas": [
+                  "Addition: If A and B are matrices of the same order, then A + B = [aᵢⱼ + bᵢⱼ].",
+                  "Scalar Multiplication: If K is a scalar, then K × A = [k × aᵢⱼ].",
+                  "Matrix Multiplication: If A is m × n and B is n × p, then AB is m × p.",
+                  "Transpose of a Matrix: If A is a matrix, then Aᵀ = [aⱼᵢ]."
+                ],
+                "explanation": [
+                  "Matrix addition is performed element-wise, requiring matrices to have the same order.",
+                  "Scalar multiplication scales every element of the matrix by a constant.",
+                  "Matrix multiplication combines rows of A with columns of B.",
+                  "The transpose of a matrix swaps its rows with columns."
+                ]
+              },
+              {
+                "title": "Properties of Matrices",
+                "formulas": [
+                  "Commutative Property of Addition: A + B = B + A.",
+                  "Associative Property of Addition: (A + B) + C = A + (B + C).",
+                  "Distributive Property: K(A + B) = KA + KB.",
+                  "Associative Property of Multiplication: (AB)C = A(BC).",
+                  "Transpose Properties: (A + B)ᵀ = Aᵀ + Bᵀ and (AB)ᵀ = BᵀAᵀ."
+                ],
+                "explanation": [
+                  "Addition of matrices is commutative and associative.",
+                  "Distributive property holds for both scalar multiplication and matrix addition.",
+                  "Matrix multiplication is associative but not commutative.",
+                  "Transpose operation reverses the order in multiplication."
+                ]
+              },
+              {
+                "title": "Determinants and Inverse of Matrices",
+                "formulas": [
+                  "Determinant of a 2x2 Matrix: |A| = ad - bc for A = [[a, b], [c, d]].",
+                  "A matrix is invertible if |A| ≠ 0.",
+                  "Inverse of a Matrix: A⁻¹ = (1/|A|) * adj(A), where adj(A) is the adjoint of A."
+                ],
+                "explanation": [
+                  "The determinant provides a scalar value representing the matrix's scale factor.",
+                  "A matrix is invertible only if its determinant is non-zero.",
+                  "The inverse of a matrix is used to solve systems of linear equations."
+                ]
+              },
+              {
+                "title": "Symmetric and Skew-Symmetric Matrices",
+                "formulas": [
+                  "Symmetric Matrix: A matrix A is symmetric if A = Aᵀ.",
+                  "Skew-Symmetric Matrix: A matrix A is skew-symmetric if Aᵀ = -A."
+                ],
+                "explanation": [
+                  "Symmetric matrices are equal to their transpose.",
+                  "Skew-symmetric matrices are the negation of their transpose."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Determinants",
+            "flashcards": [
+              {
+                "title": "Basics of Determinants",
+                "formulas": [
+                  "|A| = a11 * a22 - a12 * a21 (for 2x2 matrix)",
+                  "|A| = Σ(ai1 * Ci1), where Ci1 is the cofactor of ai1 (general determinant formula)"
+                ],
+                "explanation": [
+                  "A determinant represents a specific type of numerical value associated with a square matrix.",
+                  "The value of a determinant for a 2x2 matrix is computed as the product of its diagonals minus the product of its off-diagonals.",
+                  "For larger matrices, determinants are expanded using cofactors."
+                ]
+              },
+              {
+                "title": "Minors and Cofactors",
+                "formulas": [
+                  "Minor Mij = determinant of the matrix obtained by deleting the i-th row and j-th column.",
+                  "Cofactor Cij = (-1)^(i+j) * Mij"
+                ],
+                "explanation": [
+                  "The minor of an element is the determinant of the smaller matrix left after removing the element's row and column.",
+                  "The cofactor is the signed version of the minor, depending on the position of the element in the matrix."
+                ]
+              },
+              {
+                "title": "Area of a Triangle Using Determinants",
+                "formulas": [
+                  "Area = (1/2) * |x1 y1 1|",
+                  "           |x2 y2 1|",
+                  "           |x3 y3 1|"
+                ],
+                "explanation": [
+                  "The determinant can be used to calculate the area of a triangle given its vertices.",
+                  "The formula involves placing the vertices in a determinant, computing its absolute value, and dividing by 2."
+                ]
+              },
+              {
+                "title": "System of Linear Equations",
+                "formulas": [
+                  "AX = B",
+                  "X = A^(-1) * B (if A is invertible)"
+                ],
+                "explanation": [
+                  "A system of linear equations can be expressed as a matrix equation.",
+                  "If the determinant of the coefficient matrix (A) is non-zero, the system has a unique solution."
+                ]
+              },
+              {
+                "title": "Adjoint and Inverse of a Matrix",
+                "formulas": [
+                  "Adj(A) = transpose of cofactor matrix of A",
+                  "A^(-1) = (1/|A|) * Adj(A), if |A| ≠ 0"
+                ],
+                "explanation": [
+                  "The adjoint of a matrix is obtained by taking the transpose of its cofactor matrix.",
+                  "The inverse of a matrix exists only if its determinant is non-zero and is computed using the adjoint."
+                ]
+              },
+              {
+                "title": "Properties of Determinants",
+                "formulas": [
+                  "Interchanging two rows: |A| changes sign.",
+                  "Multiplying a row by k: |A| is multiplied by k.",
+                  "|A| = 0 if two rows (or columns) are identical or proportional."
+                ],
+                "explanation": [
+                  "Interchanging two rows or columns in a determinant reverses its sign.",
+                  "Scaling a row or column scales the determinant by the same factor.",
+                  "If any two rows or columns are identical, the determinant is zero."
+                ]
+              },
+              {
+                "title": "Special Determinant Rules",
+                "formulas": [
+                  "|kA| = k^n * |A| (for an n x n matrix)",
+                  "|A * B| = |A| * |B|"
+                ],
+                "explanation": [
+                  "Scaling the entire matrix by a constant scales the determinant by the constant raised to the power of the matrix's order.",
+                  "The determinant of the product of two matrices is the product of their determinants."
+                ]
+              },
+              {
+                "title": "Connecting Concepts",
+                "formulas": [
+                  "If |A| = 0, the matrix is singular.",
+                  "If A is invertible, |A| ≠ 0."
+                ],
+                "explanation": [
+                  "A determinant of zero indicates a singular matrix, which does not have an inverse.",
+                  "The invertibility of a matrix is directly linked to its determinant being non-zero."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Continuity and Differentiability",
+            "flashcards": [
+                {
+                    "title": "Continuity",
+                    "formulas": [
+                        "lim f(x) as x \u2192 a = f(a)",
+                        "lim f(a+h) as h \u2192 0 = lim f(a-h) = f(a)"
+                    ],
+                    "explanation": [
+                        "A function is continuous at x = a if the limit of the function exists, is finite, and equals the function's value at a.",
+                        "Continuity in an interval means the function is continuous at each point of the interval."
+                    ]
+                },
+                {
+                    "title": "Discontinuity",
+                    "formulas": [],
+                    "explanation": [
+                        "A function is discontinuous at x = a if it is not continuous at this point.",
+                        "Discontinuity occurs where the limit of the function does not exist, is not finite, or does not equal the function value."
+                    ]
+                },
+                {
+                    "title": "Differentiability",
+                    "formulas": [
+                        "f'(x) = lim h \u2192 0 [(f(x+h) - f(x)) / h]"
+                    ],
+                    "explanation": [
+                        "Differentiability means the derivative of the function exists at a given point.",
+                        "Every differentiable function is continuous, but not every continuous function is differentiable."
+                    ]
+                },
+                {
+                    "title": "Algebra of Derivatives",
+                    "formulas": [
+                        "(u+v)' = u' + v'",
+                        "(uv)' = u'v + uv'",
+                        "(u/v)' = (u'v - uv') / v\u00b2"
+                    ],
+                    "explanation": [
+                        "The sum, product, and quotient of differentiable functions follow specific rules for derivatives.",
+                        "The quotient rule requires that the denominator is not zero."
+                    ]
+                },
+                {
+                    "title": "Chain Rule",
+                    "formulas": [
+                        "d/dx [f(g(x))] = f'(g(x)) * g'(x)"
+                    ],
+                    "explanation": [
+                        "The chain rule is used to differentiate composite functions.",
+                        "If y = f(u) and u = g(x), then dy/dx = (dy/du) * (du/dx)."
+                    ]
+                },
+                {
+                    "title": "Implicit Differentiation",
+                    "formulas": [
+                        "Differentiate both sides of the equation term-wise with respect to x.",
+                        "Collect terms containing dy/dx to isolate and solve for dy/dx."
+                    ],
+                    "explanation": [
+                        "Implicit differentiation is used when y is not explicitly expressed as a function of x.",
+                        "Each occurrence of y is differentiated with respect to x, multiplying by dy/dx."
+                    ]
+                },
+                {
+                    "title": "Logarithmic Differentiation",
+                    "formulas": [
+                        "log_b(pq) = log_b(p) + log_b(q)",
+                        "log_b(p/q) = log_b(p) - log_b(q)",
+                        "log_b(p^x) = x * log_b(p)"
+                    ],
+                    "explanation": [
+                        "Logarithmic differentiation simplifies the differentiation of functions with exponents or products.",
+                        "It involves taking the natural logarithm of both sides of the function."
+                    ]
+                },
+                {
+                    "title": "Derivatives of Inverse Trigonometric Functions",
+                    "formulas": [
+                        "d/dx [sin\u207b\u00b9(x)] = 1 / \u221a(1-x\u00b2)",
+                        "d/dx [cos\u207b\u00b9(x)] = -1 / \u221a(1-x\u00b2)",
+                        "d/dx [tan\u207b\u00b9(x)] = 1 / (1+x\u00b2)",
+                        "d/dx [cot\u207b\u00b9(x)] = -1 / (1+x\u00b2)",
+                        "d/dx [sec\u207b\u00b9(x)] = 1 / |x|\u221a(x\u00b2-1)",
+                        "d/dx [cosec\u207b\u00b9(x)] = -1 / |x|\u221a(x\u00b2-1)"
+                    ],
+                    "explanation": [
+                        "These formulas provide the derivatives of inverse trigonometric functions.",
+                        "They are used in calculus to compute the slopes of curves defined by such functions."
+                    ]
+                },
+                {
+                    "title": "Mean Value Theorem",
+                    "formulas": [
+                        "f'(c) = [f(b) - f(a)] / (b - a)"
+                    ],
+                    "explanation": [
+                        "For a function continuous on [a, b] and differentiable on (a, b), there exists a point c in (a, b) where the tangent is parallel to the secant joining (a, f(a)) and (b, f(b))."
+                    ]
+                },
+                {
+                    "title": "Rolle's Theorem",
+                    "formulas": [],
+                    "explanation": [
+                        "If f(a) = f(b) and the function is continuous on [a, b] and differentiable on (a, b), there exists a c in (a, b) such that f'(c) = 0."
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter": "Application of Derivatives",
+            "flashcards": [
+              {
+                "title": "Rate of Change and Increasing/Decreasing Functions",
+                "formulas": [
+                  "dy/dx = lim Δx→0 [Δy/Δx]",
+                  "f'(x0) represents the rate of change of y with respect to x at x = x0",
+                  "f'(x) > 0 for increasing functions",
+                  "f'(x) < 0 for decreasing functions"
+                ],
+                "explanation": [
+                  "Rate of change indicates how one quantity changes with respect to another.",
+                  "A function is increasing if f'(x) > 0 and decreasing if f'(x) < 0 in a given interval."
+                ]
+              },
+              {
+                "title": "Tangents, Normals, and Extrema",
+                "formulas": [
+                  "Tangent: y - y0 = m(x - x0), where m = f'(x0)",
+                  "Normal: y - y0 = (-1/m)(x - x0), where m = f'(x0)",
+                  "Maximum: f'(x) = 0 and f''(x) < 0",
+                  "Minimum: f'(x) = 0 and f''(x) > 0"
+                ],
+                "explanation": [
+                  "The tangent to a curve at a point has a slope equal to the derivative at that point.",
+                  "The normal is perpendicular to the tangent.",
+                  "A maximum occurs when f'(x) = 0 and f''(x) < 0, while a minimum occurs when f'(x) = 0 and f''(x) > 0."
+                ]
+              },
+              {
+                "title": "Local and Absolute Extrema",
+                "formulas": [
+                  "Absolute extrema: Consider critical points and endpoints.",
+                  "Local extrema: f'(c) = 0, and f''(c) determines the nature of the point."
+                ],
+                "explanation": [
+                  "Absolute extrema occur over the entire interval, while local extrema occur within a smaller neighborhood.",
+                  "The first derivative test can identify the nature of local extrema by observing the sign changes in f'(x)."
+                ]
+              },
+              {
+                "title": "Connecting Concepts: Increasing/Decreasing and Tangents",
+                "formulas": [
+                  "Increasing: If x1 < x2, then f(x1) ≤ f(x2).",
+                  "Strictly Increasing: If x1 < x2, then f(x1) < f(x2).",
+                  "Decreasing: If x1 < x2, then f(x1) ≥ f(x2).",
+                  "Strictly Decreasing: If x1 < x2, then f(x1) > f(x2).",
+                  "Tangent special cases: If θ = 0, m = 0 → y = y0; If θ = π/2, m is undefined → x = x0"
+                ],
+                "explanation": [
+                  "An increasing function rises as x increases, while a decreasing function falls.",
+                  "The tangent's slope depends on m, derived from the angle θ with respect to the x-axis."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Integrals",
+            "flashcards": [
+              {
+                "title": "Introduction to Integration",
+                "formulas": [
+                  "∫ f'(x) dx = f(x) + C",
+                  "d/dx [F(x) + C] = f(x)"
+                ],
+                "explanation": [
+                  "Integration is the process of finding the function F(x) whose derivative is f(x).",
+                  "The arbitrary constant C is added because the integral of a function is not unique."
+                ]
+              },
+              {
+                "title": "Integration by Substitution",
+                "formulas": [
+                  "Let x = g(t), dx = g'(t) dt",
+                  "∫ f(x) dx = ∫ f(g(t)) g'(t) dt"
+                ],
+                "explanation": [
+                  "Use substitution when the integrand can be simplified by expressing it in terms of another variable.",
+                  "Common substitutions: x = a sin(θ), x = a tan(θ), x = a sec(θ)."
+                ]
+              },
+              {
+                "title": "Trigonometric Integrals",
+                "formulas": [
+                  "∫ sin^2(x) dx = (1/2)(x - sin(2x)/2) + C",
+                  "∫ cos^2(x) dx = (1/2)(x + sin(2x)/2) + C",
+                  "∫ sin(ax) cos(bx) dx = (1/2) ∫ [sin((a+b)x) + sin((a-b)x)] dx"
+                ],
+                "explanation": [
+                  "Trigonometric products are often expressed as sums or differences using identities.",
+                  "This helps simplify integration involving sin(x), cos(x), and their powers."
+                ]
+              },
+              {
+                "title": "Integration of Rational Functions",
+                "formulas": [
+                  "∫ P(x)/Q(x) dx = ∫ [T(x) + P1(x)/Q1(x)] dx",
+                  "Where T(x) is the quotient and P1(x)/Q1(x) is the proper rational fraction."
+                ],
+                "explanation": [
+                  "For rational functions, use polynomial long division if the numerator's degree is greater than or equal to the denominator's.",
+                  "Decompose proper fractions into partial fractions for easier integration."
+                ]
+              },
+              {
+                "title": "Integration by Parts",
+                "formulas": [
+                  "∫ u v dx = u ∫ v dx - ∫ (du/dx) ∫ v dx"
+                ],
+                "explanation": [
+                  "Use integration by parts when the integrand is a product of two functions.",
+                  "Choose u and dv based on ILATE (Inverse, Logarithmic, Algebraic, Trigonometric, Exponential) rule."
+                ]
+              },
+              {
+                "title": "Definite Integrals",
+                "formulas": [
+                  "∫[a to b] f(x) dx = F(b) - F(a)",
+                  "∫[a to b] f(x) dx = ∫[a to b] f(a+b-x) dx"
+                ],
+                "explanation": [
+                  "Definite integrals provide the net area under the curve of f(x) between limits a and b.",
+                  "Properties like symmetry and substitution simplify evaluation of definite integrals."
+                ]
+              },
+              {
+                "title": "General Properties of Integrals",
+                "formulas": [
+                  "∫ k f(x) dx = k ∫ f(x) dx",
+                  "∫[a to b] f(x) dx = -∫[b to a] f(x) dx",
+                  "∫[a to b] [f(x) + g(x)] dx = ∫[a to b] f(x) dx + ∫[a to b] g(x) dx"
+                ],
+                "explanation": [
+                  "Integration is linear and follows basic algebraic rules.",
+                  "Reversal of limits changes the sign of the integral."
+                ]
+              },
+              {
+                "title": "Special Integrals",
+                "formulas": [
+                  "∫ dx / (a^2 - x^2) = (1/2a) log|(a+x)/(a-x)| + C",
+                  "∫ dx / (x^2 + a^2) = (1/a) arctan(x/a) + C",
+                  "∫ dx / sqrt(x^2 + a^2) = log|x + sqrt(x^2 + a^2)| + C"
+                ],
+                "explanation": [
+                  "These are standard results for common forms of integrals.",
+                  "These results are derived from trigonometric or logarithmic substitutions."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Application of the Integrals",
+            "flashcards": [
+              {
+                "title": "Area Under Simple Curves",
+                "formulas": [
+                  "A = ∫[a to b] f(x) dx"
+                ],
+                "explanation": [
+                  "The area under the curve y = f(x), bounded by the x-axis and the vertical lines x = a and x = b, is calculated as the definite integral of f(x) from a to b.",
+                  "The integral represents the sum of the areas of thin vertical strips under the curve."
+                ]
+              },
+              {
+                "title": "Area Between Two Curves",
+                "formulas": [
+                  "A = ∫[a to b] [f(x) - g(x)] dx"
+                ],
+                "explanation": [
+                  "The area between two curves y = f(x) and y = g(x), where f(x) > g(x) over [a, b], is the integral of the difference between the two functions from a to b.",
+                  "If the roles of f(x) and g(x) interchange, the formula remains the same as it calculates the absolute difference."
+                ]
+              },
+              {
+                "title": "Area for Curves Below the X-Axis",
+                "formulas": [
+                  "A = ∫[a to b] |f(x)| dx"
+                ],
+                "explanation": [
+                  "If the curve lies below the x-axis, f(x) < 0, and the integral gives a negative value. In such cases, the absolute value of the integral represents the area."
+                ]
+              },
+              {
+                "title": "Area for Curves Partly Above and Below the X-Axis",
+                "formulas": [
+                  "A = |∫[a to c] f(x) dx| + |∫[c to b] f(x) dx|"
+                ],
+                "explanation": [
+                  "If a portion of the curve is above the x-axis and a portion is below, the total area is the sum of the absolute values of the integrals over the respective intervals."
+                ]
+              },
+              {
+                "title": "General Case for Area Between Two Curves",
+                "formulas": [
+                  "A = ∫[a to c] [f(x) - g(x)] dx + ∫[c to b] [g(x) - f(x)] dx"
+                ],
+                "explanation": [
+                  "For two curves intersecting at points a, c, and b, the area is calculated by dividing the interval [a, b] at the intersection points and integrating the difference accordingly."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Differential Equations",
+            "flashcards": [
+              {
+                "title": "Basic Concepts of Differential Equations",
+                "formulas": [],
+                "explanation": [
+                  "A differential equation involves an independent variable, a dependent variable, and derivatives of the dependent variable with respect to the independent variable.",
+                  "Order: The order of a differential equation is the highest order derivative present in the equation.",
+                  "Degree: The degree of a differential equation is the power of the highest order derivative, provided it is free from radicals or fractions."
+                ]
+              },
+              {
+                "title": "Solution of a Differential Equation",
+                "formulas": [],
+                "explanation": [
+                  "General Solution: Contains arbitrary constants equal to the order of the equation.",
+                  "Particular Solution: Obtained by assigning specific values to the arbitrary constants in the general solution."
+                ]
+              },
+              {
+                "title": "Variable Separable Form",
+                "formulas": [
+                  "dy/dx = f(x)g(y) → ∫(1/g(y)) dy = ∫f(x) dx"
+                ],
+                "explanation": [
+                  "If the equation can be written such that all terms involving y are on one side and all terms involving x are on the other, the variables are separable.",
+                  "The solution is obtained by integrating both sides."
+                ]
+              },
+              {
+                "title": "Homogeneous Differential Equations",
+                "formulas": [
+                  "dy/dx = F(x, y) where F(kx, ky) = F(x, y)"
+                ],
+                "explanation": [
+                  "A differential equation is homogeneous if it can be expressed as a function of the ratio y/x.",
+                  "To solve, substitute y = vx (or x = vy) and separate the variables."
+                ]
+              },
+              {
+                "title": "Linear Differential Equations",
+                "formulas": [
+                  "dy/dx + Py = Q",
+                  "Integrating factor (I.F.) = e^(∫P dx)",
+                  "Solution: y * I.F. = ∫(Q * I.F.) dx + C"
+                ],
+                "explanation": [
+                  "A linear differential equation has the form dy/dx + Py = Q, where P and Q are functions of x.",
+                  "The solution involves finding the integrating factor and integrating accordingly."
+                ]
+              },
+              {
+                "title": "Formation of Differential Equations",
+                "formulas": [],
+                "explanation": [
+                  "Differential equations can be formed by differentiating an equation containing arbitrary constants.",
+                  "Eliminate the arbitrary constants to obtain the differential equation."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Vector Algebra",
+            "flashcards": [
+              {
+                "title": "Basic Concepts of Vectors",
+                "formulas": [],
+                "explanation": [
+                  "A vector is a quantity that has both magnitude and direction, such as displacement, velocity, force, or acceleration.",
+                  "The magnitude of a vector is the distance between its initial and terminal points.",
+                  "Vectors are denoted using bold letters or arrows above the symbol (e.g., AB or →AB)."
+                ]
+              },
+              {
+                "title": "Types of Vectors",
+                "formulas": [],
+                "explanation": [
+                  "Zero Vector: A vector with both initial and terminal points coinciding.",
+                  "Unit Vector: A vector with magnitude equal to 1, denoted as û.",
+                  "Co-initial Vectors: Vectors having the same initial point.",
+                  "Collinear Vectors: Vectors parallel to the same line.",
+                  "Equal Vectors: Vectors with the same magnitude and direction.",
+                  "Negative Vector: A vector with the same magnitude but opposite direction."
+                ]
+              },
+              {
+                "title": "Addition of Vectors",
+                "formulas": [
+                  "a + b = resultant vector using triangle or parallelogram law."
+                ],
+                "explanation": [
+                  "The sum of two vectors is found by placing them head-to-tail and joining the initial point of the first vector to the terminal point of the second.",
+                  "The parallelogram law states that the resultant of two vectors is represented by the diagonal of a parallelogram."
+                ]
+              },
+              {
+                "title": "Multiplication of a Vector by a Scalar",
+                "formulas": [
+                  "λa = scalar multiple of vector a"
+                ],
+                "explanation": [
+                  "When a vector is multiplied by a scalar, its magnitude changes but its direction remains the same.",
+                  "If λ is negative, the vector's direction is reversed."
+                ]
+              },
+              {
+                "title": "Components of a Vector",
+                "formulas": [
+                  "a = xi + yj + zk",
+                  "|a| = √(x² + y² + z²)"
+                ],
+                "explanation": [
+                  "A vector in three-dimensional space can be expressed in terms of its components along the x, y, and z axes.",
+                  "The unit vectors along the axes are i, j, and k, respectively."
+                ]
+              },
+              {
+                "title": "Section Formula",
+                "formulas": [
+                  "r = (mb + na) / (m + n) for internal division",
+                  "r = (mb - na) / (m - n) for external division"
+                ],
+                "explanation": [
+                  "The section formula gives the position vector of a point dividing a line segment in a given ratio."
+                ]
+              },
+              {
+                "title": "Dot Product of Two Vectors",
+                "formulas": [
+                  "a · b = |a||b|cos(θ)"
+                ],
+                "explanation": [
+                  "The dot product is a scalar quantity representing the projection of one vector onto another.",
+                  "If θ = 90°, then a · b = 0 (vectors are perpendicular)."
+                ]
+              },
+              {
+                "title": "Cross Product of Two Vectors",
+                "formulas": [
+                  "a × b = |a||b|sin(θ)n̂"
+                ],
+                "explanation": [
+                  "The cross product is a vector perpendicular to both a and b.",
+                  "If θ = 0° or 180°, then a × b = 0 (vectors are parallel)."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Introduction to Three Dimensional Geometry",
+            "flashcards": [
+              {
+                "title": "Distance Formula",
+                "formulas": [
+                  "AB = √((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)"
+                ],
+                "explanation": [
+                  "The distance between two points A(x1, y1, z1) and B(x2, y2, z2) in three-dimensional space is calculated using the distance formula."
+                ]
+              },
+              {
+                "title": "Section Formula",
+                "formulas": [
+                  "R = (mx2 + nx1) / (m + n), (my2 + ny1) / (m + n), (mz2 + nz1) / (m + n) (Internal Division)",
+                  "R = (mx2 - nx1) / (m - n), (my2 - ny1) / (m - n), (mz2 - nz1) / (m - n) (External Division)"
+                ],
+                "explanation": [
+                  "The section formula determines the coordinates of a point dividing a line segment in a given ratio m:n, either internally or externally."
+                ]
+              },
+              {
+                "title": "Mid-Point Formula",
+                "formulas": [
+                  "R = ((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2)"
+                ],
+                "explanation": [
+                  "The midpoint formula calculates the point that divides a line segment into two equal parts."
+                ]
+              },
+              {
+                "title": "Centroid Formula",
+                "formulas": [
+                  "Centroid = ((x1 + x2 + x3) / 3, (y1 + y2 + y3) / 3, (z1 + z2 + z3) / 3)"
+                ],
+                "explanation": [
+                  "The centroid of a triangle in three-dimensional space is the average of the coordinates of its vertices."
+                ]
+              },
+              {
+                "title": "Position in Three-Dimensional Space",
+                "formulas": [],
+                "explanation": [
+                  "A rectangular coordinate system consists of three mutually perpendicular axes: x, y, and z.",
+                  "The three planes formed by these axes are called the coordinate planes: XY-plane, YZ-plane, and ZX-plane.",
+                  "The coordinates (x, y, z) of a point are its perpendicular distances from the YZ, ZX, and XY planes, respectively."
+                ]
+              },
+              {
+                "title": "Distance of a Point from the Origin",
+                "formulas": [
+                  "Distance = √(x^2 + y^2 + z^2)"
+                ],
+                "explanation": [
+                  "The distance of a point (x, y, z) from the origin (0, 0, 0) is calculated using the Pythagorean theorem in three dimensions."
+                ]
+              },
+              {
+                "title": "Octants and Coordinate Signs",
+                "formulas": [],
+                "explanation": [
+                  "The space is divided into 8 parts called octants based on the signs of the x, y, and z coordinates.",
+                  "For example, in the first octant, all coordinates are positive (x > 0, y > 0, z > 0)."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Linear Programming",
+            "flashcards": [
+              {
+                "title": "Linear Programming Problems",
+                "formulas": [],
+                "explanation": [
+                  "Linear programming problems involve finding the maximum or minimum value of a linear function (called the objective function) subject to constraints expressed as linear inequalities.",
+                  "The variables in the problem are non-negative and satisfy the constraints."
+                ]
+              },
+              {
+                "title": "Objective Function",
+                "formulas": [
+                  "Z = ax + by"
+                ],
+                "explanation": [
+                  "The objective function is a linear expression of decision variables, which is maximized or minimized according to the given problem."
+                ]
+              },
+              {
+                "title": "Constraints",
+                "formulas": [],
+                "explanation": [
+                  "Constraints are the restrictions on the decision variables, expressed as inequalities.",
+                  "Non-negative restrictions ensure that x ≥ 0 and y ≥ 0."
+                ]
+              },
+              {
+                "title": "Feasible Region and Feasible Solution",
+                "formulas": [],
+                "explanation": [
+                  "The feasible region is the common region determined by all constraints, including non-negative constraints.",
+                  "A feasible solution is any point within or on the boundary of the feasible region that satisfies all constraints."
+                ]
+              },
+              {
+                "title": "Optimal Solution",
+                "formulas": [],
+                "explanation": [
+                  "An optimal solution is a point in the feasible region that gives the maximum or minimum value of the objective function.",
+                  "The optimal value occurs at a corner point of the feasible region (Theorem 1)."
+                ]
+              },
+              {
+                "title": "Different Types of Linear Programming Problems",
+                "formulas": [],
+                "explanation": [
+                  "Manufacturing Problems: Determine the number of units to produce for maximum profit while meeting resource constraints.",
+                  "Diet Problems: Minimize the cost of a diet while meeting minimum nutritional requirements.",
+                  "Transportation Problems: Optimize transportation schedules to minimize costs while meeting supply and demand."
+                ]
+              },
+              {
+                "title": "Formulation of LPP",
+                "formulas": [],
+                "explanation": [
+                  "Formulate the problem as a mathematical model with an objective function, constraints, and non-negative restrictions.",
+                  "Identify decision variables and express constraints as linear inequalities."
+                ]
+              },
+              {
+                "title": "Solving LPP",
+                "formulas": [],
+                "explanation": [
+                  "Plot constraints to determine the feasible region.",
+                  "Identify corner points of the feasible region and substitute them into the objective function to find the optimal solution.",
+                  "If the feasible region is unbounded, check whether an optimal value exists at infinity."
+                ]
+              }
+            ]
+          },
+          {
+            "chapter": "Probability",
+            "flashcards": [
+              {
+                "title": "Conditional Probability",
+                "formulas": [
+                  "P(E|F) = P(E ∩ F) / P(F), P(F) ≠ 0"
+                ],
+                "explanation": [
+                  "Conditional probability is the probability of event E occurring given that event F has already occurred.",
+                  "It is defined as the ratio of the probability of the intersection of E and F to the probability of F."
+                ]
+              },
+              {
+                "title": "Multiplication Theorem on Probability",
+                "formulas": [
+                  "P(E ∩ F) = P(E) × P(F|E)"
+                ],
+                "explanation": [
+                  "The probability of two events E and F occurring together is the product of the probability of E and the conditional probability of F given E."
+                ]
+              },
+              {
+                "title": "Independent Events",
+                "formulas": [
+                  "P(E ∩ F) = P(E) × P(F)"
+                ],
+                "explanation": [
+                  "Two events E and F are independent if the occurrence of one does not affect the occurrence of the other.",
+                  "If E and F are independent, then P(F|E) = P(F) and P(E|F) = P(E)."
+                ]
+              },
+              {
+                "title": "Bayes' Theorem",
+                "formulas": [
+                  "P(Ei|A) = [P(Ei) × P(A|Ei)] / Σ[P(Ej) × P(A|Ej)]"
+                ],
+                "explanation": [
+                  "Bayes' theorem is used to find the probability of an event Ei given that another event A has occurred.",
+                  "It relates conditional probabilities with prior probabilities and likelihood."
+                ]
+              },
+              {
+                "title": "Random Variable",
+                "formulas": [],
+                "explanation": [
+                  "A random variable is a real-valued function that assigns numerical values to outcomes of a random experiment.",
+                  "Random variables can be discrete or continuous."
+                ]
+              },
+              {
+                "title": "Mean and Variance of Random Variable",
+                "formulas": [
+                  "Mean: μ = Σ[xi × P(xi)]",
+                  "Variance: Var(X) = Σ[(xi - μ)² × P(xi)]"
+                ],
+                "explanation": [
+                  "The mean (or expected value) is the weighted average of all possible values of a random variable.",
+                  "The variance measures the spread of the values around the mean."
+                ]
+              },
+              {
+                "title": "Bernoulli Trials",
+                "formulas": [],
+                "explanation": [
+                  "A Bernoulli trial is a random experiment with exactly two outcomes: success and failure.",
+                  "The probability of success is constant for each trial, and trials are independent."
+                ]
+              },
+              {
+                "title": "Binomial Distribution",
+                "formulas": [
+                  "P(X = r) = C(n, r) × p^r × (1-p)^(n-r)"
+                ],
+                "explanation": [
+                  "The binomial distribution gives the probability of exactly r successes in n independent Bernoulli trials.",
+                  "Here, p is the probability of success and (1-p) is the probability of failure."
+                ]
+              }
+            ]
+          }                                                                                                 
+        ]
+      }
+    ]
+  }
+}
