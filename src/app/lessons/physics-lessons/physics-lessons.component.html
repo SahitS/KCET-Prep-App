@@ -1,31 +1,72 @@
 <div class="lessons-container">
     <!-- Year Selection -->
-    <div class="year-selection">
+    <div class="year-selection" *ngIf="!selectedYear">
       <h2>Select a Year</h2>
-      <button *ngFor="let year of years" (click)="onYearSelect(year)" class="year-btn">
-        {{ year }}
-      </button>
+      <div class="years-grid">
+        <button
+          *ngFor="let year of years"
+          class="year-btn"
+          (click)="onYearSelect(year)"
+        >
+          {{ year }}
+        </button>
+      </div>
     </div>
   
     <!-- Chapter Listing -->
-    <div class="chapter-list" *ngIf="selectedYear">
+    <div class="chapter-list" *ngIf="selectedYear && !showFlashcards">
       <h2>{{ selectedYear }} Chapters</h2>
-      <ul>
-        <li *ngFor="let chapter of chapters" (click)="onChapterSelect(chapter)" class="chapter-item">
+      <div class="chapters-grid">
+        <div
+          *ngFor="let chapter of chapters"
+          class="chapter-card"
+          (click)="onChapterSelect(chapter)"
+        >
           {{ chapter.name }}
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   
-    <!-- Flashcard Viewer -->
-    <div class="flashcard-viewer" *ngIf="selectedChapter">
-      <h3>{{ selectedChapter.name }}</h3>
-      <div class="flashcard" *ngFor="let flashcard of flashcards">
-        <h4>{{ flashcard.title }}</h4>
-        <p *ngFor="let explanation of flashcard.explanation">{{ explanation }}</p>
+    <!-- Flashcard Modal -->
+    <div class="flashcard-overlay" *ngIf="showFlashcards">
+      <div class="flashcard">
+        <button class="close-btn" (click)="closeFlashcards()">×</button>
+        <h3>{{ flashcards[currentFlashcardIndex]?.title }}</h3>
+        <p *ngFor="let explanation of flashcards[currentFlashcardIndex]?.explanation">
+          {{ explanation }}
+        </p>
         <ul>
-          <li *ngFor="let formula of flashcard.formulas">{{ formula }}</li>
+          <li *ngFor="let formula of flashcards[currentFlashcardIndex]?.formulas">
+            {{ formula }}
+          </li>
         </ul>
+        <!-- ASK AI Button -->
+        <button class="ask-ai-btn" (click)="openChatModal()">ASK AI</button>
+        <div class="flashcard-nav">
+          <button (click)="prevFlashcard()" [disabled]="currentFlashcardIndex === 0">
+            Previous
+          </button>
+          <button
+            (click)="nextFlashcard()"
+            [disabled]="currentFlashcardIndex === flashcards.length - 1"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Chat Modal for ASK AI -->
+    <div class="chat-modal" *ngIf="showChatModal">
+      <div class="chat-content">
+        <button class="close-btn" (click)="closeChatModal()">×</button>
+        <h3>Ask AI</h3>
+        <textarea [(ngModel)]="userQuestion" placeholder="Ask a question..."></textarea>
+        <button (click)="askAI()">Submit</button>
+        <div *ngIf="aiResponse">
+          <h4>AI Response:</h4>
+          <p>{{ aiResponse }}</p>
+        </div>
       </div>
     </div>
   </div>
