@@ -1,0 +1,105 @@
+$background-light: #f9f9f9;
+$black: #000000;
+$yellow: #FFD700;
+$white: #FFFFFF;
+$text-black: #000000;
+$dark-gray: #444;
+$gray-light: #e0e0e0;
+
+
+.lessons-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: $background-light;
+
+  .year-selection {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: $dark-gray;
+    }
+
+    .year-btn {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: $yellow;
+      color: $text-black;
+      border: 1px solid $gray-light;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $dark-gray;
+        color: $white;
+      }
+    }
+  }
+
+  .chapter-list {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: $dark-gray;
+    }
+
+    .chapter-item {
+      list-style: none;
+      margin: 5px 0;
+      padding: 10px;
+      background-color: $white;
+      border: 1px solid $gray-light;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+
+      &:hover {
+        background-color: $yellow;
+        border-color: $dark-gray;
+      }
+    }
+  }
+
+  .flashcard-viewer {
+    h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: $black;
+    }
+
+    .flashcard {
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: $white;
+      border: 1px solid $gray-light;
+      border-radius: 4px;
+
+      h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: $dark-gray;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 5px 0;
+        color: $black;
+      }
+
+      ul {
+        padding-left: 20px;
+        li {
+          font-size: 16px;
+          list-style-type: disc;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+}

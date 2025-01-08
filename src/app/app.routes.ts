@@ -14,6 +14,9 @@ import { ShowResultComponent } from './practice/show-result/show-result.componen
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudyPlanComponent } from './practice/study-plan/study-plan.component';
+import { MathLessonsComponent } from './lessons/math-lessons/math-lessons.component';
+import { ChemistryLessonsComponent } from './lessons/chemistry-lessons/chemistry-lessons.component';
+import { PhysicsLessonsComponent } from './lessons/physics-lessons/physics-lessons.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +33,9 @@ export const routes: Routes = [
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
   { path: 'study-plan', component: StudyPlanComponent, canActivate: [AuthGuard] },
   { path: 'results', component: ShowResultComponent },
+  { path: 'math-lessons', component: MathLessonsComponent},
+  { path: 'chemistry-lessons', component: ChemistryLessonsComponent},
+  { path: 'physics-lessons', component: PhysicsLessonsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];

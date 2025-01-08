@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
 
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 @Component({
+  imports: [RouterModule],
   selector: 'app-lessons',
-  standalone: true,
-  imports: [],
+  standalone: true, 
   templateUrl: './lessons.component.html',
-  styleUrl: './lessons.component.scss'
+  styleUrls: ['./lessons.component.scss']
 })
 export class LessonsComponent {
 

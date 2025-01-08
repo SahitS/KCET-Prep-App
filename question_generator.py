@@ -23,8 +23,10 @@ RETRY_DELAY = 2  # seconds
 # Define the function to generate questions
 def generate_questions(formula):
     prompt = f"""
-    Based on the formula(s) provided: "{formula}", generate 20-25 KCET-level multiple-choice questions. 
-    Ensure that the questions are clear, accurate, and relevant to the topic covered by the formula. 
+    Based on the formula(s) provided: "{formula}", generate all types of KCET-level multiple-choice questions(minimum:10, 
+    maximum: depending upon the number of formulas and topics covered, i want you to generate all the types of possible questions)
+    (KCET is Karnataka Common Entrance Test for engineering and Medical, and this syllabus is purely based on 
+    class 11 and class 12 NCERT). Ensure that the questions are clear, accurate, and relevant to the topic covered by the formula. 
     Each question must have four options and indicate the correct answer.
     """
     for attempt in range(MAX_RETRIES):
