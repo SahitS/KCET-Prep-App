@@ -692,8 +692,6 @@
             ]
           },
           {
-            "chapters": [
-              {
                 "name": "Introduction to Three Dimensional Geometry",
                 "flashcards": [
                   {
@@ -767,9 +765,7 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
+              },
           {
             "name": "Limits and Derivatives",
             "flashcards": [
@@ -856,8 +852,6 @@
             ]
           },
           {
-            "chapters": [
-              {
                 "name": "Mathematical Reasoning",
                 "flashcards": [
                   {
@@ -931,9 +925,7 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
+              },
           {
             "name": "Statistics",
             "flashcards": [
@@ -1012,8 +1004,6 @@
             ]
           },
           {
-            "chapters": [
-              {
                 "name": "Probability",
                 "flashcards": [
                   {
@@ -1090,9 +1080,7 @@
                     ]
                   }
                 ]
-              }
-            ]
-          }                    
+              }                    
         ]
       },
       {
@@ -1252,21 +1240,6 @@
                   "For example, sin⁻¹(x) + cos⁻¹(x) always equals π/2, showing their complementary nature.",
                   "Other formulas express double angles and transformations in terms of inverse functions."
                 ]
-              }
-            ]
-          },
-          {
-            "name": "Chapter 3",
-            "flashcards": [
-              {
-                "title": "First Flashcard of chapter 3",
-                "formulas": ["formula1", "formula2", "formula3"],
-                "explanation": ["exp of formula1", "exp of formula2", "exp of formula3"]
-              },
-              {
-                "title": "Second Flashcard of chapter 3",
-                "formulas": ["formula1", "formula2"],
-                "explanation": ["exp of formula1", "exp of formula2"]
               }
             ]
           },
@@ -1459,7 +1432,7 @@
             ]
           },
           {
-            "chapter": "Continuity and Differentiability",
+            "name": "Continuity and Differentiability",
             "flashcards": [
                 {
                     "title": "Continuity",
@@ -1569,7 +1542,7 @@
             ]
         },
         {
-            "chapter": "Application of Derivatives",
+            "name": "Application of Derivatives",
             "flashcards": [
               {
                 "title": "Rate of Change and Increasing/Decreasing Functions",
@@ -1626,7 +1599,7 @@
             ]
           },
           {
-            "chapter": "Integrals",
+            "name": "Integrals",
             "flashcards": [
               {
                 "title": "Introduction to Integration",
@@ -1721,7 +1694,7 @@
             ]
           },
           {
-            "chapter": "Application of the Integrals",
+            "name": "Application of the Integrals",
             "flashcards": [
               {
                 "title": "Area Under Simple Curves",
@@ -1773,7 +1746,7 @@
             ]
           },
           {
-            "chapter": "Differential Equations",
+            "name": "Differential Equations",
             "flashcards": [
               {
                 "title": "Basic Concepts of Differential Equations",
@@ -1835,7 +1808,7 @@
             ]
           },
           {
-            "chapter": "Vector Algebra",
+            "name": "Vector Algebra",
             "flashcards": [
               {
                 "title": "Basic Concepts of Vectors",
@@ -1922,7 +1895,7 @@
             ]
           },
           {
-            "chapter": "Introduction to Three Dimensional Geometry",
+            "name": "Introduction to Three Dimensional Geometry",
             "flashcards": [
               {
                 "title": "Distance Formula",
@@ -1990,7 +1963,7 @@
             ]
           },
           {
-            "chapter": "Linear Programming",
+            "name": "Linear Programming",
             "flashcards": [
               {
                 "title": "Linear Programming Problems",
@@ -2062,7 +2035,7 @@
             ]
           },
           {
-            "chapter": "Probability",
+            "name": "Probability",
             "flashcards": [
               {
                 "title": "Conditional Probability",
