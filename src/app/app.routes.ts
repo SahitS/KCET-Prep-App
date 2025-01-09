@@ -36,6 +36,6 @@ export const routes: Routes = [
   { path: 'math-lessons', component: MathLessonsComponent},
   { path: 'chemistry-lessons', component: ChemistryLessonsComponent},
   { path: 'physics-lessons', component: PhysicsLessonsComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: 'home' },
 ];

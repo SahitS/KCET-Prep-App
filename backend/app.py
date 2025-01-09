@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
 from pymongo import MongoClient
+import google.generativeai as genai 
 
 app = Flask(__name__)
 CORS(app) 
@@ -11,6 +12,16 @@ CORS(app)
 client = MongoClient('mongodb://localhost:27017/')
 db = client['kcetprep']
 users_collection = db['users'] 
+
+# Load and configure the API key
+API_KEY = "AIzaSyCKMBhgSf5XaxZ9hBOsr5GM41kEZm3PmLU"  # Replace with your API key
+if not API_KEY:
+    raise ValueError("Gemini API key is not set. Please check your configuration.")
+
+genai.configure(api_key=API_KEY)
+
+#instance of the GenerativeModel
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Load question datasets
 math_questions = pd.read_csv("C:/Users/sahits/Downloads/Math_KCET_Questions_Standardized.csv")
@@ -304,10 +315,31 @@ def generate_study_plan():
     except Exception as e:
         print(f"Error: {str(e)}")
         return jsonify({"error": str(e)}), 500
+    
 
+@app.route('/ask-ai', methods=['POST'])
+def ask_ai():
+    try:
+    
+        data = request.json
+        print("Debug: Request data:", data)
 
+        prompt = data.get('prompt', '')
+        max_tokens = data.get('max_tokens', 500)
 
+        if not prompt:
+            return jsonify({"error": "Prompt is required"}), 400
 
+        # Call the Gemini API using the model's generate_content method
+        response = model.generate_content([prompt])
+
+        # Log the response from Gemini API
+        print("Debug: Response from Gemini API:", response)
+
+        return jsonify({"response": response.text})  
+    except Exception as e:
+        print("Debug: Error occurred:", e)
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':

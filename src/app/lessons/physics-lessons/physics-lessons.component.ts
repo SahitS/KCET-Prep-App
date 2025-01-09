@@ -27,11 +27,6 @@ export class PhysicsLessonsComponent implements OnInit {
   aiResponse = '';
   currentFlashcard: any;
 
-  // Gemini API Configuration
-  private readonly GEMINI_API_KEY = 'AIzaSyCKMBhgSf5XaxZ9hBOsr5GM41kEZm3PmLU';
-  private readonly GEMINI_ENDPOINT =
-    'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText';
-
   ngOnInit() {
     this.years = PhysicsData.Physics.years.map((year) => year.year);
   }
@@ -85,14 +80,15 @@ export class PhysicsLessonsComponent implements OnInit {
       return;
     }
   
-    // Constructing the context for debugging
+    // Constructing the context
     const context = `
       Title: ${this.currentFlashcard?.title}
       Explanation: ${this.currentFlashcard?.explanation.join(', ')}
       Formulas: ${this.currentFlashcard?.formulas.join(', ')}
     `;
+    console.log('Debug: Constructed context:', context);
   
-    // Constructing the prompt for the API
+    // Constructing the prompt
     const prompt = `
       Based on the flashcard content below, answer the following question only if it is relevant to the topic:
       Flashcard Content:
@@ -102,46 +98,41 @@ export class PhysicsLessonsComponent implements OnInit {
   
       Your Answer:
     `;
-  
-    // Log the context and prompt for debugging
-    console.log('Debug: Context being sent to Gemini API:', context);
-    console.log('Debug: Prompt being sent to Gemini API:', prompt);
+    console.log('Debug: Constructed prompt:', prompt);
   
     try {
-      // Construct the API payload
+      // Preparing the request payload
       const requestBody = {
-        prompt: { text: prompt },
-        maxOutputTokens: 5000, // Adjust output token limit as needed
+        prompt: prompt,
+        max_tokens: 500,
       };
+      console.log('Debug: Request payload being sent to Flask backend:', requestBody);
   
-      // Log the API request payload
-      console.log('Debug: Request body being sent to Gemini API:', requestBody);
-  
-      // Make the API call
-      const response = await fetch(this.GEMINI_ENDPOINT, {
+      // Making the API call
+      const response = await fetch('http://127.0.0.1:5000/ask-ai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${this.GEMINI_API_KEY}`,
         },
         body: JSON.stringify(requestBody),
       });
   
-      // Log the raw API response
-      console.log('Debug: Raw response from Gemini API:', response);
+      // Checking the raw response
+      console.log('Debug: Raw response from Flask backend:', response);
   
-      // Parse the response
+      // Parsing the response
       const data = await response.json();
+      console.log('Debug: Parsed response from Flask backend:', data);
   
-      // Log the parsed API response
-      console.log('Debug: Parsed response from Gemini API:', data);
-  
-      // Extract the AI response or set a fallback message
-      this.aiResponse = data.candidates?.[0]?.output || 'No valid response.';
+      if (data.error) {
+        console.error('Error from Flask API:', data.error);
+        this.aiResponse = 'Failed to get a response from the AI.';
+      } else {
+        this.aiResponse = data.response || 'No valid response.';
+      }
     } catch (error) {
-      // Log any errors that occur during the API call
-      console.error('Error calling Gemini API:', error);
-      this.aiResponse = 'Failed to get a response from the AI.';
+      console.error('Error calling Flask backend:', error);
+      this.aiResponse = 'Failed to connect to the server.';
     }
   }  
 }

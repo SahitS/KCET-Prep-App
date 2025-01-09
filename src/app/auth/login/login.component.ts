@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true, // Mark this component as standalone
-  imports: [FormsModule], 
+  imports: [FormsModule, RouterModule], 
   templateUrl: './login.component.html',
   styleUrl:'./login.component.scss'
 })
