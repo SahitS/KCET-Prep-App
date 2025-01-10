@@ -31,7 +31,6 @@ export class StudyPlanComponent implements OnInit {
     stressHandling: false, // Default stress handling off
   };
   studyPlan: any[] = [];
-  dailyHours = 0;
   daysLeft = 0;
   isLoading = false;
 
@@ -60,9 +59,10 @@ export class StudyPlanComponent implements OnInit {
     this.authService.generateStudyPlan(requestData).subscribe({
       next: (data) => {
         this.studyPlan = data.studyPlan;
-        this.dailyHours = data.dailyHours;
         this.daysLeft = data.daysLeft;
         this.isLoading = false;
+
+        console.log('Generated study plan:', this.studyPlan); // Debug log
       },
       error: (err) => {
         console.error('Error generating study plan:', err);
@@ -71,16 +71,16 @@ export class StudyPlanComponent implements OnInit {
     });
   }
 
-  selectDay(day: any) {
+  selectDay(day: any): void {
     this.selectedDay = day;
     this.selectedSubject = null;
   }
 
-  selectSubject(subject: any) {
+  selectSubject(subject: any): void {
     this.selectedSubject = subject;
   }
 
-  resetView() {
+  resetView(): void {
     this.selectedDay = null;
     this.selectedSubject = null;
   }
@@ -88,16 +88,18 @@ export class StudyPlanComponent implements OnInit {
   getTotalHours(subjects: any[]): number {
     if (!subjects || !Array.isArray(subjects)) return 0;
     return subjects.reduce((sum, subj) => {
-      const topicSum = subj.topics.reduce((tSum: number, topic: any) => {
-        return tSum + topic.subtopics.reduce((sSum: number, sub: any) => sSum + sub.hours, 0);
-      }, 0);
-      return sum + topicSum;
+      const subtopicSum = subj.subtopics.reduce((tSum: number, sub: any) => tSum + sub.hours, 0);
+      return sum + subtopicSum;
     }, 0);
   }
 
-  getTopicTotalHours(topics: any[]): number {
-    return topics.reduce((sum, topic) => {
-      return sum + topic.subtopics.reduce((tSum: number, sub: any) => tSum + sub.hours, 0);
+  getSubjectHours(day: any): number {
+    return day.subjects.reduce((sum: number, subj: any) => {
+      return sum + subj.subtopics.reduce((subSum: number, subtopic: any) => subSum + subtopic.hours, 0);
     }, 0);
+  }
+
+  markSubtopicComplete(subtopic: any): void {
+    subtopic.completed = !subtopic.completed; // Toggle completion state
   }
 }

@@ -1,0 +1,177 @@
+{
+    "Math": {
+        "Algebra": [
+            "Linear Equations",
+            "Logarithmic Equations",
+            "Quadratic Equations",
+            "Determinants",
+            "Exponential Equations"
+        ],
+        "Trigonometry": [
+            "Basic Trigonometric Ratios"
+        ],
+        "Geometry": [
+            "Area Calculation",
+            "Perimeter Calculation",
+            "Pythagorean Theorem",
+            "Area of Triangle",
+            "Circumference",
+            "Area of Sector",
+            "Volume Calculation",
+            "Area of Circle",
+            "Sector Area",
+            "Surface Area Calculation",
+            "Circumference Calculation"
+        ],
+        "Probability": [
+            "Basic Probability"
+        ],
+        "Sequences": [
+            "Arithmetic Series",
+            "Arithmetic Sequences",
+            "Geometric Series"
+        ],
+        "Limits": [
+            "Trigonometric Limits"
+        ],
+        "Calculus": [
+            "Derivatives",
+            "Integration",
+            "Limits",
+            "Definite Integrals",
+            "Trigonometric Derivatives",
+            "Second Derivatives",
+            "Higher Order Derivatives"
+        ],
+        "Integration": [
+            "Definite Integrals"
+        ]
+    },
+    "Chemistry": {
+        "Basic Concepts and Atomic Structure": [
+            "Molarity Calculation",
+            "Electronic Configuration"
+        ],
+        "Classification and Bonding": [
+            "Atomic Number",
+            "Periodic Properties"
+        ],
+        "Acids and Bases": [
+            "pH Calculation"
+        ],
+        "Organic Chemistry": [
+            "Esterification",
+            "Hydrocarbons",
+            "Alcohols and Phenols",
+            "Addition Reactions",
+            "Aromatic Hydrocarbons",
+            "Oxidation Reactions",
+            "Electrophilic Substitution",
+            "Free Radical Substitution",
+            "Nitration",
+            "Structural Formulas",
+            "Halogenation",
+            "Hydrogenation"
+        ],
+        "Thermodynamics": [
+            "Enthalpy",
+            "Entropy"
+        ],
+        "Redox Reactions": [
+            "Oxidation States"
+        ],
+        "Inorganic Chemistry": [
+            "Coordination Compounds",
+            "Periodic Trends",
+            "Crystal Structures",
+            "Noble Gases",
+            "Lattice Energy",
+            "Molar Mass Calculations",
+            "Molecular Formulas",
+            "Melting Points"
+        ]
+    },
+    "Physics": {
+        "Mechanics": [
+            "Kinematics",
+            "Work, Energy, and Power",
+            "Gravitation",
+            "Free Fall",
+            "Kinetic Energy",
+            "Gravitational Potential Energy",
+            "Potential Energy",
+            "Friction",
+            "Acceleration",
+            "Projectile Motion",
+            "Momentum",
+            "Work Done",
+            "Newton's Second Law",
+            "Centripetal Force",
+            "Vertical Motion",
+            "Force Calculation",
+            "Circular Motion",
+            "Centripetal Acceleration"
+        ],
+        "Properties of Matter": [
+            "Motion of Rigid Body",
+            "Motion of Particles",
+            "Pressure",
+            "Elasticity",
+            "Viscosity",
+            "Buoyancy",
+            "Density",
+            "Boyle's Law",
+            "Elastic Potential Energy",
+            "Pressure Calculation",
+            "Force Calculation"
+        ],
+        "Gravitation": [
+            "Newton's Law of Gravitation"
+        ],
+        "Oscillations and Waves": [
+            "Simple Harmonic Motion",
+            "Wave Motion",
+            "Wave Speed",
+            "Sound Waves",
+            "Angular Motion"
+        ],
+        "Electrostatics": [
+            "Electric Potential",
+            "Capacitance",
+            "Electric Field",
+            "Potential Difference",
+            "Electric Force",
+            "Energy Storage",
+            "Energy Storage in Capacitors",
+            "Work Done",
+            "Potential Energy in Fields"
+        ],
+        "Current Electricity": [
+            "Ohm's Law"
+        ],
+        "Optics": [
+            "Ray Optics",
+            "Mirror Formula",
+            "Lens Formula",
+            "Interference",
+            "Diffraction",
+            "Refraction",
+            "Total Internal Reflection",
+            "Reflection"
+        ],
+        "Thermodynamics and Kinetic Theory": [
+            "Thermodynamics",
+            "Thermal Equilibrium",
+            "Charles's Law",
+            "Gas Laws",
+            "Kinetic Theory",
+            "Internal Energy",
+            "Ideal Gas Law",
+            "Root Mean Square Speed",
+            "Work Done",
+            "Pressure-Temperature Relationship",
+            "Boyle's Law",
+            "Volume-Temperature Relationship"
+        ]
+    }
+}

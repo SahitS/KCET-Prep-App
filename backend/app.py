@@ -4,6 +4,9 @@ from flask_cors import CORS
 import pandas as pd
 from pymongo import MongoClient
 import google.generativeai as genai 
+import json
+import os
+
 
 app = Flask(__name__)
 CORS(app) 
@@ -27,6 +30,18 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 math_questions = pd.read_csv("C:/Users/sahits/Downloads/Math_KCET_Questions_Standardized.csv")
 chemistry_questions = pd.read_csv("C:/Users/sahits/Downloads/Chemistry_KCET_Questions_Standardized.csv")
 physics_questions = pd.read_csv("C:/Users/sahits/Downloads/Physics_KCET_Questions_Standardized.csv")
+
+# Load question hierarchy JSON during initialization
+try:
+    # Calculate the absolute path to the JSON file
+    hierarchy_path = os.path.abspath("C:/Users/sahits/Downloads/final_sorted_hierarchy.json")
+    print(f"Loading hierarchy from: {hierarchy_path}")  # Debug log
+    with open(hierarchy_path, 'r') as f:
+        hierarchy_data = json.load(f)
+        print("Hierarchy data successfully loaded.")
+except Exception as e:
+    print(f"Error loading hierarchy file: {e}")  # Print error for debugging
+    hierarchy_data = None  # Ensure the app doesn't crash if loading fails
 
 @app.route('/')
 def index():
@@ -174,13 +189,15 @@ def generate_custom_practice():
         print('Error in /generate_custom_practice:', str(e))  # Debug log
         return jsonify({"error": str(e)}), 500
 
-# Define public holidays (example dates)
+
+# Define public holidays
 PUBLIC_HOLIDAYS = ["2024-01-01", "2024-01-15", "2024-03-08"]
 @app.route('/generate-study-plan', methods=['POST'])
 def generate_study_plan():
-    from datetime import datetime as dt, timedelta
-
     try:
+        if not hierarchy_data:
+            raise Exception("Hierarchy data is not loaded. Please check the JSON file path.")
+
         # Parse input
         data = request.json
         exam_date = dt.fromisoformat(data['examDate'].replace('Z', ''))
@@ -198,81 +215,58 @@ def generate_study_plan():
         answers = user.get("answers", {})
 
         # Get availability and stress preferences
-        weekday_hours = data.get("weekdayHours", 4)  # Default 4 hours/day
-        weekend_hours = data.get("weekendHours", 6)  # Default 6 hours/day
-        stress_mode = data.get("stressMode", False)  # Default to regular schedule
+        weekday_hours = data.get("weekdayHours", 4)
+        weekend_hours = data.get("weekendHours", 6)
+        stress_mode = data.get("stressMode", False)
 
-        # Ensure the exam date is in the future
         today = dt.now()
         if exam_date <= today:
             return jsonify({"error": "Exam date must be in the future."}), 400
 
-        # Exclude the last 1.5 weeks before the exam date
         study_end_date = exam_date - timedelta(days=10)
         total_study_days = (study_end_date - today).days
 
         if total_study_days <= 0:
             return jsonify({"error": "Not enough time to prepare for the exam."}), 400
 
-        # Helper function to calculate revision times for subtopics based on accuracy
         def calculate_required_time(subject):
-            subject_data = {}
-            for question in quiz.get(subject, []):
-                topic, subtopic = question["Topic"], question["Subtopic"]
-                answer = next((a for a in answers.get(f"{subject}Answers", [])
-                               if a["questionIndex"] == question["questionIndex"]), None)
-                correct = 1 if answer and answer["isCorrect"] else 0
+            if subject.title() not in hierarchy_data:
+                raise Exception(f"Subject {subject.title()} not found in hierarchy data.")
 
-                if topic not in subject_data:
-                    subject_data[topic] = {"subtopics": {}}
+            subject_data = []
+            subject_hierarchy = hierarchy_data[subject.title()]
 
-                if subtopic not in subject_data[topic]["subtopics"]:
-                    subject_data[topic]["subtopics"][subtopic] = {
-                        "total": 0, "correct": 0, "requiredTime": 0
-                    }
-
-                subtopic_stats = subject_data[topic]["subtopics"][subtopic]
-                subtopic_stats["total"] += 1
-                subtopic_stats["correct"] += correct
-
-            # Assign time based on accuracy
-            for topic in subject_data.values():
-                for subtopic, stats in topic["subtopics"].items():
-                    accuracy = stats["correct"] / stats["total"] if stats["total"] > 0 else 0
-                    stats["requiredTime"] = 2.5 if accuracy < 0.6 else (1.5 if accuracy < 0.85 else 1)
+            for topic, subtopics in subject_hierarchy.items():
+                for subtopic in subtopics:
+                    answer = next((a for a in answers.get(f"{subject}Answers", [])
+                                   if a.get("subtopic") == subtopic), None)
+                    if answer:
+                        accuracy = answer["correct"] / answer["total"] if answer["total"] > 0 else 0
+                        time = 2.5 if accuracy < 0.6 else (1.5 if accuracy < 0.85 else 1)
+                        subject_data.append({"subject": subject.title(), "topic": topic, "subtopic": subtopic, "time": round(time, 1)})
+                    else:
+                        subject_data.append({"subject": subject.title(), "topic": topic, "subtopic": subtopic, "time": 1.5})
 
             return subject_data
 
-        # Calculate performance for each subject
         subjects = ["math", "physics", "chemistry"]
-        performance = {subj: calculate_required_time(subj) for subj in subjects}
-
-        # Collect all topics and their required times
         all_topics = []
-        for subject, topics in performance.items():
-            for topic_name, topic in topics.items():
-                for subtopic_name, stats in topic["subtopics"].items():
-                    all_topics.append({
-                        "subject": subject.title(),
-                        "topic": topic_name,
-                        "subtopic": subtopic_name,
-                        "time": stats["requiredTime"]
-                    })
+        for subject in subjects:
+            all_topics.extend(calculate_required_time(subject))
 
         total_hours = sum(t["time"] for t in all_topics)
 
-        # Study plan generation
         study_plan = []
         current_date = today
+        day_counter = 1
         while current_date <= study_end_date:
             is_weekend = current_date.weekday() in [5, 6]
             available_hours = weekend_hours if is_weekend else weekday_hours
 
-            # Adjust hours if stress handling mode is active
             if stress_mode:
-                available_hours *= 0.75  # Reduce study load by 25%
+                available_hours *= 0.75
 
-            day_plan = {"date": current_date.strftime("%Y-%m-%d"), "subjects": [], "totalHours": 0}
+            day_plan = {"day": f"Day {day_counter}", "subjects": [], "totalHours": 0}
             day_hours = 0
             subjects_map = {}
 
@@ -286,22 +280,22 @@ def generate_study_plan():
 
                 subject_name = topic["subject"]
                 if subject_name not in subjects_map:
-                    subjects_map[subject_name] = {"subject": subject_name, "topics": []}
+                    subjects_map[subject_name] = {"subject": subject_name, "subtopics": []}
 
-                subjects_map[subject_name]["topics"].append({
-                    "topic": topic["topic"],
-                    "subtopics": [{"subtopic": topic["subtopic"], "hours": topic["time"]}]
+                subjects_map[subject_name]["subtopics"].append({
+                    "subtopic": topic["subtopic"],
+                    "hours": topic["time"],
+                    "completed": False
                 })
 
-            # Mock tests on weekends or if close to exam
             if is_weekend or (exam_date - current_date).days <= 5:
                 day_plan["mockTest"] = "Mock Test Scheduled"
 
             day_plan["subjects"] = list(subjects_map.values())
             study_plan.append(day_plan)
             current_date += timedelta(days=1)
+            day_counter += 1
 
-        # Prepare and return the response
         response = {
             "studyPlan": study_plan,
             "totalStudyHours": total_hours,
@@ -315,7 +309,8 @@ def generate_study_plan():
     except Exception as e:
         print(f"Error: {str(e)}")
         return jsonify({"error": str(e)}), 500
-    
+
+
 
 @app.route('/ask-ai', methods=['POST'])
 def ask_ai():
