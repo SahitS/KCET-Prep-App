@@ -6,6 +6,7 @@ from pymongo import MongoClient
 import google.generativeai as genai 
 import json
 import os
+import random
 
 
 app = Flask(__name__)
@@ -190,8 +191,6 @@ def generate_custom_practice():
         return jsonify({"error": str(e)}), 500
 
 
-# Define public holidays
-PUBLIC_HOLIDAYS = ["2024-01-01", "2024-01-15", "2024-03-08"]
 @app.route('/generate-study-plan', methods=['POST'])
 def generate_study_plan():
     try:
@@ -254,11 +253,20 @@ def generate_study_plan():
         for subject in subjects:
             all_topics.extend(calculate_required_time(subject))
 
-        total_hours = sum(t["time"] for t in all_topics)
+        total_required_hours = sum(t["time"] for t in all_topics)
+        total_available_hours = total_study_days * (weekday_hours * 5 / 7 + weekend_hours * 2 / 7)
+
+        # Check if total hours are sufficient
+        if total_available_hours < total_required_hours:
+            # Prompt user to increase hours or adjust time
+            scale_factor = total_available_hours / total_required_hours
+            for topic in all_topics:
+                topic["time"] = round(topic["time"] * scale_factor, 1)
 
         study_plan = []
         current_date = today
         day_counter = 1
+
         while current_date <= study_end_date:
             is_weekend = current_date.weekday() in [5, 6]
             available_hours = weekend_hours if is_weekend else weekday_hours
@@ -266,39 +274,38 @@ def generate_study_plan():
             if stress_mode:
                 available_hours *= 0.75
 
-            day_plan = {"day": f"Day {day_counter}", "subjects": [], "totalHours": 0}
+            day_plan = {"day": day_counter, "subjects": [], "totalHours": 0}
             day_hours = 0
             subjects_map = {}
+
+            random.shuffle(all_topics)  # Shuffle topics for variety
 
             for topic in list(all_topics):
                 if day_hours + topic["time"] > available_hours:
                     continue
 
                 day_hours += topic["time"]
-                day_plan["totalHours"] += topic["time"]
                 all_topics.remove(topic)
 
                 subject_name = topic["subject"]
                 if subject_name not in subjects_map:
-                    subjects_map[subject_name] = {"subject": subject_name, "subtopics": []}
+                    subjects_map[subject_name] = {"subject": subject_name, "totalHours": 0, "subtopics": []}
 
                 subjects_map[subject_name]["subtopics"].append({
                     "subtopic": topic["subtopic"],
-                    "hours": topic["time"],
-                    "completed": False
+                    "hours": topic["time"]
                 })
-
-            if is_weekend or (exam_date - current_date).days <= 5:
-                day_plan["mockTest"] = "Mock Test Scheduled"
+                subjects_map[subject_name]["totalHours"] += topic["time"]
 
             day_plan["subjects"] = list(subjects_map.values())
+            day_plan["totalHours"] = sum(subj["totalHours"] for subj in day_plan["subjects"])
             study_plan.append(day_plan)
             current_date += timedelta(days=1)
             day_counter += 1
 
         response = {
             "studyPlan": study_plan,
-            "totalStudyHours": total_hours,
+            "totalStudyHours": total_required_hours,
             "daysLeft": total_study_days,
             "weekdayHours": weekday_hours,
             "weekendHours": weekend_hours,

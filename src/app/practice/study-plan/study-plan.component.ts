@@ -26,9 +26,9 @@ import { AuthService } from '../../auth.service';
 export class StudyPlanComponent implements OnInit {
   examDate: Date | null = null;
   preferences = {
-    weekdayHours: 4, // Default weekday hours
-    weekendHours: 6, // Default weekend hours
-    stressHandling: false, // Default stress handling off
+    weekdayHours: 4,
+    weekendHours: 6,
+    stressHandling: false,
   };
   studyPlan: any[] = [];
   daysLeft = 0;
@@ -46,23 +46,30 @@ export class StudyPlanComponent implements OnInit {
       alert('Please select a KCET exam date.');
       return;
     }
-
+  
     this.isLoading = true;
-
+  
     const requestData = {
       examDate: this.examDate,
       weekdayHours: this.preferences.weekdayHours,
       weekendHours: this.preferences.weekendHours,
       stressMode: this.preferences.stressHandling,
     };
-
+  
     this.authService.generateStudyPlan(requestData).subscribe({
       next: (data) => {
+        if (data.error) {
+          // Prompt user to adjust study hours
+          alert(
+            `${data.error}\nRequired Hours: ${data.requiredTotalHours}, Available Hours: ${data.availableTotalHours}\n${data.suggestion}`
+          );
+          this.isLoading = false;
+          return;
+        }
+  
         this.studyPlan = data.studyPlan;
         this.daysLeft = data.daysLeft;
         this.isLoading = false;
-
-        console.log('Generated study plan:', this.studyPlan); // Debug log
       },
       error: (err) => {
         console.error('Error generating study plan:', err);
@@ -70,6 +77,7 @@ export class StudyPlanComponent implements OnInit {
       },
     });
   }
+  
 
   selectDay(day: any): void {
     this.selectedDay = day;
@@ -97,9 +105,5 @@ export class StudyPlanComponent implements OnInit {
     return day.subjects.reduce((sum: number, subj: any) => {
       return sum + subj.subtopics.reduce((subSum: number, subtopic: any) => subSum + subtopic.hours, 0);
     }, 0);
-  }
-
-  markSubtopicComplete(subtopic: any): void {
-    subtopic.completed = !subtopic.completed; // Toggle completion state
   }
 }

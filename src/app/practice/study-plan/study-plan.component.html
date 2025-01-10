@@ -40,7 +40,7 @@
     <!-- Day Level -->
     <div *ngIf="!selectedDay">
       <div *ngFor="let day of studyPlan" class="day-card" (click)="selectDay(day)">
-        <h3>Day {{ day.day }}</h3>
+        <h3>{{ day.day }}</h3>
         <p>Total Hours: {{ day.totalHours }}</p>
       </div>
     </div>
@@ -50,7 +50,7 @@
       <h2>Day {{ selectedDay.day }}</h2>
       <div *ngFor="let subject of selectedDay.subjects" class="subject-card" (click)="selectSubject(subject)">
         <h3>{{ subject.subject }}</h3>
-        <p>Total Hours: {{ subject.totalHours }}</p>
+        <p>Total Hours: {{ getSubjectHours(selectedDay) }}</p>
       </div>
     </div>
 
