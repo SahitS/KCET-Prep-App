@@ -22,7 +22,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
-  {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
   { path: 'lessons', component: LessonsComponent, canActivate: [AuthGuard] },
   { path: 'practice', component: PracticeComponent, canActivate: [AuthGuard] },
   { path: 'progress', component: ProgressComponent, canActivate: [AuthGuard] },
