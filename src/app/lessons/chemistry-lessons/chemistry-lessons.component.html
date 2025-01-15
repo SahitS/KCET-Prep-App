@@ -1,1 +1,74 @@
-<p>chemistry-lessons works!</p>
+<div class="lessons-container">
+    <!-- Topic Selection -->
+    <div class="topic-selection" *ngIf="!selectedTopic">
+      <h2>Select a Topic</h2>
+      <div class="topics-grid">
+        <button
+          *ngFor="let topic of topics"
+          class="topic-btn"
+          (click)="onTopicSelect(topic)"
+        >
+          {{ topic }}
+        </button>
+      </div>
+    </div>
+  
+    <!-- Chapter Listing -->
+    <div class="chapter-list" *ngIf="selectedTopic && !showFlashcards">
+      <h2>{{ selectedTopic }} Chapters</h2>
+      <div class="chapters-grid">
+        <div
+          *ngFor="let chapter of chapters"
+          class="chapter-card"
+          (click)="onChapterSelect(chapter)"
+        >
+          <h3>{{ chapter.name }}</h3>
+          <p>Click to explore the content</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Flashcard Modal -->
+    <div class="flashcard-overlay" *ngIf="showFlashcards">
+      <div class="flashcard">
+        <button class="close-btn" (click)="closeFlashcards()">×</button>
+        <h3>{{ flashcards[currentFlashcardIndex]?.title }}</h3>
+        <p *ngFor="let explanation of flashcards[currentFlashcardIndex]?.explanation">
+          {{ explanation }}
+        </p>
+        <ul>
+          <li *ngFor="let formula of flashcards[currentFlashcardIndex]?.formulas">
+            {{ formula }}
+          </li>
+        </ul>
+        <!-- ASK AI Button -->
+        <button class="ask-ai-btn" (click)="openChatModal()">ASK AI</button>
+        <div class="flashcard-nav">
+          <button (click)="prevFlashcard()" [disabled]="currentFlashcardIndex === 0">
+            Previous
+          </button>
+          <button
+            (click)="nextFlashcard()"
+            [disabled]="currentFlashcardIndex === flashcards.length - 1"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Chat Modal for ASK AI -->
+    <div class="chat-modal" *ngIf="showChatModal">
+      <div class="chat-content">
+        <button class="close-btn" (click)="closeChatModal()">×</button>
+        <h3>Ask AI</h3>
+        <textarea [(ngModel)]="userQuestion" placeholder="Ask a question..."></textarea>
+        <button class="submit-btn" (click)="askAI()">Submit</button>
+        <div class="ai-response" *ngIf="aiResponse">
+          <h4>AI Response:</h4>
+          <p>{{ aiResponse }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

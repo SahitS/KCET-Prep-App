@@ -54,6 +54,45 @@ $border-color: #3a3a3a;
     }
   }
 
+  /* Topic Selection */
+.topic-selection {
+  h2 {
+    font-size: 2rem;
+    color: $accent-primary; // Use your primary accent color
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .topic-btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $text-primary; // Text color
+      background-color: $card-background; // Button background
+      border: 2px solid $accent-primary; // Accent border
+      border-radius: 8px; // Rounded corners
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background-color: $accent-primary; // Hover background
+        color: $background-dark; // Hover text color
+        transform: translateY(-5px); // Lift effect
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); // Hover shadow
+      }
+    }
+  }
+}
+
+
  /* Chapter List */
 .chapter-list {
   h2 {

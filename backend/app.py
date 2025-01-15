@@ -35,7 +35,7 @@ physics_questions = pd.read_csv("C:/Users/sahits/Downloads/Physics_KCET_Question
 # Load question hierarchy JSON during initialization
 try:
     # Calculate the absolute path to the JSON file
-    hierarchy_path = os.path.abspath("../../../final_sorted_hierarchy.json")
+    hierarchy_path = os.path.abspath("C:/Users/sahits/Downloads/final_sorted_hierarchy.json")
     print(f"Loading hierarchy from: {hierarchy_path}")  # Debug log
     with open(hierarchy_path, 'r') as f:
         hierarchy_data = json.load(f)
@@ -363,7 +363,7 @@ def ask_ai():
         return jsonify({"response": response.text})  
     except Exception as e:
         print("Debug: Error occurred:", e)
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e) }), 500
 
 
 if __name__ == '__main__':
