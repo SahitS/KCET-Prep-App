@@ -1,70 +1,64 @@
 <div class="section-container container">
-  <div class="row vh-100 align-items-center justify-content-center">
-    <!-- Outer Box -->
-    <div class="content-box col-lg-10 p-5">
-      <div class="row">
-        <!-- Left Column (Signup Form) -->
-        <div class="col-lg-6 p-5 d-flex flex-column justify-content-center">
-          <div class="mx-auto" style="max-width: 400px;">
-            <img src="assets/Learnify.png" alt="Logo" class="mb-4" width="150">
-            <h2 class="mb-3 text-center">Join PrepSphere Today!</h2>
-            <p class="text-center text-muted mb-4">
-              Sign up to access your personalized KCET preparation journey.
-            </p>
+  <div class="content-box">
+    <div class="row">
+      <!-- Left Column (Signup Form) -->
+      <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+        <div class="mx-auto" style="max-width: 400px;">
+          <h2 class="mb-3 text-center">Join PrepSphere Today!</h2>
+          <p class="text-center text-muted mb-4">
+            Sign up to access your personalized KCET preparation journey.
+          </p>
 
-            <!-- Signup Form -->
-            <form (ngSubmit)="onSignup()">
-              <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  [(ngModel)]="username"
-                  name="username"
-                  class="form-control"
-                  placeholder="Create your username"
-                  required
-                >
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  [(ngModel)]="password"
-                  name="password"
-                  class="form-control"
-                  placeholder="Create a secure password"
-                  required
-                >
-              </div>
-              <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary btn-lg">Start Your KCET Journey</button>
-              </div>
-              <p class="text-center text-muted">OR</p>
-              <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
-              <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
-            </form>
-
-            <p class="mt-4 text-center">
-              Already have an account? <a routerLink="/login" class="text-primary">Log In</a>
-            </p>
-          </div>
+          <!-- Signup Form -->
+          <form (ngSubmit)="onSignup()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                id="username"
+                [(ngModel)]="username"
+                name="username"
+                class="form-control"
+                placeholder="Create your username"
+                required
+              >
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                class="form-control"
+                placeholder="Create a secure password"
+                required
+              >
+            </div>
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-primary btn-lg">Start Your KCET Journey</button>
+            </div>
+            <p class="text-center text-muted">OR</p>
+            <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
+            <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+          </form>
         </div>
+      </div>
 
-        <!-- Right Column (Interactive Section) -->
-        <div class="col-lg-6 d-flex align-items-center justify-content-center">
-          <div class="text-white text-center p-5 interactive-box">
-            <h2>Why PrepSphere?</h2>
-            <p>Join 10,000+ students who have boosted their KCET scores!</p>
-            <ul class="list-unstyled text-white">
-              <li><i class="bi bi-check2-circle"></i> Personalized study plans</li>
-              <li><i class="bi bi-check2-circle"></i> Expert guidance from top educators</li>
-              <li><i class="bi bi-check2-circle"></i> Real-time progress analytics</li>
-              <li><i class="bi bi-check2-circle"></i> Mock exams with instant feedback</li>
-            </ul>
-            <p class="mt-3">Already a user? <a routerLink="/login" class="btn btn-outline-warning">Login Now</a></p>
-          </div>
+      <!-- Right Column (Interactive Section) -->
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="interactive-box">
+          <h2>Why PrepSphere?</h2>
+          <p>Join 10,000+ students who have boosted their KCET scores!</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2-circle"></i> Personalized study plans</li>
+            <li><i class="bi bi-check2-circle"></i> Expert guidance from top educators</li>
+            <li><i class="bi bi-check2-circle"></i> Real-time progress analytics</li>
+            <li><i class="bi bi-check2-circle"></i> Mock exams with instant feedback</li>
+          </ul>
+          <p class="mt-3">
+            Already a user? <a routerLink="/login" class="btn btn-outline-warning">Login Now</a>
+          </p>
         </div>
       </div>
     </div>

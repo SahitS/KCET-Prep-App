@@ -1,24 +1,26 @@
-$background-light: #f9f9f9;
-$black: #000000;
-$yellow: #FFD700;
-$white: #FFFFFF;
-$text-black: #000000;
-$gray-light: #e0e0e0;
+$card-background: #242424; // Global card background
+$text-primary: #f5f5f5; // Global white text
+$text-secondary: #c7c7c7; // Global grey text
+$accent-primary: #A78BFA; // Global purple accent
+$accent-secondary: #4ADE80; // Global teal accent
+$hover-effect: #373737; // Hover background
+$border-color: #3a3a3a; // Border color
 
 .custom-practice-container {
-  background-color: $background-light;
+  background-color: #181818; // Dark theme background
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: $black;
+    color: $accent-primary;
     text-align: center;
     margin-bottom: 2rem;
   }
 
+  /* Subject Navbar */
   .navbar-container {
     margin-bottom: 2rem;
 
@@ -30,127 +32,115 @@ $gray-light: #e0e0e0;
       li {
         font-size: 1.2rem;
         font-weight: bold;
-        color: $black;
+        color: $text-secondary;
         cursor: pointer;
+        transition: color 0.3s ease-in-out;
 
         &.active {
-          color: $yellow;
+          color: $accent-primary;
           text-decoration: underline;
         }
+
+        &:hover {
+          color: $accent-primary;
+        }
       }
     }
   }
 
-  .history-container {
+  .hierarchical-history {
+    background-color: $card-background;
+    border-radius: 16px;
+    padding: 2rem;
     margin-bottom: 2rem;
-    background-color: $white;
-    border: 1px solid $gray-light;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   
     h2 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: $black;
-      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $accent-primary;
+      margin-bottom: 1.5rem;
       text-align: center;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
     }
-  
-    .history-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-  
-      .history-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-  
-        .history-details {
-          display: flex;
-          justify-content: space-between;
-          font-size: 1.2rem;
-          color: $black;
-  
-          .history-topic,
-          .history-subtopic,
-          .history-accuracy {
-            margin: 0;
-          }
-        }
-  
-        .history-bar {
-          background-color: $gray-light;
-          height: 10px;
-          border-radius: 5px;
-          overflow: hidden;
-  
-          .progress-bar {
-            background-color: $yellow;
-            height: 100%;
-            transition: width 0.3s ease;
-          }
-        }
-      }
-    }
-    .hierarchical-history {
-  margin: 20px;
-
-  mat-accordion {
-    margin-bottom: 20px;
-
-    mat-expansion-panel-header {
-      font-weight: bold;
-    }
-
-    ul {
-      padding-left: 20px;
-
-      li {
-        margin-bottom: 5px;
-      }
-    }
-  }
-}
-
-  } 
-  .hierarchical-history {
-    margin: 20px;
   
     mat-accordion {
-      margin-bottom: 20px;
+      background: transparent;
+      border-radius: 12px;
+      box-shadow: none;
   
-      mat-expansion-panel-header {
-        font-weight: bold;
-      }
+      mat-expansion-panel {
+        background-color: lighten($card-background, 5%);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   
-      ul {
-        padding-left: 20px;
+        &:hover {
+          transform: translateY(-2px);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
   
-        li {
-          margin-bottom: 5px;
+        mat-expansion-panel-header {
+          background-color: $hover-effect;
+          border-radius: 12px;
+          padding: 0.8rem 1.2rem;
+          font-size: 1.2rem;
+          color: $accent-primary !important; /* Ensure header text color is applied */
+          font-weight: 400;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: lighten($hover-effect, 5%);
+          }
+  
+          .mat-content {
+            display: flex;
+            align-items: center;
+          }
+  
+          .mat-expansion-indicator {
+            color: $accent-primary;
+            transition: transform 0.3s ease;
+          }
+        }
+  
+        ul {
+          padding-left: 1.5rem;
+          margin: 1rem 0;
+  
+          li {
+            margin-bottom: 0.5rem;
+            color: $accent-primary !important; /* Force subtopic text color */
+            font-size: 1rem;
+            font-weight: 400;
+            list-style: disc;
+          }
         }
       }
     }
-  }
-  
-   
+  }   
 
-  .practice-options,
-  .question-container {
+  /* Practice Options */
+  .practice-options {
     margin: 0 auto;
     max-width: 700px;
     padding: 1.5rem;
-    background-color: $white;
-    border: 1px solid $gray-light;
-    border-radius: 8px;
+    background-color: $card-background;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 
     h2 {
       font-size: 1.8rem;
       font-weight: bold;
-      color: $black;
+      color: $accent-primary;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .topics-container,
@@ -159,6 +149,7 @@ $gray-light: #e0e0e0;
 
       h3 {
         font-size: 1.4rem;
+        color: $accent-primary;
         margin-bottom: 1rem;
       }
 
@@ -169,9 +160,15 @@ $gray-light: #e0e0e0;
 
         label {
           font-size: 1.2rem;
+          color: $text-secondary;
+          cursor: pointer;
 
           input {
             margin-right: 0.5rem;
+          }
+
+          &:hover {
+            color: $accent-primary;
           }
         }
       }
@@ -182,6 +179,7 @@ $gray-light: #e0e0e0;
 
       h3 {
         font-size: 1.4rem;
+        color: $accent-primary;
         margin-bottom: 0.5rem;
       }
 
@@ -189,8 +187,15 @@ $gray-light: #e0e0e0;
         width: 100%;
         padding: 0.5rem;
         border-radius: 8px;
-        border: 1px solid $gray-light;
+        border: 1px solid $border-color;
         font-size: 1.2rem;
+        background-color: $card-background;
+        color: $text-primary;
+
+        &:focus {
+          border-color: $accent-primary;
+          box-shadow: 0 0 5px $accent-primary;
+        }
       }
     }
 
@@ -204,16 +209,34 @@ $gray-light: #e0e0e0;
       border-radius: 8px;
       text-align: center;
       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
 
       &.btn-primary {
-        background-color: $yellow;
-        color: $black;
+        background-color: $accent-primary;
+        color: $text-primary;
 
         &:hover {
-          background-color: $black;
-          color: $yellow;
+          background-color: lighten($accent-primary, 10%);
+          transform: scale(1.05);
         }
       }
+    }
+  }
+
+  /* Question Container */
+  .question-container {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 1.5rem;
+    background-color: $card-background;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $accent-primary;
+      margin-bottom: 1.5rem;
     }
 
     .options {
@@ -225,10 +248,15 @@ $gray-light: #e0e0e0;
         display: flex;
         align-items: center;
         font-size: 1.2rem;
+        color: $text-secondary;
         cursor: pointer;
 
-        input[type='radio'] {
+        input {
           margin-right: 0.8rem;
+        }
+
+        &:hover {
+          color: $accent-primary;
         }
       }
     }
@@ -242,13 +270,13 @@ $gray-light: #e0e0e0;
       text-align: center;
 
       &.correct {
-        background-color: #e0f7e0;
-        color: green;
+        background-color: #2d662f;
+        color: $text-primary;
       }
 
       &.incorrect {
-        background-color: #fbe4e4;
-        color: red;
+        background-color: #662f2f;
+        color: $text-primary;
       }
     }
 
@@ -264,32 +292,48 @@ $gray-light: #e0e0e0;
         border-radius: 8px;
 
         &.btn-submit {
-          background-color: $yellow;
-          color: $black;
+          background-color: $accent-primary;
+          color: $text-primary;
 
           &:hover {
-            background-color: $black;
-            color: $yellow;
+            background-color: lighten($accent-primary, 10%);
           }
 
           &:disabled {
-            background-color: $gray-light;
-            color: $white;
+            background-color: $border-color;
+            color: $text-secondary;
             cursor: not-allowed;
           }
         }
 
         &.btn-next,
         &.btn-finish {
-          background-color: $black;
-          color: $yellow;
+          background-color: $accent-secondary;
+          color: $text-primary;
 
           &:hover {
-            background-color: $yellow;
-            color: $black;
+            background-color: lighten($accent-secondary, 10%);
           }
         }
       }
     }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-container .subject-navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .practice-options,
+  .question-container {
+    max-width: 90%;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
