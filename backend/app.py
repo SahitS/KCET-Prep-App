@@ -194,58 +194,70 @@ def generate_custom_practice():
 @app.route('/generate-study-plan', methods=['POST'])
 def generate_study_plan():
     try:
+        # Check if hierarchy data is loaded
         if not hierarchy_data:
             raise Exception("Hierarchy data is not loaded. Please check the JSON file path.")
 
-        # Parse input
+        # Parse input data
         data = request.json
+        if not data or 'examDate' not in data:
+            return jsonify({"error": "Invalid payload. 'examDate' is required."}), 400
+
         exam_date = dt.fromisoformat(data['examDate'].replace('Z', ''))
         token = request.headers.get('Authorization')
-
         if not token:
             return jsonify({"error": "Authorization token is required"}), 401
 
-        # Fetch user data
+        # Validate user
         user = users_collection.find_one({"token": token})
         if not user:
             return jsonify({"error": "User not found"}), 404
 
+        # Extract user and request parameters
         answers = user.get("answers", {})
         weekday_hours = data.get("weekdayHours", 4)
         weekend_hours = data.get("weekendHours", 6)
         stress_mode = data.get("stressMode", False)
 
+        # Validate exam date
         today = dt.now()
         if exam_date <= today:
             return jsonify({"error": "Exam date must be in the future."}), 400
 
         study_end_date = exam_date - timedelta(days=10)
         total_study_days = (study_end_date - today).days
-
         if total_study_days <= 0:
             return jsonify({"error": "Not enough time to prepare for the exam."}), 400
 
-        def calculate_required_time(subject):
-            if subject.title() not in hierarchy_data:
-                raise Exception(f"Subject {subject.title()} not found in hierarchy data.")
+        # Hardcoded subjects list
+        subjects = ["Math", "Chemistry", "Physics"]
 
+        # Helper function to calculate required study time for subjects
+        def calculate_required_time(subject):
+            if subject not in hierarchy_data:
+                raise Exception(f"Subject '{subject}' not found in hierarchy data.")
+
+            subject_hierarchy = hierarchy_data[subject]
             subject_data = []
-            subject_hierarchy = hierarchy_data[subject.title()]
 
             for topic, subtopics in subject_hierarchy.items():
                 for subtopic in subtopics:
-                    answer = next((a for a in answers.get(f"{subject}Answers", [])
+                    answer = next((a for a in answers.get(f"{subject.lower()}Answers", [])
                                    if a.get("subtopic") == subtopic), None)
+                    time = 1.5
                     if answer:
                         accuracy = answer["correct"] / answer["total"] if answer["total"] > 0 else 0
                         time = 2.5 if accuracy < 0.6 else (1.5 if accuracy < 0.85 else 1)
-                        subject_data.append({"subject": subject.title(), "topic": topic, "subtopic": subtopic, "time": round(time, 1)})
-                    else:
-                        subject_data.append({"subject": subject.title(), "topic": topic, "subtopic": subtopic, "time": 1.5})
 
+                    subject_data.append({
+                        "subject": subject,
+                        "topic": topic,
+                        "subtopic": subtopic,
+                        "time": round(time, 1)
+                    })
             return subject_data
 
-        subjects = ["math", "physics", "chemistry"]
+        # Calculate required study time for all subjects
         all_topics = []
         for subject in subjects:
             all_topics.extend(calculate_required_time(subject))
@@ -254,34 +266,26 @@ def generate_study_plan():
         total_available_hours = total_study_days * (weekday_hours * 5 / 7 + weekend_hours * 2 / 7)
 
         # Adjust study plan feasibility
-        while total_available_hours < total_required_hours:
-            if weekday_hours < 12:  # Max 12 hours/day for weekdays
-                weekday_hours += 1
-            elif weekend_hours < 12:  # Max 12 hours/day for weekends
-                weekend_hours += 1
-            else:
-                scale_factor = total_available_hours / total_required_hours
-                for topic in all_topics:
-                    topic["time"] = round(topic["time"] * scale_factor, 1)
-                break
-            total_available_hours = total_study_days * (weekday_hours * 5 / 7 + weekend_hours * 2 / 7)
+        if total_available_hours < total_required_hours:
+            scale_factor = total_available_hours / total_required_hours
+            for topic in all_topics:
+                topic["time"] = round(topic["time"] * scale_factor, 1)
 
+        # Generate daily study plan
         study_plan = []
+        backlog_topics = all_topics.copy()
         current_date = today
         day_counter = 1
-        backlog_topics = all_topics.copy()
 
         while current_date <= study_end_date:
             is_weekend = current_date.weekday() in [5, 6]
             available_hours = weekend_hours if is_weekend else weekday_hours
-
             if stress_mode:
                 available_hours *= 0.75
 
             day_plan = {"day": day_counter, "subjects": [], "totalHours": 0}
             day_hours = 0
             subjects_map = {}
-
             remaining_topics = backlog_topics[:]
             backlog_topics = []
 
@@ -315,16 +319,7 @@ def generate_study_plan():
             current_date += timedelta(days=1)
             day_counter += 1
 
-        # Final verification for missing subtopics
-        all_subtopics = {f"{subject}.{subtopic}" for subject, topics in hierarchy_data.items() for subtopics in topics.values() for subtopic in subtopics}
-        covered_subtopics = {f"{topic['subject']}.{topic['subtopic']}" for day in study_plan for subj in day["subjects"] for topic in subj["subtopics"]}
-
-        missing_subtopics = all_subtopics - covered_subtopics
-        if missing_subtopics:
-            for missing in missing_subtopics:
-                subject, subtopic = missing.split('.')
-                backlog_topics.append({"subject": subject, "subtopic": subtopic, "time": 1.5})
-
+        # Build response
         response = {
             "studyPlan": study_plan,
             "totalStudyHours": total_required_hours,
@@ -333,12 +328,13 @@ def generate_study_plan():
             "weekendHours": weekend_hours,
             "stressMode": stress_mode
         }
-
         return jsonify(response)
 
     except Exception as e:
-        print(f"Error: {str(e)}")
+        print(f"Error: {str(e)}", flush=True)
         return jsonify({"error": str(e)}), 500
+
+
 
 
 @app.route('/ask-ai', methods=['POST'])
