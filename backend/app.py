@@ -210,10 +210,7 @@ def generate_study_plan():
         if not user:
             return jsonify({"error": "User not found"}), 404
 
-        quiz = user.get("quiz", {})
         answers = user.get("answers", {})
-
-        # Get availability and stress preferences
         weekday_hours = data.get("weekdayHours", 4)
         weekend_hours = data.get("weekendHours", 6)
         stress_mode = data.get("stressMode", False)
@@ -256,16 +253,23 @@ def generate_study_plan():
         total_required_hours = sum(t["time"] for t in all_topics)
         total_available_hours = total_study_days * (weekday_hours * 5 / 7 + weekend_hours * 2 / 7)
 
-        # Check if total hours are sufficient
-        if total_available_hours < total_required_hours:
-            # Prompt user to increase hours or adjust time
-            scale_factor = total_available_hours / total_required_hours
-            for topic in all_topics:
-                topic["time"] = round(topic["time"] * scale_factor, 1)
+        # Adjust study plan feasibility
+        while total_available_hours < total_required_hours:
+            if weekday_hours < 12:  # Max 12 hours/day for weekdays
+                weekday_hours += 1
+            elif weekend_hours < 12:  # Max 12 hours/day for weekends
+                weekend_hours += 1
+            else:
+                scale_factor = total_available_hours / total_required_hours
+                for topic in all_topics:
+                    topic["time"] = round(topic["time"] * scale_factor, 1)
+                break
+            total_available_hours = total_study_days * (weekday_hours * 5 / 7 + weekend_hours * 2 / 7)
 
         study_plan = []
         current_date = today
         day_counter = 1
+        backlog_topics = all_topics.copy()
 
         while current_date <= study_end_date:
             is_weekend = current_date.weekday() in [5, 6]
@@ -278,14 +282,21 @@ def generate_study_plan():
             day_hours = 0
             subjects_map = {}
 
-            random.shuffle(all_topics)  # Shuffle topics for variety
+            remaining_topics = backlog_topics[:]
+            backlog_topics = []
 
-            for topic in list(all_topics):
-                if day_hours + topic["time"] > available_hours:
-                    continue
-
-                day_hours += topic["time"]
-                all_topics.remove(topic)
+            for topic in remaining_topics:
+                if day_hours + topic["time"] <= available_hours:
+                    day_hours += topic["time"]
+                else:
+                    remaining_time = available_hours - day_hours
+                    if remaining_time > 0:
+                        backlog_topics.append({**topic, "time": topic["time"] - remaining_time})
+                        topic["time"] = remaining_time
+                        day_hours = available_hours
+                    else:
+                        backlog_topics.append(topic)
+                        continue
 
                 subject_name = topic["subject"]
                 if subject_name not in subjects_map:
@@ -298,10 +309,21 @@ def generate_study_plan():
                 subjects_map[subject_name]["totalHours"] += topic["time"]
 
             day_plan["subjects"] = list(subjects_map.values())
-            day_plan["totalHours"] = sum(subj["totalHours"] for subj in day_plan["subjects"])
+            day_plan["totalHours"] = day_hours
             study_plan.append(day_plan)
+
             current_date += timedelta(days=1)
             day_counter += 1
+
+        # Final verification for missing subtopics
+        all_subtopics = {f"{subject}.{subtopic}" for subject, topics in hierarchy_data.items() for subtopics in topics.values() for subtopic in subtopics}
+        covered_subtopics = {f"{topic['subject']}.{topic['subtopic']}" for day in study_plan for subj in day["subjects"] for topic in subj["subtopics"]}
+
+        missing_subtopics = all_subtopics - covered_subtopics
+        if missing_subtopics:
+            for missing in missing_subtopics:
+                subject, subtopic = missing.split('.')
+                backlog_topics.append({"subject": subject, "subtopic": subtopic, "time": 1.5})
 
         response = {
             "studyPlan": study_plan,
@@ -311,12 +333,12 @@ def generate_study_plan():
             "weekendHours": weekend_hours,
             "stressMode": stress_mode
         }
+
         return jsonify(response)
 
     except Exception as e:
         print(f"Error: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
 
 
 @app.route('/ask-ai', methods=['POST'])
