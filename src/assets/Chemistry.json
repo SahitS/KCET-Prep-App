@@ -1,0 +1,2835 @@
+{
+  "Chemistry": {
+    "topics": [
+      {
+        "topic":"Physical Chemistry",
+        "chapters": [
+       {
+        "name": "Atomic Structure",
+        "flashcards": [
+          {
+            "title": "Planck's Quantum Theory",
+            "formulas": [
+              "Energy of one photon = hν = hc/λ"
+            ],
+            "explanation": [
+              "Planck's quantum theory explains the quantization of energy. It states that energy is emitted or absorbed in discrete amounts called quanta."
+            ]
+          },
+          {
+            "title": "Photoelectric Effect",
+            "formulas": [
+              "hν = hν₀ + 1/2 mₑv²"
+            ],
+            "explanation": [
+              "The photoelectric effect describes the ejection of electrons from a metal surface when exposed to light of a certain minimum frequency."
+            ]
+          },
+          {
+            "title": "Bohr’s Model for Hydrogen-like Atoms",
+            "formulas": [
+              "mvr = n(h/2π)",
+              "Eₙ = -2.178 × 10⁻¹⁸ (z²/n²) J/atom",
+              "Eₙ = -13.6(z²/n²) eV",
+              "rₙ = 0.529 × (n²/Z) Å",
+              "v = 2.18 × 10⁶(z/n) m/s"
+            ],
+            "explanation": [
+              "Bohr’s model introduced quantization of angular momentum and explained the discrete energy levels of hydrogen-like atoms.",
+              "The energy and radius of an electron's orbit depend on the principal quantum number (n) and the atomic number (Z)."
+            ]
+          },
+          {
+            "title": "De-Broglie Wavelength",
+            "formulas": [
+              "λ = h/mv",
+              "λ = h/p"
+            ],
+            "explanation": [
+              "De-Broglie proposed that particles exhibit wave-like properties, with a wavelength inversely proportional to their momentum."
+            ]
+          },
+          {
+            "title": "Wavelength of Emitted Photon",
+            "formulas": [
+              "1/λ = RZ²(1/n₁² - 1/n₂²)"
+            ],
+            "explanation": [
+              "The wavelength of light emitted during an electronic transition in hydrogen-like atoms is determined by the Rydberg formula.",
+              "R is the Rydberg constant, Z is the atomic number, and n₁ and n₂ are principal quantum numbers."
+            ]
+          },
+          {
+            "title": "No. of Photons Emitted by a Sample of H Atom",
+            "formulas": [
+              "Δn(Δn+1)/2"
+            ],
+            "explanation": [
+              "The number of photons emitted during transitions can be calculated using the given formula, where Δn is the change in the quantum number."
+            ]
+          },
+          {
+            "title": "Heisenberg’s Uncertainty Principle",
+            "formulas": [
+              "Δx·Δp ≥ h/4π",
+              "m·Δx·Δv ≥ h/4π"
+            ],
+            "explanation": [
+              "The principle states that it is impossible to simultaneously determine the exact position and momentum of a particle.",
+              "It emphasizes the probabilistic nature of quantum mechanics."
+            ]
+          },
+          {
+            "title": "Quantum Numbers",
+            "formulas": [
+              "mvr = n(h/2π)",
+              "L = √l(l+1) h/2π"
+            ],
+            "explanation": [
+              "Quantum numbers define the state of an electron in an atom, including its energy, angular momentum, and orientation.",
+              "Principal quantum number (n): Energy level or shell.",
+              "Azimuthal quantum number (l): Shape of the orbital.",
+              "Magnetic quantum number (m): Orientation of the orbital.",
+              "Spin quantum number (s): Spin of the electron."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Stoichiometry",
+        "flashcards": [
+          {
+            "title": "Relative Atomic Mass (R.A.M)",
+            "formulas": [
+              "R.A.M = Mass of one atom of an element / (1/12 × Mass of one carbon atom)"
+            ],
+            "explanation": [
+              "Relative atomic mass compares the mass of an atom to 1/12th the mass of a carbon atom.",
+              "It is a dimensionless quantity."
+            ]
+          },
+          {
+            "title": "Density",
+            "formulas": [
+              "Density = Mass / Volume",
+              "Specific Gravity = Density of the substance / Density of water at 4°C"
+            ],
+            "explanation": [
+              "Density is defined as mass per unit volume.",
+              "Specific gravity compares the density of a substance to the density of water."
+            ]
+          },
+          {
+            "title": "Concentration Terms",
+            "formulas": [
+              "Molarity (M) = w × 1000 / (Mol. wt of solute × V in mL)",
+              "Molality (m) = Number of moles of solute / Mass of solvent in grams",
+              "Mole Fraction (x₁) = n / (n + N)",
+              "Mole Fraction (x₂) = N / (n + N)",
+              "x₁ + x₂ = 1"
+            ],
+            "explanation": [
+              "Molarity is the number of moles of solute per liter of solution.",
+              "Molality is the number of moles of solute per kilogram of solvent.",
+              "Mole fraction represents the ratio of moles of a component to the total moles in the mixture."
+            ]
+          },
+          {
+            "title": "Conversions and Derived Formulas",
+            "formulas": [
+              "Mole Fraction of Solute to Molarity (M) = x₂ρ × 1000 / (x₁M₁ + x₂M₂)",
+              "Molarity to Mole Fraction (x₂) = M × M₁ / (1000ρ - MM₂)",
+              "Mole Fraction to Molality (m) = x₂ × 1000 / x₁M₁"
+            ],
+            "explanation": [
+              "These formulas allow the conversion between different concentration terms."
+            ]
+          },
+          {
+            "title": "Mean Atomic Mass",
+            "formulas": [
+              "A_avg = (a₁x₁ + a₂x₂ + ... + aₙxₙ) / 100"
+            ],
+            "explanation": [
+              "The mean atomic mass is the weighted average of the atomic masses of all isotopes of an element."
+            ]
+          },
+          {
+            "title": "Mean Molar Mass or Molecular Mass",
+            "formulas": [
+              "M_avg = (n₁M₁ + n₂M₂ + ... + nₙMₙ) / (n₁ + n₂ + ... + nₙ)"
+            ],
+            "explanation": [
+              "The mean molecular mass is the weighted average of the molar masses of components in a mixture."
+            ]
+          },
+          {
+            "title": "Oxidation Number",
+            "formulas": [
+              "Oxidation Number = Number of electrons in the valence shell - Number of electrons left after bonding"
+            ],
+            "explanation": [
+              "The oxidation number indicates the charge of an atom in a compound, considering the distribution of electrons."
+            ]
+          },
+          {
+            "title": "Equivalent Weight",
+            "formulas": [
+              "E = Atomic Weight / Valency Factor",
+              "E = Molar Mass / Basicity or Acidity",
+              "E = M / (Number of moles of e⁻ gained/lost)"
+            ],
+            "explanation": [
+              "Equivalent weight is the amount of a substance that combines with or displaces a fixed amount of another substance."
+            ]
+          },
+          {
+            "title": "Normality",
+            "formulas": [
+              "Normality (N) = Number of equivalents of solute / Volume of solution in liters",
+              "N = Molarity × Valency Factor"
+            ],
+            "explanation": [
+              "Normality measures the concentration of equivalents of solute in a solution."
+            ]
+          },
+          {
+            "title": "Volume Strength of H₂O₂",
+            "formulas": [
+              "Normality (N) = Volume Strength of H₂O₂ / 5.6",
+              "Molarity (M) = Volume Strength of H₂O₂ / 11.2"
+            ],
+            "explanation": [
+              "Volume strength indicates the amount of oxygen released by hydrogen peroxide at standard temperature and pressure."
+            ]
+          },
+          {
+            "title": "Hardness of Water",
+            "formulas": [
+              "Hardness in ppm = (Mass of CaCO₃ × 10⁶) / Total Mass of Water"
+            ],
+            "explanation": [
+              "Hardness of water is the concentration of calcium and magnesium salts, expressed in parts per million (ppm)."
+            ]
+          },
+          {
+            "title": "Available Chlorine in Bleaching Powder",
+            "formulas": [
+              "% of Cl₂ = (3.55 × x × v (mL)) / w (g)"
+            ],
+            "explanation": [
+              "Available chlorine is the amount of chlorine released by bleaching powder during titration with a standard solution."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Thermodynamics",
+        "flashcards": [
+          {
+            "title": "Thermodynamic Processes",
+            "formulas": [
+              "Isothermal Process: T = constant, dT = 0, ΔT = 0",
+              "Isochoric Process: V = constant, dV = 0, ΔV = 0",
+              "Isobaric Process: P = constant, dP = 0, ΔP = 0",
+              "Adiabatic Process: q = 0 (no heat exchange with the surroundings)"
+            ],
+            "explanation": [
+              "Thermodynamic processes describe how a system interacts with its surroundings during changes in pressure, volume, and temperature."
+            ]
+          },
+          {
+            "title": "First Law of Thermodynamics",
+            "formulas": [
+              "ΔU = (U₂ - U₁) = q + w",
+              "Law of Equipartition of Energy: U = (f/2) nRT",
+              "ΔE = (f/2) nR (ΔT)"
+            ],
+            "explanation": [
+              "The first law states that energy is conserved and can neither be created nor destroyed.",
+              "It is applied to calculate changes in internal energy, work, and heat exchange."
+            ]
+          },
+          {
+            "title": "Heat Capacity",
+            "formulas": [
+              "Total Heat Capacity: Cₜ = (ΔQ / ΔT) = dq / dT (J/°C)",
+              "Molar Heat Capacity: Cₚ = dq / ndT (J mol⁻¹ K⁻¹)",
+              "Specific Heat Capacity: s = dq / mΔT = dq / mdT (J gm⁻¹ K⁻¹)"
+            ],
+            "explanation": [
+              "Heat capacity quantifies the heat required to raise the temperature of a substance by a certain amount."
+            ]
+          },
+          {
+            "title": "Work Done (w)",
+            "formulas": [
+              "Isothermal Reversible Process: W = -nRT ln (V₂ / V₁)",
+              "Reversible Isochoric Process: W = 0 (since ΔV = 0)",
+              "Reversible Isobaric Process: W = P (V₂ - V₁)",
+              "Adiabatic Reversible Expansion: T₂V₂^(γ-1) = T₁V₁^(γ-1)",
+              "Reversible Work: W = nR (T₂ - T₁) / (γ - 1)"
+            ],
+            "explanation": [
+              "Work done depends on the type of thermodynamic process and involves changes in volume or pressure."
+            ]
+          },
+          {
+            "title": "Second Law of Thermodynamics",
+            "formulas": [
+              "ΔS_universe = ΔS_system + ΔS_surrounding > 0 (for a spontaneous process)",
+              "ΔS_system = ∫ dq_rev / T"
+            ],
+            "explanation": [
+              "The second law states that the entropy of an isolated system always increases for a spontaneous process."
+            ]
+          },
+          {
+            "title": "Entropy for Ideal Gas",
+            "formulas": [
+              "ΔS_system = nCₚ ln (T₂ / T₁) + nR ln (V₂ / V₁)"
+            ],
+            "explanation": [
+              "Entropy changes during processes involving gases depend on temperature and volume changes."
+            ]
+          },
+          {
+            "title": "Third Law of Thermodynamics",
+            "formulas": [
+              "At absolute zero temperature, the entropy of a perfect crystal is zero."
+            ],
+            "explanation": [
+              "This law states that entropy approaches zero as temperature approaches absolute zero for perfect crystalline substances."
+            ]
+          },
+          {
+            "title": "Gibb’s Free Energy (G)",
+            "formulas": [
+              "G_system = H_system - T S_system",
+              "ΔG = ΔH - TΔS",
+              "ΔG° = -2.303 RT log₁₀ K"
+            ],
+            "explanation": [
+              "Gibb's free energy determines the spontaneity of a process.",
+              "If ΔG < 0, the process is spontaneous.",
+              "If ΔG > 0, the process is non-spontaneous."
+            ]
+          },
+          {
+            "title": "Thermochemistry",
+            "formulas": [
+              "ΔH° = H°ₘ₂ - H°ₘ₁ (heat added at constant pressure)",
+              "ΔH_reaction = H_products - H_reactants"
+            ],
+            "explanation": [
+              "Thermochemistry deals with the heat changes accompanying chemical reactions."
+            ]
+          },
+          {
+            "title": "Kirchhoff's Equation",
+            "formulas": [
+              "ΔH° = ΔH°₁ + ΔCₚ (T₂ - T₁) (at constant pressure)",
+              "ΔE° = ΔE°₁ + ∫ C_V dT (at constant volume)"
+            ],
+            "explanation": [
+              "Kirchhoff's equation relates changes in enthalpy to temperature changes."
+            ]
+          },
+          {
+            "title": "Resonance Energy",
+            "formulas": [
+              "ΔH°_resonance = ΔH°_experimental - ΔH°_calculated"
+            ],
+            "explanation": [
+              "Resonance energy is the difference between experimental and calculated enthalpies of a molecule."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gaseous State",
+        "flashcards": [
+          {
+            "title": "Temperature Scale",
+            "formulas": [
+              "°C → K: °C + 273",
+              "K → °C: K - 273",
+              "°F → °C: (°F - 32) × 5/9",
+              "°C → °F: (°C × 9/5) + 32"
+            ],
+            "explanation": [
+              "Temperature conversion formulas for Celsius, Kelvin, and Fahrenheit."
+            ]
+          },
+          {
+            "title": "Boyle's Law and Measurement of Pressure",
+            "formulas": [
+              "V ∝ 1/P (at constant temperature)",
+              "P₁V₁ = P₂V₂"
+            ],
+            "explanation": [
+              "Boyle's law states that at constant temperature, the pressure of a gas is inversely proportional to its volume."
+            ]
+          },
+          {
+            "title": "Charles' Law",
+            "formulas": [
+              "V ∝ T (at constant pressure)",
+              "V₁/T₁ = V₂/T₂"
+            ],
+            "explanation": [
+              "Charles' law states that the volume of a gas is directly proportional to its temperature at constant pressure."
+            ]
+          },
+          {
+            "title": "Gay-Lussac's Law",
+            "formulas": [
+              "P ∝ T (at constant volume)",
+              "P₁/T₁ = P₂/T₂"
+            ],
+            "explanation": [
+              "Gay-Lussac's law states that the pressure of a gas is directly proportional to its temperature at constant volume."
+            ]
+          },
+          {
+            "title": "Ideal Gas Equation",
+            "formulas": [
+              "PV = nRT",
+              "P = (w/m) RT or P = (d/M) RT",
+              "Pm = dRT"
+            ],
+            "explanation": [
+              "The ideal gas equation relates pressure, volume, temperature, and the amount of gas (in moles)."
+            ]
+          },
+          {
+            "title": "Dalton's Law of Partial Pressure",
+            "formulas": [
+              "P₁ = (n₁RT)/V",
+              "P_total = P₁ + P₂ + P₃ + ...",
+              "Partial Pressure = Mole Fraction × Total Pressure"
+            ],
+            "explanation": [
+              "Dalton's law states that the total pressure of a gas mixture is the sum of the partial pressures of each component."
+            ]
+          },
+          {
+            "title": "Amagat's Law of Partial Volume",
+            "formulas": [
+              "V = V₁ + V₂ + V₃ + ..."
+            ],
+            "explanation": [
+              "Amagat's law states that the total volume of a gas mixture is the sum of the partial volumes of each component."
+            ]
+          },
+          {
+            "title": "Graham's Law",
+            "formulas": [
+              "Rate of Diffusion (r) ∝ 1/√d",
+              "r₁/r₂ = √(d₂/d₁) = √(M₂/M₁)"
+            ],
+            "explanation": [
+              "Graham's law states that the rate of diffusion of a gas is inversely proportional to the square root of its molar mass."
+            ]
+          },
+          {
+            "title": "Kinetic Theory of Gases",
+            "formulas": [
+              "PV = (1/3) mN U²",
+              "Average K.E. for one mole = (3/2) K N_A T = (3/2) RT",
+              "Root Mean Square Speed (U_rms) = √(3RT/M)",
+              "Average Speed (U_avg) = √(8RT/πM)",
+              "Most Probable Speed (U_mps) = √(2RT/M)"
+            ],
+            "explanation": [
+              "The kinetic theory of gases relates the motion of gas molecules to macroscopic properties such as pressure and temperature."
+            ]
+          },
+          {
+            "title": "Van der Waal's Equation",
+            "formulas": [
+              "[P + (a n²/V²)] (V - nb) = nRT",
+              "Critical Constants: V_c = 3b, P_c = a/27b², T_c = 8a/27Rb"
+            ],
+            "explanation": [
+              "Van der Waal's equation accounts for intermolecular forces and the finite size of gas molecules, correcting the ideal gas law."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chemical Equilibrium",
+        "flashcards": [
+          {
+            "title": "At Equilibrium",
+            "formulas": [
+              "Rate of forward reaction = Rate of backward reaction",
+              "Concentration (mol/litre) of reactant and product becomes constant",
+              "ΔG = 0",
+              "Q = K_eq"
+            ],
+            "explanation": [
+              "At equilibrium, the rates of the forward and backward reactions are equal, and there is no net change in concentrations."
+            ]
+          },
+          {
+            "title": "Equilibrium Constant (K)",
+            "formulas": [
+              "K = Rate constant of forward reaction / Rate constant of backward reaction"
+            ],
+            "explanation": [
+              "The equilibrium constant quantifies the ratio of the concentrations of products to reactants at equilibrium."
+            ]
+          },
+          {
+            "title": "Equilibrium Constant in Terms of Concentration (K_c)",
+            "formulas": [
+              "K_c = [C]^c [D]^d / [A]^a [B]^b"
+            ],
+            "explanation": [
+              "K_c is expressed in terms of the concentrations of reactants and products at equilibrium."
+            ]
+          },
+          {
+            "title": "Equilibrium Constant in Terms of Partial Pressure (K_p)",
+            "formulas": [
+              "K_p = (P_C)^c (P_D)^d / (P_A)^a (P_B)^b"
+            ],
+            "explanation": [
+              "K_p is expressed in terms of the partial pressures of reactants and products at equilibrium."
+            ]
+          },
+          {
+            "title": "Equilibrium Constant in Terms of Mole Fraction (K_x)",
+            "formulas": [
+              "K_x = (x_C)^c (x_D)^d / (x_A)^a (x_B)^b"
+            ],
+            "explanation": [
+              "K_x uses mole fractions to represent the equilibrium constant."
+            ]
+          },
+          {
+            "title": "Relation Between K_p, K_c, and K_x",
+            "formulas": [
+              "K_p = K_c (RT)^Δn",
+              "log (K_2 / K_1) = -ΔH / 2.303R (1/T_2 - 1/T_1)"
+            ],
+            "explanation": [
+              "These relationships connect the equilibrium constants expressed in different terms and account for changes in temperature."
+            ]
+          },
+          {
+            "title": "Reaction Quotient (Q)",
+            "formulas": [
+              "Q = [C]^c [D]^d / [A]^a [B]^b"
+            ],
+            "explanation": [
+              "The reaction quotient predicts the direction of the reaction's shift to reach equilibrium."
+            ]
+          },
+          {
+            "title": "Degree of Dissociation (α)",
+            "formulas": [
+              "α = Number of moles dissociated / Initial number of moles taken",
+              "% Dissociation = α × 100"
+            ],
+            "explanation": [
+              "Degree of dissociation represents the fraction of moles dissociated into products."
+            ]
+          },
+          {
+            "title": "Effect of Temperature on Equilibrium",
+            "formulas": [
+              "If ln K vs 1/T is plotted, slope = -ΔH°/R and intercept = ΔS°/R"
+            ],
+            "explanation": [
+              "For endothermic reactions (ΔH > 0), K increases with temperature.",
+              "For exothermic reactions (ΔH < 0), K decreases with temperature."
+            ]
+          },
+          {
+            "title": "Vapour Pressure of Liquid",
+            "formulas": [
+              "Relative Humidity = Partial Pressure of H₂O Vapours / Vapour Pressure of H₂O at that Temp"
+            ],
+            "explanation": [
+              "Relative humidity compares the actual vapor pressure to the saturation vapor pressure at a given temperature."
+            ]
+          },
+          {
+            "title": "Thermodynamics of Equilibrium",
+            "formulas": [
+              "ΔG = ΔG° + 2.303 RT log₁₀ Q",
+              "log (K_1 / K_2) = ΔH° / 2.303R (1/T_2 - 1/T_1)"
+            ],
+            "explanation": [
+              "Thermodynamics of equilibrium relates Gibbs free energy to equilibrium constants and temperature."
+            ]
+          },
+          {
+            "title": "Le Chatelier's Principle",
+            "formulas": [],
+            "explanation": [
+              "If a system at equilibrium is subjected to a disturbance (e.g., change in concentration, pressure, or temperature), it shifts to minimize the effect of the disturbance."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ionic Equilibrium",
+        "flashcards": [
+          {
+            "title": "Ostwald Dilution Law",
+            "formulas": [
+              "K_a = [H⁺][A⁻] / [HA]",
+              "K_a = Cα² / (1 - α)",
+              "K_b = [OH⁻][B⁺] / [BOH]",
+              "K_b = Cα² / (1 - α)"
+            ],
+            "explanation": [
+              "Ostwald's dilution law relates the dissociation constant of a weak acid or base to its degree of dissociation and concentration."
+            ]
+          },
+          {
+            "title": "Acidity and pH Scale",
+            "formulas": [
+              "pH = -log [H⁺]",
+              "pOH = -log [OH⁻]",
+              "pK_a = -log K_a",
+              "pK_b = -log K_b",
+              "pH + pOH = 14 (at 25°C)"
+            ],
+            "explanation": [
+              "The pH scale measures the acidity or basicity of a solution, with pH < 7 being acidic, pH > 7 being basic, and pH = 7 being neutral."
+            ]
+          },
+          {
+            "title": "Properties of Water",
+            "formulas": [
+              "K_w = [H⁺][OH⁻] = 10⁻¹⁴ (at 25°C)",
+              "[H⁺] = [OH⁻] = 10⁻⁷ M (neutral water)",
+              "pK_w = -log K_w = 14"
+            ],
+            "explanation": [
+              "Water dissociates slightly to produce H⁺ and OH⁻ ions, and the ionic product (K_w) is constant at a given temperature."
+            ]
+          },
+          {
+            "title": "pH of Different Solutions",
+            "formulas": [
+              "pH of a strong acid solution: [H⁺] = N",
+              "pH of a strong base solution: [OH⁻] = N",
+              "pH of a weak acid solution: K_a = Cα²",
+              "pH of a weak base solution: K_b = Cα²",
+              "pH of a mixture of two strong acids: [H⁺] = (N₁V₁ + N₂V₂) / (V₁ + V₂)"
+            ],
+            "explanation": [
+              "The pH of a solution depends on the strength and concentration of acids or bases present in the solution."
+            ]
+          },
+          {
+            "title": "Relative Strength of Two Acids",
+            "formulas": [
+              "[H⁺] furnished by acid 1 / [H⁺] furnished by acid 2 = (K_a₁C₁) / (K_a₂C₂)"
+            ],
+            "explanation": [
+              "The strength of an acid is proportional to its dissociation constant (K_a) and its concentration."
+            ]
+          },
+          {
+            "title": "Salt Hydrolysis",
+            "formulas": [
+              "For weak acid + strong base: pH = 7 + 1/2 pK_a + 1/2 log C",
+              "For strong acid + weak base: pH = 7 - 1/2 pK_b - 1/2 log C",
+              "For weak acid + weak base: pH = 7 + 1/2 (pK_a - pK_b)"
+            ],
+            "explanation": [
+              "Salt hydrolysis involves the reaction of salt with water to produce acidic or basic solutions depending on the type of salt."
+            ]
+          },
+          {
+            "title": "Buffer Solutions",
+            "formulas": [
+              "For acidic buffer: pH = pK_a + log ([Salt] / [Acid])",
+              "For basic buffer: pOH = pK_b + log ([Salt] / [Base])"
+            ],
+            "explanation": [
+              "Buffer solutions resist changes in pH upon addition of small amounts of acid or base."
+            ]
+          },
+          {
+            "title": "Solubility Product (K_sp)",
+            "formulas": [
+              "K_sp = (x⁺)ⁿ(y⁻)ⁿ",
+              "Condition for precipitation: Ionic product (K_ip) > K_sp"
+            ],
+            "explanation": [
+              "The solubility product represents the equilibrium constant for the dissolution of a sparingly soluble salt."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Electrochemistry",
+        "flashcards": [
+          {
+            "title": "Electrode Potential",
+            "formulas": [
+              "E_cell = R.P of cathode - R.P of anode",
+              "E_cell = O.P of anode - O.P of cathode",
+              "E_cell = SRP of cathode - SRP of anode"
+            ],
+            "explanation": [
+              "Electrode potential measures the tendency of an electrode to lose or gain electrons.",
+              "The standard reduction potential (SRP) is used to determine the direction of electron flow."
+            ]
+          },
+          {
+            "title": "Gibbs Free Energy Change",
+            "formulas": [
+              "ΔG = -nFE_cell",
+              "ΔG° = -nFE°_cell"
+            ],
+            "explanation": [
+              "The Gibbs free energy change relates the work done by an electrochemical cell to the cell potential and the number of electrons involved."
+            ]
+          },
+          {
+            "title": "Nernst Equation",
+            "formulas": [
+              "E_cell = E°_cell - (RT/nF) ln Q",
+              "E_cell = E°_cell - (0.0591/n) log Q (at 298 K)",
+              "log K_eq = (nE°_cell) / 0.0591"
+            ],
+            "explanation": [
+              "The Nernst equation calculates the cell potential at non-standard conditions.",
+              "It accounts for the effect of reactant and product concentrations on the cell potential."
+            ]
+          },
+          {
+            "title": "Concentration Cell",
+            "formulas": [
+              "E = (0.0591/2) log (C2 / C1)",
+              "E = (0.0591/2) log (P1 / P2)"
+            ],
+            "explanation": [
+              "Concentration cells generate emf based on concentration differences of the same material in two half-cells."
+            ]
+          },
+          {
+            "title": "Different Types of Electrodes",
+            "formulas": [
+              "Metal-Metal Ion Electrode: E = E° + (0.0591/n) log [M⁺]",
+              "Gas Ion Electrode: E = E° - (0.0591/n) log [H⁺]",
+              "Oxidation-Reduction Electrode: E = E° - (0.0591/n) log ([Fe²⁺] / [Fe³⁺])",
+              "Metal-Metal Insoluble Salt Electrode: E = E° - 0.0591 log [Cl⁻]"
+            ],
+            "explanation": [
+              "Different types of electrodes are used based on the reactions occurring at the electrode surface."
+            ]
+          },
+          {
+            "title": "Faraday's Laws of Electrolysis",
+            "formulas": [
+              "First Law: w = zq",
+              "Second Law: w/E = constant, w₁/E₁ = w₂/E₂",
+              "Current Efficiency = (Actual Mass Deposited / Theoretical Mass) × 100"
+            ],
+            "explanation": [
+              "Faraday's laws describe the relationship between the amount of substance deposited or liberated at an electrode and the quantity of electricity passed through the electrolyte."
+            ]
+          },
+          {
+            "title": "Conductance",
+            "formulas": [
+              "Conductance = 1 / Resistance",
+              "Specific Conductance: K = 1/ρ (reciprocal of specific resistance)",
+              "Equivalent Conductance: λ_E = K × 1000 / Normality",
+              "Molar Conductance: λ_M = K × 1000 / Molarity"
+            ],
+            "explanation": [
+              "Conductance measures the ability of a solution to conduct electricity.",
+              "It depends on the type and concentration of ions present in the solution."
+            ]
+          },
+          {
+            "title": "Kohlrausch's Law",
+            "formulas": [
+              "λ°_M = λ°_A + λ°_C",
+              "λ°_M = λ°_M (Strong Electrolyte) - b√C (Weak Electrolyte)"
+            ],
+            "explanation": [
+              "Kohlrausch's law relates the molar conductivity of an electrolyte to its concentration.",
+              "It is used to calculate the degree of dissociation and solubility product of weak electrolytes."
+            ]
+          },
+          {
+            "title": "Transport Number",
+            "formulas": [
+              "t_c = μ_c / (μ_c + μ_a)",
+              "t_a = μ_a / (μ_c + μ_a)"
+            ],
+            "explanation": [
+              "The transport number represents the fraction of the total current carried by a specific ion in an electrolyte."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Solution and Colligative Properties",
+        "flashcards": [
+          {
+            "title": "Raoult's Law for Binary (Ideal) Mixture of Volatile Liquids",
+            "formulas": [
+              "P_A = X_A P_A°",
+              "P_B = X_B P_B°",
+              "P_T = P_A + P_B = X_A P_A° + X_B P_B°",
+              "1/P_T = X_A/P_A° + X_B/P_B°"
+            ],
+            "explanation": [
+              "Raoult's law states that the partial vapor pressure of each component in an ideal solution is directly proportional to its mole fraction."
+            ]
+          },
+          {
+            "title": "Elevation in Boiling Point",
+            "formulas": [
+              "ΔT_b = i × K_b × m",
+              "K_b = RT_b² / (1000 × ΔH_vap)"
+            ],
+            "explanation": [
+              "The boiling point of a solution is higher than that of the pure solvent.",
+              "K_b is the molal boiling point elevation constant."
+            ]
+          },
+          {
+            "title": "Depression in Freezing Point",
+            "formulas": [
+              "ΔT_f = i × K_f × m",
+              "K_f = RT_f² / (1000 × ΔH_fusion)"
+            ],
+            "explanation": [
+              "The freezing point of a solution is lower than that of the pure solvent.",
+              "K_f is the molal freezing point depression constant."
+            ]
+          },
+          {
+            "title": "Osmotic Pressure",
+            "formulas": [
+              "π = CRT = nRT / V",
+              "π = (C₁V₁ + C₂V₂)RT / (V₁ + V₂)"
+            ],
+            "explanation": [
+              "Osmotic pressure is the pressure required to stop the flow of solvent through a semipermeable membrane."
+            ]
+          },
+          {
+            "title": "Abnormal Colligative Properties (Van't Hoff Correction Factor)",
+            "formulas": [
+              "i = (Observed Colligative Property) / (Theoretical Colligative Property)",
+              "i = 1 + (n - 1)α (for dissociation)",
+              "i = 1 + (1/n - 1)β (for association)"
+            ],
+            "explanation": [
+              "Van't Hoff factor accounts for the effect of ionization or association on colligative properties."
+            ]
+          },
+          {
+            "title": "Relative Lowering of Vapor Pressure",
+            "formulas": [
+              "RLVP = ΔP / P = X_solute = n / (n + N)",
+              "RLVP = (i × molality × M) / 1000 (M = molar mass of solvent)"
+            ],
+            "explanation": [
+              "Relative lowering of vapor pressure is a colligative property dependent on the number of solute particles in a solution."
+            ]
+          },
+          {
+            "title": "Henry's Law",
+            "formulas": [
+              "m ∝ P (m = mass of gas dissolved, P = pressure of gas)",
+              "m = kP (k = Henry's constant)"
+            ],
+            "explanation": [
+              "Henry's law relates the solubility of a gas in a liquid to the partial pressure of the gas above the liquid."
+            ]
+          },
+          {
+            "title": "Ideal and Non-Ideal Solutions",
+            "formulas": [
+              "ΔH_mix = 0, ΔV_mix = 0 (for ideal solutions)",
+              "Positive Deviation: P_total > X_AP_A° + X_BP_B°",
+              "Negative Deviation: P_total < X_AP_A° + X_BP_B°"
+            ],
+            "explanation": [
+              "Ideal solutions follow Raoult's law at all compositions, while non-ideal solutions show deviations due to interactions between components."
+            ]
+          },
+          {
+            "title": "Immiscible Liquids",
+            "formulas": [
+              "P_total = P_A + P_B",
+              "P_A = P_A° X_A",
+              "P_B = P_B° X_B",
+              "P_A° / P_B° = W_B M_A / W_A M_B"
+            ],
+            "explanation": [
+              "The total vapor pressure of immiscible liquids is the sum of the vapor pressures of the components."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Solid State",
+        "flashcards": [
+          {
+            "title": "Classification of Crystal into Seven Systems",
+            "formulas": [
+              "Cubic: a = b = c; α = β = γ = 90°",
+              "Orthorhombic: a ≠ b ≠ c; α = β = γ = 90°",
+              "Tetragonal: a = b ≠ c; α = β = γ = 90°",
+              "Monoclinic: a ≠ b ≠ c; α = γ = 90°, β ≠ 90°",
+              "Rhombohedral: a = b = c; α = β = γ ≠ 90°",
+              "Triclinic: a ≠ b ≠ c; α ≠ β ≠ γ",
+              "Hexagonal: a = b ≠ c; α = β = 90°, γ = 120°"
+            ],
+            "explanation": [
+              "Crystals are classified based on unit cell dimensions and angles into seven systems."
+            ]
+          },
+          {
+            "title": "Analysis of Cubical System",
+            "formulas": [
+              "SC (Simple Cubic): r = a/2, Packing Efficiency = 52%",
+              "BCC (Body-Centered Cubic): r = √3a/4, Packing Efficiency = 68%",
+              "FCC (Face-Centered Cubic): r = a/√2, Packing Efficiency = 74%"
+            ],
+            "explanation": [
+              "Cubic systems are analyzed for atomic radius (r), packing efficiency, and number of atoms per unit cell."
+            ]
+          },
+          {
+            "title": "Density of Lattice Matter",
+            "formulas": [
+              "d = (Z × M) / (N_A × a³)"
+            ],
+            "explanation": [
+              "Density of a crystal lattice depends on the number of atoms per unit cell (Z), molar mass (M), and edge length (a)."
+            ]
+          },
+          {
+            "title": "Ionic Crystals",
+            "formulas": [
+              "Limiting Radius Ratio (r+/r-):",
+              "Triangular: 0.155–0.225",
+              "Tetrahedral: 0.225–0.414",
+              "Octahedral: 0.414–0.732",
+              "Cubic: 0.732–0.999"
+            ],
+            "explanation": [
+              "Ionic crystals are categorized based on limiting radius ratio and coordination number."
+            ]
+          },
+          {
+            "title": "Crystal Defects (Imperfections)",
+            "formulas": [
+              "Stoichiometric Defects: Schottky (ion pairs missing), Frenkel (dislocation of ions)",
+              "Non-Stoichiometric Defects: Metal Excess (extra cation or electron), Non-Metal Excess (extra anion or electron)"
+            ],
+            "explanation": [
+              "Crystal defects include point defects such as vacancies (Schottky) and dislocations (Frenkel), as well as non-stoichiometric defects involving excess ions or electrons."
+            ]
+          },
+          {
+            "title": "Examples of Ionic Crystals",
+            "formulas": [
+              "Rock Salt (NaCl): Coordination Number = 6:6",
+              "CsCl: Coordination Number = 8:8",
+              "Zinc Blende (ZnS): Coordination Number = 4:4",
+              "Fluorite (CaF₂): Coordination Number = 8:4"
+            ],
+            "explanation": [
+              "Examples of ionic crystals are categorized by their coordination numbers and structural characteristics."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chemical Kinetics and Radioactivity",
+        "flashcards": [
+          {
+            "title": "Rate/Velocity of Chemical Reaction",
+            "formulas": [
+              "Rate = Δc / Δt",
+              "Average rate = Total change in concentration / Total time taken"
+            ],
+            "explanation": [
+              "Rate of reaction is the change in concentration of reactants or products over time."
+            ]
+          },
+          {
+            "title": "Rate Law",
+            "formulas": [
+              "Rate = k [A]^p [B]^q",
+              "Order of reaction = p + q"
+            ],
+            "explanation": [
+              "Rate law expresses the relationship between the reaction rate and the concentrations of reactants."
+            ]
+          },
+          {
+            "title": "Integrated Rate Laws",
+            "formulas": [
+              "Zero-order reaction: [A] = [A]_0 - kt",
+              "First-order reaction: ln[A] = ln[A]_0 - kt",
+              "Second-order reaction: 1/[A] = 1/[A]_0 + kt"
+            ],
+            "explanation": [
+              "Integrated rate laws provide equations to calculate concentrations at a given time."
+            ]
+          },
+          {
+            "title": "Methods to Determine Order of Reaction",
+            "formulas": [
+              "Initial rate method: r_1/r_2 = ([A]_1 / [A]_2)^n",
+              "Half-life method: t_1/2 ∝ 1/[A]^(n-1)"
+            ],
+            "explanation": [
+              "Order of reaction can be determined using experimental data."
+            ]
+          },
+          {
+            "title": "Effect of Temperature on Rate of Reaction",
+            "formulas": [
+              "T.C. = K_t+10 / K_t ≈ 2 to 3",
+              "Arrhenius equation: k = A * e^(-Ea/RT)"
+            ],
+            "explanation": [
+              "Rate of reaction increases with temperature due to greater molecular collisions."
+            ]
+          },
+          {
+            "title": "Methods to Monitor Progress of Reaction",
+            "formulas": [
+              "Gaseous reaction: k = (2.303 / t) * log(P_0 / P)",
+              "Titration method: k = (2.303 / t) * log(V_0 / V_t)"
+            ],
+            "explanation": [
+              "Various methods are used to track reaction progress depending on the reaction type."
+            ]
+          },
+          {
+            "title": "Arrhenius Theory",
+            "formulas": [
+              "ln k = ln A - Ea / RT",
+              "log(k_2 / k_1) = (Ea / 2.303R) * [(1/T_1) - (1/T_2)]"
+            ],
+            "explanation": [
+              "Arrhenius theory relates the rate constant to activation energy and temperature."
+            ]
+          }
+        ]
+      }
+    ]
+    },
+    {
+      "topic":"Inorganic Chemistry",
+      "chapters": [
+          {
+            "name": "Periodic Table & Periodicity",
+            "flashcards": [
+              {
+                "title": "Shielding or Screening Effect",
+                "formulas": [],
+                "explanation": [
+                  "The larger the number of electrons in the inner shells, the greater the shielding effect, reducing nuclear attraction and lowering ionization energy."
+                ]
+              },
+              {
+                "title": "Penetration Effect",
+                "formulas": [],
+                "explanation": [
+                  "For the same energy level, the order of penetration effect is: s > p > d > f. Higher penetration results in higher ionization energy."
+                ]
+              },
+              {
+                "title": "Electron Gain Enthalpy",
+                "formulas": [
+                  "X(g) + e⁻ → X⁻(g)"
+                ],
+                "explanation": [
+                  "Electron gain enthalpy measures the energy change when an electron is added to a neutral gaseous atom.",
+                  "Halogens have high negative electron gain enthalpies, whereas noble gases have large positive values."
+                ]
+              },
+              {
+                "title": "Electronegativity",
+                "formulas": [
+                  "Δ = X_A - X_B = 0.208 √E_A-B - √(E_A-A × E_B-B)"
+                ],
+                "explanation": [
+                  "Electronegativity measures the tendency of an atom to attract shared electrons in a covalent bond.",
+                  "Pauling’s scale and Mulliken’s scale are commonly used to quantify electronegativity."
+                ]
+              },
+              {
+                "title": "Periodicity of Valence or Oxidation States",
+                "formulas": [],
+                "explanation": [
+                  "Variable valence is characteristic of transition elements and actinides.",
+                  "Across a period, oxidation states increase, while they decrease within a group."
+                ]
+              },
+              {
+                "title": "Periodic Trends in Oxides",
+                "formulas": [],
+                "explanation": [
+                  "In a group, oxides become more basic down the group.",
+                  "In a period, oxides change from basic to acidic moving from left to right."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Atomic Properties",
+            "flashcards": [
+              {
+                "title": "Effective Nuclear Charge",
+                "formulas": [
+                  "Z_eff = Z - σ"
+                ],
+                "explanation": [
+                  "Effective nuclear charge is the net positive charge experienced by valence electrons, considering shielding effects."
+                ]
+              },
+              {
+                "title": "Atomic Radius",
+                "formulas": [],
+                "explanation": [
+                  "Atomic radius decreases across a period due to increasing nuclear charge, and increases down a group due to added electron shells."
+                ]
+              },
+              {
+                "title": "Ionic Radius",
+                "formulas": [],
+                "explanation": [
+                  "Cations are smaller than their parent atoms due to loss of electrons, while anions are larger due to electron gain."
+                ]
+              },
+              {
+                "title": "Ionization Energy",
+                "formulas": [],
+                "explanation": [
+                  "Ionization energy is the energy required to remove an electron from an isolated gaseous atom.",
+                  "It increases across a period and decreases down a group."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Classification of Elements",
+            "flashcards": [
+              {
+                "title": "s-Block Elements",
+                "formulas": [],
+                "explanation": [
+                  "Includes Group 1 and 2 elements with a general configuration of [noble gas]ns¹-².",
+                  "These elements are highly reactive and form basic oxides."
+                ]
+              },
+              {
+                "title": "p-Block Elements",
+                "formulas": [],
+                "explanation": [
+                  "Groups 13 to 18 elements, with general configuration [noble gas]ns²np¹-⁶.",
+                  "They show variable oxidation states and include metals, non-metals, and metalloids."
+                ]
+              },
+              {
+                "title": "d-Block Elements",
+                "formulas": [],
+                "explanation": [
+                  "Transition metals with partially filled d-orbitals exhibit variable oxidation states, forming colored compounds and acting as catalysts."
+                ]
+              },
+              {
+                "title": "f-Block Elements",
+                "formulas": [],
+                "explanation": [
+                  "Lanthanides and actinides are characterized by the filling of f-orbitals and show similar chemical properties."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dipole Moment and Resonance",
+            "flashcards": [
+              {
+                "title": "Dipole Moment",
+                "formulas": [
+                  "R = √(P² + Q² + 2PQcosθ)"
+                ],
+                "explanation": [
+                  "Dipole moment represents the shift in electron density, shown by crossed arrows above the Lewis structure.",
+                  "Non-zero summation of moment vectors in a molecule results in a dipole moment."
+                ]
+              },
+              {
+                "title": "Resonance",
+                "formulas": [
+                  "No specific formulas"
+                ],
+                "explanation": [
+                  "Resonance involves multiple structures with identical atom positions for a compound.",
+                  "The ozone (O₃) molecule can be equally represented by multiple resonance structures."
+                ]
+              },
+              {
+                "title": "Resonance Hybrid",
+                "formulas": [],
+                "explanation": [
+                  "Represents the actual structure combining all possible resonance forms.",
+                  "Example: Benzene's resonance hybrid structure."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Hydrogen Bonding",
+            "flashcards": [
+              {
+                "title": "Conditions for H-Bond",
+                "formulas": [],
+                "explanation": [
+                  "Requires electronegative atoms (F, O, N) linked to H-atoms.",
+                  "Smaller size of electronegative atom ensures stronger bonding.",
+                  "Presence of lone pairs on electronegative atoms is necessary."
+                ]
+              },
+              {
+                "title": "Types of Hydrogen Bonds",
+                "formulas": [],
+                "explanation": [
+                  "Intramolecular H-Bonding: Occurs within the same molecule, e.g., o-hydroxybenzaldehyde.",
+                  "Intermolecular H-Bonding: Formed between molecules, e.g., in water (H₂O) and HF."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Valence Bond Theory (VBT)",
+            "flashcards": [
+              {
+                "title": "Sigma and Pi Bonds",
+                "formulas": [],
+                "explanation": [
+                  "Sigma bonds involve head-on overlapping of orbitals, e.g., s-s, s-p, or p-p overlaps.",
+                  "Pi bonds involve lateral overlap of p-orbitals."
+                ]
+              },
+              {
+                "title": "VSEPR Theory",
+                "formulas": [],
+                "explanation": [
+                  "Explains molecular shape based on electron pair repulsion around the central atom."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Hybridization and Bonding",
+            "flashcards": [
+              {
+                "title": "Hybridization",
+                "formulas": [],
+                "explanation": [
+                  "Hybrid orbitals form by combining atomic orbitals of similar energy.",
+                  "Types: sp, sp², sp³, sp³d, sp³d²."
+                ]
+              },
+              {
+                "title": "Molecular Orbital Theory (MOT)",
+                "formulas": [],
+                "explanation": [
+                  "Molecular orbitals are formed by the combination of atomic orbitals, influencing bonding and antibonding characteristics."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Coordination Compounds",
+            "flashcards": [
+              {
+                "title": "Definition",
+                "formulas": [],
+                "explanation": [
+                  "Coordination compounds are formed by the combination of two or more stable compounds in stoichiometric ratios."
+                ]
+              },
+              {
+                "title": "Double Salts",
+                "formulas": [],
+                "explanation": [
+                  "Compounds that lose their identity in solution, e.g., K2SO4, Al2(SO4)3."
+                ]
+              },
+              {
+                "title": "Central Atom/Ion",
+                "formulas": [],
+                "explanation": [
+                  "The atom or ion to which ligands are bound in a coordination entity."
+                ]
+              },
+              {
+                "title": "Ligands",
+                "formulas": [],
+                "explanation": [
+                  "Neutral molecules, anions, or cations directly linked to the central atom in a definite geometrical arrangement."
+                ]
+              },
+              {
+                "title": "Chelate Ligand",
+                "formulas": [],
+                "explanation": [
+                  "A ligand that uses two or more donor atoms to bind a metal ion."
+                ]
+              },
+              {
+                "title": "Ambidentate Ligands",
+                "formulas": [],
+                "explanation": [
+                  "Ligands that can link through two different atoms, such as nitrito-N (NO2-) or nitrito-O."
+                ]
+              },
+              {
+                "title": "Coordination Number",
+                "formulas": [],
+                "explanation": [
+                  "The number of donor atoms directly attached to the metal."
+                ]
+              },
+              {
+                "title": "Oxidation Number of Central Atom",
+                "formulas": [],
+                "explanation": [
+                  "The charge the central atom would carry if all ligands were removed."
+                ]
+              },
+              {
+                "title": "Werner’s Theory",
+                "formulas": [],
+                "explanation": [
+                  "Primary and secondary valences define the oxidation state and coordination number.",
+                  "Primary valence corresponds to the oxidation state, and secondary valence corresponds to the coordination number."
+                ]
+              },
+              {
+                "title": "Common Ligands Table",
+                "formulas": [],
+                "explanation": [
+                  "Table of common ligands such as methyl isocyanide, ethylenediamine, and more, categorized by denticity."
+                ]
+              },
+              {
+                "title": "Nomenclature Rules",
+                "formulas": [],
+                "explanation": [
+                  "Central atom is placed first, followed by ligands in alphabetical order.",
+                  "The oxidation state of the central atom is denoted by Roman numerals in parentheses."
+                ]
+              },
+              {
+                "title": "Valence Bond Theory (VBT)",
+                "formulas": [],
+                "explanation": [
+                  "Utilizes hybridization of metal orbitals for bonding and geometry prediction.",
+                  "Hybridization types include sp3, sp3d2, dsp3, and others."
+                ]
+              },
+              {
+                "title": "Magnetic Moment",
+                "formulas": [
+                  "Magnetic Moment (μ) = √(n(n+2)) BM"
+                ],
+                "explanation": [
+                  "μ is determined by the number of unpaired electrons in the d-orbitals."
+                ]
+              },
+              {
+                "title": "Crystal Field Theory (CFT)",
+                "formulas": [],
+                "explanation": [
+                  "CFT explains the splitting of d-orbitals in a crystal field into lower and higher energy levels.",
+                  "Splitting depends on the geometry and nature of ligands."
+                ]
+              },
+              {
+                "title": "Calculation of CFSE",
+                "formulas": [
+                  "CFSE = [ -0.4(n) + 0.6(n') ] Δo + P"
+                ],
+                "explanation": [
+                  "CFSE calculates the stabilization energy due to crystal field splitting in octahedral complexes."
+                ]
+              },
+              {
+                "title": "Stability of Coordination Compounds",
+                "formulas": [],
+                "explanation": [
+                  "Stability constants (βn) are used to measure the stability of coordination compounds.",
+                  "Higher βn indicates greater stability."
+                ]
+              },
+              {
+                "title": "Isomerism in Coordination Compounds",
+                "formulas": [],
+                "explanation": [
+                  "Structural Isomerism includes ionization, solvate, linkage, and coordination isomerism.",
+                  "Stereoisomerism includes geometrical and optical isomerism."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Organometallic Compounds",
+            "flashcards": [
+              {
+                "title": "Definition",
+                "formulas": [],
+                "explanation": [
+                  "Compounds containing metal-carbon bonds are called organometallic compounds."
+                ]
+              },
+              {
+                "title": "Types of Bonds",
+                "formulas": [],
+                "explanation": [
+                  "Sigma-bonded organometallic compounds include Grignard's reagent.",
+                  "Pi-bonded organometallic compounds include Zeise's salt, ferrocene."
+                ]
+              },
+              {
+                "title": "Synergic Bonding",
+                "formulas": [],
+                "explanation": [
+                  "Involves donation of electron density from the ligand to the metal and back donation from the metal to the ligand."
+                ]
+              },
+              {
+                "title": "Examples",
+                "formulas": [],
+                "explanation": [
+                  "Examples include Grignard's reagent (R-Mg-X), Zeise's salt, ferrocene, and others."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Metallurgy",
+            "flashcards": [
+              {
+                "title": "Definition of Minerals and Ores",
+                "formulas": [],
+                "explanation": [
+                  "Minerals are naturally occurring compounds of metals found in nature.",
+                  "Ores are minerals from which metals can be economically and conveniently extracted."
+                ]
+              },
+              {
+                "title": "Types of Ores",
+                "formulas": [],
+                "explanation": [
+                  "Native ores: Metals in free state (e.g., silver, gold, platinum).",
+                  "Oxidized ores: Contain oxides or oxy-salts (e.g., carbonates, phosphates).",
+                  "Sulphide ores: Contain sulphides (e.g., iron pyrite, copper pyrite).",
+                  "Halide ores: Contain halides (e.g., chlorargyrite)."
+                ]
+              },
+              {
+                "title": "Crushing and Grinding",
+                "formulas": [],
+                "explanation": [
+                  "The ore is crushed and ground to a fine powder for further processing."
+                ]
+              },
+              {
+                "title": "Concentration of Ore",
+                "formulas": [],
+                "explanation": [
+                  "Hydraulic washing: Based on differences in density between ore and gangue particles.",
+                  "Electromagnetic separation: Uses magnetic properties of ore components.",
+                  "Froth flotation: Used for sulphide ores, where gangue particles are wetted by water and ore particles by oil.",
+                  "Leaching: Dissolves ore in a suitable solvent for further extraction."
+                ]
+              },
+              {
+                "title": "Conversion of Ore to Oxide",
+                "formulas": [],
+                "explanation": [
+                  "Calcination: Heating the ore in limited air to remove water and volatile impurities.",
+                  "Roasting: Heating the ore in excess air to convert sulphide ores to oxides."
+                ]
+              },
+              {
+                "title": "Reduction of Oxides to Metals",
+                "formulas": [
+                  "PbO + C → Pb + CO",
+                  "Fe₂O₃ + 3CO → 2Fe + 3CO₂"
+                ],
+                "explanation": [
+                  "Chemical reduction: Using reducing agents like carbon or CO.",
+                  "Electrolytic reduction: Used for highly reactive metals like aluminum."
+                ]
+              },
+              {
+                "title": "Extraction of Aluminum",
+                "formulas": [
+                  "2Al₂O₃ + 3C → 4Al + 3CO₂"
+                ],
+                "explanation": [
+                  "Involves Bayer’s process for purification of bauxite and Hall-Heroult process for electrolytic reduction of alumina."
+                ]
+              },
+              {
+                "title": "Refining of Metals",
+                "formulas": [],
+                "explanation": [
+                  "Liquation: Removes impurities from metals with low melting points (e.g., tin, zinc).",
+                  "Electrolytic refining: Produces pure metals like copper and aluminum.",
+                  "Vapor phase refining: Includes Mond’s process for nickel and Van Arkel process for titanium."
+                ]
+              },
+              {
+                "title": "Key Extraction Reactions",
+                "formulas": [
+                  "2ZnS + 3O₂ → 2ZnO + 2SO₂",
+                  "SnO₂ + 2C → Sn + 2CO",
+                  "CaO + SiO₂ → CaSiO₃ (slag formation)"
+                ],
+                "explanation": [
+                  "Extraction of zinc, tin, and slag formation reactions during smelting processes."
+                ]
+              },
+              {
+                "title": "Purification Methods",
+                "formulas": [],
+                "explanation": [
+                  "Zone refining: Used for semiconductors like Si and Ge.",
+                  "Poling: Used for removing impurities from metals like copper."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "s-block Elements and Their Compounds",
+            "flashcards": [
+              {
+                "title": "Physical Properties of Alkali Metals",
+                "formulas": [],
+                "explanation": [
+                  "Alkali metals are silvery white, soft, and light.",
+                  "They exhibit low density and melting points.",
+                  "Their salts impart characteristic colors to a flame: Li - crimson red, Na - yellow, K - violet, Rb - red violet, Cs - blue."
+                ]
+              },
+              {
+                "title": "Chemical Properties of Alkali Metals",
+                "formulas": [
+                  "2M + O₂ → M₂O",
+                  "M + H₂ → MH",
+                  "M + H₂O → MOH + H₂"
+                ],
+                "explanation": [
+                  "Alkali metals are highly reactive due to their large atomic size and low ionization enthalpy.",
+                  "They react with water to form hydroxides and hydrogen gas.",
+                  "React with oxygen to form oxides, peroxides, or superoxides."
+                ]
+              },
+              {
+                "title": "Properties of Alkaline Earth Metals",
+                "formulas": [],
+                "explanation": [
+                  "Alkaline earth metals have higher melting and boiling points than alkali metals.",
+                  "They are harder and denser than alkali metals.",
+                  "Their salts impart characteristic colors to a flame: Ca - brick red, Sr - crimson, Ba - apple green."
+                ]
+              },
+              {
+                "title": "Reactivity of Alkaline Earth Metals",
+                "formulas": [
+                  "M + 2H₂O → M(OH)₂ + H₂",
+                  "M + O₂ → MO",
+                  "M + Cl₂ → MCl₂"
+                ],
+                "explanation": [
+                  "React with water to form hydroxides and hydrogen gas.",
+                  "Form ionic oxides and chlorides.",
+                  "Beryllium and magnesium react less vigorously due to their smaller atomic size."
+                ]
+              },
+              {
+                "title": "Diagonal Relationship of Lithium and Magnesium",
+                "formulas": [],
+                "explanation": [
+                  "Lithium resembles magnesium in properties due to a similar charge/radius ratio.",
+                  "Both form nitrides (Li₃N, Mg₃N₂), carbonates, and hydroxides that decompose on heating."
+                ]
+              },
+              {
+                "title": "Uses of s-block Elements",
+                "formulas": [],
+                "explanation": [
+                  "Sodium is used in streetlights, nuclear reactors, and as a heat exchanger.",
+                  "Potassium is used in fertilizers and fireworks.",
+                  "Calcium is used in construction (lime and cement) and in reducing agents."
+                ]
+              },
+              {
+                "title": "Compounds of Sodium",
+                "formulas": [
+                  "Na₂CO₃ + H₂O + CO₂ → 2NaHCO₃"
+                ],
+                "explanation": [
+                  "Sodium carbonate is used in glass manufacturing.",
+                  "Sodium hydroxide (caustic soda) is used in soap making and water purification."
+                ]
+              },
+              {
+                "title": "Compounds of Calcium",
+                "formulas": [
+                  "Ca(OH)₂ + Cl₂ → Ca(OCl)₂ + H₂O"
+                ],
+                "explanation": [
+                  "Quick lime (CaO) is used in cement production.",
+                  "Slaked lime (Ca(OH)₂) is used in water softening and as a whitewash.",
+                  "Bleaching powder (Ca(OCl)₂) is used for disinfection."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p-Block Elements",
+            "flashcards": [
+              {
+                "title": "Trends in Properties of p-Block Elements",
+                "formulas": [
+                  "Electronegativity decreases down the group",
+                  "Oxidation states vary across the groups"
+                ],
+                "explanation": [
+                  "p-Block elements exhibit diverse properties due to varying oxidation states.",
+                  "Electronegativity generally decreases down the group, while metallic character increases."
+                ]
+              },
+              {
+                "title": "Boron Family (Group 13)",
+                "formulas": [
+                  "2Al + 6HCl \u2192 2AlCl_3 + 3H_2",
+                  "2Al + 2NaOH + 6H_2O \u2192 2Na[Al(OH)_4] + 3H_2"
+                ],
+                "explanation": [
+                  "The general oxidation state is +3.",
+                  "Reactivity includes reaction with acids and alkalis to form corresponding salts and hydrogen gas."
+                ]
+              },
+              {
+                "title": "Important Reactions of Boron",
+                "formulas": [
+                  "B_2O_3 + Mg \u2192 MgO + B",
+                  "B + F_2 \u2192 BF_3"
+                ],
+                "explanation": [
+                  "Boron forms compounds like boron trifluoride and reacts with magnesium to produce elemental boron."
+                ]
+              },
+              {
+                "title": "Carbon Family (Group 14)",
+                "formulas": [
+                  "C + O_2 \u2192 CO_2",
+                  "Si + 2Cl_2 \u2192 SiCl_4"
+                ],
+                "explanation": [
+                  "Carbon and silicon are key members of Group 14.",
+                  "Oxidation states range from -4 to +4, and these elements form oxides and halides."
+                ]
+              },
+              {
+                "title": "Allotropes of Carbon",
+                "formulas": [
+                  "Diamond: sp^3 hybridization",
+                  "Graphite: sp^2 hybridization"
+                ],
+                "explanation": [
+                  "Carbon exhibits allotropy, forming structures like diamond (tetrahedral network) and graphite (layered hexagonal)."
+                ]
+              },
+              {
+                "title": "Nitrogen Family (Group 15)",
+                "formulas": [
+                  "N_2 + 3H_2 \u2192 2NH_3",
+                  "P_4 + 5O_2 \u2192 P_4O_{10}"
+                ],
+                "explanation": [
+                  "Group 15 elements show oxidation states of -3, +3, and +5.",
+                  "Nitrogen forms ammonia, while phosphorus forms oxides and other compounds."
+                ]
+              },
+              {
+                "title": "Oxygen Family (Group 16)",
+                "formulas": [
+                  "O_2 + 2H_2 \u2192 2H_2O",
+                  "SO_2 + 1/2O_2 \u2192 SO_3"
+                ],
+                "explanation": [
+                  "Oxygen and sulfur are prominent elements in Group 16.",
+                  "They exhibit oxidation states of -2, +4, and +6, forming oxides and sulfides."
+                ]
+              },
+              {
+                "title": "Halogen Family (Group 17)",
+                "formulas": [
+                  "Cl_2 + H_2O \u2192 HCl + HOCl",
+                  "I_2 + NaOH \u2192 NaI + NaIO"
+                ],
+                "explanation": [
+                  "Halogens exhibit -1 oxidation state and react with metals to form salts.",
+                  "They also form interhalogen and oxo-compounds."
+                ]
+              },
+              {
+                "title": "Noble Gases (Group 18)",
+                "formulas": [
+                  "Xe + F_2 \u2192 XeF_2",
+                  "XeF_2 + H_2O \u2192 Xe + HF + O_2"
+                ],
+                "explanation": [
+                  "Noble gases are chemically inert but can form compounds under extreme conditions.",
+                  "Xenon forms fluorides and oxides in controlled reactions."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "d-Block Elements and Their Compounds",
+            "flashcards": [
+              {
+                "title": "Potassium Permanganate (KMnO₄)",
+                "formulas": [
+                  "H₂O + MnO₂ + KMnO₄",
+                  "OH⁻ + MnO₂ + KMnO₄",
+                  "MnO₄⁻ + MnO₂ + O₂"
+                ],
+                "explanation": [
+                  "KMnO₄ is an oxidizing agent in both acidic and alkaline mediums.",
+                  "In acidic medium, MnO₄⁻ is reduced to Mn²⁺, while in alkaline medium, it forms MnO₂."
+                ]
+              },
+              {
+                "title": "Potassium Dichromate (K₂Cr₂O₇)",
+                "formulas": [
+                  "Na₂Cr₂O₇ + H⁺ → K₂Cr₂O₇",
+                  "K₂Cr₂O₇ → Cr₂O₃ + O₂",
+                  "Cr₂O₇²⁻ + H⁺ + Fe²⁺ → Cr³⁺ + Fe³⁺"
+                ],
+                "explanation": [
+                  "Potassium dichromate is used as an oxidizing agent in acidic medium.",
+                  "It can oxidize Fe²⁺ to Fe³⁺ and I⁻ to I₂."
+                ]
+              },
+              {
+                "title": "Formation of Colored Ions",
+                "formulas": [],
+                "explanation": [
+                  "Transition metal ions appear colored due to d-d electronic transitions.",
+                  "The observed color is complementary to the absorbed wavelength."
+                ]
+              },
+              {
+                "title": "Magnetic Properties",
+                "formulas": [
+                  "\u03bc = \u221a[n(n+2)] BM"
+                ],
+                "explanation": [
+                  "Substances with unpaired electrons are paramagnetic, while those without are diamagnetic."
+                ]
+              },
+              {
+                "title": "Catalytic Properties",
+                "formulas": [],
+                "explanation": [
+                  "Transition metals and their compounds act as catalysts due to variable oxidation states and large surface areas."
+                ]
+              },
+              {
+                "title": "Alloy Formation",
+                "formulas": [],
+                "explanation": [
+                  "Transition metals form alloys due to their similar atomic sizes."
+                ]
+              },
+              {
+                "title": "Oxidation States",
+                "formulas": [],
+                "explanation": [
+                  "Transition elements show variable oxidation states due to the involvement of (n-1)d and ns electrons in bonding."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Qualitative Analysis",
+            "flashcards": [
+              {
+                "title": "IVth Group (Zn²⁺, Mn²⁺, Ni²⁺, Co²⁺)",
+                "formulas": [
+                  "Zn²⁺ + H₂S → ZnS (white precipitate)",
+                  "Mn²⁺ + H₂S → MnS (light pink precipitate)",
+                  "Ni²⁺ + H₂S → NiS (black precipitate)",
+                  "Co²⁺ + H₂S → CoS (black precipitate)"
+                ],
+                "explanation": [
+                  "In the IVth group, sulfides are precipitated using H₂S in an alkaline medium.",
+                  "ZnS, MnS, NiS, and CoS precipitates are formed and further analyzed.",
+                  "ZnS and MnS are confirmed using specific reagents like ammonium carbonate and dilute acids, while CoS and NiS are tested using aqua regia and dimethylglyoxime."
+                ]
+              },
+              {
+                "title": "Vth Group (Ba²⁺, Sr²⁺, Ca²⁺)",
+                "formulas": [
+                  "Ba²⁺ + (NH₄)₂CO₃ → BaCO₃ (white precipitate)",
+                  "Sr²⁺ + (NH₄)₂CO₃ → SrCO₃ (white precipitate)",
+                  "Ca²⁺ + (NH₄)₂CO₃ → CaCO₃ (white precipitate)"
+                ],
+                "explanation": [
+                  "The Vth group involves precipitating carbonates using ammonium carbonate in the presence of ammonia.",
+                  "Tests for confirmation include reactions with K₂CrO₄ (yellow BaCrO₄ precipitate), (NH₄)₂SO₄ (white SrSO₄ precipitate), and (NH₄)₂C₂O₄ (white CaC₂O₄ precipitate)."
+                ]
+              },
+              {
+                "title": "VIth Group (Mg²⁺)",
+                "formulas": [
+                  "Mg²⁺ + NH₃ + HPO₄²⁻ → Mg(NH₄)PO₄ (white precipitate)",
+                  "Mg(OH)₂ + Titan Yellow → Deep red precipitate"
+                ],
+                "explanation": [
+                  "Magnesium ions are confirmed using ammonium phosphate, forming Mg(NH₄)PO₄.",
+                  "Titan yellow dye is used to produce a deep red precipitate with Mg(OH)₂, further confirming the presence of Mg²⁺ ions."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Analysis of Anions",
+            "flashcards": [
+              {
+                "title": "Chloride Ion (Cl⁻)",
+                "formulas": [
+                  "H₂SO₄ + Cl⁻ → HCl (pungent gas)",
+                  "Cl⁻ + Ag⁺ → AgCl (white precipitate)",
+                  "Cl⁻ + Cr₂O₇²⁻ + H⁺ → CrO₂Cl₂ (deep red vapors)"
+                ],
+                "explanation": [
+                  "Concentrated H₂SO₄ reacts with chlorides to produce HCl gas, which is pungent.",
+                  "Silver nitrate test produces a white precipitate of AgCl, soluble in ammonia.",
+                  "Chromyl chloride test produces deep red vapors of CrO₂Cl₂."
+                ]
+              },
+              {
+                "title": "Bromide Ion (Br⁻)",
+                "formulas": [
+                  "H₂SO₄ + Br⁻ → Br₂ (reddish-brown vapors)",
+                  "Br⁻ + Ag⁺ → AgBr (pale yellow precipitate)",
+                  "Br₂ + Cl₂ → 2Br⁺ + Cl⁻"
+                ],
+                "explanation": [
+                  "Bromide ions react with concentrated H₂SO₄ to produce reddish-brown vapors of bromine.",
+                  "Silver nitrate test forms a pale yellow precipitate of AgBr.",
+                  "Chlorine water can oxidize bromide to bromine, which can dissolve in an organic layer."
+                ]
+              },
+              {
+                "title": "Iodide Ion (I⁻)",
+                "formulas": [
+                  "H₂SO₄ + I⁻ → I₂ (violet fumes)",
+                  "I⁻ + Ag⁺ → AgI (bright yellow precipitate)",
+                  "I₂ + CHCl₃ → Violet solution"
+                ],
+                "explanation": [
+                  "Iodide ions react with concentrated H₂SO₄ to produce violet fumes of iodine.",
+                  "Silver nitrate test forms a bright yellow precipitate of AgI, insoluble in ammonia.",
+                  "Chlorine water test produces violet color in the organic layer due to iodine dissolution."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Qualitative Tests",
+            "flashcards": [
+              {
+                "title": "Charcoal Cavity Test",
+                "formulas": [],
+                "explanation": [
+                  "Residues formed during heating in the charcoal cavity test help identify specific cations.",
+                  "Yellow (Zn²⁺), brown (Cu²⁺), and white (general salts) residues are common observations."
+                ]
+              },
+              {
+                "title": "Cobalt Nitrate Test",
+                "formulas": [],
+                "explanation": [
+                  "When specific metals are treated with cobalt nitrate, distinct colored masses form.",
+                  "Zinc forms green, aluminum forms blue, and magnesium forms pink masses."
+                ]
+              },
+              {
+                "title": "Flame Test",
+                "formulas": [],
+                "explanation": [
+                  "Characteristic flame colors include crimson red (Li⁺), golden yellow (Na⁺), violet (K⁺), and green (Ba²⁺).",
+                  "The flame color is due to electronic transitions within metal cations."
+                ]
+              },
+              {
+                "title": "Borax Bead Test",
+                "formulas": [],
+                "explanation": [
+                  "When metals are treated in an oxidizing or reducing flame with borax, different colors appear.",
+                  "Copper produces green (oxidizing) and colorless (reducing) colors, while cobalt produces blue in both flames."
+                ]
+              }
+            ]
+          }
+        ]
+    },
+    {
+      "topic": "Organic Chemistry",
+      "chapters": [
+        {
+          "name": "Nomenclature",
+          "flashcards": [
+            {
+              "title": "IUPAC System of Nomenclature",
+              "formulas": [
+                "Secondary Prefix + Primary Prefix + Word Root + Primary Suffix + Secondary Suffix"
+              ],
+              "explanation": [
+                "IUPAC names consist of several parts to define the molecular structure and functional groups.",
+                "For example: CH3-CH2-OH → Ethanol."
+              ]
+            },
+            {
+              "title": "Common and IUPAC Names",
+              "formulas": [],
+              "explanation": [
+                "CH3-CH=CH2 → Propylene (Common) / Propene (IUPAC)",
+                "CH3-C≡CH → Methyl acetylene (Common) / Propyne (IUPAC)"
+              ]
+            },
+            {
+              "title": "Functional Group Names",
+              "formulas": [
+                "R-COOH → -oic acid (Carboxylic Acid)",
+                "R-COCl → -oyl chloride (Acid Chloride)"
+              ],
+              "explanation": [
+                "Functional groups determine the suffix in IUPAC nomenclature.",
+                "Example: CH3COOH → Ethanoic acid."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Common Organic Compounds",
+          "flashcards": [
+            {
+              "title": "Isopropyl Alcohol",
+              "formulas": [
+                "CH3-CHOH-CH3",
+                "Propan-2-ol"
+              ],
+              "explanation": [
+                "Isopropyl alcohol is used as a solvent and antiseptic."
+              ]
+            },
+            {
+              "title": "Toluene",
+              "formulas": [
+                "C6H5-CH3",
+                "Methylbenzene"
+              ],
+              "explanation": [
+                "Toluene is used in industrial applications as a solvent and chemical intermediate."
+              ]
+            },
+            {
+              "title": "Glycerol",
+              "formulas": [
+                "CH2OH-CHOH-CH2OH",
+                "Propane-1,2,3-triol"
+              ],
+              "explanation": [
+                "Glycerol is a viscous liquid used in pharmaceuticals and cosmetics."
+              ]
+            }
+          ]
+        },
+      {
+      "name": "Structure Isomerism",
+      "flashcards": [
+        {
+          "title": "Chain Isomers",
+          "formulas": [],
+          "explanation": [
+            "Chain isomers have different sizes of main chains or side chains.",
+            "Condition: They have the same nature of locants."
+          ]
+        },
+        {
+          "title": "Positional Isomers",
+          "formulas": [],
+          "explanation": [
+            "Positional isomers have different positions of locants.",
+            "Condition: They should have the same size of the main chain and same side chain and nature of locants."
+          ]
+        },
+        {
+          "title": "Functional Isomers",
+          "formulas": [],
+          "explanation": [
+            "Functional isomers have different nature of locants.",
+            "Condition: Chain and positional isomerism is not considered."
+          ]
+        },
+        {
+          "title": "Metamerism",
+          "formulas": [],
+          "explanation": [
+            "Metamers have different nature of alkyl groups along a polyvalent functional group.",
+            "Condition: They should have the same nature of functional groups, chain & positional isomerism is ignored."
+          ]
+        },
+        {
+          "title": "Tautomerism",
+          "formulas": [],
+          "explanation": [
+            "Tautomers have different positions of hydrogen atoms.",
+            "Condition: The two functional isomers remain in dynamic equilibrium to each other."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Types of Conjugation",
+      "flashcards": [
+        {
+          "title": "Conjugation between C=C and C=C",
+          "formulas": [
+            "C=C ↔ C=C"
+          ],
+          "explanation": [
+            "Occurs due to interaction of π-electrons of two double bonds."
+          ]
+        },
+        {
+          "title": "Conjugation between C=C and Positive Charge",
+          "formulas": [
+            "C=C ↔ C⁺"
+          ],
+          "explanation": [
+            "Interaction of π-electrons with an adjacent positively charged atom."
+          ]
+        },
+        {
+          "title": "Conjugation between Lone Pair and C=C",
+          "formulas": [
+            "C=C ↔ Lone Pair"
+          ],
+          "explanation": [
+            "Occurs when lone pair electrons on an atom interact with a double bond."
+          ]
+        },
+        {
+          "title": "Conjugation between Odd Electron and C=C",
+          "formulas": [
+            "C=C ↔ Odd Electron"
+          ],
+          "explanation": [
+            "Interaction between π-electrons and an unpaired electron."
+          ]
+        },
+        {
+          "title": "Conjugation between Negative Charge and C=C",
+          "formulas": [
+            "C=C ↔ Negative Charge"
+          ],
+          "explanation": [
+            "Occurs due to delocalization of π-electrons with a negative charge."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Hyperconjugation",
+      "flashcards": [
+        {
+          "title": "Hyperconjugation in Alkenes",
+          "formulas": [
+            "CH₂=CH–CH₃ ↔ CH=CH⁺–CH₃"
+          ],
+          "explanation": [
+            "Delocalization of sigma electrons with p-orbitals in alkenes."
+          ]
+        },
+        {
+          "title": "Hyperconjugation in Carbocations",
+          "formulas": [
+            "CH₃–CH⁺–CH₃ ↔ CH₂=CH–CH₃"
+          ],
+          "explanation": [
+            "Involves overlap of sigma bonds with an adjacent empty p-orbital."
+          ]
+        },
+        {
+          "title": "Hyperconjugation in Free Radicals",
+          "formulas": [
+            "CH₃–CH·–CH₃ ↔ CH₂=CH–CH₃"
+          ],
+          "explanation": [
+            "Delocalization of sigma electrons with a radical site."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "General Organic Chemistry",
+      "flashcards": [
+        {
+          "title": "Inductive Effect",
+          "formulas": [],
+          "explanation": [
+            "The inductive effect is a permanent displacement of σ-bond electrons due to differences in electronegativity.",
+            "It operates through σ bonds and diminishes with distance from the source of the effect.",
+            "Types: -I Effect (electron-withdrawing groups like NO₂, CN) and +I Effect (electron-donating groups like alkyl groups)."
+          ]
+        },
+        {
+          "title": "Resonance",
+          "formulas": [
+            "Resonance hybrid of CH₂=CH-CH=CH₂: All structures contribute to a hybrid with delocalized π electrons."
+          ],
+          "explanation": [
+            "Resonance involves delocalization of π electrons across adjacent multiple bonds or lone pairs, increasing stability.",
+            "The resonance hybrid represents the molecule's most stable form."
+          ]
+        },
+        {
+          "title": "Conjugation",
+          "formulas": [],
+          "explanation": [
+            "Conjugation occurs in systems with alternating single and double bonds, lone pairs, or empty p orbitals.",
+            "Examples include CH₂=CH-CH=CH₂ and benzene."
+          ]
+        },
+        {
+          "title": "Hyperconjugation",
+          "formulas": [],
+          "explanation": [
+            "Hyperconjugation involves delocalization of σ electrons of C-H bonds adjacent to a double bond or carbocation.",
+            "It is also known as no-bond resonance."
+          ]
+        },
+        {
+          "title": "Free Radicals",
+          "formulas": [
+            "Homolysis: A:B → A· + B·"
+          ],
+          "explanation": [
+            "Free radicals are neutral species with unpaired electrons, formed by homolytic bond cleavage.",
+            "They are stabilized by resonance, hyperconjugation, and inductive effects."
+          ]
+        },
+        {
+          "title": "Carbenes",
+          "formulas": [
+            "CHCl₃ + OH⁻ → :CCl₂ + H₂O",
+            "CH₂I₂ + Zn → :CH₂ + ZnI₂"
+          ],
+          "explanation": [
+            "Carbenes are divalent carbon intermediates with a lone pair and an incomplete octet.",
+            "They are highly reactive and can be stabilized through resonance."
+          ]
+        },
+        {
+          "title": "Nitrenes",
+          "formulas": [
+            "R-N₃ → R-:N"
+          ],
+          "explanation": [
+            "Nitrenes are nitrogen analogs of carbenes with one unpaired electron.",
+            "They are highly reactive due to incomplete octets."
+          ]
+        },
+        {
+          "title": "Aromatic Character",
+          "formulas": [
+            "(4n + 2)π electrons (n = 0, 1, 2, ...)"
+          ],
+          "explanation": [
+            "Aromatic compounds are cyclic, planar, and contain (4n + 2)π electrons in a delocalized π system.",
+            "Examples include benzene and naphthalene."
+          ]
+        },
+        {
+          "title": "Carbocations",
+          "formulas": [
+            "CH₃⁺, CH₂=CH⁺ (sp² hybridized)",
+            "HC≡C⁺ (sp hybridized)"
+          ],
+          "explanation": [
+            "Carbocations are positively charged carbon species stabilized by resonance, inductive effects, and hyperconjugation.",
+            "Stability order: tertiary > secondary > primary > methyl."
+          ]
+        },
+        {
+          "title": "Carbanions",
+          "formulas": [
+            "CH₃⁻, CH₂=CH⁻ (sp² hybridized)",
+            "HC≡C⁻ (sp hybridized)"
+          ],
+          "explanation": [
+            "Carbanions are negatively charged carbon species stabilized by resonance and inductive effects.",
+            "Stability order: methyl > primary > secondary > tertiary."
+          ]
+        },
+        {
+          "title": "Benzyne",
+          "formulas": [
+            "C₆H₄ (Triple-bonded benzene derivative)"
+          ],
+          "explanation": [
+            "Benzyne is a highly reactive intermediate with a strained triple bond within the benzene ring.",
+            "It is generated in elimination-addition reactions."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Nucleophilic Aromatic Substitution",
+      "flashcards": [
+        {
+          "title": "Mechanism of Nucleophilic Aromatic Substitution",
+          "formulas": [
+            "Step I: RDS",
+            "Step II: Fast step"
+          ],
+          "explanation": [
+            "An electron withdrawing group at ortho or para positions with respect to a good leaving group is necessary for S_N2Ar reactions.",
+            "Intermediate ions are stabilized by resonance and form stable salts called Meisenheimer salts.",
+            "Electron-withdrawing groups stabilize the carbanion by dispersing negative charge, activating the reaction.",
+            "Electron-releasing groups destabilize the carbanion, slowing down the reaction."
+          ]
+        },
+        {
+          "title": "Element Effect in S_N2Ar",
+          "formulas": [
+            "Reactivity order: Ar-F > Ar-Cl > Ar-Br > Ar-I"
+          ],
+          "explanation": [
+            "Reactivity depends on the halogen attached to the aromatic ring due to its electron-withdrawing nature."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reactions of Alkanes, Alkenes, and Alkynes",
+      "flashcards": [
+        {
+          "title": "Wurtz Reaction",
+          "formulas": [
+            "R-X + 2Na + R-X \u2192 R-R + 2NaX"
+          ],
+          "explanation": [
+            "The reaction of primary or secondary alkyl halides with sodium in ether to form alkanes."
+          ]
+        },
+        {
+          "title": "Electrophilic Addition in Alkenes and Alkynes",
+          "formulas": [
+            "Step I: Formation of carbocation",
+            "Step II: Nucleophilic attack"
+          ],
+          "explanation": [
+            "Alkenes and alkynes undergo electrophilic addition reactions, forming carbocation intermediates.",
+            "The major product follows Markovnikov's rule when unsymmetrical reagents are added."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reactions of Alkyl Halides",
+      "flashcards": [
+        {
+          "title": "Nucleophilic Substitution Reactions",
+          "formulas": [
+            "S_N1 mechanism",
+            "S_N2 mechanism"
+          ],
+          "explanation": [
+            "S_N1: Two-step mechanism involving carbocation intermediate.",
+            "S_N2: One-step mechanism involving a backside attack and inversion of configuration."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reactions of Alcohols",
+      "flashcards": [
+        {
+          "title": "Williamson's Ether Synthesis",
+          "formulas": [
+            "R-OH + R'-X \u2192 R-O-R' + HX"
+          ],
+          "explanation": [
+            "Involves the reaction of alcohol with alkyl halide in the presence of a base to form ethers."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Grignard Reagent",
+      "flashcards": [
+        {
+          "title": "Grignard Reagent and Its Reactions",
+          "formulas": [
+            "RMgX (Grignard reagent)",
+            "RCHO + RMgX → 1° alcohol",
+            "R₂CO + RMgX → 2° alcohol",
+            "R₃CO + RMgX → 3° alcohol",
+            "R-X + RMgX → R-R'",
+            "CO₂ + RMgX → RCOOH",
+            "RCOCl + 2 RMgX → R₃COH + HCl",
+            "Cyclic ester + 2 RMgX → Ring alcohol (2° or 3° depending on structure)"
+          ],
+          "explanation": [
+            "Grignard reagents (RMgX) are organomagnesium halides used in organic synthesis.",
+            "They react with aldehydes to form primary alcohols, ketones to form secondary alcohols, and esters to form tertiary alcohols.",
+            "Grignard reagents also react with CO₂ to produce carboxylic acids.",
+            "Cyclic esters undergo ring opening with Grignard reagents, producing alcohols."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reduction Reactions",
+      "flashcards": [
+        {
+          "title": "LiAlH₄ Reduction",
+          "formulas": [
+            "R-CHO → R-CH₂OH",
+            "RCOOH → R-CH₂OH",
+            "R-COR' → R-CH(OH)-R'",
+            "R-CN → R-CH₂-NH₂",
+            "Exception: Ph-CH₂-COOH → Ph-CH₂-CH₂-OH"
+          ],
+          "explanation": [
+            "LiAlH₄ is a strong reducing agent that reduces aldehydes, carboxylic acids, ketones, and nitriles to their respective alcohols or amines.",
+            "It is commonly used in organic synthesis for selective reductions."
+          ]
+        },
+        {
+          "title": "NaBH₄ Reduction",
+          "formulas": [
+            "Aldehyde → 1° Alcohol",
+            "Ketone → 2° Alcohol",
+            "Acid Halide → 1° Alcohol"
+          ],
+          "explanation": [
+            "NaBH₄ selectively reduces aldehydes and ketones to alcohols.",
+            "It is a milder reducing agent compared to LiAlH₄."
+          ]
+        },
+        {
+          "title": "Bouvet Blanc Reduction",
+          "formulas": [
+            "Aldehyde → 1° Alcohol",
+            "Ketone → 2° Alcohol",
+            "Acid Halide → 1° Alcohol",
+            "Ester → Alcohol + Alcohol"
+          ],
+          "explanation": [
+            "Bouvet Blanc reduction utilizes sodium in alcohol as the reducing agent, capable of reducing various carbonyl compounds and esters."
+          ]
+        },
+        {
+          "title": "Clemmensen Reduction",
+          "formulas": [
+            "R-COR' → R-CH₂-R"
+          ],
+          "explanation": [
+            "Clemmensen reduction uses Zn-Hg in HCl to reduce carbonyl groups (ketones and aldehydes) to methylene groups.",
+            "It is suitable for compounds stable in acidic conditions."
+          ]
+        },
+        {
+          "title": "Wolff-Kishner Reduction",
+          "formulas": [
+            "R-COR' → R-CH₂-R"
+          ],
+          "explanation": [
+            "Wolff-Kishner reduction involves hydrazine (NH₂-NH₂) and KOH to reduce carbonyl groups to methylene groups.",
+            "It is used for compounds stable under basic conditions."
+          ]
+        },
+        {
+          "title": "Birch Reduction",
+          "formulas": [
+            "R-C≡C-R → R-CH=CH-R (Trans alkene)"
+          ],
+          "explanation": [
+            "Birch reduction uses alkali metals in liquid ammonia to reduce alkynes to trans alkenes.",
+            "Terminal alkynes are not reduced."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Oxidation and Reduction Reactions",
+      "flashcards": [
+        {
+          "title": "Oxidation Reaction",
+          "formulas": [
+            "KMnO₄ (both medium) or K₂Cr₂O₇ (acidic medium)",
+            "PCC (Pyridinium chloro chromate)",
+            "Cu/573 K",
+            "HIO₄ (Periodic Acid)",
+            "Baeyer’s reagent and OsO₄ + NaHSO₃",
+            "Baeyer–Villiger oxidation (m-CPBA or CH₃CO₃H)",
+            "Prilezhaev reaction",
+            "Oxidation by HNO₃",
+            "Oxidation by MnO₂"
+          ],
+          "explanation": [
+            "Various reagents like KMnO₄, PCC, Cu, etc., are used for oxidizing alcohols, aldehydes, and alkenes into acids, ketones, or other oxidized products.",
+            "Periodic acid cleaves vicinal diols into aldehydes or ketones.",
+            "Baeyer’s reagent results in stereospecific syn addition to form diols.",
+            "Prilezhaev reaction involves anti hydroxylation to form diols.",
+            "MnO₂ specifically oxidizes allylic and benzylic alcohols."
+          ]
+        },
+        {
+          "title": "Reduction Reaction",
+          "formulas": [
+            "LiAlH₄",
+            "NaBH₄, EtOH",
+            "Na/EtOH (Bouevat Blanc reduction)",
+            "Na–Hg/HCl or Al[OCH₃]₃ (MPV Reduction)",
+            "Rosenmund’s Reduction",
+            "Birch Reduction (Li/Na/K + Liquid NH₃)",
+            "Stephen’s Reduction",
+            "Clemmensen Reduction",
+            "Wolff-Kishner Reduction",
+            "Lindlar Catalyst",
+            "Red Phosphorus and HI",
+            "DIBAL-H Reduction"
+          ],
+          "explanation": [
+            "LiAlH₄ and NaBH₄ reduce aldehydes, ketones, esters, and acid chlorides to alcohols.",
+            "Rosenmund’s reduction selectively reduces acid chlorides to aldehydes.",
+            "Birch reduction converts alkynes to trans-alkenes using metal in liquid ammonia.",
+            "Stephen’s reduction reduces nitriles to aldehydes.",
+            "Clemmensen and Wolff-Kishner reductions convert ketones to alkanes under acidic or basic conditions respectively.",
+            "DIBAL-H selectively reduces esters to aldehydes at low temperature."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Aldehydes and Ketones",
+      "flashcards": [
+        {
+          "title": "Aldol Condensation",
+          "formulas": [
+            "2CH₃CHO → CH₃CH=CHCHO (Dil NaOH, H₂O)"
+          ],
+          "explanation": [
+            "Carbonyl compounds having acidic sp² α-H show aldol condensation in the presence of dilute NaOH or dilute acid."
+          ]
+        },
+        {
+          "title": "Cannizzaro Reaction",
+          "formulas": [
+            "2HCHO + NaOH → CH₃OH + HCOONa"
+          ],
+          "explanation": [
+            "Carbonyl compounds without sp² α-H undergo Cannizzaro reaction, involving disproportionation in the presence of NaOH."
+          ]
+        },
+        {
+          "title": "Perkin Reaction",
+          "formulas": [
+            "C₆H₅CHO + CH₃COONa → C₆H₅CH=CHCOOH"
+          ],
+          "explanation": [
+            "An aromatic aldehyde reacts with the anhydride of an aliphatic acid in the presence of its sodium salt to form an α, β-unsaturated acid."
+          ]
+        },
+        {
+          "title": "Haloform Reaction",
+          "formulas": [
+            "RCOCH₃ + 3Br₂ + 4NaOH → CHBr₃ + RCOONa + 3H₂O"
+          ],
+          "explanation": [
+            "Acetaldehyde and methyl ketones react with halogens in the presence of alkali to produce haloform."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reduction Reactions",
+      "flashcards": [
+        {
+          "title": "LiAlH₄ Reduction",
+          "formulas": [
+            "RCHO → RCH₂OH",
+            "RCOOH → RCH₂OH"
+          ],
+          "explanation": [
+            "LiAlH₄ reduces aldehydes to primary alcohols and carboxylic acids to primary alcohols."
+          ]
+        },
+        {
+          "title": "NaBH₄ Reduction",
+          "formulas": [
+            "RCHO → RCH₂OH",
+            "RCOR' → RCH(OH)R'"
+          ],
+          "explanation": [
+            "NaBH₄ selectively reduces aldehydes and ketones to alcohols."
+          ]
+        },
+        {
+          "title": "Birch Reduction",
+          "formulas": [
+            "RC≡CR → RCH=CHR"
+          ],
+          "explanation": [
+            "Alkynes are reduced to trans alkenes using Na/NH₃."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Oxidation Reactions",
+      "flashcards": [
+        {
+          "title": "KMnO₄ Oxidation",
+          "formulas": [
+            "RCHO → RCOOH",
+            "RCH₂OH → RCOOH"
+          ],
+          "explanation": [
+            "KMnO₄ oxidizes primary alcohols and aldehydes to carboxylic acids."
+          ]
+        },
+        {
+          "title": "PCC Oxidation",
+          "formulas": [
+            "RCH₂OH → RCHO"
+          ],
+          "explanation": [
+            "PCC selectively oxidizes primary alcohols to aldehydes."
+          ]
+        },
+        {
+          "title": "Prilezhaev Reaction",
+          "formulas": [
+            "RCH=CHR' + MCPBA → RCHOHCHOH"
+          ],
+          "explanation": [
+            "Alkenes react with MCPBA to form epoxides, followed by hydrolysis to diols."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reactions of Esters",
+      "flashcards": [
+        {
+          "title": "Hydrolysis of Esters",
+          "formulas": [
+            "RCOOH + R'OH"
+          ],
+          "explanation": [
+            "In acidic medium or with water, esters hydrolyze to give carboxylic acid and alcohol."
+          ]
+        },
+        {
+          "title": "Saponification",
+          "formulas": [
+            "RCOONa + R'OH"
+          ],
+          "explanation": [
+            "When treated with NaOH, esters undergo saponification, yielding soap and alcohol."
+          ]
+        },
+        {
+          "title": "Aminolysis",
+          "formulas": [
+            "RCONH₂ + R'OH"
+          ],
+          "explanation": [
+            "Reaction of esters with ammonia results in the formation of amides and alcohol."
+          ]
+        },
+        {
+          "title": "Bouvaeu-Blanc Reduction",
+          "formulas": [
+            "RCH₂OH + R'OH"
+          ],
+          "explanation": [
+            "In the presence of Na/alcohol, esters are reduced to primary alcohols."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Carboxylic Acid & Derivatives",
+      "flashcards": [
+        {
+          "title": "Reaction with Na Metal",
+          "formulas": [
+            "RCOONa + ½ H₂"
+          ],
+          "explanation": [
+            "Carboxylic acids react with sodium metal to produce sodium carboxylate and hydrogen gas."
+          ]
+        },
+        {
+          "title": "Reaction with SOCl₂",
+          "formulas": [
+            "RCOCl + SO₂ + HCl"
+          ],
+          "explanation": [
+            "Carboxylic acids react with thionyl chloride to produce acid chlorides."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Acid Halides",
+      "flashcards": [
+        {
+          "title": "Hydrolysis of Acid Chlorides",
+          "formulas": [
+            "RCOOH + HCl"
+          ],
+          "explanation": [
+            "Acid chlorides react with water to yield carboxylic acids and hydrochloric acid."
+          ]
+        },
+        {
+          "title": "Reaction with Alcohols",
+          "formulas": [
+            "RCOOR' + HCl"
+          ],
+          "explanation": [
+            "Acid chlorides react with alcohols to form esters."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Amides",
+      "flashcards": [
+        {
+          "title": "Hofmann Bromide Reaction",
+          "formulas": [
+            "RNH₂ + CO₂ + 2KBr + H₂O"
+          ],
+          "explanation": [
+            "Amides react with bromine in the presence of KOH to yield amines."
+          ]
+        },
+        {
+          "title": "Reduction with LiAlH₄",
+          "formulas": [
+            "RCH₂NH₂"
+          ],
+          "explanation": [
+            "Amides can be reduced to primary amines using lithium aluminium hydride."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Aromatic Compounds",
+      "flashcards": [
+        {
+          "title": "Electrophilic Aromatic Substitution",
+          "formulas": [
+            "Formation of electrophile: Br2 + FeBr3 → Br⁺ + FeBr4⁻",
+            "Sigma Complex Formation",
+            "Proton Loss: Produces Bromobenzene + H⁺"
+          ],
+          "explanation": [
+            "The process involves generating an electrophile that reacts with benzene to form a sigma complex, followed by proton loss to restore aromaticity.",
+            "Examples include Bromination, Nitration, and Sulphonation."
+          ]
+        },
+        {
+          "title": "Friedel-Craft Reactions",
+          "formulas": [
+            "Alkylation: R-Cl + AlCl3 → R⁺ + AlCl4⁻",
+            "Acylation: RCOCl + AlCl3 → RCO⁺ + AlCl4⁻"
+          ],
+          "explanation": [
+            "Alkylation introduces alkyl groups into benzene, while acylation introduces acyl groups using acid chlorides and Lewis acids.",
+            "Note: Acylations prevent multiple substitutions."
+          ]
+        },
+        {
+          "title": "Chemical Reactions of Benzene",
+          "formulas": [
+            "Nitration: C6H6 + HNO3 → C6H5NO2 + H2O",
+            "Sulphonation: C6H6 + SO3 → C6H5SO3H",
+            "Halogenation: C6H6 + Cl2 → C6H5Cl + HCl (in presence of FeCl3)"
+          ],
+          "explanation": [
+            "Benzene undergoes reactions like nitration, sulphonation, and halogenation under specific conditions."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Reactions of Esters",
+      "flashcards": [
+        {
+          "title": "Hydrolysis",
+          "formulas": [
+            "R-COOR' + H2O → R-COOH + R'-OH"
+          ],
+          "explanation": [
+            "Ester hydrolysis in acidic medium produces carboxylic acid and alcohol."
+          ]
+        },
+        {
+          "title": "Saponification",
+          "formulas": [
+            "R-COOR' + NaOH → R-COONa + R'-OH"
+          ],
+          "explanation": [
+            "Saponification involves ester hydrolysis in the presence of a base, forming soap (carboxylate salt) and alcohol."
+          ]
+        },
+        {
+          "title": "Reduction of Esters",
+          "formulas": [
+            "R-COOR' + 2[H] → R-CH2OH + R'-OH (using LiAlH4 or Na/Alcohol)"
+          ],
+          "explanation": [
+            "Esters are reduced to primary alcohols using reducing agents like LiAlH4 or sodium in alcohol."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Addition Polymers",
+      "flashcards": [
+        {
+          "title": "Polyethylene (LDPE and HDPE)",
+          "formulas": [
+            "-[-CH2-CH2-]-n"
+          ],
+          "explanation": [
+            "LDPE: Produced by free radical polymerization, used in film wraps and plastic bags.",
+            "HDPE: Produced by Ziegler-Natta polymerization, used in toys and electrical insulation."
+          ]
+        },
+        {
+          "title": "Polyvinyl Chloride (PVC)",
+          "formulas": [
+            "-[-CH2-CHCl-]-n"
+          ],
+          "explanation": [
+            "Produced from vinyl chloride monomers, used in raincoats and water pipes."
+          ]
+        },
+        {
+          "title": "Polystyrene",
+          "formulas": [
+            "-[-CH2-CH(C6H5)-]-n"
+          ],
+          "explanation": [
+            "Produced from styrene, used as insulating and packing material."
+          ]
+        },
+        {
+          "title": "Polytetrafluoroethylene (PTFE, Teflon)",
+          "formulas": [
+            "-[-CF2-CF2-]-n"
+          ],
+          "explanation": [
+            "Produced from tetrafluoroethylene, used in non-stick surfaces and electrical insulation."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Condensation Polymers",
+      "flashcards": [
+        {
+          "title": "Polyester (Dacron or Terylene)",
+          "formulas": [
+            "-[-CO-C6H4-CO-O-CH2-CH2-O-]-n"
+          ],
+          "explanation": [
+            "Produced from terephthalic acid and ethylene glycol, used in fabrics and tire cords."
+          ]
+        },
+        {
+          "title": "Nylon-6,6",
+          "formulas": [
+            "-[-NH-(CH2)6-NH-CO-(CH2)4-CO-]-n"
+          ],
+          "explanation": [
+            "Produced from hexamethylenediamine and adipic acid, used in parachutes and clothing."
+          ]
+        },
+        {
+          "title": "Bakelite",
+          "formulas": [
+            "Cross-linked phenol and formaldehyde units"
+          ],
+          "explanation": [
+            "Produced from phenol and formaldehyde, used in electrical switches and combs."
+          ]
+        }
+      ]
+     },
+     {
+      "name": "Biodegradable Polymers",
+      "flashcards": [
+        {
+          "title": "Poly-\u03b2-hydroxybutyrate-co-\u03b2-hydroxyvalerate (PHBV)",
+          "formulas": [
+            "Polymer of 3-hydroxybutanoic acid and 3-hydroxypentanoic acid"
+          ],
+          "explanation": [
+            "Used in packaging and controlled drug release, degrades in the environment via bacterial action."
+          ]
+        },
+        {
+          "title": "Nylon-2-Nylon-6",
+          "formulas": [
+            "-[-NH-CH2-CO-NH-(CH2)5-CO-]-n"
+          ],
+          "explanation": [
+            "Alternating polyamide copolymer of glycine and amino caproic acid, used as biodegradable polymer."
+          ]
+        }
+       ]
+     } 
+   ] 
+  }   
+ ] 
+}
+}
