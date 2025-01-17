@@ -104,7 +104,6 @@ export class AuthService {
   }
 
   getCustomPracticeTest() {
-    console.log('Hi');
     return this.http.get(`${this.baseUrl}/get-custom-practice`, {
       headers: { Authorization: localStorage.getItem('userToken') || '' },
     });
@@ -156,6 +155,13 @@ export class AuthService {
   
     return this.http.post(`${this.apiUrl}/generate-study-plan`, payload, {
       headers: { Authorization: token }
+    });
+  }
+
+  fetchQuiz(): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get(`${this.baseUrl}/fetch-quiz`, {
+      headers: { Authorization: token },
     });
   }
   

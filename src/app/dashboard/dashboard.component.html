@@ -1,1 +1,37 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <div class="rank-prediction-container">
+      <div class="rank-prediction-card">
+        <h2>Want to know your rank?</h2>
+        <p>
+          This is a full-length mock KCET test, consisting of 180 questions:
+          60 each in Physics, Chemistry, and Mathematics. You will have
+          3 hours to complete the exam. This is your chance to test your
+          preparation level and get a predicted rank!
+        </p>
+        <p class="disclaimer">
+          Disclaimer: The predicted rank is based on your performance and may not
+          always reflect your actual KCET rank.
+        </p>
+        <button class="btn-predict-rank" (click)="startQuiz()">Start Mock Test</button>
+      </div>
+    </div>
+  
+    <div *ngIf="quizStarted" class="quiz-container">
+      <h2>Mock Test</h2>
+      <div *ngFor="let question of currentQuestions" class="question-card">
+        <div class="image-container">
+          <img [src]="question.imagePath" alt="Question Image" />
+        </div>
+        <div class="options">
+          <button
+            *ngFor="let option of question.options"
+            (click)="selectAnswer(question.questionIndex, option)"
+          >
+            {{ option }}
+          </button>
+        </div>
+      </div>
+      <button class="btn-submit-quiz" (click)="submitQuiz()">Submit Quiz</button>
+    </div>
+  </div>
+  

@@ -4,8 +4,12 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
 const rateLimit = require('express-rate-limit');
-
+const mongoose = require('mongoose');
 const router = express.Router();
+
+const ChemistryCollection = mongoose.connection.collection('Previous_Year_Questions_Chemistry');
+const PhysicsCollection = mongoose.connection.collection('Previous_Year_Questions_Physics');
+const MathematicsCollection = mongoose.connection.collection('Previous_Year_Questions_Mathematics');
 
 // Rate limiter for login route
 const loginLimiter = rateLimit({
@@ -451,6 +455,24 @@ router.get('/get-history', async (req, res) => {
   }
 });
 
+// Endpoint to fetch all questions
+router.get('/fetch-quiz', async (req, res) => {
+  try {
+    const chemistryQuestions = await ChemistryCollection.find().toArray();
+    const physicsQuestions = await PhysicsCollection.find().toArray();
+    const mathematicsQuestions = await MathematicsCollection.find().toArray();
 
+    const allQuestions = {
+      chemistry: chemistryQuestions,
+      physics: physicsQuestions,
+      mathematics: mathematicsQuestions,
+    };
+
+    res.status(200).json(allQuestions);
+  } catch (error) {
+    console.error('Error fetching quiz questions:', error);
+    res.status(500).json({ error: 'Failed to fetch quiz questions' });
+  }
+});
 
 module.exports = router;
