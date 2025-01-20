@@ -1,0 +1,161 @@
+Question,Option_1,Option_2,Option_3,Option_4,Correct_Option,Topic,Subtopic,Difficulty_Level
+"If f(x) = x + 2x + 1, find f'(x).",2x + 2,2x - 1,x + 2,x^2 + 2x,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (5x) dx.,5x^4 / 4 + C,5x^5 / 5 + C,x^4 + C,5x^3 + C,Option_1,Calculus,Integration,Medium
+Solve for x: 4x - 7 = 5.,3,4,2,0,Option_1,Algebra,Linear Equations,Easy
+A die is rolled. What is the probability of getting a 4?,01-Jun,01-Apr,01-Mar,01-May,Option_1,Probability,Basic Probability,Easy
+Find the area of a rectangle with length 5 cm and width 3 cm.,15 cm,20 cm,10 cm,25 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = 3x - 4x + 5, find f'(x).",6x - 4,3x - 2,2x + 1,4x - 1,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (x + 2x) dx.,(x/3) + x + C,(x/2) + x + C,2x + C,x + x + C,Option_1,Calculus,Integration,Medium
+Solve for x: 5x + 9 = 24.,3,4,5,6,Option_1,Algebra,Linear Equations,Easy
+What is the probability of drawing a queen from a standard deck of 52 cards?,Jan-13,Jan-52,01-Apr,Jan-26,Option_1,Probability,Basic Probability,Easy
+Find the perimeter of a rectangle with length 8 cm and width 3 cm.,22 cm,20 cm,18 cm,16 cm,Option_1,Geometry,Perimeter Calculation,Easy
+What is the value of lim (x0) (sin x / x)?,1,0,Infinity,-1,Option_1,Calculus,Limits,Medium
+Calculate the derivative of f(x) = x - 2x + 4.,3x - 2,x + 4,3x - 2x,x - x,Option_1,Calculus,Derivatives,Medium
+Solve the equation: log(x + 1) + log(x - 1) = 1.,x = 2,x = 3,x = 1,x = 4,Option_1,Algebra,Logarithmic Equations,Medium
+"In a right triangle, if the adjacent side is 4 cm and the opposite side is 3 cm, find the hypotenuse.",5 cm,6 cm,7 cm,8 cm,Option_1,Geometry,Pythagorean Theorem,Easy
+What is the value of (3x) dx from x = 0 to x = 2?,8,12,16,10,Option_3,Calculus,Definite Integrals,Medium
+"If f(x) = 2x - 3x + x, find f'(x).",6x - 6x + 1,3x - 3x + 2,2x - x + 1,x - 3x + 4,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (4x - 2) dx.,2x - 2x + C,4x + C,3x + C,2x + C,Option_1,Calculus,Integration,Medium
+What is the value of sin(45) in simplest form?,02-Feb,01-Feb,1,03-Feb,Option_1,Trigonometry,Basic Trigonometric Ratios,Easy
+Solve for x: 3x + 5 = 20.,5,6,7,8,Option_1,Algebra,Linear Equations,Easy
+Calculate the area of a triangle with base 6 cm and height 4 cm.,12 cm,10 cm,8 cm,14 cm,Option_1,Geometry,Area of Triangle,Easy
+What is the derivative of f(x) = sin(x)?,cos(x),#NAME?,tan(x),sec(x),Option_1,Calculus,Trigonometric Derivatives,Easy
+Evaluate the integral (2x + 3x) dx.,(2/3)x + (3/2)x + C,x + x + C,(3/2)x - (2/3)x + C,2x + 3 + C,Option_1,Calculus,Integration,Medium
+Solve for x: x - 4 = 0.,x = 2,x = 4,x = 1,x = 3,Option_1,Algebra,Quadratic Equations,Easy
+What is the probability of drawing an ace from a standard deck of 52 cards?,Jan-13,01-Apr,Jan-26,Jan-52,Option_1,Probability,Basic Probability,Easy
+Find the circumference of a circle with radius 7 cm.,44 cm,22 cm,28 cm,14 cm,Option_1,Geometry,Circumference,Easy
+"What is the value of the determinant of a 2x2 matrix with elements [[2, 3], [4, 5]]?",-2,-3,-4,-5,Option_1,Algebra,Determinants,Easy
+"If f(x) = e^x, what is f'(x)?",e^x,x^2,2x,x,Option_1,Calculus,Derivatives,Medium
+Evaluate the limit lim (x0) (1 - cos(x))/x.,01-Feb,1,0,01-Apr,Option_3,Limits,Trigonometric Limits,Medium
+Solve for x: log(x) + log(3) = log(12).,x = 4,x = 5,x = 3,x = 2,Option_1,Logarithmic Equations,Solving Equations,Easy
+Find the area under the curve y = x from x = 0 to x = 2.,2,3,4,6,Option_1,Integration,Definite Integrals,Medium
+"If f(x) = x - 3x + 2, find f'(x).",3x - 3,2x + 3,3x - 1,x + 2x,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (x + 2x) dx.,(x^4 / 4) + x + C,(x / 3) + 2x + C,(x / 2) + x + C,(2x / 3) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 20 terms of an arithmetic sequence with first term 5 and common difference 2?,410,405,420,400,Option_1,Sequences,Arithmetic Series,Easy
+Solve for x: e^(2x) = 7.,x = 1.25,x = 1.2,x = 0.85,x = 0.75,Option_3,Algebra,Exponential Equations,Medium
+Calculate the area of a sector with radius 5 cm and angle 30.,6.54 cm,4.36 cm,7.5 cm,5.24 cm,Option_2,Geometry,Area of Sector,Medium
+"If f(x) = ln(x), find f'(x).",1/x,x,ln(x),1/x,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (sin x) dx.,-cos(x) + C,sin(x) + C,cos(x) + C,-sin(x) + C,Option_1,Calculus,Integration,Easy
+Find the common difference of an arithmetic sequence where the first term is 3 and the 10th term is 30.,3,4,5,2,Option_1,Sequences,Arithmetic Sequences,Easy
+What is the solution to the equation log(x) = 4?,x = 81,x = 64,x = 82,x = 80,Option_1,Logarithmic Equations,Exponential and Logarithmic Equations,Medium
+Find the volume of a sphere with radius 3 cm.,113.04 cm,125.6 cm,132.8 cm,108 cm,Option_1,Geometry,Volume Calculation,Medium
+"If f(x) = x + 3x + 2, find the derivative f'(x).",2x + 3,x + 1,x + 2,3x + 5,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (3x + 5) dx.,(3x/2) + 5x + C,(x + 5x) + C,(x + 5x) / 2 + C,(3x + x) + C,Option_1,Calculus,Integration,Easy
+What is the sum of the first 15 terms of an arithmetic sequence with first term 4 and common difference 3?,160,135,180,170,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x: log(x) = 2.,x = 16,x = 12,x = 14,x = 18,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the area of a circle with radius 6 cm.,113.04 cm,120 cm,130 cm,140 cm,Option_1,Geometry,Area of Circle,Easy
+"If f(x) = 5x - 3, find the derivative f'(x).",5,3,1,7,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (x + 3) dx.,(x / 3) + 3x + C,(x / 2) + 3 + C,x + 3 + C,2x + C,Option_1,Calculus,Integration,Medium
+What is the 8th term of an arithmetic sequence with first term 2 and common difference 5?,37,42,32,27,Option_1,Sequences,Arithmetic Sequences,Easy
+Solve for x: 3^x = 81.,x = 4,x = 3,x = 5,x = 2,Option_1,Exponential Equations,Exponential Functions,Medium
+Find the area of a rectangle with length 7 cm and width 4 cm.,28 cm,21 cm,24 cm,25 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = x + 2x + 1, find the derivative f'(x).",2x + 2,x + 2,2x + 1,x + 1,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (4x - 2) dx.,(2x - 2x) + C,(x + 2x) + C,(2x - x) + C,(x / 2) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 12 terms of an arithmetic sequence with first term 5 and common difference 3?,246,210,230,216,Option_2,Sequences,Arithmetic Series,Medium
+Solve for x in the equation log(x) = 5.,x = 64,x = 32,x = 128,x = 256,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the area of a triangle with base 6 cm and height 8 cm.,24 cm,18 cm,48 cm,36 cm,Option_3,Geometry,Area of Triangle,Easy
+"If f(x) = x + 4x + 4, find the second derivative f''(x).",2,4,6,8,Option_1,Calculus,Second Derivatives,Medium
+Evaluate the integral (2x + 3) dx.,x + 3x + C,2x + 3 + C,x + C,3x + C,Option_1,Calculus,Integration,Easy
+What is the 12th term of an arithmetic sequence with first term 7 and common difference 5?,62,67,72,52,Option_2,Sequences,Arithmetic Sequences,Medium
+Solve for x in the equation log(x) = 3.,x = 1000,x = 2000,x = 10,x = 100,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the volume of a cylinder with radius 3 cm and height 10 cm.,282.6 cm,270 cm,314 cm,251 cm,Option_1,Geometry,Volume Calculation,Easy
+"If f(x) = x - 3x + 1, find the second derivative f''(x).",6x - 3,3x - 2,6x - 1,3x - 1,Option_1,Calculus,Second Derivatives,Medium
+Evaluate the integral (x + 4x) dx.,(x / 3) + 2x + C,(x + 2) + C,(x / 2) + x + C,(2x / 3) + C,Option_1,Calculus,Integration,Medium
+What is the 10th term of an arithmetic sequence with first term 3 and common difference 4?,39,42,35,37,Option_1,Sequences,Arithmetic Sequences,Easy
+Solve for x: log(x) = 4.,x = 81,x = 80,x = 82,x = 64,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the area of a sector with radius 4 cm and angle 30.,2.09 cm,4.18 cm,6.28 cm,1.57 cm,Option_1,Geometry,Sector Area,Easy
+"If f(x) = e^x, find the derivative f'(x).",e^x,x e^(x-1),x e^x,e^x + 1,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (5x - 3) dx.,(5x/2) - 3x + C,(5x/3) - x + C,(3x/2) - 5x + C,(x/3) - 3 + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 10 terms of an arithmetic sequence with first term 7 and common difference 3?,175,160,150,180,Option_1,Sequences,Arithmetic Series,Easy
+Solve for x: log(x) = 3.,x = 125,x = 25,x = 15,x = 5,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the area of a parallelogram with base 6 cm and height 8 cm.,48 cm,36 cm,30 cm,24 cm,Option_1,Geometry,Area Calculation,Easy
+Evaluate the limit lim (x0) (sin(x)/x).,1,0,,-1,Option_1,Calculus,Limits,Easy
+"If f(x) = ln(x), find f'(x).",1/x,x,ln(x),x^2,Option_1,Calculus,Derivatives,Medium
+What is the sum of the first 12 terms of a geometric sequence with first term 2 and common ratio 3?,797160,393660,797160/3,262440,Option_1,Sequences,Geometric Series,Medium
+Solve for x: log(x) = 6.,x = 64,x = 32,x = 128,x = 8,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Find the volume of a cone with radius 3 cm and height 4 cm.,12.57 cm,37.7 cm,113.04 cm,56.52 cm,Option_2,Geometry,Volume Calculation,Medium
+Find the derivative of f(x) = 3x - 4x + 5.,6x - 4,3x - 4,6x - 5,3x + 5,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (2x + 1) dx.,(x + x) + C,(x + x) + C,(2x + x) + C,(x / 2) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 20 terms of an arithmetic sequence with first term 2 and common difference 5?,510,520,480,450,Option_1,Sequences,Arithmetic Series,Easy
+Solve for x in the equation log(x) = 4.,x = 10000,x = 1000,x = 100,x = 100000,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a triangle with base 8 cm and height 5 cm.,20 cm,40 cm,30 cm,10 cm,Option_1,Geometry,Area Calculation,Easy
+Evaluate the limit lim (x) (3x + 2x)/(x + x).,3,2,1,0,Option_1,Calculus,Limits,Medium
+"If f(x) = cos(x), find f'(x).",#NAME?,cos(x),sin(x),#NAME?,Option_1,Calculus,Derivatives,Easy
+What is the 15th term of an arithmetic sequence with first term 2 and common difference 3?,44,42,40,45,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x in the equation log(x) = 2.,x = 16,x = 8,x = 4,x = 64,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the volume of a sphere with radius 4 cm.,268.08 cm,256.5 cm,150.8 cm,300 cm,Option_1,Geometry,Volume Calculation,Medium
+"If f(x) = x^2 + 3x, find the derivative f'(x).",2x + 3,x + 1,3x + 1,2x + 4,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (3x + 4) dx.,(3x/2) + 4x + C,(x + 4) + C,(x + 3x) + C,(2x + 5) + C,Option_1,Calculus,Integration,Medium
+What is the 7th term of an arithmetic sequence with first term 5 and common difference 2?,17,16,19,14,Option_1,Sequences,Arithmetic Sequences,Easy
+Solve for x: log(x) = 3.,x = 125,x = 25,x = 15,x = 64,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the surface area of a sphere with radius 3 cm.,113.04 cm,75.36 cm,100 cm,90 cm,Option_1,Geometry,Surface Area Calculation,Medium
+Find the derivative of f(x) = 4x - 3x + 2.,12x - 3,8x - 1,3x + 2,4x + 3,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (5x - 4) dx.,(5x/2) - 4x + C,(5x - 4) + C,(5x/3) + C,(2x - 4) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 10 terms of an arithmetic sequence with first term 3 and common difference 4?,195,210,220,180,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 5.,x = 32,x = 16,x = 25,x = 64,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a circle with radius 5 cm.,78.5 cm,25 cm,100 cm,50 cm,Option_1,Geometry,Area Calculation,Easy
+Differentiate f(x) = x - 2x + x with respect to x.,3x - 4x + 1,3x - 4,2x + 1,4x + 3,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (x - 3) dx.,(x / 3) - 3x + C,(x / 2) + 3 + C,(2x - 3) + C,(x + 3x) + C,Option_1,Calculus,Integration,Medium
+What is the 8th term of an arithmetic sequence with first term 2 and common difference 3?,23,24,21,20,Option_1,Sequences,Arithmetic Sequences,Medium
+Solve for x: log(x) = 4.,x = 81,x = 64,x = 16,x = 9,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the perimeter of a rectangle with length 8 cm and width 5 cm.,26 cm,20 cm,16 cm,18 cm,Option_1,Geometry,Perimeter Calculation,Easy
+"If f(x) = sin(x), find the second derivative f''(x).",#NAME?,#NAME?,cos(x),sin(x),Option_1,Calculus,Second Derivatives,Medium
+Evaluate the integral (x + 2x) dx.,(x / 4) + x + C,(x / 3) + x + C,(x / 2) + x + C,(2x / 3) + x + C,Option_1,Calculus,Integration,Medium
+What is the 9th term of a geometric sequence with first term 1 and common ratio 2?,256,512,128,64,Option_1,Sequences,Geometric Series,Medium
+Solve for x in the equation log(x) = 3.,x = 1000,x = 100,x = 10,x = 10000,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+"Calculate the volume of a cuboid with dimensions 3 cm, 4 cm, and 5 cm.",60 cm,50 cm,40 cm,70 cm,Option_1,Geometry,Volume Calculation,Easy
+"If f(x) = e^x, find the second derivative f''(x).",e^x,x e^x,2e^x,3e^x,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (2x - 3x + 1) dx.,(2x / 3) - (3x / 2) + x + C,(x / 2) - x + C,2x + x + C,(x + 3x) + C,Option_1,Calculus,Integration,Medium
+What is the 5th term of a geometric sequence with first term 3 and common ratio 2?,48,24,32,16,Option_1,Sequences,Geometric Series,Easy
+Solve for x in the equation log(x) = 2.,x = 16,x = 64,x = 4,x = 10,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a rectangle with length 7 cm and width 4 cm.,28 cm,25 cm,20 cm,30 cm,Option_1,Geometry,Area Calculation,Easy
+Find the derivative of f(x) = 5x - 2x + x with respect to x.,15x - 4x + 1,10x + 2x,5x + x,15x - 2x,Option_1,Calculus,Derivatives,Easy
+Evaluate the integral (2x - 4) dx.,(x - 4x) + C,(x - 4x) + C,(2x - x) + C,(x - 2x) + C,Option_1,Calculus,Integration,Medium
+What is the 12th term of a geometric sequence with first term 2 and common ratio 3?,531441,59049,729,2187,Option_1,Sequences,Geometric Series,Medium
+Solve for x in the equation log(x) = 2.,x = 25,x = 125,x = 5,x = 100,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+"Calculate the area of a trapezium with bases 10 cm and 6 cm, and height 5 cm.",40 cm,20 cm,30 cm,25 cm,Option_1,Geometry,Area Calculation,Easy
+Differentiate f(x) = x - 3x + 5x with respect to x.,4x - 9x + 10x,3x - 4x + 2,2x + 3x + 5,x - 4x + 3,Option_1,Calculus,Derivatives,Medium
+Evaluate the integral (4x - 2x + 1) dx.,(x) - x + x + C,(x) - x + C,(4x) - 3x + C,(2x) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 6 terms of a geometric sequence with first term 2 and common ratio 3?,728,2187,162,486,Option_1,Sequences,Geometric Series,Medium
+Solve for x in the equation log(x) = 5.,x = 32,x = 25,x = 100,x = 16,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a parallelogram with base 5 cm and height 8 cm.,40 cm,45 cm,20 cm,25 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = ln(x), find the second derivative f''(x).",#NAME?,#NAME?,1/x,1/x,Option_1,Calculus,Second Derivatives,Medium
+Evaluate the integral (3x - x) dx.,(x) - (x / 2) + C,(x / 2) - (3x) + C,(2x) - x + C,(x / 2) + x + C,Option_1,Calculus,Integration,Medium
+What is the 10th term of a geometric sequence with first term 5 and common ratio 3?,9845,8912,512,243,Option_1,Sequences,Geometric Series,Medium
+Solve for x in the equation log(x) = 3.,x = 125,x = 25,x = 5,x = 625,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+"Calculate the area of a trapezium with bases 8 cm and 5 cm, and height 6 cm.",39 cm,28 cm,40 cm,36 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = ln(x), find the third derivative f'''(x).",#NAME?,#NAME?,#NAME?,#NAME?,Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (2x - 5x + 2) dx.,(x / 2) - (5x / 2) + 2x + C,(x) - 3x + C,(x / 4) + x + C,(x) + 2x + C,Option_1,Calculus,Integration,Medium
+What is the 7th term of a geometric sequence with first term 4 and common ratio 2?,256,512,128,64,Option_1,Sequences,Geometric Series,Medium
+Solve for x in the equation log(x) = 5.,x = 100000,x = 10000,x = 100,x = 10,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the volume of a cone with radius 5 cm and height 12 cm.,314 cm,256 cm,125 cm,275 cm,Option_1,Geometry,Volume Calculation,Medium
+"If f(x) = e^(2x), find the second derivative f''(x).",4e^(2x),e^(2x),2e^(2x),8e^(2x),Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (5x - 4) dx.,(5x / 3) - 4x + C,(x / 2) + C,(5x / 2) + C,(2x / 3) + C,Option_1,Calculus,Integration,Medium
+What is the 10th term of an arithmetic sequence with first term 3 and common difference 5?,48,50,52,54,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 3.,x = 343,x = 49,x = 7,x = 21,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the surface area of a sphere with radius 6 cm.,452.39 cm,226.19 cm,150.72 cm,301.59 cm,Option_1,Geometry,Surface Area Calculation,Easy
+"If f(x) = cos(2x), find the second derivative f''(x).",-4cos(2x),-2sin(2x),4sin(2x),2cos(2x),Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (3x + 2x - 1) dx.,(x + x - x) + C,(2x - 3x) + C,(x + 4x) + C,(3x - x) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 12 terms of an arithmetic sequence with first term 2 and common difference 5?,342,300,270,330,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 4.,x = 81,x = 64,x = 27,x = 100,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the volume of a cylinder with radius 3 cm and height 10 cm.,282.74 cm,150 cm,314 cm,100 cm,Option_1,Geometry,Volume Calculation,Easy
+"If f(x) = x^3 - x, find the second derivative f''(x).",6x,3x - 1,2x + 1,x - x,Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (x + 2x + 3) dx.,(x / 3) + x + 3x + C,(x / 2) - 3 + C,(x + 4) + C,(2x - x) + C,Option_1,Calculus,Integration,Medium
+What is the 20th term of an arithmetic sequence with first term 5 and common difference 3?,62,58,52,50,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 6.,x = 64,x = 32,x = 16,x = 8,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a triangle with base 6 cm and height 4 cm.,12 cm,15 cm,8 cm,10 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = tan(x), find the second derivative f''(x).",2sec(x)tan(x),sec(x),tan(x),2tan(x),Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (x + 4x) dx.,(x / 4) + 2x + C,(x / 3) - x + C,(x + x) + C,(2x - x) + C,Option_1,Calculus,Integration,Medium
+What is the sum of the first 15 terms of an arithmetic sequence with first term 1 and common difference 2?,225,210,230,205,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 3.,x = 125,x = 25,x = 15,x = 5,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a rectangle with length 9 cm and width 6 cm.,54 cm,45 cm,36 cm,18 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = e^(3x), find the second derivative f''(x).",9e^(3x),6e^(3x),3e^(3x),12e^(3x),Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (x - x + 2) dx.,(x / 4) - (x / 2) + 2x + C,(x / 3) + x + C,(2x + 3) + C,(4x + x) + C,Option_1,Calculus,Integration,Medium
+What is the 15th term of a geometric sequence with first term 2 and common ratio 3?,14348907,1594323,6561,2187,Option_1,Sequences,Geometric Series,Medium
+Solve for x if log(x) = 2.,x = 81,x = 49,x = 9,x = 16,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the area of a parallelogram with base 7 cm and height 5 cm.,35 cm,25 cm,45 cm,28 cm,Option_1,Geometry,Area Calculation,Easy
+"If f(x) = sin(3x), find the second derivative f''(x).",-9sin(3x),-3sin(3x),9cos(3x),3cos(3x),Option_1,Calculus,Higher Order Derivatives,Medium
+Evaluate the integral (4x - x) dx.,(2x) - (x / 3) + C,(x) + 2 + C,(x + x) + C,(x - x) + C,Option_1,Calculus,Integration,Medium
+What is the 12th term of an arithmetic sequence with first term 3 and common difference 7?,80,85,90,95,Option_1,Sequences,Arithmetic Series,Medium
+Solve for x if log(x) = 3.,x = 64,x = 16,x = 4,x = 8,Option_1,Logarithmic Equations,Logarithmic Functions,Medium
+Calculate the circumference of a circle with radius 8 cm.,50.24 cm,45.28 cm,40 cm,30 cm,Option_1,Geometry,Circumference Calculation,Easy

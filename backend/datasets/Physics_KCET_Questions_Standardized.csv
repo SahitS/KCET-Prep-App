@@ -1,0 +1,161 @@
+Question,Option_1,Option_2,Option_3,Option_4,Correct_Option,Topic,Subtopic,Difficulty_Level
+A car accelerates uniformly from rest at 4 m/s. What is its velocity after 3 seconds?,12 m/s,15 m/s,9 m/s,8 m/s,Option_1,Mechanics,Kinematics,Medium
+Calculate the gravitational force between two masses of 5 kg each separated by a distance of 2 m (G = 6.674 x 10^-11 N m/kg).,8.34 x 10^-10 N,6.67 x 10^-11 N,3.34 x 10^-10 N,1.67 x 10^-9 N,Option_1,Gravitation,Newton's Law of Gravitation,Medium
+A solid sphere rolls down an inclined plane. What is the relationship between its linear and angular velocities?,v = r,v = 2r,v = r/2,v = r,Option_1,Properties of Matter,Motion of Rigid Body,Easy
+What is the amount of work done in moving a charge of 2 C across two points with a potential difference of 12 V?,24 J,6 J,12 J,18 J,Option_1,Electrostatics,Electric Potential,Easy
+"In an SHM, if the amplitude is doubled, what happens to the total energy of the system?",Doubles,Halves,Quadruples,Stays the same,Option_3,Oscillations and Waves,Simple Harmonic Motion,Medium
+A ball is thrown vertically upwards with a velocity of 20 m/s. How long does it take to reach the maximum height? (g = 9.8 m/s),2 seconds,4 seconds,3 seconds,5 seconds,Option_2,Mechanics,Kinematics,Medium
+Calculate the potential energy of a 2 kg mass raised to a height of 10 m (g = 9.8 m/s).,196 J,98 J,49 J,100 J,Option_1,Mechanics,"Work, Energy, and Power",Easy
+What is the angular momentum of a 0.5 kg mass moving in a circle of radius 2 m with a velocity of 3 m/s?,3 kg m/s,6 kg m/s,1.5 kg m/s,0.5 kg m/s,Option_2,Properties of Matter,Motion of Particles,Medium
+What is the pressure exerted by a 1 kg object on a surface area of 0.5 m?,19.6 Pa,9.8 Pa,39.2 Pa,4.9 Pa,Option_1,Properties of Matter,Pressure,Easy
+Calculate the total heat absorbed when a substance of mass 2 kg undergoes a temperature rise of 10C (specific heat capacity = 420 J/kgC).,8400 J,4200 J,2100 J,10500 J,Option_1,Thermodynamics and Kinetic Theory,Thermodynamics,Medium
+What is the escape velocity of an object on Earth? (Take g = 9.8 m/s and Earth's radius = 6.4 x 10^6 m),11.2 km/s,5.6 km/s,8.9 km/s,13.3 km/s,Option_1,Mechanics,Gravitation,Medium
+A spring has a force constant of 200 N/m. Calculate the potential energy when it is compressed by 0.1 m.,1 J,2 J,0.5 J,0.1 J,Option_1,Properties of Matter,Elasticity,Medium
+Calculate the final temperature when 100 g of water at 20C is mixed with 200 g of water at 60C.,40C,45C,50C,55C,Option_3,Thermodynamics and Kinetic Theory,Thermal Equilibrium,Medium
+A capacitor of 10 F is charged to a potential of 100 V. Calculate the energy stored in the capacitor.,0.05 J,0.5 J,5 J,1 J,Option_1,Electrostatics,Capacitance,Easy
+An object is placed 15 cm in front of a convex mirror with a focal length of 10 cm. Determine the image distance.,6 cm,-6 cm,10 cm,-10 cm,Option_2,Optics,Ray Optics,Medium
+A satellite is orbiting Earth at a height where the acceleration due to gravity is 4.9 m/s. What is its orbital radius? (Earth's radius = 6.4 x 10^6 m),9.6 x 10^6 m,7.2 x 10^6 m,6.4 x 10^6 m,8.1 x 10^6 m,Option_1,Mechanics,Gravitation,Medium
+What is the electric field strength at a point 0.5 m away from a charge of 2 C? (k = 9 x 10^9 N m/C),3.6 x 10^4 N/C,7.2 x 10^3 N/C,9 x 10^4 N/C,1.8 x 10^3 N/C,Option_1,Electrostatics,Electric Field,Medium
+A force of 50 N stretches a spring by 0.25 m. Calculate the spring constant.,200 N/m,250 N/m,150 N/m,100 N/m,Option_1,Properties of Matter,Elasticity,Easy
+A wire carrying a current of 5 A is placed in a magnetic field of 0.2 T. Calculate the force on a 0.5 m section of the wire.,0.5 N,1 N,0.2 N,0.8 N,Option_1,Current Electricity and Magnetism,Magnetic Force,Medium
+What is the focal length of a convex lens if the object distance is 20 cm and the image distance is 40 cm?,13.3 cm,15 cm,20 cm,10 cm,Option_1,Optics,Ray Optics,Easy
+An object is dropped from a height of 20 m. Calculate the time it takes to reach the ground. (g = 9.8 m/s),2.02 s,2.86 s,3.5 s,4.5 s,Option_1,Mechanics,Free Fall,Medium
+"What is the capacitance of a parallel plate capacitor with area 1 m, separation 0.01 m, and dielectric constant 5? ( = 8.85 x 10^-12 F/m)",4.425 x 10^-10 F,8.85 x 10^-11 F,1.77 x 10^-11 F,4.43 x 10^-9 F,Option_1,Electrostatics,Capacitance,Medium
+Calculate the wavelength of a wave with frequency 500 Hz and speed 340 m/s.,0.68 m,0.34 m,0.17 m,1.36 m,Option_1,Waves,Wave Speed,Easy
+A body of mass 10 kg is moving with a velocity of 20 m/s. What is its kinetic energy?,2000 J,1000 J,4000 J,500 J,Option_1,Mechanics,Kinetic Energy,Easy
+What is the focal length of a concave mirror if an object placed 20 cm in front of it forms an image at 10 cm?,6.67 cm,10 cm,15 cm,20 cm,Option_2,Optics,Mirror Formula,Medium
+"In Newton's law of gravitation, the force between two masses is inversely proportional to the square of the distance between them. What happens to the force if the distance is doubled?",Force is quartered,Force is halved,Force doubles,Force quadruples,Option_1,Mechanics,Gravitation,Easy
+What is the work done by a force of 10 N in moving an object by 5 m?,50 J,5 J,2 J,0.5 J,Option_1,"Work, Energy, and Power",Work Calculation,Medium
+A ball is projected vertically upwards with a velocity of 20 m/s. How high will it rise? (g = 9.8 m/s),20.4 m,30.6 m,10.2 m,40.8 m,Option_1,Kinematics,Projectile Motion,Medium
+Calculate the pressure exerted by a 500 N force on an area of 2 m.,250 Pa,500 Pa,100 Pa,50 Pa,Option_2,Properties of Matter,Pressure,Easy
+What is the frequency of a wave with a wavelength of 0.5 m and a speed of 340 m/s?,680 Hz,170 Hz,340 Hz,85 Hz,Option_2,Oscillations and Waves,Wave Motion,Medium
+What is the gravitational potential energy of a 5 kg object at a height of 10 m? (g = 9.8 m/s),490 J,250 J,750 J,1000 J,Option_1,Mechanics,Gravitational Potential Energy,Medium
+Calculate the force exerted by a spring with a spring constant of 200 N/m when it is compressed by 0.1 m.,20 N,50 N,100 N,30 N,Option_1,Properties of Matter,Elasticity,Easy
+What is the speed of sound in air at room temperature (assume 340 m/s)?,340 m/s,300 m/s,320 m/s,330 m/s,Option_1,Oscillations and Waves,Wave Speed,Easy
+What is the electric field at a point 2 m from a charge of 1 C? (k = 9 x 10^9 N m/C),4500 N/C,2250 N/C,1125 N/C,3375 N/C,Option_2,Electrostatics,Electric Field,Medium
+Calculate the focal length of a convex lens if the object distance is 30 cm and the image distance is 15 cm.,10 cm,15 cm,20 cm,30 cm,Option_1,Optics,Lens Formula,Medium
+A car moving at a speed of 20 m/s is brought to rest in 5 seconds. What is its deceleration?,4 m/s,6 m/s,2 m/s,8 m/s,Option_1,Mechanics,Kinematics,Easy
+Calculate the heat required to raise the temperature of 200 g of water from 25C to 75C. (Specific heat of water = 4.18 J/gC),41800 J,20900 J,62700 J,12500 J,Option_1,Thermodynamics,Heat Transfer,Medium
+What is the frequency of a tuning fork that produces a sound wave with a wavelength of 1.5 m and speed of 340 m/s?,226.67 Hz,113.33 Hz,170 Hz,340 Hz,Option_1,Oscillations and Waves,Sound Waves,Easy
+Calculate the potential difference if 20 J of work is done to move a charge of 5 C.,4 V,5 V,10 V,8 V,Option_1,Electrostatics,Potential Difference,Easy
+"In a Young's double-slit experiment, if the distance between the slits is doubled, how does the fringe width change?",It is halved,It doubles,It remains the same,It quadruples,Option_1,Optics,Interference,Medium
+What is the kinetic energy of a 0.5 kg object moving at 10 m/s?,25 J,50 J,100 J,75 J,Option_1,Mechanics,Kinetic Energy,Easy
+Calculate the total internal energy of an ideal gas at 300 K containing 2 moles of gas (R = 8.314 J/molK).,2494.2 J,3000 J,1500 J,4000 J,Option_1,Thermodynamics,Ideal Gas Law,Medium
+What is the time period of a simple pendulum of length 1 m? (g = 9.8 m/s),2.01 s,1.42 s,2.85 s,1.78 s,Option_1,Oscillations and Waves,Simple Harmonic Motion,Medium
+"If a charge of 5 C is placed in an electric field of strength 2 x 10^5 N/C, calculate the force acting on it.",1 N,0.1 N,10 N,0.5 N,Option_1,Electrostatics,Electric Force,Easy
+"In a transformer, the primary coil has 100 turns and the secondary coil has 200 turns. What is the output voltage if the input voltage is 50 V?",100 V,75 V,50 V,25 V,Option_1,Electromagnetic Induction and Alternating Current,Transformers,Medium
+Calculate the work done when a force of 15 N displaces an object by 3 m in the direction of the force.,45 J,50 J,35 J,40 J,Option_1,"Work, Energy, and Power",Work Done,Easy
+What is the root mean square speed of gas molecules at 300 K? (Assume R = 8.314 J/molK and Molar mass = 0.028 kg/mol),517 m/s,600 m/s,500 m/s,700 m/s,Option_1,Kinetic Theory,Molecular Speed,Medium
+A wave has a frequency of 500 Hz and a wavelength of 2 m. Calculate its speed.,1000 m/s,750 m/s,1500 m/s,2000 m/s,Option_1,Waves,Wave Speed,Easy
+What is the energy stored in a 5 F capacitor charged to a potential of 12 V?,0.36 mJ,0.72 mJ,1.08 mJ,0.24 mJ,Option_1,Electrostatics,Capacitance,Medium
+"In a diffraction experiment, the angle of the first order maximum is 30. Calculate the wavelength if the slit separation is 2 m.",1 m,0.5 m,0.25 m,1.5 m,Option_1,Optics,Diffraction,Medium
+A 2 kg object is lifted to a height of 10 m. Calculate the gravitational potential energy. (g = 9.8 m/s),196 J,20 J,50 J,100 J,Option_1,Mechanics,Potential Energy,Easy
+"If a gas occupies 3 L at 300 K, what is the volume at 600 K assuming pressure remains constant?",4.5 L,6 L,9 L,3 L,Option_1,Thermodynamics and Kinetic Theory,Charles's Law,Medium
+What is the speed of light in water if its refractive index is 1.33? (Speed of light in vacuum = 3 x 10^8 m/s),2.25 x 10^8 m/s,2.0 x 10^8 m/s,1.33 x 10^8 m/s,1.5 x 10^8 m/s,Option_1,Optics,Refraction,Medium
+Calculate the force on a 10 m long wire carrying 3 A of current placed in a magnetic field of 0.5 T.,15 N,5 N,1.5 N,30 N,Option_2,Current Electricity and Magnetism,Magnetic Force on Current,Medium
+What is the magnification produced by a concave mirror if the image distance is -15 cm and object distance is 30 cm?,0.5,1.5,2,-0.5,Option_4,Optics,Mirror Formula,Medium
+An object of mass 10 kg is sliding on a surface with a coefficient of friction 0.3. Calculate the frictional force.,30 N,20 N,50 N,40 N,Option_1,Mechanics,Friction,Medium
+"If 1 mole of an ideal gas occupies 22.4 L at STP, what volume will it occupy at 546 K and 2 atm?",44.8 L,22.4 L,11.2 L,33.6 L,Option_1,Thermodynamics and Kinetic Theory,Gas Laws,Medium
+What is the critical angle for light traveling from glass (n = 1.5) to air (n = 1.0)?,41.8,28.1,45,60,Option_1,Optics,Total Internal Reflection,Medium
+"Calculate the magnetic field strength 0.1 m away from a long, straight wire carrying a current of 5 A. ( = 4 x 10^-7 Tm/A)",10 T,100 T,50 T,25 T,Option_2,Current Electricity and Magnetism,Magnetic Field,Medium
+What is the focal length of a convex mirror if an object placed 25 cm in front of it forms an image 10 cm behind the mirror?,10 cm,15 cm,20 cm,25 cm,Option_1,Optics,Mirror Formula,Easy
+A ball is dropped from a height of 20 m. Calculate the time it takes to hit the ground. (g = 9.8 m/s),2.02 s,2.5 s,3.2 s,1.5 s,Option_1,Mechanics,Free Fall,Medium
+What is the pressure exerted by a force of 100 N on an area of 0.5 m?,200 Pa,50 Pa,100 Pa,150 Pa,Option_1,Properties of Matter,Pressure,Easy
+What is the kinetic energy of a gas molecule at 300 K? (k = 1.38 x 10^-23 J/K),6.21 x 10^-21 J,4.15 x 10^-21 J,3.11 x 10^-21 J,5.87 x 10^-21 J,Option_1,Thermodynamics and Kinetic Theory,Kinetic Theory,Medium
+Calculate the potential difference between two points if a charge of 2 C gains 10 J of energy.,5 V,10 V,2 V,15 V,Option_1,Electrostatics,Electric Potential,Medium
+What is the focal length of a concave lens with a power of -5 D?,-0.2 m,-0.5 m,-0.3 m,-0.1 m,Option_2,Optics,Lens Formula,Medium
+A car accelerates uniformly from rest to a speed of 20 m/s in 10 seconds. Calculate its acceleration.,2 m/s,4 m/s,6 m/s,8 m/s,Option_1,Mechanics,Acceleration,Easy
+What is the potential energy of a 4 kg object at a height of 5 m? (g = 9.8 m/s),98 J,196 J,49 J,245 J,Option_2,Mechanics,Potential Energy,Medium
+A gas has a pressure of 2 atm at 300 K. What is the pressure if the temperature is increased to 600 K while volume remains constant?,4 atm,2 atm,1 atm,3 atm,Option_1,Thermodynamics and Kinetic Theory,Gas Laws,Medium
+Calculate the capacitance of a capacitor that stores 0.5 C of charge at a potential difference of 10 V.,0.05 F,0.1 F,0.2 F,0.01 F,Option_2,Electrostatics,Capacitance,Medium
+What is the focal length of a convex lens if its power is 4 D?,0.25 m,0.5 m,0.75 m,0.1 m,Option_2,Optics,Lens Formula,Easy
+An object of mass 2 kg is lifted to a height of 10 m. Calculate the gravitational potential energy. (g = 9.8 m/s),196 J,98 J,50 J,20 J,Option_1,Mechanics,Gravitational Potential Energy,Medium
+What is the viscosity of a fluid that requires a force of 10 N to maintain a velocity gradient of 0.5 s over an area of 0.2 m?,0.1 Pas,50 Pas,25 Pas,5 Pas,Option_1,Properties of Matter,Viscosity,Medium
+What is the total energy of an ideal gas with 3 moles at 400 K? (Assume R = 8.314 J/molK),9976.8 J,1247.2 J,2500 J,3746.4 J,Option_1,Thermodynamics and Kinetic Theory,Internal Energy,Medium
+Calculate the capacitance of a capacitor that stores a charge of 0.3 C at a potential difference of 6 V.,0.05 F,0.08 F,0.1 F,0.02 F,Option_2,Electrostatics,Capacitance,Medium
+"In a diffraction experiment, if the wavelength of light is 500 nm and the slit separation is 2 m, what is the angle of the first order maximum?",15,30,45,60,Option_2,Optics,Diffraction,Medium
+An object is projected vertically upwards with an initial velocity of 20 m/s. Calculate the maximum height it will reach. (g = 9.8 m/s),20.4 m,40.8 m,10.2 m,5.1 m,Option_1,Mechanics,Projectile Motion,Medium
+"What is the force exerted by a fluid on a submerged object of volume 0.5 m, given fluid density as 1000 kg/m and g = 9.8 m/s?",4900 N,9800 N,2000 N,3000 N,Option_1,Properties of Matter,Buoyancy,Medium
+"If 3 moles of a gas occupies 60 L at 300 K, what is the pressure? (R = 0.0821 L atm / mol K)",0.821 atm,1.64 atm,0.5 atm,2.5 atm,Option_2,Thermodynamics and Kinetic Theory,Ideal Gas Law,Medium
+Calculate the electric field intensity at a point 1 m away from a charge of 2 C. (k = 9 x 10^9 N m/C),18000 N/C,9000 N/C,27000 N/C,1000 N/C,Option_1,Electrostatics,Electric Field,Medium
+A light ray hits a plane mirror at an angle of 30. What is the angle of reflection?,30,45,60,90,Option_1,Optics,Reflection,Easy
+An object of mass 3 kg is moving with a velocity of 4 m/s. Calculate its kinetic energy.,24 J,12 J,18 J,36 J,Option_1,Mechanics,Kinetic Energy,Medium
+"What is the magnitude of buoyant force on an object with a volume of 0.6 m submerged in water? (Density of water = 1000 kg/m, g = 9.8 m/s)",5880 N,1000 N,1200 N,3200 N,Option_1,Properties of Matter,Buoyancy,Medium
+What is the total internal energy of 2 moles of an ideal gas at 350 K? (R = 8.314 J/molK),5820 J,2910 J,4820 J,3720 J,Option_1,Thermodynamics and Kinetic Theory,Internal Energy,Medium
+Calculate the charge on a capacitor of capacitance 0.01 F connected to a 12 V battery.,0.12 C,0.6 C,1.2 C,0.5 C,Option_1,Electrostatics,Capacitance,Easy
+"If the refractive index of glass is 1.5, what is the speed of light in glass? (Speed of light in vacuum = 3 x 10^8 m/s)",2 x 10^8 m/s,2.5 x 10^8 m/s,1.5 x 10^8 m/s,3 x 10^8 m/s,Option_1,Optics,Refraction,Medium
+A 5 kg object moves at a speed of 10 m/s. Calculate its momentum.,50 kgm/s,100 kgm/s,20 kgm/s,30 kgm/s,Option_1,Mechanics,Momentum,Medium
+What is the work done to lift a 10 kg object to a height of 5 m? (g = 9.8 m/s),490 J,100 J,50 J,150 J,Option_1,Mechanics,Work Done,Medium
+"If the root mean square speed of gas molecules at 300 K is 500 m/s, calculate their speed at 600 K.",707 m/s,500 m/s,1000 m/s,600 m/s,Option_1,Thermodynamics and Kinetic Theory,Root Mean Square Speed,Medium
+What is the potential difference across a resistor of resistance 5  carrying a current of 2 A?,10 V,5 V,15 V,20 V,Option_1,Current Electricity,Ohm's Law,Easy
+"In Young's double-slit experiment, the wavelength of light used is 600 nm and the slit separation is 0.2 mm. Calculate the fringe width at a distance of 1 m from the slits.",3 mm,6 mm,1.5 mm,4 mm,Option_2,Optics,Interference,Medium
+A ball is thrown vertically upwards with a velocity of 15 m/s. Calculate the time taken to reach the highest point. (g = 9.8 m/s),1.53 s,1.8 s,2.0 s,1.53 s,Option_1,Mechanics,Projectile Motion,Medium
+Calculate the work done in compressing a gas at constant pressure of 2 atm from 10 L to 5 L.,10 J,100 J,5 J,20 J,Option_2,Thermodynamics and Kinetic Theory,Work Done,Medium
+"What is the root mean square speed of gas molecules at 400 K? (R = 8.314 J/molK, Molar mass = 0.028 kg/mol)",511 m/s,707 m/s,400 m/s,650 m/s,Option_1,Thermodynamics and Kinetic Theory,Root Mean Square Speed,Medium
+"If a 5 F capacitor is charged to a potential of 10 V, calculate the energy stored.",0.25 mJ,0.125 mJ,0.5 mJ,1 mJ,Option_1,Electrostatics,Energy Storage,Medium
+"In a diffraction experiment, what happens to the fringe width if the distance between the slits is halved?",It doubles,It halves,It remains the same,It quadruples,Option_1,Optics,Interference,Easy
+Calculate the acceleration of a 10 kg object when a force of 50 N is applied.,5 m/s,10 m/s,2.5 m/s,20 m/s,Option_1,Mechanics,Newton's Second Law,Easy
+What is the potential energy of a 2 kg object lifted to a height of 10 m? (g = 9.8 m/s),196 J,98 J,200 J,49 J,Option_1,Mechanics,Potential Energy,Medium
+"If a gas occupies 5 L at 300 K, what volume will it occupy at 600 K under constant pressure?",10 L,15 L,5 L,20 L,Option_1,Thermodynamics and Kinetic Theory,Charles's Law,Medium
+Calculate the energy stored in a 2 F capacitor charged to a potential of 15 V.,0.225 mJ,0.45 mJ,0.1125 mJ,0.75 mJ,Option_1,Electrostatics,Energy Storage in Capacitors,Medium
+"In a Youngs double-slit experiment, the distance between slits is doubled. What effect does this have on the fringe width?",It halves,It doubles,It quadruples,It remains the same,Option_1,Optics,Interference,Easy
+A body of mass 5 kg is dropped from a height of 20 m. Calculate the time taken to reach the ground. (g = 9.8 m/s),2.02 s,4.08 s,3.20 s,1.53 s,Option_1,Mechanics,Free Fall,Medium
+Calculate the pressure exerted by a 100 N force on an area of 0.5 m.,200 Pa,100 Pa,400 Pa,50 Pa,Option_1,Properties of Matter,Pressure,Easy
+What is the volume of gas at 400 K if it occupies 2 L at 200 K under constant pressure?,4 L,6 L,8 L,2 L,Option_1,Thermodynamics and Kinetic Theory,Charles's Law,Medium
+Calculate the energy stored in a capacitor of capacitance 4 F when connected to a 12 V battery.,0.288 mJ,0.144 mJ,0.072 mJ,0.360 mJ,Option_1,Electrostatics,Energy Storage,Medium
+"In a diffraction experiment, what happens to the angle of the first maximum if the wavelength of light is increased?",It increases,It decreases,It remains the same,It doubles,Option_1,Optics,Diffraction,Easy
+A 3 kg object is moving at a speed of 10 m/s. Calculate its kinetic energy.,150 J,100 J,50 J,75 J,Option_1,Mechanics,Kinetic Energy,Medium
+Calculate the gravitational potential energy of a 4 kg object at a height of 5 m. (g = 9.8 m/s),196 J,49 J,100 J,245 J,Option_1,Mechanics,Potential Energy,Easy
+What is the final pressure if a gas at 1 atm and 300 K is heated to 600 K in a rigid container?,2 atm,1 atm,0.5 atm,4 atm,Option_1,Thermodynamics and Kinetic Theory,Pressure-Temperature Relationship,Medium
+Find the charge on a 3 F capacitor connected to a 10 V battery.,30 C,20 C,15 C,10 C,Option_1,Electrostatics,Capacitance,Easy
+"In a double-slit experiment, if the wavelength of light is increased, what happens to the fringe spacing?",It increases,It decreases,It remains the same,It doubles,Option_1,Optics,Interference,Medium
+Calculate the force on an object of mass 2 kg moving in a circle of radius 1 m with a speed of 4 m/s.,32 N,16 N,8 N,4 N,Option_1,Mechanics,Centripetal Force,Medium
+What is the density of an object with mass 10 kg and volume 2 m?,5 kg/m,2 kg/m,10 kg/m,8 kg/m,Option_1,Properties of Matter,Density,Easy
+"If the volume of a gas is doubled while keeping temperature constant, what happens to the pressure?",It is halved,It doubles,It remains the same,It triples,Option_1,Thermodynamics and Kinetic Theory,Boyle's Law,Medium
+Calculate the current through a 10  resistor connected to a 5 V battery.,0.5 A,2:00 AM,1.5 A,1:00 AM,Option_1,Current Electricity,Ohm's Law,Easy
+"In optics, what happens to the focal length of a lens if the curvature of the lens is increased?",It decreases,It increases,It stays constant,It becomes negative,Option_1,Optics,Lens Formula,Medium
+A car accelerates uniformly from 10 m/s to 20 m/s in 5 seconds. Calculate its acceleration.,2 m/s,3 m/s,4 m/s,1 m/s,Option_1,Mechanics,Acceleration,Medium
+What is the work done in moving a charge of 2 C through a potential difference of 12 V?,24 J,36 J,12 J,18 J,Option_1,Electrostatics,Work Done,Easy
+"A gas has a volume of 3 L at 2 atm pressure. What will be the volume at 1 atm pressure, assuming temperature is constant?",6 L,9 L,4 L,12 L,Option_1,Properties of Matter,Boyle's Law,Medium
+Calculate the potential energy stored in a 5 F capacitor connected to a 20 V source.,1 mJ,2 mJ,0.5 mJ,1.5 mJ,Option_1,Electrostatics,Energy Storage,Medium
+"In a diffraction pattern, if the slit width is increased, what happens to the width of the central maximum?",It decreases,It increases,It remains the same,It doubles,Option_1,Optics,Diffraction,Easy
+A 4 kg object is dropped from a height of 10 m. Calculate the time it takes to hit the ground. (g = 9.8 m/s),1.43 s,1.53 s,2.02 s,3.01 s,Option_1,Mechanics,Free Fall,Medium
+"What is the force exerted by a fluid on an object with volume 0.3 m, if fluid density is 800 kg/m and g = 9.8 m/s?",2352 N,1568 N,392 N,784 N,Option_1,Properties of Matter,Buoyancy,Medium
+"If a gas at 1 atm occupies 2 L at 300 K, what volume will it occupy at 600 K under constant pressure?",4 L,8 L,2 L,6 L,Option_1,Thermodynamics and Kinetic Theory,Charles's Law,Medium
+Calculate the electric field due to a 2 C charge at a distance of 1 m. (k = 9  10 N m/C),18000 N/C,9000 N/C,4500 N/C,20000 N/C,Option_1,Electrostatics,Electric Field,Medium
+"In Youngs double-slit experiment, what happens to the fringe spacing if the screen distance is doubled?",It doubles,It halves,It remains the same,It quadruples,Option_1,Optics,Interference,Easy
+A particle is projected with a velocity of 30 m/s at an angle of 45 to the horizontal. Calculate the maximum height reached. (g = 9.8 m/s),22.5 m,25.5 m,15 m,18 m,Option_1,Mechanics,Projectile Motion,Medium
+What is the total mechanical energy of a 1 kg object raised to a height of 10 m? (g = 9.8 m/s),98 J,10 J,80 J,50 J,Option_1,Mechanics,Potential Energy,Medium
+A body rotates with an angular speed of 10 rad/s. Calculate the angular displacement after 5 seconds.,50 rad,25 rad,75 rad,30 rad,Option_1,Oscillations and Waves,Angular Motion,Medium
+What is the temperature of an ideal gas in a closed container if its initial temperature is 200 K and its volume doubles at constant pressure?,400 K,300 K,500 K,100 K,Option_1,Thermodynamics and Kinetic Theory,Ideal Gas Law,Medium
+Calculate the electric field at a distance of 2 m from a 1 C charge. (k = 9  10 N m/C),4500 N/C,2500 N/C,1250 N/C,3600 N/C,Option_1,Electrostatics,Electric Field,Medium
+A 2 kg object is thrown vertically upwards with an initial speed of 20 m/s. Calculate its maximum height. (g = 9.8 m/s),20.4 m,10.2 m,15.3 m,25.5 m,Option_1,Mechanics,Vertical Motion,Medium
+Calculate the elastic potential energy stored in a spring with spring constant 200 N/m compressed by 0.1 m.,1 J,0.5 J,2 J,1.5 J,Option_1,Properties of Matter,Elastic Potential Energy,Medium
+What is the temperature of an ideal gas in a closed container if the initial temperature is 100 K and its volume triples at constant pressure?,300 K,400 K,200 K,500 K,Option_1,Thermodynamics and Kinetic Theory,Ideal Gas Law,Medium
+Calculate the potential difference between two points if the work done to move 3 C of charge is 9 J.,3 V,6 V,2 V,1 V,Option_1,Electrostatics,Electric Potential,Easy
+"In an optical experiment, what happens to the fringe width if the distance between the screen and the slits is tripled?",It triples,It doubles,It halves,It remains the same,Option_1,Optics,Interference,Easy
+A car accelerates from rest to 30 m/s in 10 seconds. Calculate its acceleration.,3 m/s,5 m/s,2 m/s,4 m/s,Option_1,Mechanics,Acceleration,Medium
+Calculate the pressure exerted by a fluid column of height 0.5 m and density 1000 kg/m. (g = 9.8 m/s),4900 Pa,2500 Pa,9800 Pa,1250 Pa,Option_1,Properties of Matter,Pressure Calculation,Easy
+"If 1 mole of an ideal gas occupies 22.4 L at STP, what volume will it occupy at 273 K under 2 atm?",11.2 L,22.4 L,5.6 L,7.5 L,Option_1,Thermodynamics and Kinetic Theory,Ideal Gas Law,Medium
+Calculate the capacitance of a capacitor that stores 6 C of charge at a potential difference of 2 V.,3 F,6 F,1.5 F,12 F,Option_1,Electrostatics,Capacitance,Medium
+"In an interference pattern, what happens to the fringe width if the wavelength of light used is halved?",It halves,It doubles,It remains the same,It quadruples,Option_1,Optics,Interference,Easy
+Calculate the force required to accelerate a 15 kg object by 5 m/s.,75 N,50 N,25 N,100 N,Option_1,Mechanics,Force Calculation,Medium
+What is the absolute pressure at the bottom of a water column 10 m high? (Assume g = 9.8 m/s and density of water = 1000 kg/m),198000 Pa,98000 Pa,100000 Pa,120000 Pa,Option_1,Properties of Matter,Pressure Calculation,Medium
+"If a gas at 300 K occupies 4 L, what volume will it occupy at 150 K under constant pressure?",2 L,4 L,8 L,6 L,Option_1,Thermodynamics and Kinetic Theory,Volume-Temperature Relationship,Medium
+Calculate the potential energy of a 2 C charge in an electric field of 3 V/m over a distance of 4 m.,24 J,12 J,36 J,48 J,Option_1,Electrostatics,Potential Energy in Fields,Easy
+"In a diffraction pattern, what happens to the fringe width if the wavelength of light used is doubled?",It doubles,It halves,It quadruples,It remains the same,Option_1,Optics,Interference,Easy
+A 10 kg object is lifted to a height of 5 m. Calculate the gravitational potential energy. (g = 9.8 m/s),490 J,250 J,100 J,200 J,Option_1,Mechanics,Potential Energy,Medium
+Calculate the force exerted on a 0.2 m area by a fluid with pressure of 3000 Pa.,600 N,300 N,400 N,500 N,Option_1,Properties of Matter,Force Calculation,Easy
+"If a gas at 2 atm occupies 1 L at 300 K, what will be its volume at 600 K?",2 L,1 L,3 L,4 L,Option_1,Thermodynamics and Kinetic Theory,Volume-Temperature Relationship,Medium
+What is the electric potential at a point 3 m away from a charge of 4 C? (k = 9  10 N m/C),12000 V,18000 V,24000 V,9000 V,Option_1,Electrostatics,Electric Potential,Medium
+"In Youngs double-slit experiment, what happens to the fringe width if the slit separation is doubled?",It halves,It doubles,It quadruples,It remains the same,Option_1,Optics,Interference,Easy
+An object is moving in a circular path with a radius of 3 m and speed of 4 m/s. Calculate its centripetal acceleration.,5.33 m/s,4.44 m/s,6.67 m/s,3.33 m/s,Option_1,Mechanics,Circular Motion,Medium
+"Calculate the pressure at the bottom of a tank filled with water to a depth of 3 m. (Density of water = 1000 kg/m, g = 9.8 m/s)",29400 Pa,19600 Pa,9800 Pa,50000 Pa,Option_1,Properties of Matter,Pressure Calculation,Easy
+"If 1 mole of gas at 300 K has a volume of 22.4 L, what will be its volume at 600 K under constant pressure?",44.8 L,22.4 L,33.6 L,11.2 L,Option_1,Thermodynamics and Kinetic Theory,Volume-Temperature Relationship,Medium
+Find the electric field at a point 0.5 m away from a 2 C charge. (k = 9  10 N m/C),36000 N/C,18000 N/C,9000 N/C,27000 N/C,Option_1,Electrostatics,Electric Field,Medium
+"In an interference pattern, what effect does increasing the slit width have on the brightness of the fringes?",Increases,Decreases,Remains constant,No effect,Option_1,Optics,Interference,Easy
+A car rounds a curve of radius 20 m with a speed of 15 m/s. Calculate its centripetal acceleration.,11.25 m/s,7.5 m/s,15 m/s,9 m/s,Option_1,Mechanics,Centripetal Acceleration,Medium
+"Calculate the pressure exerted at a depth of 4 m in a lake. (Density of water = 1000 kg/m, g = 9.8 m/s)",39200 Pa,10000 Pa,4900 Pa,19600 Pa,Option_1,Properties of Matter,Pressure Calculation,Easy
+What volume will 1 mole of an ideal gas occupy at 500 K if its volume at 250 K is 2 L?,4 L,3 L,5 L,6 L,Option_1,Thermodynamics and Kinetic Theory,Volume-Temperature Relationship,Medium
+Determine the electric field strength at a distance of 0.4 m from a 5 C charge. (k = 9  10 N m/C),112500 N/C,67500 N/C,45000 N/C,22500 N/C,Option_1,Electrostatics,Electric Field,Medium
+What happens to the angular width of central maximum in a single-slit diffraction pattern when the wavelength is increased?,It increases,It decreases,It remains the same,No effect,Option_1,Optics,Diffraction,Easy

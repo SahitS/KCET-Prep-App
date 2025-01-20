@@ -1,33 +1,30 @@
 $background-dark: #181818;
-$section-background: #242424;
 $card-background: #2d2d2d;
 $text-primary: #f5f5f5;
 $text-secondary: #c7c7c7;
 $accent-primary: #A78BFA;
-$accent-secondary: #4ADE80;
-$hover-effect: #373737;
-$border-color: #3a3a3a;
 
 .dashboard-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap; /* Allow elements to flow naturally */
+  justify-content: space-between; /* Use space effectively */
+  align-items: flex-start; /* Align items to the top */
+  height: 100vh;
   padding: 2rem;
 
   .rank-prediction-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
+    position: absolute; /* Position in a corner */
+    top: 10.8vw; /* Offset from the top */
+    left: 4.2vw; /* Offset from the left */
+    z-index: 1; /* Ensure it stays above other elements */
+    max-width: 400px; /* Smaller card for better layout */
 
     .rank-prediction-card {
       background-color: $card-background;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
       text-align: center;
-      max-width: 600px;
-      width: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
@@ -37,119 +34,45 @@ $border-color: #3a3a3a;
 
       h2 {
         color: $accent-primary;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
       }
 
       p {
         color: $text-secondary;
-        font-size: 1rem;
         margin-bottom: 1rem;
-      }
-
-      .disclaimer {
-        font-size: 0.9rem;
-        color: lighten($text-secondary, 10%);
-        margin-bottom: 1.5rem;
+        line-height: 1.4;
       }
 
       .btn-predict-rank {
         background-color: $accent-primary;
         color: $text-primary;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
-        font-weight: bold;
+        padding: 0.5rem 1rem;
         border-radius: 8px;
-        transition: all 0.3s ease;
+        border: none;
         cursor: pointer;
+        font-size: 0.9rem;
 
         &:hover {
           background-color: lighten($accent-primary, 10%);
-          color: $background-dark;
-          transform: scale(1.05);
         }
       }
     }
   }
 
-  .quiz-container {
+  .future-feature-placeholder {
+    flex-grow: 1; /* Allow this section to fill the remaining space */
+    background-color: $card-background;
+    color: $text-secondary;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
     margin-top: 2rem;
-    width: 100%;
-    max-width: 1200px;
 
-    h2 {
-      color: $text-primary;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .question-card {
-      background-color: $card-background;
-      margin: 1rem 0;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-      .image-container {
-        width: 100%;
-        max-width: 600px;
-        height: 300px; /* Set a fixed height */
-        background-color: #ffffff; /* White outer box */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto 1rem;
-        border-radius: 8px;
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain; /* Center-align images and maintain aspect ratio */
-        }
-      }
-
-      .options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-
-        button {
-          background-color: $accent-secondary;
-          color: $text-primary;
-          padding: 0.5rem 1rem;
-          border-radius: 8px;
-          font-size: 1rem;
-          font-weight: bold;
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.3s ease, transform 0.3s ease;
-
-          &:hover {
-            background-color: lighten($accent-secondary, 10%);
-            transform: scale(1.05);
-          }
-        }
-      }
-    }
-
-    .btn-submit-quiz {
-      background-color: $accent-primary;
-      color: $text-primary;
-      border: none;
-      padding: 0.75rem 2rem;
-      font-size: 1.25rem;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-top: 2rem;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-
-      &:hover {
-        background-color: lighten($accent-primary, 10%);
-        transform: scale(1.05);
-      }
+    p {
+      font-size: 1.2rem;
+      margin: 0;
     }
   }
 }

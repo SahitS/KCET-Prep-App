@@ -462,17 +462,94 @@ router.get('/fetch-quiz', async (req, res) => {
     const physicsQuestions = await PhysicsCollection.find().toArray();
     const mathematicsQuestions = await MathematicsCollection.find().toArray();
 
-    const allQuestions = {
+    if (!chemistryQuestions || !physicsQuestions || !mathematicsQuestions) {
+      return res
+        .status(500)
+        .json({ error: 'One or more collections are empty' });
+    }
+
+    res.status(200).json({
       chemistry: chemistryQuestions,
       physics: physicsQuestions,
       mathematics: mathematicsQuestions,
-    };
-
-    res.status(200).json(allQuestions);
+    });
   } catch (error) {
     console.error('Error fetching quiz questions:', error);
     res.status(500).json({ error: 'Failed to fetch quiz questions' });
   }
 });
+
+//endpoint to save total marks of mock-test
+router.post('/submit-mock-test', async (req, res) => {
+  const { token, physicsAnswers = [], chemistryAnswers = [], mathAnswers = [] } = req.body;
+
+  try {
+    const user = await User.findOne({ token });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    let physicsScore = 0;
+    let chemistryScore = 0;
+    let mathScore = 0;
+
+    console.log('Validating Physics answers:', physicsAnswers);
+    for (const answer of physicsAnswers) {
+      const question = await PhysicsCollection.findOne({ questionIndex: answer.questionIndex });
+      if (question && question.correctAnswer === answer.selectedOption) {
+        physicsScore++;
+      }
+    }
+
+    console.log('Validating Chemistry answers:', chemistryAnswers);
+    for (const answer of chemistryAnswers) {
+      const question = await ChemistryCollection.findOne({ questionIndex: answer.questionIndex });
+      if (question && question.correctAnswer === answer.selectedOption) {
+        chemistryScore++;
+      }
+    }
+
+    console.log('Validating Math answers:', mathAnswers);
+    for (const answer of mathAnswers) {
+      const question = await MathematicsCollection.findOne({ questionIndex: answer.questionIndex });
+      if (question && question.correctAnswer === answer.selectedOption) {
+        mathScore++;
+      }
+    }
+
+    const totalScore = physicsScore + chemistryScore + mathScore;
+
+    // Overwrite the user's mock test scores with a single object
+    user.mockTestScores = [
+      {
+        date: new Date(),
+        physicsScore,
+        chemistryScore,
+        mathScore,
+        totalScore,
+      },
+    ];
+
+    // Skip `custom_practice` validation if it's not relevant
+    delete user.custom_practice;
+
+    // Save user data without validating unrelated fields
+    await user.save({ validateModifiedOnly: true });
+
+    res.status(200).json({
+      message: 'Mock test submitted successfully!',
+      scores: {
+        physics: physicsScore,
+        chemistry: chemistryScore,
+        math: mathScore,
+        total: totalScore,
+      },
+    });
+  } catch (error) {
+    console.error('Error submitting mock test:', error);
+    res.status(500).json({ error: 'Failed to submit mock test' });
+  }
+});
+
 
 module.exports = router;

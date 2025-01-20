@@ -165,5 +165,24 @@ export class AuthService {
     });
   }
   
+  submitMockTest(payload: any): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post(`${this.baseUrl}/submit-mock-test`, payload, {
+      headers: { Authorization: token },
+    });
+  }  
+
+  predictRank(payload: {
+    totalMarks: number;
+    physicsPU: number;
+    chemistryPU: number;
+    mathPU: number;
+  }): Observable<{ predictedRank: number }> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post<{ predictedRank: number }>(`${this.apiUrl}/predict_rank`, payload, {
+      headers: { Authorization: token },
+    });
+  }
+  
   
 }

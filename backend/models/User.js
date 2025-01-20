@@ -35,6 +35,14 @@ const QuizSchema = new mongoose.Schema({
   physics: [QuestionSchema],
 });
 
+const MockTestScoresSchema = new mongoose.Schema({
+  date: { type: Date, default: Date.now },
+  physicsScore: { type: Number, default: 0 },
+  chemistryScore: { type: Number, default: 0 },
+  mathScore: { type: Number, default: 0 },
+  totalScore: { type: Number, default: 0 },
+});
+
 const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -47,6 +55,7 @@ const UserSchema = new mongoose.Schema({
   },
   custom_practice: [QuestionSchema],
   history: [HistorySchema],
+  mockTestScores: [MockTestScoresSchema],
 });
 
 module.exports = mongoose.model('User', UserSchema);

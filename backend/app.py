@@ -7,6 +7,9 @@ import google.generativeai as genai
 import json
 import os
 import random
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
 
 app = Flask(__name__)
@@ -28,14 +31,18 @@ genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Load question datasets
-math_questions = pd.read_csv("C:/Users/sahits/Downloads/Math_KCET_Questions_Standardized.csv")
-chemistry_questions = pd.read_csv("C:/Users/sahits/Downloads/Chemistry_KCET_Questions_Standardized.csv")
-physics_questions = pd.read_csv("C:/Users/sahits/Downloads/Physics_KCET_Questions_Standardized.csv")
+math_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Math_KCET_Questions_Standardized.csv")
+chemistry_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Chemistry_KCET_Questions_Standardized.csv")
+physics_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Physics_KCET_Questions_Standardized.csv")
+
+# Load KCET Rank Prediction Dataset
+dataset_path = "D:/codebase/KCETPrepApp/backend/datasets/kcet_rank_prediction_enhanced_dataset.csv"
+rank_prediction_data = pd.read_csv(dataset_path)
 
 # Load question hierarchy JSON during initialization
 try:
     # Calculate the absolute path to the JSON file
-    hierarchy_path = os.path.abspath("C:/Users/sahits/Downloads/final_sorted_hierarchy.json")
+    hierarchy_path = os.path.abspath("datasets/final_sorted_hierarchy.json")
     print(f"Loading hierarchy from: {hierarchy_path}")  # Debug log
     with open(hierarchy_path, 'r') as f:
         hierarchy_data = json.load(f)
@@ -43,6 +50,15 @@ try:
 except Exception as e:
     print(f"Error loading hierarchy file: {e}")  # Print error for debugging
     hierarchy_data = None  # Ensure the app doesn't crash if loading fails
+
+# Train the rank prediction model
+X = rank_prediction_data[['KCET_Score', 'PUC_Physics', 'PUC_Chemistry', 'PUC_Mathematics']]
+y = rank_prediction_data['Rank']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+rank_model = LinearRegression()
+rank_model.fit(X_train, y_train)
 
 @app.route('/')
 def index():
@@ -335,8 +351,6 @@ def generate_study_plan():
         return jsonify({"error": str(e)}), 500
 
 
-
-
 @app.route('/ask-ai', methods=['POST'])
 def ask_ai():
     try:
@@ -360,6 +374,30 @@ def ask_ai():
     except Exception as e:
         print("Debug: Error occurred:", e)
         return jsonify({"error": str(e) }), 500
+    
+
+@app.route('/predict_rank', methods=['POST'])
+def predict_rank():
+    try:
+        # Fetch the total marks from the backend and user input for PUC marks
+        data = request.json
+        total_marks = data.get('totalMarks')  # Fetch total KCET marks
+        physics_pu_marks = data.get('physicsPU')
+        chemistry_pu_marks = data.get('chemistryPU')
+        math_pu_marks = data.get('mathPU')
+
+        if not (total_marks and physics_pu_marks and chemistry_pu_marks and math_pu_marks):
+            return jsonify({"error": "All inputs (totalMarks, physicsPU, chemistryPU, mathPU) are required"}), 400
+
+        # Prepare data for prediction
+        input_data = np.array([[total_marks, physics_pu_marks, chemistry_pu_marks, math_pu_marks]])
+        predicted_rank = rank_model.predict(input_data)[0]
+
+        return jsonify({"predictedRank": int(predicted_rank)}), 200
+
+    except Exception as e:
+        print(f"Error in /predict_rank: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':

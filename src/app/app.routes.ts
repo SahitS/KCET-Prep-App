@@ -17,6 +17,7 @@ import { StudyPlanComponent } from './practice/study-plan/study-plan.component';
 import { MathLessonsComponent } from './lessons/math-lessons/math-lessons.component';
 import { ChemistryLessonsComponent } from './lessons/chemistry-lessons/chemistry-lessons.component';
 import { PhysicsLessonsComponent } from './lessons/physics-lessons/physics-lessons.component';
+import { MockTestComponent } from './dashboard/mock-test/mock-test.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -32,6 +33,7 @@ export const routes: Routes = [
   { path: 'custom-practice', component: CustomPracticeComponent, canActivate: [AuthGuard] },
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard] },
   { path: 'study-plan', component: StudyPlanComponent, canActivate: [AuthGuard] },
+  { path: 'mock-test', component: MockTestComponent, canActivate: [AuthGuard] },
   { path: 'results', component: ShowResultComponent },
   { path: 'math-lessons', component: MathLessonsComponent},
   { path: 'chemistry-lessons', component: ChemistryLessonsComponent},
