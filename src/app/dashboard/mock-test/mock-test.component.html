@@ -69,6 +69,7 @@
         Next
       </button>
       <button (click)="submitQuiz()" class="submit-button">Submit Quiz</button>
+      <button (click)="confirmGoBack()">Back to Dashboard</button>
     </div>
   
     <div class="overlay" *ngIf="showOverlay">
@@ -96,7 +97,7 @@
     <div class="rank-display" *ngIf="predictedRank">
       <h2>Your Predicted Rank</h2>
       <p>{{ predictedRank }}</p>
-      <button (click)="closeRankDisplay()">Close</button>
+      <button (click)="redirectToDashboard()">Okay</button>
     </div>
   </div>
   

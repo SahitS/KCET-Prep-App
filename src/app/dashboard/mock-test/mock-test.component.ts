@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mock-test',
@@ -23,7 +24,7 @@ export class MockTestComponent implements OnInit {
   showOverlay: boolean = false;
   predictedRank: string | null = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     console.log('MockTestComponent initialized.');
@@ -187,10 +188,6 @@ export class MockTestComponent implements OnInit {
     this.showOverlay = false;
   }
 
-  closeRankDisplay(): void {
-    this.predictedRank = null;
-  }
-
   navigateSection(section: string): void {
     this.currentSection = section;
     this.currentQuestionIndex = 0;
@@ -222,4 +219,16 @@ export class MockTestComponent implements OnInit {
       .toString()
       .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
+
+  redirectToDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
+  confirmGoBack(): void {
+    const confirmBack = confirm('Are you sure you want to leave the test? Your progress will be lost.');
+    if (confirmBack) {
+      this.redirectToDashboard();
+    }
+  }
+  
 }
