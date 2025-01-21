@@ -1,7 +1,7 @@
 <div class="container dashboard-container">
   <div class="row">
     <!-- Rank Prediction Card -->
-    <div class="col-lg-6 mb-4">
+    <div class="col-lg-6 rank-container">
       <div class="card rank-prediction-card">
         <div class="card-body text-center">
           <h2>Want to know your rank?</h2>
@@ -21,13 +21,18 @@
     </div>
 
     <!-- Study Plan Calendar -->
-    <div class="col-lg-6 mb-4">
+    <div class="col-lg-6 calendar-container">
       <div class="card calendar-card">
         <div class="card-body">
           <h3>Study Plan Calendar</h3>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Select Date</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateSelect($event.value)" />
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="selectedDate"
+              (dateChange)="onDateSelect($event.value)"
+            />
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -37,7 +42,7 @@
   </div>
 
   <!-- Agenda Display -->
-  <div class="row" *ngIf="selectedAgenda">
+  <div class="row agenda-row" *ngIf="selectedAgenda">
     <div class="col-lg-12">
       <div class="card agenda-card">
         <div class="card-body">

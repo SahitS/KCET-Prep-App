@@ -8,15 +8,10 @@ $hover-effect: #373737;
 
 .dashboard-container {
   background-color: $background-dark;
-  max-width: 1800px;
   padding: 2rem;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 
   .row {
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -24,6 +19,10 @@ $hover-effect: #373737;
   }
 
   // Rank Prediction Card
+  .rank-container {
+    flex: 1 1 48%;
+  }
+
   .rank-prediction-card {
     background-color: $card-background;
     padding: 1.5rem;
@@ -68,6 +67,10 @@ $hover-effect: #373737;
   }
 
   // Calendar Card
+  .calendar-container {
+    flex: 1 1 48%;
+  }
+
   .calendar-card {
     background-color: $card-background;
     padding: 1.5rem;
@@ -83,9 +86,9 @@ $hover-effect: #373737;
     h3 {
       color: $accent-primary;
       font-size: 1.8rem;
-      text-align: center;
       margin-bottom: 1.5rem;
       font-weight: bold;
+      text-align: center;
     }
 
     .mat-form-field {
@@ -103,39 +106,6 @@ $hover-effect: #373737;
         color: $text-primary;
       }
     }
-
-    .day-box {
-      background-color: transparent;
-      color: $text-secondary;
-      padding: 1rem;
-      border-radius: 50%;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: $hover-effect;
-        color: $text-primary;
-      }
-
-      &.study-plan-day {
-        background-color: $accent-primary;
-        color: $text-primary;
-        font-weight: bold;
-        position: relative;
-
-        .dot {
-          width: 6px;
-          height: 6px;
-          background-color: $accent-secondary;
-          border-radius: 50%;
-          position: absolute;
-          bottom: 4px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-    }
   }
 
   // Agenda Card
@@ -144,12 +114,6 @@ $hover-effect: #373737;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-    }
 
     h3 {
       color: $accent-primary;
@@ -175,26 +139,13 @@ $hover-effect: #373737;
     }
   }
 
-  // Buttons (reusable styles for interactive elements)
-  button {
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  // Responsive Adjustments
   @media (max-width: 768px) {
     flex-direction: column;
 
-    .rank-prediction-card,
-    .calendar-card,
+    .rank-container,
+    .calendar-container,
     .agenda-card {
-      margin-bottom: 2rem;
+      flex: 1 1 100%;
     }
 
     h3,
