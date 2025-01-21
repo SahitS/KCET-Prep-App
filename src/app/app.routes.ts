@@ -38,6 +38,7 @@ export const routes: Routes = [
   { path: 'math-lessons', component: MathLessonsComponent},
   { path: 'chemistry-lessons', component: ChemistryLessonsComponent},
   { path: 'physics-lessons', component: PhysicsLessonsComponent},
+  { path: 'show-result', component: ShowResultComponent},
   { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: 'home' },
 ];

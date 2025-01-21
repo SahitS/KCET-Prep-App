@@ -43,7 +43,22 @@ const MockTestScoresSchema = new mongoose.Schema({
   totalScore: { type: Number, default: 0 },
 });
 
-
+const StudyPlanSchema = new mongoose.Schema({
+  date: { type: String, required: true }, 
+  totalHours: { type: Number, required: true }, 
+  subjects: [
+    {
+      subject: { type: String, required: true }, 
+      totalHours: { type: Number, required: true }, 
+      subtopics: [
+        {
+          subtopic: { type: String, required: true }, 
+          hours: { type: Number, required: true }, 
+        },
+      ],
+    },
+  ],
+});
 
 const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
@@ -58,6 +73,7 @@ const UserSchema = new mongoose.Schema({
   custom_practice: [QuestionSchema],
   history: [HistorySchema],
   mockTestScores: [MockTestScoresSchema],
+  studyPlan: [StudyPlanSchema],
 });
 
 module.exports = mongoose.model('User', UserSchema);

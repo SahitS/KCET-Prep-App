@@ -206,7 +206,7 @@ def generate_custom_practice():
         print('Error in /generate_custom_practice:', str(e))  # Debug log
         return jsonify({"error": str(e)}), 500
 
-
+# Endpoint to get generate study plan
 @app.route('/generate-study-plan', methods=['POST'])
 def generate_study_plan():
     try:
@@ -349,6 +349,56 @@ def generate_study_plan():
     except Exception as e:
         print(f"Error: {str(e)}", flush=True)
         return jsonify({"error": str(e)}), 500
+    
+# Endpoint to save Generated Study Plan
+@app.route('/save-study-plan', methods=['POST'])
+def save_study_plan():
+    try:
+        token = request.headers.get('Authorization')
+        if not token:
+            return jsonify({"error": "Authorization token is required"}), 401
+
+        # Validate user
+        user = users_collection.find_one({"token": token})
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+
+        # Get study plan data from request
+        data = request.json
+        if not data or 'studyPlan' not in data:
+            return jsonify({"error": "Invalid payload. 'studyPlan' is required."}), 400
+
+        # Save the study plan
+        users_collection.update_one(
+            {"token": token},
+            {"$set": {"studyPlan": data['studyPlan']}}
+        )
+
+        return jsonify({"message": "Study plan saved successfully."}), 200
+    except Exception as e:
+        print(f"Error saving study plan: {str(e)}", flush=True)
+        return jsonify({"error": str(e)}), 500
+
+# Endpoint to get the user's study plan    
+@app.route('/get-study-plan', methods=['GET'])
+def get_study_plan():
+    try:
+        token = request.headers.get('Authorization')
+        if not token:
+            return jsonify({"error": "Authorization token is required"}), 401
+
+        user = users_collection.find_one({"token": token})
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+
+        study_plan = user.get('studyPlan', [])
+        if not study_plan:
+            return jsonify({"error": "No study plan found."}), 404
+
+        return jsonify({"studyPlan": study_plan}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 @app.route('/ask-ai', methods=['POST'])

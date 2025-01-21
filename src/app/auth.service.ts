@@ -183,6 +183,20 @@ export class AuthService {
       headers: { Authorization: token },
     });
   }
+
+  saveStudyPlan(payload: { studyPlan: any[] }): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post(`${this.apiUrl}/save-study-plan`, payload, {
+      headers: { Authorization: token },
+    });
+  }  
+
+  getStudyPlan(): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get(`${this.apiUrl}/get-study-plan`, {
+      headers: { Authorization: token },
+    });
+  }
   
   
 }
