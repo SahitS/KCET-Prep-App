@@ -167,63 +167,6 @@ $hover-effect: #373737;
   }
 }
 
-  // Agenda Card
-  .agenda-card {
-    background-color: $card-background;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-
-    h3 {
-      color: $accent-primary;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    h4 {
-      color: $text-primary;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-
-      li {
-        color: $text-secondary;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-
-  // Progress Bar
-  .progress-bar-container {
-    margin: 2rem 0;
-    text-align: center;
-
-    h3 {
-      color: $accent-primary;
-      margin-bottom: 1rem;
-    }
-
-    .progress-bar {
-      background-color: $hover-effect;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 20px;
-      width: 80%;
-      margin: 0 auto;
-
-      .progress {
-        background-color: $accent-secondary;
-        height: 100%;
-        transition: width 0.3s ease;
-      }
-    }
-  }
-
   // Overlay
   .overlay {
     position: fixed;
