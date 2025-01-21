@@ -43,6 +43,8 @@ const MockTestScoresSchema = new mongoose.Schema({
   totalScore: { type: Number, default: 0 },
 });
 
+
+
 const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
