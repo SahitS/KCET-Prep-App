@@ -1,3 +1,4 @@
+// Global Color Palette
 $background-dark: #181818;
 $card-background: #2d2d2d;
 $text-primary: #f5f5f5;
@@ -6,6 +7,7 @@ $accent-primary: #A78BFA;
 $accent-secondary: #4ADE80;
 $hover-effect: #373737;
 
+// Dashboard Container
 .dashboard-container {
   background-color: $background-dark;
   padding: 2rem;
@@ -66,47 +68,104 @@ $hover-effect: #373737;
     }
   }
 
-  // Calendar Card
+
   .calendar-container {
-    flex: 1 1 48%;
+  flex: 1 1 48%;
+}
+
+.calendar-card {
+  background-color: $card-background;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
   }
 
-  .calendar-card {
-    background-color: $card-background;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .calendar-title {
+    color: $accent-primary;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-    }
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 
-    h3 {
-      color: $accent-primary;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+    .month-display {
+      color: $text-primary;
+      font-size: 1.5rem;
       font-weight: bold;
       text-align: center;
+      flex: 1; /* Ensures the title stays centered */
     }
 
-    .mat-form-field {
-      width: 100%;
+    .btn-prev,
+    .btn-next {
       background-color: $hover-effect;
+      color: $text-primary;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
-      padding: 0.5rem;
-      margin-top: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 0.5rem; /* Adds spacing around buttons */
 
-      mat-label {
-        color: $text-secondary;
-      }
-
-      input {
-        color: $text-primary;
+      &:hover {
+        background-color: lighten($hover-effect, 10%);
       }
     }
   }
+
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Ensures a grid with 7 columns */
+    gap: 0.6rem; /* Adjusts spacing between dates */
+
+    .day-label {
+      text-align: center;
+      font-weight: bold;
+      color: $text-secondary;
+      font-size: 0.9rem; /* Smaller font for day labels */
+    }
+
+    .calendar-date {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px; /* Uniform width */
+      height: 50px; /* Uniform height for circular shape */
+      font-size: 0.9rem;
+      font-weight: bold;
+      background-color: $hover-effect;
+      color: $text-secondary;
+      border-radius: 50%; /* Circular shape */
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.event-day {
+        background-color: $accent-primary;
+        color: $text-primary;
+      }
+
+      &.today {
+        border: 2px solid $accent-secondary;
+      }
+
+      &:hover {
+        background-color: lighten($hover-effect, 10%);
+        color: $text-primary;
+      }
+      margin: 8px;
+    }
+  }
+}
 
   // Agenda Card
   .agenda-card {
@@ -139,6 +198,86 @@ $hover-effect: #373737;
     }
   }
 
+  // Progress Bar
+  .progress-bar-container {
+    margin: 2rem 0;
+    text-align: center;
+
+    h3 {
+      color: $accent-primary;
+      margin-bottom: 1rem;
+    }
+
+    .progress-bar {
+      background-color: $hover-effect;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+      width: 80%;
+      margin: 0 auto;
+
+      .progress {
+        background-color: $accent-secondary;
+        height: 100%;
+        transition: width 0.3s ease;
+      }
+    }
+  }
+
+  // Overlay
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay-content {
+      background-color: $card-background;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+
+      h3 {
+        color: $accent-primary;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          color: $text-secondary;
+          margin: 1rem 0;
+          display: flex;
+          align-items: center;
+
+          input {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .btn-close {
+        background-color: $hover-effect;
+        color: $text-primary;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($hover-effect, 10%);
+        }
+      }
+    }
+  }
+
+  // Media Queries
   @media (max-width: 768px) {
     flex-direction: column;
 

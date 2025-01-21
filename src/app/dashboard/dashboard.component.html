@@ -24,39 +24,51 @@
     <div class="col-lg-6 calendar-container">
       <div class="card calendar-card">
         <div class="card-body">
-          <h3>Study Plan Calendar</h3>
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Select Date</mat-label>
-            <input
-              matInput
-              [matDatepicker]="picker"
-              [(ngModel)]="selectedDate"
-              (dateChange)="onDateSelect($event.value)"
-            />
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
-      </div>
-    </div>
-  </div>
+          <h3 class="calendar-title">Study Plan Calendar</h3>
+          <div class="calendar">
+            <div class="calendar-header">
+              <button class="btn-prev" (click)="prevMonth()">←</button>
+              <h3 class="month-display">{{ months[currentMonth] }} {{ currentYear }}</h3>
+              <button class="btn-next" (click)="nextMonth()">→</button>
+            </div>
+            <div class="calendar-days">
+              <!-- Weekday Labels -->
+              <div class="day-label" *ngFor="let day of weekdays">{{ day }}</div>
 
-  <!-- Agenda Display -->
-  <div class="row agenda-row" *ngIf="selectedAgenda">
-    <div class="col-lg-12">
-      <div class="card agenda-card">
-        <div class="card-body">
-          <h3 class="text-primary">Agenda for {{ selectedDate | date: 'fullDate' }}</h3>
-          <div *ngFor="let subject of selectedAgenda.subjects">
-            <h4>{{ subject.subject }}</h4>
-            <ul>
-              <li *ngFor="let subtopic of subject.subtopics">
-                {{ subtopic.subtopic }} - {{ subtopic.hours }} hours
-              </li>
-            </ul>
+              <!-- Calendar Dates -->
+              <div
+                class="calendar-date"
+                *ngFor="let date of calendarDays"
+                [ngClass]="{ 'event-day': isEventDay(date), 'today': isToday(date) }"
+                (click)="openOverlay(date)"
+              >
+                {{ date.getDate() }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Overlay -->
+<div class="overlay" *ngIf="selectedAgenda">
+  <div class="overlay-content">
+    <h3>Agenda for {{ selectedDate | date: 'fullDate' }}</h3>
+    <div *ngFor="let subject of selectedAgenda.subjects">
+      <h4>{{ subject.subject }}</h4>
+      <ul>
+        <li *ngFor="let subtopic of subject.subtopics">
+          <input
+            type="checkbox"
+            [(ngModel)]="subtopic.completed"
+            (change)="updateProgress()"
+          />
+          {{ subtopic.subtopic }} - {{ subtopic.hours }} hours
+        </li>
+      </ul>
+    </div>
+    <button class="btn-close" (click)="closeOverlay()">Close</button>
+  </div>
+</div>
 </div>
