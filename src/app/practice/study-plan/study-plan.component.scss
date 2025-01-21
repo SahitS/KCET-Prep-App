@@ -207,6 +207,46 @@ $border-color: #3a3a3a;
     }
   }
 }
+.study-plan-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .btn-save, .btn-analysis {
+    background-color: $accent-primary;
+    color: $text-primary;
+    margin-top: 0.8vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten($accent-primary, 10%);
+      transform: scale(1.05);
+    }
+  }
+
+  .btn-analysis {
+    background-color: $accent-secondary;
+
+    &:hover {
+      background-color: lighten($accent-secondary, 10%);
+    }
+  }
+
+  /* Add this new container for buttons */
+  .button-container {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    width: 100%; /* Ensure the buttons stay centered */
+  }
+}
 
 // Responsive Design
 @media (max-width: 768px) {

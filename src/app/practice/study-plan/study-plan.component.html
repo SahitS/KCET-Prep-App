@@ -45,6 +45,14 @@
           <p>Total Hours: {{ day.totalHours }}</p>
         </div>
       </div>
+
+      <!-- Buttons for Day Level -->
+      <div class="button-container" *ngIf="!selectedDay && !selectedSubject">
+        <!-- Save Button -->
+        <button class="btn-save" (click)="saveStudyPlan()">Save Study Plan</button>
+        <!-- Back to Analysis Button -->
+        <button class="btn-analysis" (click)="navigateToAnalysis()">Back to Analysis</button>
+      </div>
     </div>
 
     <!-- Subject Level -->
@@ -68,5 +76,4 @@
       </div>
     </div>
   </div>
-
 </div>

@@ -7,6 +7,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-study-plan',
@@ -37,7 +38,7 @@ export class StudyPlanComponent implements OnInit {
   selectedDay: any = null;
   selectedSubject: any = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -106,4 +107,31 @@ export class StudyPlanComponent implements OnInit {
       return sum + subj.subtopics.reduce((subSum: number, subtopic: any) => subSum + subtopic.hours, 0);
     }, 0);
   }
+
+  saveStudyPlan(): void {
+    const token = localStorage.getItem('userToken') || '';
+    if (!token) {
+      alert('User not authenticated. Please log in.');
+      return;
+    }
+  
+    const payload = { studyPlan: this.studyPlan };
+  
+    this.authService.saveStudyPlan(payload).subscribe({
+      next: (data) => {
+        alert(data.message || 'Study plan saved successfully.');
+      },
+      error: (err) => {
+        console.error('Error saving study plan:', err);
+        alert('Failed to save the study plan. Please try again.');
+      },
+    });
+  }
+
+  navigateToAnalysis(): void {
+    // Replace with your route to the analysis page
+    this.router.navigate(['/show-result']);
+  }
+  
+  
 }
