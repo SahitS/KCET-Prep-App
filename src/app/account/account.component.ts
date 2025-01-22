@@ -21,6 +21,7 @@ export class AccountComponent {
   isPasswordOverlayOpen = false;
 
   constructor(private authService: AuthService) {
+    this.loadUserDetails();
     this.getUsername();
   }
 
@@ -102,6 +103,24 @@ export class AccountComponent {
       (error) => {
         console.error('Error changing password:', error);
         alert('Failed to change password. Please try again.');
+      }
+    );
+  }
+
+  loadUserDetails() {
+    this.authService.getUserDetails().subscribe(
+      (data) => {
+        this.username = data.username || '';
+        this.personalInfo.name = data.name || '';
+        this.personalInfo.dob = data.dob ? new Date(data.dob).toISOString().split('T')[0] : ''; // Format date
+        this.personalInfo.country = data.country || 'India/Karnataka';
+        this.personalInfo.language = data.language || 'English';
+        this.contactInfoPayload.email = data.email || '';
+        this.contactInfoPayload.gender = data.gender || '';
+        console.log('User details loaded successfully:', data);
+      },
+      (error) => {
+        console.error('Error loading user details:', error);
       }
     );
   }

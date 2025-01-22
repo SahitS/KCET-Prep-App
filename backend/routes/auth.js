@@ -640,12 +640,45 @@ router.post('/change-password', async (req, res) => {
 
     // Save user data without validating unrelated fields
     await user.save({ validateModifiedOnly: true });
-    
+
     res.status(200).json({ message: 'Password updated successfully' });
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while changing the password' });
   }
 });
+
+router.get('/get-user-details', async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ error: 'Authorization token is required' });
+    }
+
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Prepare the response with necessary fields
+    const userDetails = {
+      username: user.username,
+      email: user.email || '',
+      gender: user.gender || '',
+      name: user.name || '',
+      dob: user.dob || '',
+      country: user.country || 'India/Karnataka',
+      language: user.language || 'English',
+    };
+
+    res.status(200).json(userDetails);
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+    res.status(500).json({ error: 'An error occurred while fetching user details' });
+  }
+});
+
 
 
 module.exports = router;

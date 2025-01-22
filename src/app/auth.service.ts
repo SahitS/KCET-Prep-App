@@ -226,4 +226,12 @@ export class AuthService {
     });
   }
 
+  getUserDetails(): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get(`${this.baseUrl}/get-user-details`, {
+      headers: { Authorization: token },
+    });
+  }
+  
+
 }
