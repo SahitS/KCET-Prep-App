@@ -64,6 +64,11 @@ const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   token: { type: String },
+  name: { type: String },
+  dob: { type: Date },
+  country: { type: String, default: "India/Karnataka" },
+  email: { type: String },
+  gender: { type: String, enum: ['Male', 'Female', 'Other'], default: 'Male' },
   quiz: QuizSchema,
   answers: {
     physicsAnswers: [AnswerSchema],
@@ -75,5 +80,6 @@ const UserSchema = new mongoose.Schema({
   mockTestScores: [MockTestScoresSchema],
   studyPlan: [StudyPlanSchema],
 });
+
 
 module.exports = mongoose.model('User', UserSchema);

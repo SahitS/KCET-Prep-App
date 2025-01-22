@@ -551,5 +551,101 @@ router.post('/submit-mock-test', async (req, res) => {
   }
 });
 
+//endpoint to update personal information
+router.post('/update-personal-info', async (req, res) => {
+  try {
+    const { token, personalInfo } = req.body;
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.name = personalInfo.name || user.name;
+    user.dob = personalInfo.dob || user.dob;
+    user.country = personalInfo.country || user.country;
+
+    // Skip `custom_practice` validation if it's not relevant
+    delete user.custom_practice;
+
+    // Save user data without validating unrelated fields
+    await user.save({ validateModifiedOnly: true });
+
+    res.status(200).json({ message: 'Personal information updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while updating personal info' });
+  }
+});
+
+//endpoint to update contact information
+router.post('/update-contact-info', async (req, res) => {
+  try {
+    const { token, contactInfo } = req.body;
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.email = contactInfo.email || user.email;
+    user.gender = contactInfo.gender || user.gender;
+
+    // Skip `custom_practice` validation if it's not relevant
+    delete user.custom_practice;
+
+    // Save user data without validating unrelated fields
+    await user.save({ validateModifiedOnly: true });
+
+    res.status(200).json({ message: 'Contact information updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while updating contact info' });
+  }
+});
+
+//endpoint to fetch username
+router.get('/get-username', async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.status(200).json({ username: user.username });
+  } catch (error) {
+    res.status(500).json({ error: 'Error retrieving username' });
+  }
+});
+
+//endpoint to change password
+router.post('/change-password', async (req, res) => {
+  try {
+    const { token, oldPassword, newPassword } = req.body;
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ error: 'Old password is incorrect' });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10);
+
+    // Skip `custom_practice` validation if it's not relevant
+    delete user.custom_practice;
+
+    // Save user data without validating unrelated fields
+    await user.save({ validateModifiedOnly: true });
+    
+    res.status(200).json({ message: 'Password updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while changing the password' });
+  }
+});
+
 
 module.exports = router;

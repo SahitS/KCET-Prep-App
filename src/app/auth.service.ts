@@ -197,6 +197,33 @@ export class AuthService {
       headers: { Authorization: token },
     });
   }
-  
-  
+
+  getUsername(): Observable<{ username: string }> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.get<{ username: string }>(`${this.baseUrl}/get-username`, {
+      headers: { Authorization: token },
+    });
+  }
+
+  updatePersonalInfo(personalInfo: { name: string; dob: string; country: string }): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post(`${this.baseUrl}/update-personal-info`, { token, personalInfo }, {
+      headers: { Authorization: token },
+    });
+  }
+
+  updateContactInfo(contactInfo: { email: string; gender: string }): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post(`${this.baseUrl}/update-contact-info`, { token, contactInfo }, {
+      headers: { Authorization: token },
+    });
+  }
+
+  changePassword(oldPassword: string, newPassword: string): Observable<any> {
+    const token = localStorage.getItem('userToken') || '';
+    return this.http.post(`${this.baseUrl}/change-password`, { token, oldPassword, newPassword }, {
+      headers: { Authorization: token },
+    });
+  }
+
 }
