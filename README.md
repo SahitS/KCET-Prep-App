@@ -236,3 +236,6 @@ Contributors
 
 This project was developed by a dedicated team passionate about enhancing education through technology.
 
+License
+
+This project is licensed under the MIT License.
