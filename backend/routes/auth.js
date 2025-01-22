@@ -602,21 +602,6 @@ router.post('/update-contact-info', async (req, res) => {
   }
 });
 
-//endpoint to fetch username
-router.get('/get-username', async (req, res) => {
-  try {
-    const token = req.headers.authorization;
-    const user = await User.findOne({ token });
-
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.status(200).json({ username: user.username });
-  } catch (error) {
-    res.status(500).json({ error: 'Error retrieving username' });
-  }
-});
 
 //endpoint to change password
 router.post('/change-password', async (req, res) => {

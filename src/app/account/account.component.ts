@@ -22,20 +22,6 @@ export class AccountComponent {
 
   constructor(private authService: AuthService) {
     this.loadUserDetails();
-    this.getUsername();
-  }
-
-  getUsername() {
-    this.authService.getUsername().subscribe(
-      (data) => {
-        this.username = data.username;
-        this.accountSettings.username = data.username;
-        console.log('Username fetched successfully:', this.username);
-      },
-      (error) => {
-        console.error('Error fetching username:', error);
-      }
-    );
   }
 
   editPersonalInfo() {

@@ -198,13 +198,6 @@ export class AuthService {
     });
   }
 
-  getUsername(): Observable<{ username: string }> {
-    const token = localStorage.getItem('userToken') || '';
-    return this.http.get<{ username: string }>(`${this.baseUrl}/get-username`, {
-      headers: { Authorization: token },
-    });
-  }
-
   updatePersonalInfo(personalInfo: { name: string; dob: string; country: string }): Observable<any> {
     const token = localStorage.getItem('userToken') || '';
     return this.http.post(`${this.baseUrl}/update-personal-info`, { token, personalInfo }, {
