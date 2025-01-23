@@ -632,6 +632,7 @@ router.post('/change-password', async (req, res) => {
   }
 });
 
+//endpoint to get user details
 router.get('/get-user-details', async (req, res) => {
   try {
     const token = req.headers.authorization;

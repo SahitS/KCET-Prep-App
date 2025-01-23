@@ -20,6 +20,11 @@ export class AccountComponent {
   isAccountSettingsEditable = false;
   isPasswordOverlayOpen = false;
 
+  ngOnInit() {
+    this.contactInfoPayload.gender = this.contactInfoPayload.gender.toLowerCase(); // Normalize to lowercase
+  }
+  
+
   constructor(private authService: AuthService) {
     this.loadUserDetails();
   }

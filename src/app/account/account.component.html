@@ -83,10 +83,10 @@
           <div class="box">
             <h3>Gender</h3>
             <select id="gender" name="gender" [(ngModel)]="contactInfoPayload.gender" [disabled]="!isAccountSettingsEditable">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>            
           </div>
         </div>
         <button *ngIf="!isAccountSettingsEditable" (click)="editAccountSettings()">Edit</button>
