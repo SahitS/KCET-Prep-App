@@ -38,27 +38,33 @@ export class DashboardComponent implements OnInit {
     this.generateCalendar(this.currentMonth, this.currentYear); // Generate the calendar for the current month and year
   }
 
-  // Fetch study plan from backend
   fetchStudyPlan(): void {
     this.authService.getStudyPlan().subscribe({
       next: (data) => {
-        this.studyPlan = data.studyPlan || []; // Assign the fetched study plan
-        this.markDates(); // Mark the dates on the calendar
+        this.studyPlan = data.studyPlan || [];
+        const currentDay = data.currentDay || 1;
+  
+        // Mark calendar dates based on the current day
+        this.markDates(currentDay);
       },
-      error: (err) => console.error('Error fetching study plan:', err), // Log errors
+      error: (err) => console.error('Error fetching study plan:', err),
     });
   }
+  
 
   // Mark study plan days on the calendar
-  markDates(): void {
-    const today = new Date(); // Start from today's date
+  markDates(currentDay: number): void {
+    const today = new Date();
+    this.markedDates = {}; // Reset marked dates
+  
     this.studyPlan.forEach((day: any, index: number) => {
-      const date = new Date(today); // Clone today's date
-      date.setDate(today.getDate() + index); // Increment day for each study plan
+      const date = new Date(today);
+      date.setDate(today.getDate() + index - (currentDay - 1)); // Align with current day
       const key = date.toDateString();
-      this.markedDates[key] = day; // Map the date to its agenda
+      this.markedDates[key] = day;
     });
   }
+  
 
   // Generate calendar days for a given month and year
   generateCalendar(month: number, year: number): void {
@@ -101,16 +107,18 @@ export class DashboardComponent implements OnInit {
 
   // Handle date selection and display the overlay
   openOverlay(date: Date): void {
-    const key = date.toDateString(); // Convert date to a string key
+    const key = date.toDateString();
     if (this.markedDates[key]) {
-      this.selectedDate = date; // Set the selected date
-      this.selectedAgenda = this.markedDates[key]; // Set the selected agenda
+      this.selectedDate = date;
+      this.selectedAgenda = this.markedDates[key]; // Show agenda for the selected date
       console.log('Selected date:', this.selectedDate);
       console.log('Selected agenda:', this.selectedAgenda);
     } else {
       console.log('No events for the selected date.');
+      this.selectedAgenda = null;
     }
   }
+  
 
   // Close the overlay
   closeOverlay(): void {

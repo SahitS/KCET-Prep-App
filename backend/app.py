@@ -358,26 +358,27 @@ def save_study_plan():
         if not token:
             return jsonify({"error": "Authorization token is required"}), 401
 
-        # Validate user
         user = users_collection.find_one({"token": token})
         if not user:
             return jsonify({"error": "User not found"}), 404
 
-        # Get study plan data from request
         data = request.json
         if not data or 'studyPlan' not in data:
             return jsonify({"error": "Invalid payload. 'studyPlan' is required."}), 400
 
-        # Save the study plan
+        start_date = dt.utcnow().strftime('%Y-%m-%d')  # Save the current date as the start date
+
+        # Save study plan and start date
         users_collection.update_one(
             {"token": token},
-            {"$set": {"studyPlan": data['studyPlan']}}
+            {"$set": {"studyPlan": data['studyPlan'], "startDate": start_date}}
         )
 
         return jsonify({"message": "Study plan saved successfully."}), 200
     except Exception as e:
         print(f"Error saving study plan: {str(e)}", flush=True)
         return jsonify({"error": str(e)}), 500
+
 
 # Endpoint to get the user's study plan    
 @app.route('/get-study-plan', methods=['GET'])
@@ -392,11 +393,25 @@ def get_study_plan():
             return jsonify({"error": "User not found"}), 404
 
         study_plan = user.get('studyPlan', [])
-        if not study_plan:
+        start_date = user.get('startDate')
+
+        if not study_plan or not start_date:
             return jsonify({"error": "No study plan found."}), 404
 
-        return jsonify({"studyPlan": study_plan}), 200
+        # Calculate days elapsed since the start date
+        today = dt.utcnow().date()
+        start_date = dt.strptime(start_date, '%Y-%m-%d').date()
+        days_elapsed = (today - start_date).days + 1  # Day 1 is inclusive
+
+        # Adjust study plan to show only the remaining days
+        remaining_plan = [
+            {**day, "day": index + days_elapsed}
+            for index, day in enumerate(study_plan[days_elapsed - 1 :])
+        ]
+
+        return jsonify({"studyPlan": remaining_plan, "currentDay": days_elapsed}), 200
     except Exception as e:
+        print(f"Error fetching study plan: {str(e)}", flush=True)
         return jsonify({"error": str(e)}), 500
 
 
