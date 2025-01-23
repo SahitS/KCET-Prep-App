@@ -146,9 +146,12 @@ export class CustomPracticeComponent implements OnInit {
         this.authService.getCustomPracticeTest().subscribe({
           next: (fetchResponse: any) => {
             console.log('Fetched custom practice questions:', fetchResponse);
-
+        
             if (fetchResponse.questions && fetchResponse.questions.length > 0) {
-              this.customPractice = fetchResponse.questions;
+              this.customPractice = fetchResponse.questions.map((q: any, index: any) => ({
+                ...q,
+                questionIndex: index // Assign a questionIndex if not already present
+              }));
               this.currentQuestion = this.customPractice[this.currentQuestionIndex];
               this.isSessionStarted = true;
               console.log('Session started. First question:', this.currentQuestion);
@@ -160,7 +163,7 @@ export class CustomPracticeComponent implements OnInit {
           error: (fetchError) => {
             console.error('Error fetching custom practice questions:', fetchError);
             alert('An error occurred while fetching custom practice questions. Please try again.');
-          },
+          }
         });
       },
       error: (generateError) => {
@@ -181,7 +184,10 @@ export class CustomPracticeComponent implements OnInit {
       return;
     }
   
-    this.authService.verifyAnswer(this.currentQuestion.questionIndex, this.selectedOption).subscribe({
+    const questionIndex = this.currentQuestion.questionIndex;
+    console.log('Submitting answer for questionIndex:', questionIndex);
+  
+    this.authService.verifyAnswer(questionIndex, this.selectedOption).subscribe({
       next: (response: { isCorrect: boolean }) => {
         this.isAnswered = true;
         this.isAnswerCorrect = response.isCorrect;
@@ -190,15 +196,13 @@ export class CustomPracticeComponent implements OnInit {
         const topic = this.currentQuestion.Topic;
         const subtopic = this.currentQuestion.Subtopic;
   
-        // Find the performance entry for this topic/subtopic
         let performanceEntry = this.sessionPerformance.find(
           (entry) => entry.topic === topic && entry.subtopic === subtopic
         );
   
         if (!performanceEntry) {
-          // Add new entry if not already present
           performanceEntry = {
-            subject: this.selectedSubject, // Include the subject here
+            subject: this.selectedSubject,
             topic,
             subtopic,
             totalQuestions: 0,
@@ -207,7 +211,6 @@ export class CustomPracticeComponent implements OnInit {
           this.sessionPerformance.push(performanceEntry);
         }
   
-        // Update stats
         performanceEntry.totalQuestions += 1;
         if (response.isCorrect) {
           performanceEntry.correctAnswers += 1;
@@ -220,7 +223,7 @@ export class CustomPracticeComponent implements OnInit {
         alert('An error occurred while verifying your answer.');
       }
     });
-  }
+  }  
    
 
   nextQuestion(): void {

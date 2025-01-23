@@ -111,12 +111,14 @@ export class AuthService {
 
   // Submit user answer and verify correctness
   verifyAnswer(questionIndex: number, selectedOption: string): Observable<{ isCorrect: boolean }> {
+    console.log('Verifying Answer Payload:', { questionIndex, selectedOption });
     return this.http.post<{ isCorrect: boolean }>(
       `${this.baseUrl}/verify-answer`,
       { questionIndex, selectedOption },
       { headers: { Authorization: localStorage.getItem('userToken') || '' } }
     );
   }
+  
   //Saving custom practice session history
   saveSessionHistory(performanceData: any) {
     const token = localStorage.getItem('userToken');

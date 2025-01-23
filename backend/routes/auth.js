@@ -324,11 +324,13 @@ router.get('/get-custom-practice', async (req, res) => {
   }
 });
 
-//Endpoint to verifying custom practice questions on the go
+//endpoint to verify custom practice answer
 router.post('/verify-answer', async (req, res) => {
   try {
     const { questionIndex, selectedOption } = req.body;
     const token = req.headers.authorization;
+
+    console.log('Incoming Payload:', { questionIndex, selectedOption });
 
     if (!token) {
       return res.status(401).json({ error: 'Authorization token is required' });
@@ -339,8 +341,14 @@ router.post('/verify-answer', async (req, res) => {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    const question = user.custom_practice.find(q => q.questionIndex === questionIndex);
+    if (questionIndex === undefined || questionIndex === null) {
+      console.error('Invalid questionIndex:', questionIndex);
+      return res.status(400).json({ error: 'Invalid questionIndex' });
+    }
+
+    const question = user.custom_practice[questionIndex];
     if (!question) {
+      console.error('Question not found for index:', questionIndex);
       return res.status(404).json({ error: 'Question not found' });
     }
 
@@ -348,9 +356,10 @@ router.post('/verify-answer', async (req, res) => {
     res.status(200).json({ isCorrect });
   } catch (error) {
     console.error('Error verifying answer:', error);
-    res.status(500).json({ error: 'An error occurred while verifying answer' });
+    res.status(500).json({ error: 'An error occurred while verifying the answer' });
   }
 });
+
 
 //Endpoint to save a custom practice sessions history
 router.post('/save-session-history', async (req, res) => {
