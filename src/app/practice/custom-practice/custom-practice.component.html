@@ -1,13 +1,14 @@
-<div class="custom-practice-container">
-  <h1>Custom Practice Session</h1>
+<div class="custom-practice-container {{currentTheme}}">
+  <h1 class="h1 {{currentTheme}}">Custom Practice Session</h1>
 
   <!-- Subject Navbar -->
-  <div class="navbar-container">
-    <ul class="subject-navbar">
+  <div class="navbar-container {{currentTheme}}">
+    <ul class="subject-navbar {{currentTheme}}">
       <li
         *ngFor="let subject of subjects"
-        [class.active]="selectedSubject === subject"
+        [class.active]="'active ' + currentTheme"
         (click)="fetchTopics(subject)"
+        class="{{currentTheme}}"
       >
         {{ subject }}
       </li>
@@ -15,22 +16,22 @@
   </div>
 
   <!-- Performance History (hidden when a subject is selected) -->
-  <div class="hierarchical-history" *ngIf="!selectedSubject && history.length > 0">
-    <h2>Performance History</h2>
-    <mat-accordion>
-      <mat-expansion-panel *ngFor="let subject of history">
-        <mat-expansion-panel-header>
+  <div class="hierarchical-history {{currentTheme}}" *ngIf="!selectedSubject && history.length > 0">
+    <h2 class="h2 {{currentTheme}}">Performance History</h2>
+    <mat-accordion class="{{currentTheme}}">
+      <mat-expansion-panel *ngFor="let subject of history" class="{{currentTheme}}">
+        <mat-expansion-panel-header class="{{currentTheme}}">
           {{ subject.subject }} (Accuracy: {{ subject.accuracy }}%)
         </mat-expansion-panel-header>
-  
-        <mat-accordion>
-          <mat-expansion-panel *ngFor="let topic of subject.topics">
-            <mat-expansion-panel-header>
+
+        <mat-accordion class="{{currentTheme}}">
+          <mat-expansion-panel *ngFor="let topic of subject.topics" class="{{currentTheme}}">
+            <mat-expansion-panel-header class="{{currentTheme}}">
               {{ topic.topic }} (Accuracy: {{ topic.accuracy }}%)
             </mat-expansion-panel-header>
-  
-            <ul>
-              <li *ngFor="let subtopic of topic.subtopics">
+
+            <ul class="{{currentTheme}}">
+              <li *ngFor="let subtopic of topic.subtopics" class="{{currentTheme}}">
                 {{ subtopic.subtopic }}: {{ subtopic.accuracy }}%
               </li>
             </ul>
@@ -39,24 +40,25 @@
       </mat-expansion-panel>
     </mat-accordion>
   </div>
-  
-  <!-- Topic and Subtopic Selection -->
-  <div *ngIf="selectedSubject && !isSessionStarted" class="practice-options">
-    <h2>Select Topics and Subtopics for {{ selectedSubject }}</h2>
 
-    <div *ngIf="isLoading" class="loading-spinner">Loading topics...</div>
+  <!-- Topic and Subtopic Selection -->
+  <div *ngIf="selectedSubject && !isSessionStarted" class="practice-options {{currentTheme}}">
+    <h2 class="h2 {{currentTheme}}">Select Topics and Subtopics for {{ selectedSubject }}</h2>
+
+    <div *ngIf="isLoading" class="loading-spinner {{currentTheme}}">Loading topics...</div>
 
     <div *ngIf="!isLoading">
       <!-- Topics -->
-      <div class="topics-container">
-        <h3>Topics</h3>
-        <div class="checkbox-list">
-          <label *ngFor="let topic of topics">
+      <div class="topics-container {{currentTheme}}">
+        <h3 class="h3 {{currentTheme}}">Topics</h3>
+        <div class="checkbox-list {{currentTheme}}">
+          <label *ngFor="let topic of topics" class="{{currentTheme}}">
             <input
               type="checkbox"
               [value]="topic"
               (change)="toggleTopic(topic)"
               [checked]="selectedTopics.includes(topic)"
+              class="{{currentTheme}}"
             />
             {{ topic }}
           </label>
@@ -64,15 +66,16 @@
       </div>
 
       <!-- Subtopics -->
-      <div class="subtopics-container" *ngFor="let topic of selectedTopics">
-        <h3>Subtopics for {{ topic }}</h3>
-        <div class="checkbox-list">
-          <label *ngFor="let subtopic of subtopics[topic]">
+      <div class="subtopics-container {{currentTheme}}" *ngFor="let topic of selectedTopics">
+        <h3 class="h3 {{currentTheme}}">Subtopics for {{ topic }}</h3>
+        <div class="checkbox-list {{currentTheme}}">
+          <label *ngFor="let subtopic of subtopics[topic]" class="{{currentTheme}}">
             <input
               type="checkbox"
               [value]="subtopic"
               (change)="toggleSubtopic(topic, subtopic)"
               [checked]="selectedSubtopics[topic]?.includes(subtopic)"
+              class="{{currentTheme}}"
             />
             {{ subtopic }}
           </label>
@@ -81,26 +84,26 @@
     </div>
 
     <!-- Difficulty -->
-    <div class="difficulty-container">
-      <h3>Select Difficulty</h3>
-      <select [(ngModel)]="selectedDifficulty">
+    <div class="difficulty-container {{currentTheme}}">
+      <h3 class="h3 {{currentTheme}}">Select Difficulty</h3>
+      <select [(ngModel)]="selectedDifficulty" class="{{currentTheme}}">
         <option *ngFor="let level of difficultyLevels" [value]="level">
           {{ level }}
         </option>
       </select>
     </div>
 
-    <button class="btn btn-primary" (click)="startSession()">Start Session</button>
+    <button class="btn btn-primary {{currentTheme}}" (click)="startSession()">Start Session</button>
   </div>
 
   <!-- Practice Session -->
-  <div *ngIf="isSessionStarted" class="question-container">
-    <h2>Question {{ currentQuestionIndex + 1 }}</h2>
-    <p class="question-text">{{ currentQuestion.Question }}</p>
+  <div *ngIf="isSessionStarted" class="question-container {{currentTheme}}">
+    <h2 class="h2 {{currentTheme}}">Question {{ currentQuestionIndex + 1 }}</h2>
+    <p class="question-text {{currentTheme}}">{{ currentQuestion.Question }}</p>
 
     <!-- Options -->
-    <div class="options">
-      <label *ngFor="let option of ['Option_1', 'Option_2', 'Option_3', 'Option_4']">
+    <div class="options {{currentTheme}}">
+      <label *ngFor="let option of ['Option_1', 'Option_2', 'Option_3', 'Option_4']" class="{{currentTheme}}">
         <input
           type="radio"
           name="options"
@@ -108,23 +111,24 @@
           [checked]="selectedOption === option"
           [disabled]="isAnswered"
           (change)="selectOption(option)"
+          class="{{currentTheme}}"
         />
         {{ currentQuestion[option] }}
       </label>
     </div>
 
     <!-- Feedback -->
-    <div *ngIf="isAnswered" class="feedback">
-      <p [class.correct]="isAnswerCorrect" [class.incorrect]="!isAnswerCorrect">
+    <div *ngIf="isAnswered" class="feedback {{currentTheme}}">
+      <p [class.correct]="'correct ' + currentTheme" [class.incorrect]="'incorrect ' + currentTheme">
         {{ isAnswerCorrect ? 'Correct!' : 'Incorrect!' }}
       </p>
     </div>
 
     <!-- Navigation -->
-    <div class="navigation-buttons">
+    <div class="navigation-buttons {{currentTheme}}">
       <button
         *ngIf="!isAnswered"
-        class="btn btn-submit"
+        class="btn btn-submit {{currentTheme}}"
         [disabled]="!selectedOption"
         (click)="submitAnswer()"
       >
@@ -132,14 +136,14 @@
       </button>
       <button
         *ngIf="isAnswered && currentQuestionIndex < customPractice.length - 1"
-        class="btn btn-next"
+        class="btn btn-next {{currentTheme}}"
         (click)="nextQuestion()"
       >
         Next Question
       </button>
       <button
         *ngIf="isAnswered && currentQuestionIndex === customPractice.length - 1"
-        class="btn btn-finish"
+        class="btn btn-finish {{currentTheme}}"
         (click)="finishPractice()"
       >
         Finish Practice

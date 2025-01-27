@@ -1,4 +1,5 @@
 // Define reusable variables for consistency
+// Dark Theme
 $background-color: #181818;
 $container-bg: #242424;
 $card-bg: #2d2d2d;
@@ -9,13 +10,32 @@ $text-primary: #f5f5f5;
 $text-secondary: #c7c7c7;
 $hover-shadow: rgba(203, 13, 228, 0.3);
 
-/* General Layout */
+// Light Theme
+$background-color-light: #f9f9fa;
+$container-bg-light: #f2f3f5;
+$card-bg-light: #ffffff;
+$primary-color-light: #8a5ddb;
+$secondary-color-light: #c69ee4;
+$input-border-light: #dee2e6;
+$text-primary-light: #212529;
+$text-secondary-light: #6c757d;
+$hover-shadow-light: rgba(138, 93, 219, 0.3);
+
+// General Layout
 body {
   font-family: Arial, sans-serif;
-  background-color: #181818;
-  color: #f5f5f5;
   margin: 0;
   padding: 0;
+
+  &.dark-theme {
+    background-color: $background-color;
+    color: $text-primary;
+  }
+
+  &.light-theme {
+    background-color: $background-color-light;
+    color: $text-primary-light;
+  }
 }
 
 .account-container {
@@ -23,43 +43,65 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #242424;
   border-radius: 8px;
   box-sizing: border-box;
+
+  &.dark-theme {
+    background-color: $container-bg;
+  }
+
+  &.light-theme {
+    background-color: $container-bg-light;
+  }
 }
 
 /* Profile Picture Styling */
 .profile-picture-container {
   text-align: center;
   margin-bottom: 50px;
-}
 
-.profile-picture-wrapper {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 10px;
-  border: 3px solid #d378ea;
-  position: relative;
-}
+  &.dark-theme {
+    color: $text-primary;
+  }
 
-.profile-picture-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  &.light-theme {
+    color: $text-primary-light;
+  }
 
-.profile-picture-wrapper input[type="file"] {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
+  .profile-picture-wrapper {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+
+    &.dark-theme {
+      border: 3px solid $secondary-color;
+    }
+
+    &.light-theme {
+      border: 3px solid $secondary-color-light;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
 }
 
 /* Section Layout */
@@ -67,122 +109,214 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  .box {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px $hover-shadow;
+
+    &.dark-theme {
+      background-color: $card-bg;
+      box-shadow: 0 2px 4px $hover-shadow;
+    }
+
+    &.light-theme {
+      background-color: $card-bg-light;
+      box-shadow: 0 2px 4px $hover-shadow-light;
+    }
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+
+    .box {
+      flex: 1;
+    }
+  }
+
+  h2,
+  h3 {
+    font-size: 16px;
+
+    &.dark-theme {
+      color: $primary-color;
+    }
+
+    &.light-theme {
+      color: $primary-color-light;
+    }
+  }
+
+  p {
+    font-size: 14px;
+
+    &.dark-theme {
+      color: $text-primary;
+    }
+
+    &.light-theme {
+      color: $text-primary-light;
+    }
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+
+    &.dark-theme {
+      background-color: $container-bg;
+      color: $text-primary;
+      border: 1px solid $input-border;
+    }
+
+    &.light-theme {
+      background-color: $container-bg-light;
+      color: $text-primary-light;
+      border: 1px solid $input-border-light;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.dark-theme {
+      background-color: $primary-color;
+      color: $text-primary;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+
+    &.light-theme {
+      background-color: $primary-color-light;
+      color: $text-primary-light;
+
+      &:hover {
+        background-color: lighten($primary-color-light, 10%);
+      }
+    }
+  }
 }
 
-.box {
-  background-color: #2d2d2d;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(170, 13, 227, 0.2);
-}
-
-.row {
-  display: flex;
-  gap: 20px;
-}
-
-.row .box {
-  flex: 1;
-}
-
-h2, h3 {
-  font-size: 16px;
-  color: #A78BFA;
-}
-
-p {
-  font-size: 14px;
-  color: #f5f5f5;
-}
-
-input, select {
-  width: 100%;
-  padding: 8px;
-  background-color: #242424;
-  color: #f5f5f5;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #A78BFA;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #875de6;
-}
-
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(24, 24, 24, 0.85); // Semi-transparent dark background
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(8px); // Adds a blurred background effect
+  backdrop-filter: blur(8px);
+
+  &.dark-theme {
+    background: rgba(24, 24, 24, 0.85);
+  }
+
+  &.light-theme {
+    background: rgba(249, 249, 250, 0.85);
+  }
+
+  .overlay-content {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+
+    &.dark-theme {
+      background-color: $card-bg;
+      color: $text-primary;
+    }
+
+    &.light-theme {
+      background-color: $card-bg-light;
+      color: $text-primary-light;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+
+      &.dark-theme {
+        color: $primary-color;
+      }
+
+      &.light-theme {
+        color: $primary-color-light;
+      }
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-sizing: border-box;
+
+      &.dark-theme {
+        background-color: $container-bg;
+        color: $text-primary;
+        border: 1px solid $input-border;
+      }
+
+      &.light-theme {
+        background-color: $container-bg-light;
+        color: $text-primary-light;
+        border: 1px solid $input-border-light;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &.dark-theme {
+        background-color: $primary-color;
+        color: $text-primary;
+
+        &:hover {
+          background-color: lighten($primary-color, 10%);
+        }
+
+        & + button {
+          margin-top: 10px;
+          background-color: $secondary-color;
+        }
+      }
+
+      &.light-theme {
+        background-color: $primary-color-light;
+        color: $text-primary-light;
+
+        &:hover {
+          background-color: lighten($primary-color-light, 10%);
+        }
+
+        & + button {
+          margin-top: 10px;
+          background-color: $secondary-color-light;
+        }
+      }
+    }
+  }
 }
 
-.overlay-content {
-  width: 90%;
-  max-width: 400px;
-  background-color: #2d2d2d; // Card background
-  border-radius: 12px; // Smooth corners
-  padding: 20px 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); // Subtle shadow for depth
-  text-align: center; // Center-align content
-  color: #f5f5f5; // Primary text color
-  animation: fadeIn 0.3s ease-in-out; // Optional animation
-}
-
-.overlay-content h3 {
-  font-size: 1.5rem;
-  color: #A78BFA; // Accent color for headings
-  margin-bottom: 15px;
-}
-
-.overlay-content input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #3a3a3a;
-  border-radius: 6px;
-  background-color: #242424;
-  color: #f5f5f5;
-  box-sizing: border-box;
-}
-
-.overlay-content button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 6px;
-  background-color: #A78BFA; // Accent color
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.overlay-content button:hover {
-  background-color: #875de6; // Hover color for buttons
-}
-
-.overlay-content button + button {
-  margin-top: 10px;
-  background-color: #4ADE80; // Secondary accent color
-}
-
+/* Keyframes */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -193,4 +327,3 @@ button:hover {
     transform: translateY(0);
   }
 }
-

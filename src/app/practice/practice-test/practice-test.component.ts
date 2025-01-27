@@ -55,7 +55,19 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
         console.error('Error generating quiz:', err);
       },
     });
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 
   initializeQuiz(): void {
     Object.keys(this.quiz).forEach((section) => {

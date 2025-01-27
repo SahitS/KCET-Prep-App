@@ -29,7 +29,19 @@ export class ShowResultComponent implements OnInit {
   ngOnInit(): void {
     this.fetchResults();
     this.fetchAnalysis();
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 
   fetchResults(): void {
     this.authService.getResults().subscribe({

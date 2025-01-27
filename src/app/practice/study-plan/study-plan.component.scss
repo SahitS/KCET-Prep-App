@@ -9,8 +9,19 @@ $accent-secondary: #4ADE80;
 $hover-effect: #373737;
 $border-color: #3a3a3a;
 
-// Study Plan Container
-.study-plan-container {
+// Light Theme Color Palette
+$background-light: #f9f9fa; 
+$section-background-light: #f0f0f5; 
+$card-background-light: #ffffff; 
+$text-primary-light: #212529;
+$text-secondary-light: #6c757d; 
+$accent-primary-light: #8a5ddb; 
+$accent-secondary-light: #51c29a; 
+$hover-effect-light: #e9ecef; 
+$border-color-light: #dee2e6; 
+
+// Study Plan Container Dark Theme
+.study-plan-container.dark-theme {
   max-width: 1200px;
   margin: 50px auto;
   padding: 2rem;
@@ -19,7 +30,7 @@ $border-color: #3a3a3a;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
 
-  h1 {
+  h1.dark-theme {
     font-size: 2.5rem;
     font-weight: bold;
     color: $accent-primary;
@@ -27,62 +38,62 @@ $border-color: #3a3a3a;
     text-transform: uppercase;
   }
 
-  .input-section {
+  .input-section.dark-theme {
     background-color: lighten($card-background, 5%);
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
 
-    p {
+    p.dark-theme {
       font-size: 1.2rem;
       color: $text-secondary;
       margin-bottom: 1.5rem;
     }
 
-    mat-form-field {
+    mat-form-field.dark-theme {
       width: 100%;
       max-width: 300px;
       margin: 1rem auto;
       color: $text-secondary;
 
-      mat-label {
+      mat-label.dark-theme {
         font-size: 1rem;
         color: $text-secondary;
       }
 
-      input {
+      input.dark-theme {
         color: $text-primary;
       }
     }
 
-    .preferences {
+    .preferences.dark-theme {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin-bottom: 1.5rem;
 
-      mat-form-field {
+      mat-form-field.dark-theme {
         width: 100%;
         max-width: 250px;
 
-        input {
+        input.dark-theme {
           color: $text-primary;
         }
       }
     }
 
-    mat-checkbox {
+    mat-checkbox.dark-theme {
       margin-top: 1.5rem;
       font-size: 1rem;
       color: $text-secondary;
 
-      .mat-checkbox-label {
+      .mat-checkbox-label.dark-theme {
         color: $text-secondary;
       }
     }
 
-    .btn-generate {
+    .btn-generate.dark-theme {
       background-color: $accent-primary;
       color: $text-primary;
       font-size: 1.2rem;
@@ -93,18 +104,18 @@ $border-color: #3a3a3a;
       cursor: pointer;
       transition: all 0.3s ease;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: lighten($accent-primary, 10%);
         transform: scale(1.05);
       }
     }
   }
 
-  .study-plan-details {
+  .study-plan-details.dark-theme {
     display: grid;
     gap: 1.5rem;
 
-    .btn-back {
+    .btn-back.dark-theme {
       grid-column: 1 / -1;
       align-self: flex-start;
       background-color: $hover-effect;
@@ -117,18 +128,18 @@ $border-color: #3a3a3a;
       cursor: pointer;
       transition: all 0.3s ease;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: lighten($hover-effect, 10%);
       }
     }
 
-    .day-grid {
+    .day-grid.dark-theme {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       justify-content: center;
 
-      .day-card {
+      .day-card.dark-theme {
         background-color: lighten($card-background, 5%);
         border-radius: 12px;
         padding: 1.5rem;
@@ -137,30 +148,30 @@ $border-color: #3a3a3a;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover {
+        &:hover.dark-theme {
           transform: translateY(-5px);
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
         }
 
-        h3 {
+        h3.dark-theme {
           font-size: 1.5rem;
           color: $accent-primary;
           margin-bottom: 0.5rem;
         }
 
-        p {
+        p.dark-theme {
           font-size: 1rem;
           color: $text-secondary;
         }
       }
     }
 
-    .subject-grid {
+    .subject-grid.dark-theme {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
 
-      .subject-card {
+      .subject-card.dark-theme {
         background-color: lighten($card-background, 5%);
         border-radius: 12px;
         padding: 1.5rem;
@@ -169,36 +180,36 @@ $border-color: #3a3a3a;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover {
+        &:hover.dark-theme {
           transform: translateY(-5px);
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
         }
 
-        h3 {
+        h3.dark-theme {
           font-size: 1.4rem;
           color: $accent-primary;
           margin-bottom: 0.5rem;
         }
 
-        p {
+        p.dark-theme {
           font-size: 1rem;
           color: $text-secondary;
         }
       }
     }
 
-    .subtopic-grid {
+    .subtopic-grid.dark-theme {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
 
-      .subtopic-card {
+      .subtopic-card.dark-theme {
         background-color: lighten($card-background, 5%);
         border-radius: 12px;
         padding: 1rem;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 
-        p {
+        p.dark-theme {
           font-size: 1rem;
           color: $text-secondary;
           margin: 0.5rem 0;
@@ -207,13 +218,13 @@ $border-color: #3a3a3a;
     }
   }
 }
-.study-plan-details {
+.study-plan-details.dark-theme {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  .btn-save, .btn-analysis {
+  .btn-save.dark-theme, .btn-analysis.dark-theme {
     background-color: $accent-primary;
     color: $text-primary;
     margin-top: 0.8vw;
@@ -225,22 +236,22 @@ $border-color: #3a3a3a;
     cursor: pointer;
     transition: all 0.3s ease;
 
-    &:hover {
+    &:hover.dark-theme {
       background-color: lighten($accent-primary, 10%);
       transform: scale(1.05);
     }
   }
 
-  .btn-analysis {
+  .btn-analysis.dark-theme {
     background-color: $accent-secondary;
 
-    &:hover {
+    &:hover.dark-theme {
       background-color: lighten($accent-secondary, 10%);
     }
   }
 
   /* Add this new container for buttons */
-  .button-container {
+  .button-container.dark-theme {
     display: flex;
     gap: 1rem; /* Space between buttons */
     justify-content: center; /* Center the buttons horizontally */
@@ -266,3 +277,265 @@ $border-color: #3a3a3a;
     }
   }
 }
+
+
+
+//light Theme
+// Study Plan Container
+.study-plan-container.light-theme {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 2rem;
+  background-color: $background-light;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+
+  h1.light-theme {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $accent-primary-light;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .input-section.light-theme {
+    background-color: lighten($card-background-light, 5%);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    p.light-theme {
+      font-size: 1.2rem;
+      color: $text-secondary-light;
+      margin-bottom: 1.5rem;
+    }
+
+    mat-form-field.light-theme {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+      color: $text-secondary-light;
+
+      mat-label.light-theme {
+        font-size: 1rem;
+        color: $text-secondary-light;
+      }
+
+      input.light-theme {
+        color: $text-primary-light;
+      }
+    }
+
+    .preferences.light-theme {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+
+      mat-form-field.light-theme {
+        width: 100%;
+        max-width: 250px;
+
+        input.light-theme {
+          color: $text-primary-light;
+        }
+      }
+    }
+
+    mat-checkbox.light-theme {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: $text-secondary-light;
+
+      .mat-checkbox-label.light-theme {
+        color: $text-secondary-light;
+      }
+    }
+
+    .btn-generate.light-theme {
+      background-color: $accent-primary-light;
+      color: $text-primary-light;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover.light-theme {
+        background-color: lighten($accent-primary-light, 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .study-plan-details.light-theme {
+    display: grid;
+    gap: 1.5rem;
+
+    .btn-back.light-theme {
+      grid-column: 1 / -1;
+      align-self: flex-start;
+      background-color: $hover-effect-light;
+      color: $text-primary-light;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover.light-theme {
+        background-color: lighten($hover-effect-light, 10%);
+      }
+    }
+
+    .day-grid.light-theme {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+
+      .day-card.light-theme {
+        background-color: lighten($card-background-light, 5%);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover.light-theme {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        h3.light-theme {
+          font-size: 1.5rem;
+          color: $accent-primary-light;
+          margin-bottom: 0.5rem;
+        }
+
+        p.light-theme {
+          font-size: 1rem;
+          color: $text-secondary-light;
+        }
+      }
+    }
+
+    .subject-grid.light-theme {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+
+      .subject-card.light-theme {
+        background-color: lighten($card-background-light, 5%);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover.light-theme {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        h3.light-theme {
+          font-size: 1.4rem;
+          color: $accent-primary-light;
+          margin-bottom: 0.5rem;
+        }
+
+        p.light-theme {
+          font-size: 1rem;
+          color: $text-secondary-light;
+        }
+      }
+    }
+
+    .subtopic-grid.light-theme {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+
+      .subtopic-card.light-theme {
+        background-color: lighten($card-background-light, 5%);
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+        p.light-theme {
+          font-size: 1rem;
+          color: $text-secondary-light;
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+.study-plan-details.light-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .btn-save.light-theme, .btn-analysis.light-theme {
+    background-color: $accent-primary-light;
+    color: $text-primary;
+    margin-top: 0.8vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover.light-theme {
+      background-color: lighten($accent-primary-light, 10%);
+      transform: scale(1.05);
+    }
+  }
+
+  .btn-analysis.light-theme {
+    background-color: $accent-secondary-light;
+
+    &:hover.light-theme {
+      background-color: lighten($accent-secondary-light, 10%);
+    }
+  }
+
+  /* Add this new container for buttons */
+  .button-container.light-theme {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    width: 100%; /* Ensure the buttons stay centered */
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .study-plan-container {
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .study-plan-details {
+      .day-card,
+      .subject-card,
+      .subtopic-card {
+        width: 100%;
+      }
+    }
+  }
+}
+

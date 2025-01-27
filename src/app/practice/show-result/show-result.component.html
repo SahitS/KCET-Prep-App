@@ -1,28 +1,28 @@
-<div class="results-container" style="width:1000px">
+<div class="results-container {{ currentTheme }}" style="width:1000px">
   <!-- Header -->
-  <h1>Your Results</h1>
-  <p class="total-score">Total Score: {{ totalScore }}/90</p>
+  <h1 class="{{ currentTheme }}">Your Results</h1>
+  <p class="total-score {{ currentTheme }}">Total Score: {{ totalScore }}/90</p>
 
-  <!-- Main Content --> 
-  <div class="main-content">
+  <!-- Main Content -->
+  <div class="main-content {{ currentTheme }}">
     <!-- Left: Subject Scores -->
-    <div class="subject-scores">
-      <div class="subject-box" (click)="showDetailedResults('physics')">
-        <h3>Physics</h3>
-        <p>{{ scores.physics }}/30</p>
+    <div class="subject-scores {{ currentTheme }}">
+      <div class="subject-box {{ currentTheme }}" (click)="showDetailedResults('physics')">
+        <h3 class="{{ currentTheme }}">Physics</h3>
+        <p class="{{ currentTheme }}">{{ scores.physics }}/30</p>
       </div>
-      <div class="subject-box" (click)="showDetailedResults('chemistry')">
-        <h3>Chemistry</h3>
-        <p>{{ scores.chemistry }}/30</p>
+      <div class="subject-box {{ currentTheme }}" (click)="showDetailedResults('chemistry')">
+        <h3 class="{{ currentTheme }}">Chemistry</h3>
+        <p class="{{ currentTheme }}">{{ scores.chemistry }}/30</p>
       </div>
-      <div class="subject-box" (click)="showDetailedResults('math')">
-        <h3>Mathematics</h3>
-        <p>{{ scores.math }}/30</p>
+      <div class="subject-box {{ currentTheme }}" (click)="showDetailedResults('math')">
+        <h3 class="{{ currentTheme }}">Mathematics</h3>
+        <p class="{{ currentTheme }}">{{ scores.math }}/30</p>
       </div>
     </div>
 
     <!-- Right: Pie Chart -->
-    <div class="pie-chart-container">
+    <div class="pie-chart-container {{ currentTheme }}">
       <ngx-charts-pie-chart
         [results]="pieChartData"
         [view]="[300, 300]"
@@ -35,23 +35,23 @@
   </div>
 
   <!-- Analysis Section -->
-  <div class="analysis-section">
-    <h2>Performance Analysis</h2>
-    <div class="subject-analysis">
-      <div class="topic-graphs">
+  <div class="analysis-section {{ currentTheme }}">
+    <h2 class="{{ currentTheme }}">Performance Analysis</h2>
+    <div class="subject-analysis {{ currentTheme }}">
+      <div class="topic-graphs {{ currentTheme }}">
         <div *ngFor="let subject of graphData">
-          <h3>{{ subject.subject | titlecase }}</h3>
-          <div class="grid-container">
-            <div *ngFor="let topic of subject.data" class="topic-graph">
-              <h4>{{ topic.name }}</h4>
-              <ul class="subtopics-list">
-                <li *ngFor="let series of topic.series" class="subtopic-item">
-                  <div class="bar-container">
-                    <div class="bar-label">{{ series.name }}</div>
-                    <div class="bar">
-                      <div class="bar-fill" [style.width.%]="series.value"></div>
+          <h3 class="{{ currentTheme }}">{{ subject.subject | titlecase }}</h3>
+          <div class="grid-container {{ currentTheme }}">
+            <div *ngFor="let topic of subject.data" class="topic-graph {{ currentTheme }}">
+              <h4 class="{{ currentTheme }}">{{ topic.name }}</h4>
+              <ul class="subtopics-list {{ currentTheme }}">
+                <li *ngFor="let series of topic.series" class="subtopic-item {{ currentTheme }}">
+                  <div class="bar-container {{ currentTheme }}">
+                    <div class="bar-label {{ currentTheme }}">{{ series.name }}</div>
+                    <div class="bar {{ currentTheme }}">
+                      <div class="bar-fill {{ currentTheme }}" [style.width.%]="series.value"></div>
                     </div>
-                    <div class="percentage-label">{{ series.value.toFixed(2) }}%</div>
+                    <div class="percentage-label {{ currentTheme }}">{{ series.value.toFixed(2) }}%</div>
                   </div>
                 </li>
               </ul>
@@ -63,14 +63,14 @@
   </div>
 
   <!-- Overlay for Detailed Results -->
-  <div class="overlay" *ngIf="selectedSubject">
-    <div class="overlay-content">
-      <h2>{{ selectedSubject | titlecase }} Detailed Results</h2>
-      <div class="result-list">
-        <div class="result-item" *ngFor="let result of detailedResults">
-          <p><strong>Q:</strong> {{ result.question }}</p>
-          <p><strong>Expected Answer:</strong> {{ result.correctAnswer }}</p>
-          <p><strong>Your Answer:</strong> {{ result.userAnswer }}</p>
+  <div class="overlay {{ currentTheme }}" *ngIf="selectedSubject">
+    <div class="overlay-content {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">{{ selectedSubject | titlecase }} Detailed Results</h2>
+      <div class="result-list {{ currentTheme }}">
+        <div class="result-item {{ currentTheme }}" *ngFor="let result of detailedResults">
+          <p class="{{ currentTheme }}"><strong>Q:</strong> {{ result.question }}</p>
+          <p class="{{ currentTheme }}"><strong>Expected Answer:</strong> {{ result.correctAnswer }}</p>
+          <p class="{{ currentTheme }}"><strong>Your Answer:</strong> {{ result.userAnswer }}</p>
           <p
             [class.correct]="result.status === 'Correct'"
             [class.incorrect]="result.status === 'Incorrect'"
@@ -79,16 +79,15 @@
           </p>
         </div>
       </div>
-      <button class="btn-back" (click)="resetSelection()">Close</button>
+      <button class="btn-back {{ currentTheme }}" (click)="resetSelection()">Close</button>
     </div>
   </div>
 
-  <div class="results-container">
-    <!-- Existing results content -->
-    <button class="btn-study-plan" (click)="goToStudyPlan()">Want a Study Plan?</button>
+  <!-- Study Plan Button -->
+  <div class="results-container {{ currentTheme }}">
+    <button class="btn-study-plan {{ currentTheme }}" (click)="goToStudyPlan()">Want a Study Plan?</button>
   </div>
-  
 
   <!-- Back to Dashboard -->
-  <button class="btn-back" (click)="goToHome()">Back to Dashboard</button>
+  <button class="btn-back {{ currentTheme }}" (click)="goToHome()">Back to Dashboard</button>
 </div>

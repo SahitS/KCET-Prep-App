@@ -1,42 +1,45 @@
-<div class="section-container">
+<div class="section-container {{ currentTheme }}">
   <!-- Overlay Section -->
-  <div *ngIf="!quizStarted" class="overlay">
-    <div class="start-container">
-      <h1>Want a Personalized Plan?</h1>
-      <p>Time: 2 hours</p>
-      <p>
+  <div *ngIf="!quizStarted" class="overlay {{ currentTheme }}">
+    <div class="start-container {{ currentTheme }}">
+      <h1 class="{{ currentTheme }}">Want a Personalized Plan?</h1>
+      <p class="{{ currentTheme }}">Time: 2 hours</p>
+      <p class="{{ currentTheme }}">
         This is more than just a test—it's your key to a personalized study plan designed to optimize your KCET preparation.
       </p>
-      <p>
+      <p class="{{ currentTheme }}">
         By completing this test, you'll receive insights into your strengths and weaknesses, enabling us to craft a plan tailored to your needs.
       </p>
-      <ul>
-        <li>Attempt the questions with focus and sincerity.</li>
-        <li>Set aside 2 hours without distractions to simulate test-day conditions.</li>
-        <li>Use this opportunity to identify areas for improvement and maximize your potential.</li>
+      <ul class="{{ currentTheme }}">
+        <li class="{{ currentTheme }}">Attempt the questions with focus and sincerity.</li>
+        <li class="{{ currentTheme }}">Set aside 2 hours without distractions to simulate test-day conditions.</li>
+        <li class="{{ currentTheme }}">Use this opportunity to identify areas for improvement and maximize your potential.</li>
       </ul>
-      <button class="btn-back" (click)="startQuiz()">Start Now</button>
+      <button class="btn-back {{ currentTheme }}" (click)="startQuiz()">Start Now</button>
     </div>
   </div>
 
   <!-- Quiz Section -->
-  <div *ngIf="quizStarted" class="quiz-container">
-    <div class="header">
-      <h2>{{ currentSection | titlecase }} Section</h2>
-      <div class="section-switcher">
-        <button class="btn btn-secondary" (click)="switchSection('physics')">Physics</button>
-        <button class="btn btn-secondary" (click)="switchSection('chemistry')">Chemistry</button>
-        <button class="btn btn-secondary" (click)="switchSection('math')">Math</button>
+  <div *ngIf="quizStarted" class="quiz-container {{ currentTheme }}">
+    <div class="header {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">{{ currentSection | titlecase }} Section</h2>
+      <div class="section-switcher {{ currentTheme }}">
+        <button class="btn btn-secondary {{ currentTheme }}" (click)="switchSection('physics')">Physics</button>
+        <button class="btn btn-secondary {{ currentTheme }}" (click)="switchSection('chemistry')">Chemistry</button>
+        <button class="btn btn-secondary {{ currentTheme }}" (click)="switchSection('math')">Math</button>
       </div>
-      <div class="timer">Time Left: {{ timer | date: 'mm:ss' }}</div>
+      <div class="timer {{ currentTheme }}">Time Left: {{ timer | date: 'mm:ss' }}</div>
     </div>
 
-    <div class="content">
-      <div class="question-box" style="height: 400px;width: 800px; overflow-y: auto;">
-        <h3>Question {{ currentQuestionIndex + 1 }}</h3>
-        <p>{{ currentQuestion?.Question }}</p>
-        <div class="options">
-          <label *ngFor="let option of ['Option_1', 'Option_2', 'Option_3', 'Option_4']; let idx = index">
+    <div class="content {{ currentTheme }}">
+      <div class="question-box {{ currentTheme }}" style="height: 400px;width: 800px; overflow-y: auto;">
+        <h3 class="{{ currentTheme }}">Question {{ currentQuestionIndex + 1 }}</h3>
+        <p class="{{ currentTheme }}">{{ currentQuestion?.Question }}</p>
+        <div class="options {{ currentTheme }}">
+          <label
+            *ngFor="let option of ['Option_1', 'Option_2', 'Option_3', 'Option_4']; let idx = index"
+            class="{{ currentTheme }}"
+          >
             <input
               type="radio"
               name="options"
@@ -53,14 +56,14 @@
         </div>
       </div>
 
-      <div class="question-navigator">
-        <h3>Question Navigator</h3>
-        <div class="navigator">
+      <div class="question-navigator {{ currentTheme }}">
+        <h3 class="{{ currentTheme }}">Question Navigator</h3>
+        <div class="navigator {{ currentTheme }}">
           <button
             *ngFor="let question of quiz[currentSection]; let i = index"
-            [ngClass]="getQuestionClass(i)"
+            [ngClass]="getQuestionClass(i) + ' ' + currentTheme"
             (click)="goToQuestion(i)"
-            class="navigator-btn"
+            class="navigator-btn {{ currentTheme }}"
           >
             {{ i + 1 }}
           </button>
@@ -68,15 +71,15 @@
       </div>
     </div>
 
-    <div class="navigation-buttons">
-      <button class="btn btn-secondary" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
+    <div class="navigation-buttons {{ currentTheme }}">
+      <button class="btn btn-secondary {{ currentTheme }}" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
         Previous
       </button>
-      <button class="btn btn-review" (click)="markForReview()">Mark for Review</button>
-      <button class="btn btn-primary" (click)="nextQuestion()">
+      <button class="btn btn-review {{ currentTheme }}" (click)="markForReview()">Mark for Review</button>
+      <button class="btn btn-primary {{ currentTheme }}" (click)="nextQuestion()">
         Next
       </button>
-      <button class="btn btn-submit" (click)="triggerSubmit()">
+      <button class="btn btn-submit {{ currentTheme }}" (click)="triggerSubmit()">
         Submit Quiz
       </button>
     </div>

@@ -40,7 +40,20 @@ export class StudyPlanComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
+  }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 
   generateStudyPlan(): void {
     if (!this.examDate) {

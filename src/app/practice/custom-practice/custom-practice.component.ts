@@ -69,7 +69,20 @@ export class CustomPracticeComponent implements OnInit {
         console.error('Error fetching history:', err);
       }
     });
+    // Load initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+   
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
   
   fetchTopics(subject: string): void {
     console.log(`Fetching topics for subject: ${subject}`);

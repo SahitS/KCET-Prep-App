@@ -1,77 +1,81 @@
-<div class="study-plan-container" style="width:700px">
-  <h1>Personalized Study Plan</h1>
+<div class="study-plan-container {{currentTheme}}" style="width:700px">
+  <h1 class="{{currentTheme}}">Personalized Study Plan</h1>
 
   <!-- Input Section -->
-  <div *ngIf="!studyPlan.length" class="input-section">
-    <p>Please enter your KCET exam date and preferences to generate a study plan:</p>
+  <div *ngIf="!studyPlan.length" class="input-section {{currentTheme}}">
+    <p class="{{currentTheme}}">
+      Please enter your KCET exam date and preferences to generate a study plan:
+    </p>
 
     <!-- Exam Date -->
-    <mat-form-field appearance="outline">
-      <mat-label>Exam Date</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="examDate" />
+    <mat-form-field class="{{currentTheme}}" appearance="outline">
+      <mat-label class="{{currentTheme}}">Exam Date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="examDate" class="{{currentTheme}}" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <!-- Weekday and Weekend Study Hours -->
-    <div class="preferences">
-      <mat-form-field appearance="outline">
-        <mat-label>Weekday Study Hours</mat-label>
-        <input type="number" matInput [(ngModel)]="preferences.weekdayHours" />
+    <div class="preferences {{currentTheme}}">
+      <mat-form-field class="{{currentTheme}}" appearance="outline">
+        <mat-label class="{{currentTheme}}">Weekday Study Hours</mat-label>
+        <input type="number" matInput [(ngModel)]="preferences.weekdayHours" class="{{currentTheme}}" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Weekend Study Hours</mat-label>
-        <input type="number" matInput [(ngModel)]="preferences.weekendHours" />
+      <mat-form-field class="{{currentTheme}}" appearance="outline">
+        <mat-label class="{{currentTheme}}">Weekend Study Hours</mat-label>
+        <input type="number" matInput [(ngModel)]="preferences.weekendHours" class="{{currentTheme}}" />
       </mat-form-field>
     </div>
 
     <!-- Stress Handling -->
-    <mat-checkbox [(ngModel)]="preferences.stressHandling">Enable Stress Handling</mat-checkbox>
+    <mat-checkbox [(ngModel)]="preferences.stressHandling" class="{{currentTheme}}">
+      Enable Stress Handling
+    </mat-checkbox>
 
     <!-- Generate Button -->
-    <button class="btn-generate" (click)="generateStudyPlan()">Generate Study Plan</button>
+    <button class="btn-generate {{currentTheme}}" (click)="generateStudyPlan()">Generate Study Plan</button>
   </div>
 
   <!-- Study Plan Details -->
-  <div *ngIf="studyPlan.length && !isLoading" class="study-plan-details">
-    <button class="btn-back" *ngIf="selectedDay || selectedSubject" (click)="resetView()">Back</button>
+  <div *ngIf="studyPlan.length && !isLoading" class="study-plan-details {{currentTheme}}">
+    <button class="btn-back {{currentTheme}}" *ngIf="selectedDay || selectedSubject" (click)="resetView()">Back</button>
 
     <!-- Day Level -->
     <div *ngIf="!selectedDay">
-      <div class="day-grid">
-        <div *ngFor="let day of studyPlan" class="day-card" (click)="selectDay(day)">
-          <h3>Day {{ day.day }}</h3>
-          <p>Total Hours: {{ day.totalHours }}</p>
+      <div class="day-grid {{currentTheme}}">
+        <div *ngFor="let day of studyPlan" class="day-card {{currentTheme}}" (click)="selectDay(day)">
+          <h3 class="{{currentTheme}}">Day {{ day.day }}</h3>
+          <p class="{{currentTheme}}">Total Hours: {{ day.totalHours }}</p>
         </div>
       </div>
 
       <!-- Buttons for Day Level -->
-      <div class="button-container" *ngIf="!selectedDay && !selectedSubject">
+      <div class="button-container {{currentTheme}}" *ngIf="!selectedDay && !selectedSubject">
         <!-- Save Button -->
-        <button class="btn-save" (click)="saveStudyPlan()">Save Study Plan</button>
+        <button class="btn-save {{currentTheme}}" (click)="saveStudyPlan()">Save Study Plan</button>
         <!-- Back to Analysis Button -->
-        <button class="btn-analysis" (click)="navigateToAnalysis()">Back to Analysis</button>
+        <button class="btn-analysis {{currentTheme}}" (click)="navigateToAnalysis()">Back to Analysis</button>
       </div>
     </div>
 
     <!-- Subject Level -->
     <div *ngIf="selectedDay && !selectedSubject">
-      <h2>Day {{ selectedDay.day }}</h2>
-      <div class="subject-grid">
-        <div *ngFor="let subject of selectedDay.subjects" class="subject-card" (click)="selectSubject(subject)">
-          <h3>{{ subject.subject }}</h3>
-          <p>Total Hours: {{ getSubjectHours(selectedDay) }}</p>
+      <h2 class="{{currentTheme}}">Day {{ selectedDay.day }}</h2>
+      <div class="subject-grid {{currentTheme}}">
+        <div *ngFor="let subject of selectedDay.subjects" class="subject-card {{currentTheme}}" (click)="selectSubject(subject)">
+          <h3 class="{{currentTheme}}">{{ subject.subject }}</h3>
+          <p class="{{currentTheme}}">Total Hours: {{ getSubjectHours(selectedDay) }}</p>
         </div>
       </div>
     </div>
 
     <!-- Subtopic Level -->
     <div *ngIf="selectedSubject">
-      <h2>{{ selectedSubject.subject }}</h2>
-      <div class="subtopic-grid">
-        <div *ngFor="let subtopic of selectedSubject.subtopics" class="subtopic-card">
-          <p>{{ subtopic.subtopic }}: {{ subtopic.hours }} hours</p>
+      <h2 class="{{currentTheme}}">{{ selectedSubject.subject }}</h2>
+      <div class="subtopic-grid {{currentTheme}}">
+        <div *ngFor="let subtopic of selectedSubject.subtopics" class="subtopic-card {{currentTheme}}">
+          <p class="{{currentTheme}}">{{ subtopic.subtopic }}: {{ subtopic.hours }} hours</p>
         </div>
       </div>
     </div>
