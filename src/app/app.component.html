@@ -1,11 +1,11 @@
-<body class="full-page-container d-flex flex-column">
+<body class="full-page-container d-flex flex-column" [class]="currentTheme">
   <!-- Banner for Announcements -->
   <div class="banner">
     🎉 Limited time offer: Get 15% off on all study plans with code <strong>LEARN15</strong>! Expires on November 20.
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg" [class]="currentTheme">
     <div class="container">
       <a class="navbar-brand" routerLink="/">PrepSphere</a>
       <button
@@ -57,13 +57,17 @@
             <a class="nav-link" routerLink="/account">Account</a>
           </li>
         </ul>
+        <!-- Theme Toggle Button -->
+        <button class="btn btn-outline-info ms-2" (click)="toggleTheme()">
+          {{ currentTheme === 'dark-theme' ? 'Light Theme' : 'Dark Theme' }}
+        </button>
         <button class="btn btn-outline-warning ms-2" (click)="onLogout()">Logout</button>
       </div>
     </div>
   </nav>
 
-   <!-- Main Content Section -->
-   <div class="main-content container my-5 flex-grow-1">
+  <!-- Main Content Section -->
+  <div class="main-content container my-5 flex-grow-1">
     <router-outlet></router-outlet> <!-- This will dynamically load routed components -->
   </div>
 

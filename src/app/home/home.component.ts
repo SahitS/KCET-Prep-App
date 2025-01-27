@@ -1,24 +1,38 @@
-import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../auth.service';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  standalone: true, 
-  imports: [RouterModule], 
-  providers: [AuthService],
   templateUrl: './home.component.html',
-  styleUrl:'./home.component.scss'
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+export class HomeComponent implements OnInit {
+  currentTheme: string = 'dark-theme'; // Default theme
 
-  login(){
+  constructor(private router: Router) {}
+
+  // Handle StorageEvent for Real-Time Updates
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+      console.log('Real-time theme update in HomeComponent:', this.currentTheme);
+    }
+  };
+
+  ngOnInit() {
+    // Load initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
+  }
+
+  login() {
     this.router.navigate(['/login']);
   }
-  
-  signup(){
+
+  signup() {
     this.router.navigate(['/signup']);
   }
 }

@@ -21,7 +21,7 @@ db = client['kcetprep']
 users_collection = db['users'] 
 
 # Load and configure the API key
-API_KEY = "AIzaSyCKMBhgSf5XaxZ9hBOsr5GM41kEZm3PmLU"  # Replace with your API key
+API_KEY = "AIzaSyCKMBhgSf5XaxZ9hBOsr5GM41kEZm3PmLU"  # API key
 if not API_KEY:
     raise ValueError("Gemini API key is not set. Please check your configuration.")
 
@@ -31,12 +31,12 @@ genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Load question datasets
-math_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Math_KCET_Questions_Standardized.csv")
-chemistry_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Chemistry_KCET_Questions_Standardized.csv")
-physics_questions = pd.read_csv("D:/codebase/KCETPrepApp/backend/datasets/Physics_KCET_Questions_Standardized.csv")
+math_questions = pd.read_csv("C:/Users/Sahit/Desktop/codebase/KCET-Prep-App/backend/datasets/Math_KCET_Questions_Standardized.csv")
+chemistry_questions = pd.read_csv("C:/Users/Sahit/Desktop/codebase/KCET-Prep-App/backend/datasets/Chemistry_KCET_Questions_Standardized.csv")
+physics_questions = pd.read_csv("C:/Users/Sahit/Desktop/codebase/KCET-Prep-App/backend/datasets/Physics_KCET_Questions_Standardized.csv")
 
 # Load KCET Rank Prediction Dataset
-dataset_path = "D:/codebase/KCETPrepApp/backend/datasets/kcet_rank_prediction_enhanced_dataset.csv"
+dataset_path = "C:/Users/Sahit/Desktop/codebase/KCET-Prep-App/backend/datasets/kcet_rank_prediction_enhanced_dataset.csv"
 rank_prediction_data = pd.read_csv(dataset_path)
 
 # Load question hierarchy JSON during initialization

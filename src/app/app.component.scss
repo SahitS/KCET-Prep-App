@@ -1,31 +1,62 @@
-// Refined Color Palette
-$background-dark: #2b2b2b; // Lighter than previous dark background
-$section-background: #383838; // Slightly darker for divisions
-$navbar-background: #303030; // Navbar slightly lighter than sections
-$card-background: #404040; // For any card elements
-$text-primary: #eaeaea; // Softer white for text
-$text-secondary: #c7c7c7; // Muted grey for secondary text
-$accent-primary: #A78BFA; // Soft purple for highlights
-$accent-secondary: #4ADE80; // Teal for secondary highlights
-$hover-effect: #474747; // Hover background color
-$border-color: #4a4a4a; // For dividers or borders
-$banner-background: #323232; // Subtle background for banner
+// Refined Color Palette for Dark Theme
+$dark-background: #2b2b2b;
+$dark-section-background: #383838;
+$dark-navbar-background: #303030;
+$dark-card-background: #404040;
+$dark-text-primary: #eaeaea;
+$dark-text-secondary: #c7c7c7;
+$dark-accent-primary: #A78BFA;
+$dark-accent-secondary: #4ADE80;
+$dark-hover-effect: #474747;
+$dark-border-color: #4a4a4a;
+$dark-banner-background: #323232;
+
+// Refined Color Palette for Light Theme
+$light-background: #f9f9f9;
+$light-section-background: #ffffff;
+$light-navbar-background: #f1f1f1;
+$light-card-background: #eaeaea;
+$light-text-primary: #222222;
+$light-text-secondary: #555555;
+$light-accent-primary: #6A1B9A;
+$light-accent-secondary: #2E7D32;
+$light-hover-effect: #e0e0e0;
+$light-border-color: #dddddd;
+$light-banner-background: #f8f8f8;
 
 // Global Body Styling
-body {
-  background-color: $background-dark;
-  color: $text-primary;
+body.dark-theme {
+  background-color: $dark-background;
+  color: $dark-text-primary;
   font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  background-color: $light-background;
+  color: $light-text-primary;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 // Navbar
-.navbar {
-  background-color: $navbar-background;
+body.dark-theme .navbar {
+  background-color: $dark-navbar-background;
+  color: $dark-text-primary;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .navbar {
+  background-color: $light-navbar-background;
+  color: $light-text-primary;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
   padding: 1rem;
 
   .navbar-brand {
-    color: $accent-primary;
+    color: inherit;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -33,125 +64,138 @@ body {
     transition: color 0.3s ease;
 
     &:hover {
-      color: lighten($accent-primary, 10%);
+      color: $dark-accent-primary;
     }
   }
 
   .nav-link {
-    color: $text-secondary;
+    color: inherit;
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover {
-      color: $accent-primary;
-      background-color: $hover-effect;
+      color: $dark-accent-primary;
+      background-color: $dark-hover-effect;
       border-radius: 8px;
-    }
-
-    &.dropdown-toggle {
-      position: relative;
-
-      &:after {
-        content: '▼';
-        font-size: 0.6rem;
-        margin-left: 5px;
-        color: $text-secondary;
-        transition: color 0.3s ease;
-      }
-
-      &:hover:after {
-        color: $accent-primary;
-      }
-    }
-  }
-
-  .btn-outline-warning {
-    background-color: $accent-primary;
-    color: $text-primary;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: lighten($accent-primary, 10%);
-      color: $background-dark;
     }
   }
 
   .dropdown-menu {
-    background-color: $navbar-background;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 0.5rem 0;
 
-    .dropdown-item {
-      color: $text-primary;
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    body.dark-theme & {
+      background-color: $dark-navbar-background;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-      &:hover {
-        background-color: $accent-primary;
-        color: $background-dark;
-        border-radius: 4px;
+      .dropdown-item {
+        color: $dark-text-primary;
+        &:hover {
+          background-color: $dark-accent-primary;
+          color: $dark-background;
+        }
+      }
+    }
+
+    body.light-theme & {
+      background-color: $light-navbar-background;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+      .dropdown-item {
+        color: $light-text-primary;
+        &:hover {
+          background-color: $light-accent-primary;
+          color: $light-background;
+        }
       }
     }
   }
+}
 
+// Buttons
+.btn-outline-warning {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 
-
-  .btn-outline-warning {
-    background-color: $accent-primary;
-    color: $text-primary;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
+  body.dark-theme & {
+    background-color: $dark-accent-primary;
+    color: $dark-text-primary;
 
     &:hover {
-      background-color: lighten($accent-primary, 10%);
-      color: $background-dark;
+      background-color: lighten($dark-accent-primary, 10%);
+      color: $dark-background;
+    }
+  }
+
+  body.light-theme & {
+    background-color: $light-accent-primary;
+    color: $light-text-primary;
+
+    &:hover {
+      background-color: lighten($light-accent-primary, 10%);
+      color: $light-background;
     }
   }
 }
 
 // Limited Time Offer Banner
+body.dark-theme .banner {
+  background-color: $dark-banner-background;
+  color: $dark-text-primary;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .banner {
+  background-color: $light-banner-background;
+  color: $light-text-primary;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .banner {
-  background-color: $banner-background;
-  color: $text-primary;
   text-align: center;
   padding: 15px;
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-
-  strong {
-    color: $accent-secondary;
-  }
 }
 
 // Main Content Section
+body.dark-theme .main-content {
+  background-color: $dark-section-background;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .main-content {
+  background-color: $light-section-background;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .main-content {
-  background-color: $section-background;
   padding: 2rem;
   margin: 1.5rem auto;
   border-radius: 10px;
   max-width: 95.125vw;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 // Footer
+body.dark-theme .footer {
+  background-color: $dark-navbar-background;
+  color: $dark-text-secondary;
+}
+
+body.light-theme .footer {
+  background-color: $light-navbar-background;
+  color: $light-text-secondary;
+}
+
 .footer {
-  background-color: $navbar-background;
-  color: $text-secondary;
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
@@ -161,11 +205,11 @@ body {
     font-size: 0.9rem;
 
     a {
-      color: $accent-primary;
       text-decoration: none;
+      transition: color 0.3s ease;
 
       &:hover {
-        text-decoration: underline;
+        color: $dark-accent-primary;
       }
     }
   }

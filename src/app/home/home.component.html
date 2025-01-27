@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<div class="section-container hero-section container">
+<div class="section-container hero-section {{ currentTheme }}">
   <h1 class="hero-title">Achieve Your Dream KCET Score</h1>
   <p class="hero-text">
     The ultimate preparation platform for KCET aspirants. Personalized study plans, real-time analytics, and more!
@@ -9,22 +9,22 @@
 </div>
 
 <!-- Why Choose PrepSphere Section -->
-<div class="section-container features-section container">
+<div class="section-container features-section {{ currentTheme }} container">
   <h2>Why Choose PrepSphere?</h2>
   <div class="row">
-    <div class="col-md-3 feature-card">
+    <div class="col-md-3 feature-card {{ currentTheme }}">
       <h3>Personalized Study Plans</h3>
       <p>Get a tailored plan to focus on your strengths and improve weaknesses.</p>
     </div>
-    <div class="col-md-3 feature-card">
+    <div class="col-md-3 feature-card {{ currentTheme }}">
       <h3>In-Depth Analytics</h3>
       <p>Track your progress with comprehensive analytics and insights.</p>
     </div>
-    <div class="col-md-3 feature-card">
+    <div class="col-md-3 feature-card {{ currentTheme }}">
       <h3>Real-Time Feedback</h3>
       <p>Receive instant feedback on your practice tests and quizzes.</p>
     </div>
-    <div class="col-md-3 feature-card">
+    <div class="col-md-3 feature-card {{ currentTheme }}">
       <h3>Exam Simulation</h3>
       <p>Simulate real KCET exam conditions to boost your confidence.</p>
     </div>
@@ -32,14 +32,14 @@
 </div>
 
 <!-- Hear From Our Students Section -->
-<div class="section-container testimonials-section container">
+<div class="section-container testimonials-section {{ currentTheme }} container">
   <h2>Hear From Our Students</h2>
   <div class="row">
-    <div class="col-md-6 testimonial-card">
+    <div class="col-md-6 testimonial-card {{ currentTheme }}">
       <p>"PrepSphere helped me boost my KCET score by 20%! The personalized plans are amazing."</p>
       <footer>- Vaishnavi_S03</footer>
     </div>
-    <div class="col-md-6 testimonial-card">
+    <div class="col-md-6 testimonial-card {{ currentTheme }}">
       <p>"The detailed analytics showed me exactly where I needed to improve. Highly recommend!"</p>
       <footer>- Manoj Sri</footer>
     </div>
@@ -47,7 +47,7 @@
 </div>
 
 <!-- Call-to-Action Section -->
-<div class="section-container cta-section">
+<div class="section-container cta-section {{ currentTheme }}">
   <h2>Start Your Journey Today</h2>
   <p>Join thousands of students who have unlocked their potential with PrepSphere.</p>
   <button class="btn btn-primary" (click)="signup()">Sign Up</button>

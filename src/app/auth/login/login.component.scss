@@ -1,4 +1,4 @@
-// Color Palette
+// Color Palette dor dark theme
 $card-background: #242424; // Main black card background
 $text-primary: #f5f5f5; // White text
 $text-secondary: #c7c7c7; // Grey text
@@ -6,6 +6,17 @@ $accent-primary: #A78BFA; // Purple
 $accent-secondary: #4ADE80; // Teal
 $hover-effect: #373737; // Hover background
 $border-color: #3a3a3a;
+
+// Light Color Palette
+$card-background-light: #ffffff; // White card background
+$text-primary-light: #000000; // Black text for high contrast
+$text-secondary-light: #4f4f4f; // Dark grey text for secondary elements
+$accent-primary-light: #6A1B9A; // Vibrant purple for highlights
+$accent-secondary-light: #2E7D32; // Rich green for secondary accents
+$hover-effect-light: #e0e0e0; // Soft grey for hover backgrounds
+$border-color-light: #d1d1d1; // Subtle grey for borders
+
+
 // Section Container
 .section-container {
   background-color:#383838;
