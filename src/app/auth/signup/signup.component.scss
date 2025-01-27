@@ -7,167 +7,333 @@ $accent-secondary: #4ADE80; // Teal
 $hover-effect: #373737; // Hover background
 $border-color: #3a3a3a;
 
+//light theme for signup page
+$card-background-light: #ffffff; // White card background
+$text-primary-light: #000000; // Black text for high contrast
+$text-secondary-light: #4f4f4f; // Dark grey text for secondary elements
+$accent-primary-light: #6A1B9A; // Vibrant purple for highlights
+$accent-secondary-light: #2E7D32; // Rich green for secondary accents
+$hover-effect-light: #e0e0e0; // Soft grey for hover backgrounds
+$border-color-light: #d1d1d1; // Subtle grey for borders
+
+
+
 // Section Container
-.section-container {
-  background-color: #383838;
-  min-height: 100vh; // Full-page height
+.section-container.dark-theme {
+  background-color:#383838;
+  min-height: 100vh; // Ensures the height adjusts dynamically
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem; // Padding for responsiveness
-  box-sizing: border-box; // Ensures padding is included in width calculation
+  padding: 1rem; // Add padding for responsiveness
+}
+
+.section-container.light-theme {
+  background-color:#e1e1e1;
+  min-height: 100vh; // Ensures the height adjusts dynamically
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; // Add padding for responsiveness
 }
 
 // Content Box
-.content-box {
-  background-color: $card-background; // Black card for content
+.content-box.dark-theme {
+  background-color: $card-background; // Black card for the content
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   padding: 2rem;
-  max-width: 900px; // Prevents stretching too wide
   width: 100%; // Ensures responsiveness
+  max-width: 900px; // Prevents the card from stretching too wide
   display: flex;
-  flex-wrap: wrap; // Dynamically wraps columns
-  gap: 1rem; // Spacing between columns
+  flex-wrap: wrap; // Wraps columns dynamically
+  gap: 1rem; // Adds spacing between columns
 
-  .row {
+  .row.dark-theme {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; // Wrap content on smaller screens
+    flex-wrap: wrap;
   }
 
-  .col-lg-6 {
-    flex: 1 1 45%; // Flexible width that adjusts dynamically
-    max-width: 48%; // Caps width on medium screens
-    min-width: 300px; // Prevents shrinking below a minimum width
-    padding: 1rem; // Consistent padding
+  .col-lg-6.dark-theme {
+    flex: 1 1 45%; // Dynamic width, shrinks or grows based on available space
+    max-width: 48%; // Caps the width for medium screens
+    min-width: 300px; // Prevents columns from shrinking too much
+    padding: 1rem; // Adds consistent padding to each column
 
-    h2 {
+    h2.dark-theme {
       color: $accent-primary;
       font-size: 2rem;
-      font-weight: bold;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    p {
+    p.dark-theme {
       color: $text-secondary;
       margin-bottom: 1.5rem;
       text-align: center;
     }
 
-    .form-label {
+    .form-label.dark-theme {
       color: $text-primary;
       font-weight: bold;
     }
 
-    .form-control {
-      background-color: $hover-effect;
+    .form-control.dark-theme {
+      background-color: #404040;
       color: $text-primary;
       border: 1px solid $border-color;
       border-radius: 8px;
       margin-bottom: 1rem;
       padding: 0.75rem;
 
-      &:focus {
+      &:focus.dark-theme {
         border-color: $accent-primary;
         box-shadow: 0 0 5px $accent-primary;
       }
     }
 
-    .btn-primary {
+    .btn-primary.dark-theme {
       background-color: $accent-primary;
       color: $text-primary;
       border: none;
       border-radius: 8px;
-      padding: 0.75rem;
-      font-weight: bold;
       transition: background-color 0.3s ease, transform 0.2s ease;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: lighten($accent-primary, 10%);
         transform: scale(1.03);
       }
     }
 
-    .btn-outline-secondary {
+    .btn-outline-secondary.dark-theme {
       background-color: transparent;
       border: 2px solid $accent-primary;
       color: $accent-primary;
       border-radius: 8px;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: $accent-primary;
-        color: $hover-effect;
+        color: #404040;
       }
     }
 
-    a.text-link {
+    a.text-link.dark-theme {
       color: $accent-primary;
 
-      &:hover {
+      &:hover.dark-theme {
         text-decoration: underline;
       }
     }
 
-    a.text-accent {
+    a.text-accent.dark-theme {
       color: $accent-primary;
 
-      &:hover {
+      &:hover.dark-theme {
         color: lighten($accent-primary, 10%);
       }
     }
   }
 
   // Interactive Box
-  .interactive-box {
-    flex: 1 1 45%; // Dynamic width, adjusts with available space
-    max-width: 48%; // Caps width for medium screens
-    min-width: 300px; // Prevents shrinking below minimum
-    background-color: $card-background; // Matches the content card
+  .interactive-box.dark-theme {
+    flex: 1 1 45%; // Dynamic width, adjusts based on screen size
+    max-width: 75%; // Caps the width for medium screens
+    min-width: 300px; // Prevents content from shrinking too much
+    background-color: $card-background; // Same as the card
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     padding: 2rem;
     text-align: center;
 
-    h2 {
+    h2.dark-theme {
       color: $accent-primary;
       font-size: 1.8rem;
-      font-weight: bold;
       margin-bottom: 1rem;
     }
 
-    p {
+    p.dark-theme {
       color: $text-secondary;
       margin-bottom: 1rem;
     }
 
-    ul {
+    ul.dark-theme {
       list-style: none;
       padding: 0;
 
-      li {
+      li.dark-theme {
         display: flex;
         align-items: center;
         justify-content: center;
         color: $text-primary;
         margin-bottom: 1rem;
 
-        i {
+        i.dark-theme {
           color: $accent-secondary;
           margin-right: 0.5rem;
         }
       }
     }
 
-    .btn-outline-warning {
+    .btn-outline-warning.dark-theme {
       border: 2px solid $accent-secondary;
       color: $accent-secondary;
       border-radius: 8px;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: $accent-secondary;
-        color: $hover-effect;
+        color: #404040;
+      }
+    }
+  }
+}
+
+// Content Box
+.content-box.light-theme {
+  background-color: $card-background-light; // Black card for the content
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  width: 100%; // Ensures responsiveness
+  max-width: 900px; // Prevents the card from stretching too wide
+  display: flex;
+  flex-wrap: wrap; // Wraps columns dynamically
+  gap: 1rem; // Adds spacing between columns
+
+  .row.light-theme {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-lg-6.light-theme {
+    flex: 1 1 45%; // Dynamic width, shrinks or grows based on available space
+    max-width: 48%; // Caps the width for medium screens
+    min-width: 300px; // Prevents columns from shrinking too much
+    padding: 1rem; // Adds consistent padding to each column
+
+    h2.light-theme {
+      color: $accent-primary-light;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p.light-theme {
+      color: $text-secondary-light;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-label.light-theme {
+      color: $text-primary-light;
+      font-weight: bold;
+    }
+
+    .form-control.light-theme {
+      background-color: #d1d1d1;
+      color: $text-primary-light;
+      border: 1px solid $border-color-light;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+
+      &:focus.light-theme {
+        border-color: $accent-primary-light;
+        box-shadow: 0 0 5px $accent-primary-light;
+      }
+    }
+
+    .btn-primary.light-theme {
+      background-color: $accent-primary-light;
+      color: $text-primary-light;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover.light-theme {
+        background-color: lighten($accent-primary-light, 10%);
+        transform: scale(1.03);
+      }
+    }
+
+    .btn-outline-secondary.light-theme {
+      background-color: transparent;
+      border: 2px solid $accent-primary-light;
+      color: $accent-primary-light;
+      border-radius: 8px;
+
+      &:hover.light-theme {
+        background-color: $accent-primary-light;
+        color: #404040;
+      }
+    }
+
+    a.text-link.light-theme {
+      color: $accent-primary-light;
+
+      &:hover.light-theme {
+        text-decoration: underline;
+      }
+    }
+
+    a.text-accent.light-theme {
+      color: $accent-primary-light;
+
+      &:hover.light-theme {
+        color: lighten($accent-primary-light, 10%);
+      }
+    }
+  }
+
+  // Interactive Box
+  .interactive-box.light-theme {
+    flex: 1 1 45%; // Dynamic width, adjusts based on screen size
+    max-width: 75%; // Caps the width for medium screens
+    min-width: 300px; // Prevents content from shrinking too much
+    background-color: $card-background-light; // Same as the card
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+
+    h2.light-theme {
+      color: $accent-primary-light;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p.light-theme {
+      color: $text-secondary-light;
+      margin-bottom: 1rem;
+    }
+
+    ul.light-theme {
+      list-style: none;
+      padding: 0;
+
+      li.light-theme {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-primary-light;
+        margin-bottom: 1rem;
+
+        i.light-theme {
+          color: $accent-secondary-light;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .btn-outline-warning.light-theme {
+      border: 2px solid $accent-secondary-light;
+      color: $accent-secondary;
+      border-radius: 8px;
+
+      &:hover.light-theme {
+        background-color: $accent-secondary-light;
+        color: #404040;
       }
     }
   }

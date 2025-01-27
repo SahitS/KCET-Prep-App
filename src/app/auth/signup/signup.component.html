@@ -1,63 +1,63 @@
-<div class="section-container container">
-  <div class="content-box">
-    <div class="row">
+<div class="section-container {{ currentTheme }} container">
+  <div class="content-box {{ currentTheme }}">
+    <div class="row {{ currentTheme }}">
       <!-- Left Column (Signup Form) -->
-      <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+      <div class="col-lg-6 d-flex flex-column justify-content-center p-5 {{ currentTheme }}">
         <div class="mx-auto" style="max-width: 400px;">
-          <h2 class="mb-3 text-center">Join PrepSphere Today!</h2>
-          <p class="text-center text-muted mb-4">
+          <h2 class="mb-3 text-center {{ currentTheme }}">Join PrepSphere Today!</h2>
+          <p class="text-center text-muted mb-4 {{ currentTheme }}">
             Sign up to access your personalized KCET preparation journey.
           </p>
 
           <!-- Signup Form -->
           <form (ngSubmit)="onSignup()">
             <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
+              <label for="username" class="form-label {{ currentTheme }}">Username</label>
               <input
                 type="text"
                 id="username"
                 [(ngModel)]="username"
                 name="username"
-                class="form-control"
+                class="form-control {{ currentTheme }}"
                 placeholder="Create your username"
                 required
               >
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="password" class="form-label {{ currentTheme }}">Password</label>
               <input
                 type="password"
                 id="password"
                 [(ngModel)]="password"
                 name="password"
-                class="form-control"
+                class="form-control {{ currentTheme }}"
                 placeholder="Create a secure password"
                 required
               >
             </div>
             <div class="d-grid mb-3">
-              <button type="submit" class="btn btn-primary btn-lg">Start Your KCET Journey</button>
+              <button type="submit" class="btn btn-primary btn-lg {{ currentTheme }}">Start Your KCET Journey</button>
             </div>
-            <p class="text-center text-muted">OR</p>
-            <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
-            <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+            <p class="text-center text-muted {{ currentTheme }}">OR</p>
+            <button class="btn btn-outline-secondary w-100 mb-2 {{ currentTheme }}">Continue with Google</button>
+            <button class="btn btn-outline-secondary w-100 {{ currentTheme }}">Continue with LinkedIn</button>
           </form>
         </div>
       </div>
 
       <!-- Right Column (Interactive Section) -->
-      <div class="col-lg-6 d-flex align-items-center justify-content-center">
-        <div class="interactive-box">
-          <h2>Why PrepSphere?</h2>
-          <p>Join 10,000+ students who have boosted their KCET scores!</p>
-          <ul class="list-unstyled">
-            <li><i class="bi bi-check2-circle"></i> Personalized study plans</li>
-            <li><i class="bi bi-check2-circle"></i> Expert guidance from top educators</li>
-            <li><i class="bi bi-check2-circle"></i> Real-time progress analytics</li>
-            <li><i class="bi bi-check2-circle"></i> Mock exams with instant feedback</li>
+      <div class="col-lg-6 d-flex align-items-center justify-content-center {{ currentTheme }}">
+        <div class="interactive-box {{ currentTheme }}">
+          <h2 class="{{ currentTheme }}">Why PrepSphere?</h2>
+          <p class="{{ currentTheme }}">Join 10,000+ students who have boosted their KCET scores!</p>
+          <ul class="list-unstyled {{ currentTheme }}">
+            <li class="{{ currentTheme }}"><i class="bi bi-check2-circle {{ currentTheme }}"></i> Personalized study plans</li>
+            <li class="{{ currentTheme }}"><i class="bi bi-check2-circle {{ currentTheme }}"></i> Expert guidance from top educators</li>
+            <li class="{{ currentTheme }}"><i class="bi bi-check2-circle {{ currentTheme }}"></i> Real-time progress analytics</li>
+            <li class="{{ currentTheme }}"><i class="bi bi-check2-circle {{ currentTheme }}"></i> Mock exams with instant feedback</li>
           </ul>
           <p class="mt-3">
-            Already a user? <a routerLink="/login" class="btn btn-outline-warning">Login Now</a>
+            Already a user? <a routerLink="/login" class="btn btn-outline-warning {{ currentTheme }}">Login Now</a>
           </p>
         </div>
       </div>

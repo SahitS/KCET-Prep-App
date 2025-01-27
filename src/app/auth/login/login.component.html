@@ -1,67 +1,67 @@
-<div class="section-container container">
-  <div class="content-box">
+<div class="section-container {{ currentTheme }} container">
+  <div class="content-box {{ currentTheme }}">
     <!-- Combined Content -->
     <div class="row">
       <!-- Left Column (Login Form) -->
       <div class="col-lg-6 p-5">
-        <h2 class="text-center">Welcome Back!</h2>
-        <p class="text-center">Log in to continue your journey to KCET success</p>
+        <h2 class="text-center {{ currentTheme }}">Welcome Back!</h2>
+        <p class="text-center {{ currentTheme }}">Log in to continue your journey to KCET success</p>
 
         <form (ngSubmit)="onLogin()">
           <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
+            <label for="username" class="form-label {{ currentTheme }}">Username</label>
             <input
               type="text"
               id="username"
               [(ngModel)]="username"
               name="username"
-              class="form-control"
+              class="form-control {{ currentTheme }}"
               placeholder="Enter your username"
               required
             >
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-label {{ currentTheme }}">Password</label>
             <input
               type="password"
               id="password"
               [(ngModel)]="password"
               name="password"
-              class="form-control"
+              class="form-control {{ currentTheme }}"
               placeholder="Enter your password"
               required
             >
           </div>
           <div class="form-check mb-3">
             <input type="checkbox" class="form-check-input" id="rememberMe">
-            <label class="form-check-label" for="rememberMe">Remember Me</label>
+            <label class="form-check-label {{ currentTheme }}" for="rememberMe">Remember Me</label>
           </div>
           <div class="d-grid mb-3">
-            <button type="submit" class="btn btn-primary">Boost Your KCET Preparation</button>
+            <button type="submit" class="btn btn-primary {{ currentTheme }}">Boost Your KCET Preparation</button>
           </div>
           <p class="text-center mb-3">OR</p>
-          <button class="btn btn-outline-secondary w-100 mb-2">Continue with Google</button>
-          <button class="btn btn-outline-secondary w-100">Continue with LinkedIn</button>
+          <button class="btn btn-outline-secondary {{ currentTheme }} w-100 mb-2">Continue with Google</button>
+          <button class="btn btn-outline-secondary {{ currentTheme }} w-100">Continue with LinkedIn</button>
         </form>
 
         <p class="mt-4 text-center">
-          <a href="#" class="text-link">Forgot Password?</a>
+          <a href="#" class="text-link {{ currentTheme }}">Forgot Password?</a>
         </p>
       </div>
 
       <!-- Right Column (Interactive Section) -->
       <div class="col-lg-6 d-flex align-items-center justify-content-center">
-        <div class="interactive-box text-center">
+        <div class="interactive-box {{ currentTheme }} text-center">
           <h2>Why PrepSphere?</h2>
           <p>Join 10,000+ students who have boosted their KCET scores!</p>
           <ul class="list-unstyled">
-            <li><i class="bi bi-check2-circle"></i> Personalized study plans</li>
-            <li><i class="bi bi-check2-circle"></i> Expert guidance from top educators</li>
-            <li><i class="bi bi-check2-circle"></i> Real-time progress analytics</li>
-            <li><i class="bi bi-check2-circle"></i> Mock exams with instant feedback</li>
+            <li><i class="bi bi-check2-circle {{ currentTheme }}"></i> Personalized study plans</li>
+            <li><i class="bi bi-check2-circle {{ currentTheme }}"></i> Expert guidance from top educators</li>
+            <li><i class="bi bi-check2-circle {{ currentTheme }}"></i> Real-time progress analytics</li>
+            <li><i class="bi bi-check2-circle {{ currentTheme }}"></i> Mock exams with instant feedback</li>
           </ul>
           <p>
-            New to PrepSphere? <a routerLink="/signup" class="btn btn-outline-warning">Sign Up Now</a>
+            New to PrepSphere? <a routerLink="/signup" class="btn btn-outline-warning {{ currentTheme }}">Sign Up Now</a>
           </p>
         </div>
       </div>
