@@ -1,103 +1,151 @@
-<div class="mock-test-container" *ngIf="quiz">
-    <h2 class="header">
-      {{ currentSection | titlecase }} Section
-      <span class="timer">Time Left: {{ getFormattedTime() }}</span>
-    </h2>
-  
-    <div class="section-switcher">
-      <button
-        *ngFor="let section of ['physics', 'chemistry', 'mathematics']"
-        [ngClass]="{ active: currentSection === section }"
-        (click)="navigateSection(section)"
-      >
-        {{ section | titlecase }}
-      </button>
-    </div>
-  
-    <div class="quiz-content">
-      <div class="question-box">
-        <h3>Question {{ currentQuestionIndex + 1 }}</h3>
-        <div class="image-container">
-          <div class="scrollable-content">
-            <img
-              [src]="quiz[currentSection][currentQuestionIndex]?.imagePath"
-              alt="Question"
-            />
-          </div>
-        </div>
-        <div class="options">
-          <button
-            *ngFor="let option of ['A', 'B', 'C', 'D']"
-            [ngClass]="{
-              selected: getAnswerForCurrentQuestion()?.selectedOption === option
-            }"
-            (click)="selectAnswer(
-              quiz[currentSection][currentQuestionIndex]?.questionIndex,
-              option
-            )"
-          >
-            {{ option }}
-          </button>
+<div class="mock-test-container {{ currentTheme }}" *ngIf="quiz">
+  <h2 class="header {{ currentTheme }}">
+    {{ currentSection | titlecase }} Section
+    <span class="timer {{ currentTheme }}">Time Left: {{ getFormattedTime() }}</span>
+  </h2>
+
+  <div class="section-switcher {{ currentTheme }}">
+    <button
+      *ngFor="let section of ['physics', 'chemistry', 'mathematics']"
+      class="{{ currentTheme }}"
+      [ngClass]="{ active: currentSection === section }"
+      (click)="navigateSection(section)"
+    >
+      {{ section | titlecase }}
+    </button>
+  </div>
+
+  <div class="quiz-content {{ currentTheme }}">
+    <div class="question-box {{ currentTheme }}">
+      <h3 class="{{ currentTheme }}">Question {{ currentQuestionIndex + 1 }}</h3>
+      <div class="image-container {{ currentTheme }}">
+        <div class="scrollable-content">
+          <img
+            [src]="quiz[currentSection][currentQuestionIndex]?.imagePath"
+            alt="Question"
+          />
         </div>
       </div>
-  
-      <div class="navigator">
-        <h3>Question Navigator</h3>
-        <div class="navigator-grid">
-          <button
-            *ngFor="let question of quiz[currentSection]; let i = index"
-            [ngClass]="getQuestionClass(i)"
-            (click)="currentQuestionIndex = i"
-          >
-            {{ i + 1 }}
-          </button>
-        </div>
+      <div class="options {{ currentTheme }}">
+        <button
+          *ngFor="let option of ['A', 'B', 'C', 'D']"
+          class="{{ currentTheme }}"
+          [ngClass]="{
+            selected: getAnswerForCurrentQuestion()?.selectedOption === option
+          }"
+          (click)="selectAnswer(
+            quiz[currentSection][currentQuestionIndex]?.questionIndex,
+            option
+          )"
+        >
+          {{ option }}
+        </button>
       </div>
     </div>
-  
-    <div class="navigation-buttons">
-      <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
-        Previous
-      </button>
-      <button (click)="markForReview()">Mark for Review</button>
-      <button
-        (click)="nextQuestion()"
-        [disabled]="
-          currentQuestionIndex === quiz[currentSection].length - 1
-        "
-      >
-        Next
-      </button>
-      <button (click)="submitQuiz()" class="submit-button">Submit Quiz</button>
-      <button (click)="confirmGoBack()">Back to Dashboard</button>
-    </div>
-  
-    <div class="overlay" *ngIf="showOverlay">
-      <div class="overlay-content">
-        <h2>Enter your PUC Scores</h2>
-        <form #pucForm="ngForm" (ngSubmit)="predictRank(pucForm.value)">
-          <label>
-            Physics:
-            <input type="number" name="physics" required ngModel />
-          </label>
-          <label>
-            Chemistry:
-            <input type="number" name="chemistry" required ngModel />
-          </label>
-          <label>
-            Mathematics:
-            <input type="number" name="math" required ngModel />
-          </label>
-          <button type="submit">Predict Rank</button>
-          <button type="button" (click)="closeOverlay()">Cancel</button>
-        </form>
+
+    <div class="navigator {{ currentTheme }}">
+      <h3 class="{{ currentTheme }}">Question Navigator</h3>
+      <div class="navigator-grid {{ currentTheme }}">
+        <button
+          *ngFor="let question of quiz[currentSection]; let i = index"
+          class="{{ currentTheme }}"
+          [ngClass]="getQuestionClass(i)"
+          (click)="currentQuestionIndex = i"
+        >
+          {{ i + 1 }}
+        </button>
       </div>
-    </div>
-  
-    <div class="rank-display" *ngIf="predictedRank">
-      <h2>Your Predicted Rank</h2>
-      <p>{{ predictedRank }}</p>
-      <button (click)="redirectToDashboard()">Okay</button>
     </div>
   </div>
-  
+
+  <div class="navigation-buttons {{ currentTheme }}">
+    <button
+      class="{{ currentTheme }}"
+      (click)="previousQuestion()"
+      [disabled]="currentQuestionIndex === 0"
+    >
+      Previous
+    </button>
+    <button class="{{ currentTheme }}" (click)="markForReview()">
+      Mark for Review
+    </button>
+    <button
+      class="{{ currentTheme }}"
+      (click)="nextQuestion()"
+      [disabled]="
+        currentQuestionIndex === quiz[currentSection].length - 1
+      "
+    >
+      Next
+    </button>
+    <button
+      class="submit-button {{ currentTheme }}"
+      (click)="submitQuiz()"
+    >
+      Submit Quiz
+    </button>
+    <button class="{{ currentTheme }}" (click)="confirmGoBack()">
+      Back to Dashboard
+    </button>
+  </div>
+
+  <div class="overlay {{ currentTheme }}" *ngIf="showOverlay">
+    <div class="overlay-content {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">Enter your PUC Scores</h2>
+      <form
+        class="{{ currentTheme }}"
+        #pucForm="ngForm"
+        (ngSubmit)="predictRank(pucForm.value)"
+      >
+        <label class="{{ currentTheme }}">
+          Physics:
+          <input
+            type="number"
+            name="physics"
+            required
+            class="{{ currentTheme }}"
+            ngModel
+          />
+        </label>
+        <label class="{{ currentTheme }}">
+          Chemistry:
+          <input
+            type="number"
+            name="chemistry"
+            required
+            class="{{ currentTheme }}"
+            ngModel
+          />
+        </label>
+        <label class="{{ currentTheme }}">
+          Mathematics:
+          <input
+            type="number"
+            name="math"
+            required
+            class="{{ currentTheme }}"
+            ngModel
+          />
+        </label>
+        <button class="{{ currentTheme }}" type="submit">
+          Predict Rank
+        </button>
+        <button
+          class="{{ currentTheme }}"
+          type="button"
+          (click)="closeOverlay()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="rank-display {{ currentTheme }}" *ngIf="predictedRank">
+    <h2 class="{{ currentTheme }}">Your Predicted Rank</h2>
+    <p class="{{ currentTheme }}">{{ predictedRank }}</p>
+    <button class="{{ currentTheme }}" (click)="redirectToDashboard()">
+      Okay
+    </button>
+  </div>
+</div>

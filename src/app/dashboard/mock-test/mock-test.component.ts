@@ -23,6 +23,7 @@ export class MockTestComponent implements OnInit {
   timerInterval: any;
   showOverlay: boolean = false;
   predictedRank: string | null = null;
+  currentTheme: string | undefined;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -30,6 +31,11 @@ export class MockTestComponent implements OnInit {
     console.log('MockTestComponent initialized.');
     this.fetchQuiz();
     this.startTimer();
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
 
   fetchQuiz(): void {
@@ -230,5 +236,11 @@ export class MockTestComponent implements OnInit {
       this.redirectToDashboard();
     }
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
   
 }
