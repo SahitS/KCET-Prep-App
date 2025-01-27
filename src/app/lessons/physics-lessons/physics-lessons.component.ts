@@ -29,6 +29,11 @@ export class PhysicsLessonsComponent implements OnInit {
 
   ngOnInit() {
     this.years = PhysicsData.Physics.years.map((year) => year.year);
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
 
   onYearSelect(year: string) {
@@ -135,4 +140,11 @@ export class PhysicsLessonsComponent implements OnInit {
       this.aiResponse = 'Failed to connect to the server.';
     }
   }  
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 }

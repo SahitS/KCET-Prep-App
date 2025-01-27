@@ -29,6 +29,11 @@ export class ChemistryLessonsComponent implements OnInit {
 
   ngOnInit() {
     this.topics = ChemistryData.Chemistry.topics.map((topic) => topic.topic).filter((topic): topic is string => topic !== undefined);
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
 
   onTopicSelect(topic: string) {
@@ -123,4 +128,11 @@ export class ChemistryLessonsComponent implements OnInit {
       this.aiResponse = 'Failed to connect to the server.';
     }
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 }

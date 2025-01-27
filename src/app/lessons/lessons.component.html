@@ -1,38 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lessons Page</title>
-  <link rel="stylesheet" href="lessons.component.scss"> 
-</head>
-<body>
-  <div class="lessons-container">
-    <header class="lessons-header">
-      <h1>Explore Your Lessons</h1>
-    </header>
-    <div class="lessons-grid">
-      <!-- Math Section -->
-      <div class="lesson-box">
-        <h2>Mathematics</h2>
-        <p>Dive into detailed lessons and resources to master Math topics.</p>
-        <button class="btn" routerLink="/math-lessons">Start Math Lessons</button>
-      </div>
+<div class="lessons-container {{ currentTheme }}">
+  <header class="lessons-header {{ currentTheme }}">
+    <h1 class="{{ currentTheme }}">Explore Your Lessons</h1>
+  </header>
+  <div class="lessons-grid {{ currentTheme }}">
+    <!-- Math Section -->
+    <div class="lesson-box {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">Mathematics</h2>
+      <p class="{{ currentTheme }}">
+        Dive into detailed lessons and resources to master Math topics.
+      </p>
+      <button class="btn {{ currentTheme }}" routerLink="/math-lessons">
+        Start Math Lessons
+      </button>
+    </div>
 
-      <!-- Physics Section -->
-      <div class="lesson-box">
-        <h2>Physics</h2>
-        <p>Learn key concepts and problem-solving techniques in Physics.</p>
-        <button class="btn" routerLink="/physics-lessons">Start Physics Lessons</button>
-      </div>
+    <!-- Physics Section -->
+    <div class="lesson-box {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">Physics</h2>
+      <p class="{{ currentTheme }}">
+        Learn key concepts and problem-solving techniques in Physics.
+      </p>
+      <button class="btn {{ currentTheme }}" routerLink="/physics-lessons">
+        Start Physics Lessons
+      </button>
+    </div>
 
-      <!-- Chemistry Section -->
-      <div class="lesson-box">
-        <h2>Chemistry</h2>
-        <p>Access in-depth Chemistry lessons for KCET preparation.</p>
-        <button class="btn" routerLink="/chemistry-lessons">Start Chemistry Lessons</button>
-      </div>
+    <!-- Chemistry Section -->
+    <div class="lesson-box {{ currentTheme }}">
+      <h2 class="{{ currentTheme }}">Chemistry</h2>
+      <p class="{{ currentTheme }}">
+        Access in-depth Chemistry lessons for KCET preparation.
+      </p>
+      <button class="btn {{ currentTheme }}" routerLink="/chemistry-lessons">
+        Start Chemistry Lessons
+      </button>
     </div>
   </div>
-</body>
-</html>
+</div>

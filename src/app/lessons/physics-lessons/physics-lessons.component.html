@@ -1,11 +1,11 @@
-<div class="lessons-container">
+<div class="lessons-container {{currentTheme}}">
   <!-- Year Selection -->
-  <div class="year-selection" *ngIf="!selectedYear">
-    <h2>Select Your Year</h2>
-    <div class="years-grid">
+  <div class="year-selection {{currentTheme}}" *ngIf="!selectedYear">
+    <h2 class="{{currentTheme}}">Select Your Year</h2>
+    <div class="years-grid {{currentTheme}}">
       <button
         *ngFor="let year of years"
-        class="year-btn"
+        class="year-btn {{currentTheme}}"
         (click)="onYearSelect(year)"
       >
         {{ year }}
@@ -14,42 +14,43 @@
   </div>
 
   <!-- Chapter Listing -->
-  <div class="chapter-list" *ngIf="selectedYear && !showFlashcards">
-    <h2>{{ selectedYear }} Chapters</h2>
-    <div class="chapters-grid">
+  <div class="chapter-list {{currentTheme}}" *ngIf="selectedYear && !showFlashcards">
+    <h2 class="{{currentTheme}}">{{ selectedYear }} Chapters</h2>
+    <div class="chapters-grid {{currentTheme}}">
       <div
         *ngFor="let chapter of chapters"
-        class="chapter-card"
+        class="chapter-card {{currentTheme}}"
         (click)="onChapterSelect(chapter)"
       >
-        <h3>{{ chapter.name }}</h3>
-        <p>Click to explore the content</p>
+        <h3 class="{{currentTheme}}">{{ chapter.name }}</h3>
+        <p class="{{currentTheme}}">Click to explore the content</p>
       </div>
     </div>
   </div>
 
   <!-- Flashcard Modal -->
-  <div class="flashcard-overlay" *ngIf="showFlashcards">
-    <div class="flashcard">
-      <button class="close-btn" (click)="closeFlashcards()">×</button>
-      <h3>{{ flashcards[currentFlashcardIndex]?.title }}</h3>
-      <p *ngFor="let explanation of flashcards[currentFlashcardIndex]?.explanation">
+  <div class="flashcard-overlay {{currentTheme}}" *ngIf="showFlashcards">
+    <div class="flashcard {{currentTheme}}">
+      <button class="close-btn {{currentTheme}}" (click)="closeFlashcards()">×</button>
+      <h3 class="{{currentTheme}}">{{ flashcards[currentFlashcardIndex]?.title }}</h3>
+      <p *ngFor="let explanation of flashcards[currentFlashcardIndex]?.explanation" class="{{currentTheme}}">
         {{ explanation }}
       </p>
-      <ul>
-        <li *ngFor="let formula of flashcards[currentFlashcardIndex]?.formulas">
+      <ul class="{{currentTheme}}">
+        <li *ngFor="let formula of flashcards[currentFlashcardIndex]?.formulas" class="{{currentTheme}}">
           {{ formula }}
         </li>
       </ul>
       <!-- ASK AI Button -->
-      <button class="ask-ai-btn" (click)="openChatModal()">ASK AI</button>
-      <div class="flashcard-nav">
-        <button (click)="prevFlashcard()" [disabled]="currentFlashcardIndex === 0">
+      <button class="ask-ai-btn {{currentTheme}}" (click)="openChatModal()">ASK AI</button>
+      <div class="flashcard-nav {{currentTheme}}">
+        <button (click)="prevFlashcard()" [disabled]="currentFlashcardIndex === 0" class="{{currentTheme}}">
           Previous
         </button>
         <button
           (click)="nextFlashcard()"
           [disabled]="currentFlashcardIndex === flashcards.length - 1"
+          class="{{currentTheme}}"
         >
           Next
         </button>
@@ -58,15 +59,15 @@
   </div>
 
   <!-- Chat Modal for ASK AI -->
-  <div class="chat-modal" *ngIf="showChatModal">
-    <div class="chat-content">
-      <button class="close-btn" (click)="closeChatModal()">×</button>
-      <h3>Ask AI</h3>
-      <textarea [(ngModel)]="userQuestion" placeholder="Ask a question..."></textarea>
-      <button class="submit-btn" (click)="askAI()">Submit</button>
-      <div class="ai-response" *ngIf="aiResponse">
-        <h4>AI Response:</h4>
-        <p>{{ aiResponse }}</p>
+  <div class="chat-modal {{currentTheme}}" *ngIf="showChatModal">
+    <div class="chat-content {{currentTheme}}">
+      <button class="close-btn {{currentTheme}}" (click)="closeChatModal()">×</button>
+      <h3 class="{{currentTheme}}">Ask AI</h3>
+      <textarea [(ngModel)]="userQuestion" class="{{currentTheme}}" placeholder="Ask a question..."></textarea>
+      <button class="submit-btn {{currentTheme}}" (click)="askAI()">Submit</button>
+      <div class="ai-response {{currentTheme}}" *ngIf="aiResponse">
+        <h4 class="{{currentTheme}}">AI Response:</h4>
+        <p class="{{currentTheme}}">{{ aiResponse }}</p>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-// Global Theme Variables
+// Global Theme Variables for dark theme
 $background-dark: #181818;
 $card-background: #242424;
 $text-primary: #f5f5f5; // Soft white
@@ -8,8 +8,19 @@ $accent-secondary: #4ADE80; // Teal
 $hover-effect: #373737; // Hover background
 $border-color: #3a3a3a;
 
+//light theme
+$background-light: #f3f4f6; 
+$card-background-light: #e9ecef; 
+$text-primary-light: #212529; 
+$text-secondary-light: #6c757d; 
+$accent-primary-light: #A78BFA; 
+$accent-secondary-light: #4ADE80; 
+$hover-effect-light: #dfe3e8; 
+$border-color-light: #ced4da; 
+
+
 // Lessons Container
-.lessons-container {
+.lessons-container.dark-theme {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -17,8 +28,8 @@ $border-color: #3a3a3a;
   border-radius: 12px;
 
   /* Year Selection */
-  .year-selection {
-    h2 {
+  .year-selection.dark-theme {
+    h2.dark-theme {
       font-size: 2rem;
       color: $accent-primary;
       margin-bottom: 1.5rem;
@@ -26,13 +37,13 @@ $border-color: #3a3a3a;
       font-weight: bold;
     }
 
-    .years-grid {
+    .years-grid.dark-theme {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
 
-      .year-btn {
+      .year-btn.dark-theme {
         padding: 1rem 2rem;
         font-size: 1.2rem;
         font-weight: bold;
@@ -44,7 +55,7 @@ $border-color: #3a3a3a;
         transition: all 0.3s ease;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-        &:hover {
+        &:hover.dark-theme {
           background-color: $accent-primary;
           color: $background-dark;
           transform: translateY(-5px);
@@ -55,8 +66,8 @@ $border-color: #3a3a3a;
   }
 
   /* Topic Selection */
-.topic-selection {
-  h2 {
+.topic-selection.dark-theme {
+  h2.dark-theme {
     font-size: 2rem;
     color: $accent-primary; // Use your primary accent color
     margin-bottom: 1.5rem;
@@ -64,13 +75,13 @@ $border-color: #3a3a3a;
     font-weight: bold;
   }
 
-  .topics-grid {
+  .topics-grid.dark-theme {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
 
-    .topic-btn {
+    .topic-btn.dark-theme {
       padding: 1rem 2rem;
       font-size: 1.2rem;
       font-weight: bold;
@@ -82,7 +93,7 @@ $border-color: #3a3a3a;
       transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: $accent-primary; // Hover background
         color: $background-dark; // Hover text color
         transform: translateY(-5px); // Lift effect
@@ -94,8 +105,8 @@ $border-color: #3a3a3a;
 
 
  /* Chapter List */
-.chapter-list {
-  h2 {
+.chapter-list.dark-theme {
+  h2.dark-theme {
     font-size: 1.8rem;
     color: $accent-primary;
     margin-bottom: 1.5rem;
@@ -103,7 +114,7 @@ $border-color: #3a3a3a;
     font-weight: bold;
   }
 
-  .chapters-grid {
+  .chapters-grid.dark-theme {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 2rem; 
@@ -111,7 +122,7 @@ $border-color: #3a3a3a;
     margin: 0 auto;
     max-width: 90%; 
     
-    .chapter-card {
+    .chapter-card.dark-theme {
       background-color: $card-background;
       padding: 2rem; 
       text-align: center;
@@ -121,13 +132,13 @@ $border-color: #3a3a3a;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-      h3 {
+      h3.dark-theme {
         font-size: 1.6rem; 
         color: $accent-primary;
         margin-bottom: 1rem;
       }
 
-      p {
+      p.dark-theme {
         font-size: 1.1rem;
         color: $text-secondary;
         margin-bottom: 1rem;
@@ -157,7 +168,7 @@ $border-color: #3a3a3a;
 
 
   /* Flashcard Overlay */
-  .flashcard-overlay {
+  .flashcard-overlay.dark-theme {
     position: fixed;
     top: 0;
     left: 0;
@@ -169,7 +180,7 @@ $border-color: #3a3a3a;
     align-items: center;
     z-index: 1000;
 
-    .flashcard {
+    .flashcard.dark-theme {
       background-color: $card-background;
       padding: 2rem;
       border-radius: 12px;
@@ -178,20 +189,20 @@ $border-color: #3a3a3a;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       position: relative;
 
-      h3 {
+      h3.dark-theme {
         font-size: 1.5rem;
         color: $accent-primary;
         margin-bottom: 1rem;
       }
 
       p,
-      ul {
+      ul.dark-theme {
         font-size: 1rem;
         color: $text-secondary;
         margin-bottom: 1rem;
       }
 
-      .ask-ai-btn {
+      .ask-ai-btn.dark-theme {
         display: block;
         width: 100%;
         padding: 0.8rem;
@@ -205,18 +216,18 @@ $border-color: #3a3a3a;
         cursor: pointer;
         transition: all 0.3s ease;
 
-        &:hover {
+        &:hover.dark-theme {
           background-color: lighten($accent-secondary, 10%);
           color: $text-primary;
         }
       }
 
-      .flashcard-nav {
+      .flashcard-nav.dark-theme {
         display: flex;
         justify-content: space-between;
         margin-top: 1.5rem;
 
-        button {
+        button.dark-theme {
           padding: 0.8rem 1.5rem;
           font-size: 1rem;
           font-weight: bold;
@@ -227,12 +238,12 @@ $border-color: #3a3a3a;
           cursor: pointer;
           transition: all 0.3s ease;
 
-          &:hover {
+          &:hover.dark-theme {
             background-color: $accent-primary;
             color: $background-dark;
           }
 
-          &:disabled {
+          &:disabled.dark-theme {
             background-color: $border-color;
             color: $text-secondary;
             cursor: not-allowed;
@@ -240,7 +251,7 @@ $border-color: #3a3a3a;
         }
       }
 
-      .close-btn {
+      .close-btn.dark-theme {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -250,7 +261,7 @@ $border-color: #3a3a3a;
         color: $text-secondary;
         cursor: pointer;
 
-        &:hover {
+        &:hover.dark-theme {
           color: $text-primary;
         }
       }
@@ -258,7 +269,7 @@ $border-color: #3a3a3a;
   }
 
   /* Chat Modal */
-  .chat-modal {
+  .chat-modal.dark-theme {
     position: fixed;
     top: 0;
     left: 0;
@@ -270,7 +281,7 @@ $border-color: #3a3a3a;
     align-items: center;
     z-index: 2000;
 
-    .chat-content {
+    .chat-content.dark-theme {
       background: $card-background;
       padding: 2rem;
       border-radius: 12px;
@@ -278,13 +289,13 @@ $border-color: #3a3a3a;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       position: relative;
 
-      h3 {
+      h3.dark-theme {
         font-size: 1.8rem;
         color: $accent-primary;
         margin-bottom: 1rem;
       }
 
-      textarea {
+      textarea.dark-theme {
         width: 100%;
         height: 120px;
         margin-bottom: 1rem;
@@ -296,7 +307,7 @@ $border-color: #3a3a3a;
         color: $text-primary;
       }
 
-      .submit-btn {
+      .submit-btn.dark-theme {
         width: 100%;
         padding: 0.8rem;
         background-color: $accent-primary;
@@ -307,7 +318,7 @@ $border-color: #3a3a3a;
         font-weight: bold;
         cursor: pointer;
 
-        &:hover {
+        &:hover.dark-theme {
           background-color: lighten($accent-primary, 10%);
         }
       }
@@ -317,19 +328,19 @@ $border-color: #3a3a3a;
         overflow-y: auto;
         margin-top: 1rem;
 
-        h4 {
+        h4.dark-theme {
           font-size: 1.2rem;
           color: $accent-primary;
           margin-bottom: 0.5rem;
         }
 
-        p {
+        p.dark-theme {
           font-size: 1rem;
           color: $text-secondary;
         }
       }
 
-      .close-btn {
+      .close-btn.dark-theme {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -339,8 +350,364 @@ $border-color: #3a3a3a;
         border: none;
         cursor: pointer;
 
-        &:hover {
+        &:hover.dark-theme {
           color: $text-primary;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .flashcard,
+  .chat-content {
+    width: 90%;
+  }
+
+  textarea {
+    height: 100px;
+  }
+}
+
+
+
+//light theme
+
+// Lessons Container
+.lessons-container.light-theme {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $background-light;
+  border-radius: 12px;
+
+  /* Year Selection */
+  .year-selection.light-theme {
+    h2.light-theme {
+      font-size: 2rem;
+      color: $accent-primary-light;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .years-grid.light-theme {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+
+      .year-btn.light-theme {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $text-primary-light;
+        background-color: $card-background-light;
+        border: 2px solid $accent-primary-light;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        &:hover.light-theme {
+          background-color: $accent-primary-light;
+          color: $background-light;
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+
+  /* Topic Selection */
+.topic-selection.light-theme {
+  h2.light-theme {
+    font-size: 2rem;
+    color: $accent-primary-light; // Use your primary accent color
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .topics-grid.light-theme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .topic-btn.light-theme {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $text-primary; // Text color
+      background-color: $card-background-light; // Button background
+      border: 2px solid $accent-primary-light; // Accent border
+      border-radius: 8px; // Rounded corners
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+      &:hover.light-theme {
+        background-color: $accent-primary-light; // Hover background
+        color: $background-light; // Hover text color
+        transform: translateY(-5px); // Lift effect
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); // Hover shadow
+      }
+    }
+  }
+}
+
+
+ /* Chapter List */
+.chapter-list.light-theme {
+  h2.light-theme {
+    font-size: 1.8rem;
+    color: $accent-primary-light;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .chapters-grid.light-theme {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 90%; 
+    
+    .chapter-card.light-theme {
+      background-color: $card-background-light;
+      padding: 2rem; 
+      text-align: center;
+      border: 1px solid $border-color-light;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      h3.light-theme {
+        font-size: 1.6rem; 
+        color: $accent-primary-light;
+        margin-bottom: 1rem;
+      }
+
+      p.light-theme {
+        font-size: 1.1rem;
+        color: $text-secondary-light;
+        margin-bottom: 1rem;
+      }
+
+      &:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .chapters-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .chapters-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
+}
+
+
+  /* Flashcard Overlay */
+  .flashcard-overlay.light-theme {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .flashcard.light-theme {
+      background-color: $card-background-light;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+
+      h3.light-theme {
+        font-size: 1.5rem;
+        color: $accent-primary-light;
+        margin-bottom: 1rem;
+      }
+
+      p,
+      ul.light-theme {
+        font-size: 1rem;
+        color: $text-secondary-light;
+        margin-bottom: 1rem;
+      }
+
+      .ask-ai-btn.light-theme {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: $accent-secondary-light;
+        color: $background-light;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover.light-theme {
+          background-color: lighten($accent-secondary-light, 10%);
+          color: $text-primary-light;
+        }
+      }
+
+      .flashcard-nav.light-theme {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+
+        button.light-theme {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          font-weight: bold;
+          color: $text-primary;
+          background-color: $hover-effect-light;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover.light-theme {
+            background-color: $accent-primary-light;
+            color: $background-light;
+          }
+
+          &:disabled.light-theme {
+            background-color: $border-color-light;
+            color: $text-secondary-light;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .close-btn.light-theme {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: $text-secondary-light;
+        cursor: pointer;
+
+        &:hover {
+          color: $text-primary-light;
+        }
+      }
+    }
+  }
+
+  /* Chat Modal */
+  .chat-modal.light-theme {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+
+    .chat-content.light-theme {
+      background: $card-background-light;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 450px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+
+      h3.light-theme {
+        font-size: 1.8rem;
+        color: $accent-primary-light;
+        margin-bottom: 1rem;
+      }
+
+      textarea.light-theme {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 1rem;
+        border: 1px solid $border-color-light;
+        border-radius: 8px;
+        padding: 0.8rem;
+        font-size: 1rem;
+        background-color: $hover-effect-light;
+        color: $text-primary-light;
+      }
+
+      .submit-btn.light-theme {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: $accent-primary-light;
+        color: $text-primary-light;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover.light-theme {
+          background-color: lighten($accent-primary-light, 10%);
+        }
+      }
+
+      .ai-response.light-theme {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-top: 1rem;
+
+        h4.light-theme {
+          font-size: 1.2rem;
+          color: $accent-primary-light;
+          margin-bottom: 0.5rem;
+        }
+
+        p.light-theme {
+          font-size: 1rem;
+          color: $text-secondary-light;
+        }
+      }
+
+      .close-btn.light-theme {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: $text-secondary-light;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover.light-theme {
+          color: $text-primary-light;
         }
       }
     }

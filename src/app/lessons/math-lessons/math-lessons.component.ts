@@ -29,6 +29,11 @@ export class MathLessonsComponent {
 
   ngOnInit() {
     this.years = MathData.Mathematics.years.map((year) => year.year);
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
 
   onYearSelect(year: string) {
@@ -134,5 +139,12 @@ export class MathLessonsComponent {
       console.error('Error calling Flask backend:', error);
       this.aiResponse = 'Failed to connect to the server.';
     }
-  }  
+  } 
+  
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 }
