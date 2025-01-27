@@ -36,6 +36,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.fetchStudyPlan(); // Fetch study plan when component initializes
     this.generateCalendar(this.currentMonth, this.currentYear); // Generate the calendar for the current month and year
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    this.currentTheme = savedTheme;
+
+    // Add listener for theme changes
+    window.addEventListener('storage', this.handleStorageEvent);
   }
 
   fetchStudyPlan(): void {
@@ -144,4 +149,11 @@ export class DashboardComponent implements OnInit {
   updateProgress(){
     
   }
+
+  private handleStorageEvent = (event: StorageEvent) => {
+    if (event.key === 'theme' && event.newValue) {
+      this.currentTheme = event.newValue;
+    }
+  };
+  currentTheme: string | undefined;
 }

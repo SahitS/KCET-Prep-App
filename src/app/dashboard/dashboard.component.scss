@@ -1,4 +1,4 @@
-// Global Color Palette
+// Global Dark Color Palette
 $background-dark: #181818;
 $card-background: #2d2d2d;
 $text-primary: #f5f5f5;
@@ -7,8 +7,20 @@ $accent-primary: #A78BFA;
 $accent-secondary: #4ADE80;
 $hover-effect: #373737;
 
-// Dashboard Container
-.dashboard-container {
+// Light Color Palette
+$background-light: #f2f3f5; // Neutral soft grey for the global background
+$card-background-light: #e6e6e6; // Slightly darker grey for cards
+$text-primary-light: #1f1f1f; // Dark charcoal for primary text
+$text-secondary-light: #4a4a4a; // Muted dark grey for secondary text
+$accent-primary-light: #A78BFA; // Purple accents (unchanged)
+$accent-secondary-light: #4ADE80; // Teal accents (unchanged)
+$hover-effect-light: #d1d1d1; // Soft grey for hover effects
+
+
+
+
+// Dashboard Container Dark-theme
+.dashboard-container.dark-theme {
   background-color: $background-dark;
   padding: 2rem;
   min-height: 100vh;
@@ -25,7 +37,7 @@ $hover-effect: #373737;
     flex: 1 1 48%;
   }
 
-  .rank-prediction-card {
+  .rank-prediction-card.dark-theme {
     background-color: $card-background;
     padding: 1.5rem;
     border-radius: 12px;
@@ -38,20 +50,20 @@ $hover-effect: #373737;
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
     }
 
-    h2 {
+    h2.dark-theme {
       color: $accent-primary;
       font-size: 2rem;
       margin-bottom: 1rem;
       font-weight: bold;
     }
 
-    p {
+    p.dark-theme {
       color: $text-secondary;
       margin-bottom: 1rem;
       line-height: 1.6;
     }
 
-    .btn-primary {
+    .btn-primary.dark-theme {
       background-color: $accent-primary;
       color: $text-primary;
       padding: 0.8rem 1.5rem;
@@ -61,7 +73,7 @@ $hover-effect: #373737;
       font-weight: bold;
       transition: all 0.3s ease;
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: lighten($accent-primary, 10%);
         transform: scale(1.05);
       }
@@ -73,7 +85,7 @@ $hover-effect: #373737;
   flex: 1 1 48%;
 }
 
-.calendar-card {
+.calendar-card.dark-theme {
   background-color: $card-background;
   padding: 1.5rem;
   border-radius: 12px;
@@ -85,7 +97,7 @@ $hover-effect: #373737;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
   }
 
-  .calendar-title {
+  .calendar-title.dark-theme {
     color: $accent-primary;
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -99,7 +111,7 @@ $hover-effect: #373737;
     align-items: center;
     margin-bottom: 1rem;
 
-    .month-display {
+    .month-display.dark-theme {
       color: $text-primary;
       font-size: 1.5rem;
       font-weight: bold;
@@ -108,7 +120,7 @@ $hover-effect: #373737;
     }
 
     .btn-prev,
-    .btn-next {
+    .btn-next.dark-theme{
       background-color: $hover-effect;
       color: $text-primary;
       padding: 0.5rem 1rem;
@@ -123,19 +135,19 @@ $hover-effect: #373737;
     }
   }
 
-  .calendar-days {
+  .calendar-days.dark-theme {
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* Ensures a grid with 7 columns */
     gap: 0.6rem; /* Adjusts spacing between dates */
 
-    .day-label {
+    .day-label.dark-theme {
       text-align: center;
       font-weight: bold;
       color: $text-secondary;
       font-size: 0.9rem; /* Smaller font for day labels */
     }
 
-    .calendar-date {
+    .calendar-date.dark-theme {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -149,16 +161,16 @@ $hover-effect: #373737;
       cursor: pointer;
       transition: all 0.3s ease;
 
-      &.event-day {
+      &.event-day.dark-theme {
         background-color: $accent-primary;
         color: $text-primary;
       }
 
-      &.today {
+      &.today.dark-theme {
         border: 2px solid $accent-secondary;
       }
 
-      &:hover {
+      &:hover.dark-theme {
         background-color: lighten($hover-effect, 10%);
         color: $text-primary;
       }
@@ -168,7 +180,7 @@ $hover-effect: #373737;
 }
 
   // Overlay
-  .overlay {
+  .overlay.dark-theme {
     position: fixed;
     top: 0;
     left: 0;
@@ -179,13 +191,13 @@ $hover-effect: #373737;
     justify-content: center;
     align-items: center;
 
-    .overlay-content {
+    .overlay-content.dark-theme {
       background-color: $card-background;
       padding: 2rem;
       border-radius: 12px;
       text-align: center;
 
-      h3 {
+      h3.dark-theme {
         color: $accent-primary;
         margin-bottom: 1rem;
       }
@@ -194,7 +206,7 @@ $hover-effect: #373737;
         list-style: none;
         padding: 0;
 
-        li {
+        li.dark-theme {
           color: $text-secondary;
           margin: 1rem 0;
           display: flex;
@@ -206,7 +218,7 @@ $hover-effect: #373737;
         }
       }
 
-      .btn-close {
+      .btn-close.dark-theme {
         background-color: $hover-effect;
         color: $text-primary;
         padding: 0.5rem 1rem;
@@ -215,6 +227,242 @@ $hover-effect: #373737;
 
         &:hover {
           background-color: lighten($hover-effect, 10%);
+        }
+      }
+    }
+  }
+
+  // Media Queries
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .rank-container,
+    .calendar-container,
+    .agenda-card {
+      flex: 1 1 100%;
+    }
+
+    h3,
+    h4 {
+      font-size: 1.4rem;
+    }
+
+    ul li {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+
+//Dashboard Light-Theme
+.dashboard-container.light-theme {
+  background-color: $background-light;
+  padding: 2rem;
+  min-height: 100vh;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  // Rank Prediction Card
+  .rank-container {
+    flex: 1 1 48%;
+  }
+
+  .rank-prediction-card.light-theme {
+    background-color: $card-background-light;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h2.light-theme {
+      color: $accent-primary-light;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    p.light-theme {
+      color: $text-secondary-light;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn-primary.light-theme {
+      background-color: $accent-primary-light;
+      color: $text-primary-light;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      &:hover.light-theme {
+        background-color: lighten($accent-primary-light, 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+
+  .calendar-container {
+  flex: 1 1 48%;
+}
+
+.calendar-card.light-theme {
+  background-color: $card-background-light;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .calendar-title.light-theme {
+    color: $accent-primary-light;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .month-display.light-theme {
+      color: $text-primary-light;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      flex: 1; /* Ensures the title stays centered */
+    }
+
+    .btn-prev,
+    .btn-next.light-theme{
+      background-color: $hover-effect-light;
+      color: $text-primary-light;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 0.5rem; /* Adds spacing around buttons */
+
+      &:hover {
+        background-color: lighten($hover-effect, 10%);
+      }
+    }
+  }
+
+  .calendar-days.light-theme {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Ensures a grid with 7 columns */
+    gap: 0.6rem; /* Adjusts spacing between dates */
+
+    .day-label.light-theme {
+      text-align: center;
+      font-weight: bold;
+      color: $text-secondary-light;
+      font-size: 0.9rem; /* Smaller font for day labels */
+    }
+
+    .calendar-date.light-theme {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px; /* Uniform width */
+      height: 50px; /* Uniform height for circular shape */
+      font-size: 0.9rem;
+      font-weight: bold;
+      background-color: $hover-effect-light;
+      color: $text-secondary-light;
+      border-radius: 50%; /* Circular shape */
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.event-day.light-theme {
+        background-color: $accent-primary-light;
+        color: $text-primary-light;
+      }
+
+      &.today.light-theme {
+        border: 2px solid $accent-secondary-light;
+      }
+
+      &:hover.light-theme {
+        background-color: lighten($hover-effect-light, 10%);
+        color: $text-primary-light;
+      }
+      margin: 8px;
+    }
+  }
+}
+
+  // Overlay
+  .overlay.light-theme {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay-content.light-theme {
+      background-color: $card-background-light;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+
+      h3.light-theme {
+        color: $accent-primary-light;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li.light-theme {
+          color: $text-secondary-light;
+          margin: 1rem 0;
+          display: flex;
+          align-items: center;
+
+          input {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .btn-close.light-theme {
+        background-color: $hover-effect-light;
+        color: $text-primary-light;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($hover-effect-light, 10%);
         }
       }
     }

@@ -1,43 +1,43 @@
-<div class="container dashboard-container">
-  <div class="row">
+<div class="container dashboard-container {{ currentTheme }}">
+  <div class="row {{ currentTheme }}">
     <!-- Rank Prediction Card -->
-    <div class="col-lg-6 rank-container">
-      <div class="card rank-prediction-card">
-        <div class="card-body text-center">
-          <h2>Want to know your rank?</h2>
-          <p>
+    <div class="col-lg-6 rank-container {{ currentTheme }}">
+      <div class="card rank-prediction-card {{ currentTheme }}">
+        <div class="card-body text-center {{ currentTheme }}">
+          <h2 class="{{ currentTheme }}">Want to know your rank?</h2>
+          <p class="{{ currentTheme }}">
             This is a full-length mock KCET test, consisting of 180 questions:
             60 each in Physics, Chemistry, and Mathematics. You will have
             3 hours to complete the exam. This is your chance to test your
             preparation level and get a predicted rank!
           </p>
-          <p>
+          <p class="{{ currentTheme }}">
             Disclaimer: The predicted rank is based on your performance and may not
             always reflect your actual KCET rank.
           </p>
-          <button class="btn btn-primary" (click)="startMockTest()">Start Mock Test</button>
+          <button class="btn btn-primary {{ currentTheme }}" (click)="startMockTest()">Start Mock Test</button>
         </div>
       </div>
     </div>
 
     <!-- Study Plan Calendar -->
-    <div class="col-lg-6 calendar-container">
-      <div class="card calendar-card">
-        <div class="card-body">
-          <h3 class="calendar-title">Study Plan Calendar</h3>
-          <div class="calendar">
-            <div class="calendar-header">
-              <button class="btn-prev" (click)="prevMonth()">←</button>
-              <h3 class="month-display">{{ months[currentMonth] }} {{ currentYear }}</h3>
-              <button class="btn-next" (click)="nextMonth()">→</button>
+    <div class="col-lg-6 calendar-container {{ currentTheme }}">
+      <div class="card calendar-card {{ currentTheme }}">
+        <div class="card-body {{ currentTheme }}">
+          <h3 class="calendar-title {{ currentTheme }}">Study Plan Calendar</h3>
+          <div class="calendar {{ currentTheme }}">
+            <div class="calendar-header {{ currentTheme }}">
+              <button class="btn-prev {{ currentTheme }}" (click)="prevMonth()">←</button>
+              <h3 class="month-display {{ currentTheme }}">{{ months[currentMonth] }} {{ currentYear }}</h3>
+              <button class="btn-next {{ currentTheme }}" (click)="nextMonth()">→</button>
             </div>
-            <div class="calendar-days">
+            <div class="calendar-days {{ currentTheme }}">
               <!-- Weekday Labels -->
-              <div class="day-label" *ngFor="let day of weekdays">{{ day }}</div>
+              <div class="day-label {{ currentTheme }}" *ngFor="let day of weekdays">{{ day }}</div>
 
               <!-- Calendar Dates -->
               <div
-                class="calendar-date"
+                class="calendar-date {{ currentTheme }}"
                 *ngFor="let date of calendarDays"
                 [ngClass]="{ 'event-day': isEventDay(date), 'today': isToday(date) }"
                 (click)="openOverlay(date)"
@@ -52,23 +52,23 @@
   </div>
 
   <!-- Overlay -->
-<div class="overlay" *ngIf="selectedAgenda">
-  <div class="overlay-content">
-    <h3>Agenda for {{ selectedDate | date: 'fullDate' }}</h3>
-    <div *ngFor="let subject of selectedAgenda.subjects">
-      <h4>{{ subject.subject }}</h4>
-      <ul>
-        <li *ngFor="let subtopic of subject.subtopics">
-          <input
-            type="checkbox"
-            [(ngModel)]="subtopic.completed"
-            (change)="updateProgress()"
-          />
-          {{ subtopic.subtopic }} - {{ subtopic.hours }} hours
-        </li>
-      </ul>
+  <div class="overlay {{ currentTheme }}" *ngIf="selectedAgenda">
+    <div class="overlay-content {{ currentTheme }}">
+      <h3 class="{{ currentTheme }}">Agenda for {{ selectedDate | date: 'fullDate' }}</h3>
+      <div *ngFor="let subject of selectedAgenda.subjects">
+        <h4 class="{{ currentTheme }}">{{ subject.subject }}</h4>
+        <ul class="{{ currentTheme }}">
+          <li *ngFor="let subtopic of subject.subtopics" class="{{ currentTheme }}">
+            <input
+              type="checkbox"
+              [(ngModel)]="subtopic.completed"
+              (change)="updateProgress()"
+            />
+            {{ subtopic.subtopic }} - {{ subtopic.hours }} hours
+          </li>
+        </ul>
+      </div>
+      <button class="btn-close {{ currentTheme }}" (click)="closeOverlay()">Close</button>
     </div>
-    <button class="btn-close" (click)="closeOverlay()"></button>
   </div>
-</div>
 </div>
