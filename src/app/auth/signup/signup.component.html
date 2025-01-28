@@ -9,6 +9,17 @@
             Sign up to access your personalized KCET preparation journey.
           </p>
 
+          <!-- Error Overlay -->
+          <div class="error-overlay" *ngIf="errorMessages.length > 0">
+            <div class="error-box">
+              <h3>Error(s) occurred:</h3>
+              <ul>
+                <li *ngFor="let error of errorMessages">{{ error.message }}</li>
+              </ul>
+              <button (click)="closeErrorOverlay()" class="btn btn-outline-danger">Close</button>
+            </div>
+          </div>
+
           <!-- Signup Form -->
           <form (ngSubmit)="onSignup()">
             <div class="mb-3">

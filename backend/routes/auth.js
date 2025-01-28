@@ -14,13 +14,20 @@ const MathematicsCollection = mongoose.connection.collection('Previous_Year_Ques
 // Rate limiter for login route
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 50000, // Limit each IP to 5 login attempts per windowMs
+  max: 50, // Limit each IP to 5 login attempts per windowMs
   message: 'Too many login attempts. Please try again later.',
+});
+// Rate limiter for signup route
+const signupLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 50, // Limit each IP to 50 signup attempts per windowMs
+  message: 'Too many signup attempts. Please try again later.',
 });
 
 // Signup Route
 router.post(
   '/signup',
+  signupLimiter,
   [
     body('username').isAlphanumeric().withMessage('Username must be alphanumeric').trim(),
     body('password')
@@ -34,27 +41,89 @@ router.post(
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({
+          errors: errors.array().map((err) => ({
+            field: err.param,
+            message: err.msg,
+          })),
+        });
       }
 
       const { username, password } = req.body;
 
-      // Check if the username already exists
       const existingUser = await User.findOne({ username });
       if (existingUser) {
-        return res.status(400).json({ error: 'Username already taken' });
+        return res.status(400).json({
+          errors: [{ field: 'username', message: 'Username already taken' }],
+        });
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new User({ username, password: hashedPassword });
-      
-      // Set the token field to the MongoDB `_id`
+
       newUser.token = newUser._id.toString();
-      
+
       await newUser.save();
-      res.status(201).json({ message: 'User created' });
+      res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
-      res.status(500).json({ error: 'Error creating user' });
+      console.error('Error during signup:', error);
+      res.status(500).json({
+        errors: [
+          { field: 'general', message: 'An error occurred while creating the user. Please try again later.' },
+        ],
+      });
+    }
+  }
+);
+
+// Login Route (updated for consistency)
+router.post(
+  '/login',
+  loginLimiter,
+  [
+    body('username').notEmpty().withMessage('Username is required').trim(),
+    body('password').notEmpty().withMessage('Password is required'),
+  ],
+  async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({
+          errors: errors.array().map((err) => ({
+            field: err.param,
+            message: err.msg,
+          })),
+        });
+      }
+
+      const { username, password } = req.body;
+      const user = await User.findOne({ username });
+      if (!user) {
+        return res.status(404).json({
+          errors: [{ field: 'username', message: 'User not found' }],
+        });
+      }
+
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(401).json({
+          errors: [{ field: 'password', message: 'Invalid password' }],
+        });
+      }
+
+      let token = user.token || user._id.toString();
+
+      if (!user.token) {
+        user.token = token;
+        await user.save();
+      }
+
+      res.json({ token });
+    } catch (error) {
+      console.error('Error during login:', error);
+      res.status(500).json({
+        errors: [{ field: 'general', message: 'An error occurred during login. Please try again later.' }],
+      });
     }
   }
 );
