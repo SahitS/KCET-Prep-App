@@ -355,4 +355,57 @@ $border-color-light: #d1d1d1; // Subtle grey for borders
     font-size: 0.9rem;
   }
 }
+.error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .error-box {
+    background-color: $card-background; // Use your dark or light theme variable
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 400px;
+    color: $text-primary; // Theme-based color
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+    h3 {
+      color: $accent-primary;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+
+      li {
+        color: $text-primary;
+        text-align: left;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    button {
+      background-color: $accent-primary;
+      color: $text-primary;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($accent-primary, 10%);
+      }
+    }
+  }
+}
 

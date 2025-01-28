@@ -7,6 +7,17 @@
         <h2 class="text-center {{ currentTheme }}">Welcome Back!</h2>
         <p class="text-center {{ currentTheme }}">Log in to continue your journey to KCET success</p>
 
+        <!-- Error Overlay -->
+        <div class="error-overlay" *ngIf="errorMessages.length > 0">
+          <div class="error-box">
+            <h3>Error(s) occurred:</h3>
+            <ul>
+              <li *ngFor="let error of errorMessages">{{ error.message }}</li>
+            </ul>
+            <button (click)="closeErrorOverlay()" class="btn btn-outline-danger">Close</button>
+          </div>
+        </div>
+
         <form (ngSubmit)="onLogin()">
           <div class="mb-3">
             <label for="username" class="form-label {{ currentTheme }}">Username</label>
