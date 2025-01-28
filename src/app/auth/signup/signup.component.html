@@ -10,7 +10,7 @@
           </p>
 
           <!-- Error Overlay -->
-          <div class="error-overlay" *ngIf="errorMessages.length > 0">
+          <div class="error-overlay {{currentTheme}}" *ngIf="errorMessages.length > 0">
             <div class="error-box">
               <h3>Error(s) occurred:</h3>
               <ul>

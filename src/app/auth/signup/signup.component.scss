@@ -358,7 +358,7 @@ $border-color-light: #d1d1d1; // Subtle grey for borders
   }
 }
 // Error Overlay (common styles)
-.error-overlay {
+.error-overlay.dark-theme {
   position: fixed;
   top: 0;
   left: 0;
