@@ -1,3 +1,4 @@
+// Dark Theme Colors
 $background-dark: #181818;
 $card-background: #242424;
 $text-primary: #f5f5f5;
@@ -7,623 +8,325 @@ $accent-warning: #FACC15;
 $accent-danger: #F87171;
 $hover-effect: #373737;
 
-//light-theme
-$background-light: #f2f2f7; 
-$card-background-light: #eaeaea; 
-$text-primary-light: #1f1f1f; 
-$text-secondary-light: #4a4a4a; 
-$accent-primary-light: #A78BFA; 
-$accent-secondary-light: #4ADE80; 
+// Light Theme Colors
+$background-light: #f2f2f7;
+$card-background-light: #eaeaea;
+$text-primary-light: #1f1f1f;
+$text-secondary-light: #4a4a4a;
+$accent-primary-light: #A78BFA;
+$accent-secondary-light: #4ADE80;
 $accent-warning-light: #FACC15;
-$accent-danger-light: #F87171; 
-$hover-effect-light: #d6d6d9; 
+$accent-danger-light: #F87171;
+$hover-effect-light: #d6d6d9;
 
-//dark-theme
-.mock-test-container.dark-theme {
-  max-width: 93.5vw;
-  padding: 2rem;
-  background-color: $background-dark;
-  color: $text-primary;
-  position: relative;
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .header.dark-theme {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.8rem; /* Increased font size for better visibility */
-    margin-bottom: 1.5rem;
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .timer.dark-theme {
-      font-weight: bold;
-      color: $accent-secondary;
-    }
+@mixin card-base($theme) {
+  $bg: if($theme == 'dark', $card-background, $card-background-light);
+  background-color: $bg;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+@mixin button-base($theme) {
+  $bg: if($theme == 'dark', $hover-effect, $hover-effect-light);
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  
+  padding: 0.75rem 2rem;
+  background-color: $bg;
+  color: $text;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover.#{$theme}-theme {
+    background-color: lighten($bg, 10%);
+    transform: scale(1.03);
   }
+}
 
-  .section-switcher.dark-theme {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+@mixin heading-style($theme) {
+  $color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+  color: $color;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 
-    button.dark-theme {
-      padding: 0.75rem 2rem;
-      background-color: $hover-effect;
-      color: $text-primary;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+@mixin theme-styles($theme) {
+  $bg: if($theme == 'dark', $background-dark, $background-light);
+  $card-bg: if($theme == 'dark', $card-background, $card-background-light);
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  $accent: if($theme == 'dark', $accent-primary, $accent-primary-light);
+  $accent-sec: if($theme == 'dark', $accent-secondary, $accent-secondary-light);
+  $accent-warn: if($theme == 'dark', $accent-warning, $accent-warning-light);
+  $accent-dang: if($theme == 'dark', $accent-danger, $accent-danger-light);
+  $hover: if($theme == 'dark', $hover-effect, $hover-effect-light);
 
-      &.active.dark-theme {
-        background-color: $accent-primary;
-        color: $text-primary;
-        transform: scale(1.05); /* Highlight active button */
-      }
+  &.#{$theme}-theme {
+    max-width: 93.5vw;
+    padding: 2rem;
+    background-color: $bg;
+    color: $text;
+    position: relative;
 
-      &:hover.dark-theme {
-        background-color: lighten($hover-effect, 10%);
-        transform: scale(1.03);
+    .header.#{$theme}-theme {
+      @include flex-space-between;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+
+      .timer.#{$theme}-theme {
+        font-weight: bold;
+        color: $accent-sec;
       }
     }
-  }
 
-  .quiz-content.dark-theme {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-
-    .question-box.dark-theme {
-      flex: 3;
-      padding: 2rem;
-      background-color: $card-background;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    .section-switcher.#{$theme}-theme {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
 
-      h3.dark-theme {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.6rem;
-        color: $accent-primary;
-      }
+      button.#{$theme}-theme {
+        @include button-base($theme);
+        font-weight: bold;
 
-      .image-container.dark-theme {
-        width: 100%;
-        max-width: 800px;
-        height: 400px;
-        background-color: white;
-        border-radius: 12px;
-        overflow: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-        min-width: 799px;
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-      }
-
-      .options {
-        display: flex;
-        justify-content: space-around;
-        gap: 1.5rem;
-
-        button.dark-theme {
-          padding: 1rem 2.5rem;
-          background-color: $hover-effect;
-          color: $text-primary;
-          border: none;
-          border-radius: 12px;
-          font-size: 1.4rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          &.selected.dark-theme {
-            background-color: $accent-secondary;
-          }
-
-          &:hover.dark-theme {
-            background-color: lighten($hover-effect, 10%);
-            transform: scale(1.05);
-          }
+        &.active.#{$theme}-theme {
+          background-color: $accent;
+          color: $text;
+          transform: scale(1.05);
         }
       }
     }
 
-    .navigator.dark-theme {
-      flex: 1;
-      padding: 1.5rem;
-      background-color: $card-background;
-      border-radius: 12px;
+    .quiz-content.#{$theme}-theme {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
 
-      h3.dark-theme {
-        margin-bottom: 1.5rem;
-        text-align: center;
-        font-size: 1.6rem;
-        color: $accent-primary;
-      }
-
-      .navigator-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 1rem;
-
-        button.dark-theme {
-          width: 50px;
-          height: 50px;
-          border-radius: 12px;
-          background-color: $hover-effect;
-          color: $text-primary;
-          border: none;
-          cursor: pointer;
-          font-size: 1.2rem;
-
-          &.answered.dark-theme {
-            background-color: $accent-secondary;
-          }
-
-          &.review.dark-theme {
-            background-color: $accent-warning;
-          }
-
-          &:hover.dark-theme {
-            background-color: lighten($hover-effect, 10%);
-          }
-        }
-      }
-    }
-  }
-
-  .navigation-buttons.dark-theme {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    button.dark-theme {
-      padding: 1rem 2.5rem;
-      background-color: $hover-effect;
-      color: $text-primary;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.4rem;
-      font-weight: bold;
-
-      &:hover.dark-theme {
-        background-color: lighten($hover-effect, 10%);
-      }
-
-      &.submit-button.dark-theme {
-        background-color: $accent-secondary;
-      }
-    }
-  }
-
-  .overlay.dark-theme {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-
-    .overlay-content.dark-theme {
-      background-color: $card-background;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      width: 400px;
-
-      h2.dark-theme {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: $accent-primary;
-      }
-
-      form.dark-theme {
+      .question-box.#{$theme}-theme {
+        flex: 3;
+        padding: 2rem;
+        @include card-base($theme);
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
 
-        label.dark-theme {
-          display: flex;
-          justify-content: space-between;
-          color: $text-primary;
-          font-size: 1.2rem;
+        h3.#{$theme}-theme {
+          @include heading-style($theme);
+          font-size: 1.6rem;
+        }
 
-          input.dark-theme {
-            width: 60%;
-            padding: 0.5rem;
-            border: 1px solid $hover-effect;
-            border-radius: 8px;
-            background-color: $background-dark;
-            color: $text-primary;
+        .image-container.#{$theme}-theme {
+          width: 100%;
+          max-width: 800px;
+          height: 400px;
+          background-color: white;
+          border-radius: 12px;
+          overflow: auto;
+          @include flex-center;
+          margin-bottom: 2rem;
+          min-width: 799px;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
           }
         }
 
-        button.dark-theme {
-          padding: 0.75rem 2rem;
-          font-size: 1.2rem;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: bold;
+        .options {
+          display: flex;
+          justify-content: space-around;
+          gap: 1.5rem;
 
-          &:first-of-type.dark-theme {
-            background-color: $accent-secondary;
-            color: $text-primary;
+          button.#{$theme}-theme {
+            @include button-base($theme);
+
+            &.selected.#{$theme}-theme {
+              background-color: $accent-sec;
+            }
+
+            &:hover.#{$theme}-theme {
+              transform: scale(1.05);
+            }
           }
+        }
+      }
 
-          &:last-of-type.dark-theme {
-            background-color: $accent-danger;
-            color: $text-primary;
-          }
+      .navigator.#{$theme}-theme {
+        flex: 1;
+        padding: 1.5rem;
+        @include card-base($theme);
 
-          &:hover {
-            transform: scale(1.05);
+        h3.#{$theme}-theme {
+          @include heading-style($theme);
+          font-size: 1.6rem;
+        }
+
+        .navigator-grid {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 1rem;
+
+          button.#{$theme}-theme {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: $hover;
+            color: $text;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+
+            &.answered.#{$theme}-theme {
+              background-color: $accent-sec;
+            }
+
+            &.review.#{$theme}-theme {
+              background-color: $accent-warn;
+            }
+
+            &:hover.#{$theme}-theme {
+              background-color: lighten($hover, 10%);
+            }
           }
         }
       }
     }
-  }
 
-  .rank-display.dark-theme {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: $card-background;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    z-index: 200;
+    .navigation-buttons.#{$theme}-theme {
+      @include flex-space-between;
+      margin-top: 2rem;
 
-    h2.dark-theme {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: $accent-primary;
+      button.#{$theme}-theme {
+        @include button-base($theme);
+        font-weight: bold;
+
+        &.submit-button.#{$theme}-theme {
+          background-color: $accent-sec;
+        }
+      }
     }
 
-    p.dark-theme {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: $accent-secondary;
+    .overlay.#{$theme}-theme {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      @include flex-center;
+      z-index: 100;
+
+      .overlay-content.#{$theme}-theme {
+        @include card-base($theme);
+        padding: 2rem;
+        text-align: center;
+        width: 400px;
+
+        h2.#{$theme}-theme {
+          @include heading-style($theme);
+        }
+
+        form.#{$theme}-theme {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          label.#{$theme}-theme {
+            display: flex;
+            justify-content: space-between;
+            color: $text;
+            font-size: 1.2rem;
+
+            input.#{$theme}-theme {
+              width: 60%;
+              padding: 0.5rem;
+              border: 1px solid $hover;
+              border-radius: 8px;
+              background-color: $bg;
+              color: $text;
+            }
+          }
+
+          button.#{$theme}-theme {
+            padding: 0.75rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:first-of-type.#{$theme}-theme {
+              background-color: $accent-sec;
+              color: $text;
+            }
+
+            &:last-of-type.#{$theme}-theme {
+              background-color: $accent-dang;
+              color: $text;
+            }
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
     }
 
-    button.dark-theme {
-      padding: 0.75rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: $hover-effect;
-      color: $text-primary;
+    .rank-display.#{$theme}-theme {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      @include card-base($theme);
+      padding: 2rem;
+      text-align: center;
+      width: 400px;
+      z-index: 200;
 
-      &:hover.dark-theme {
-        background-color: lighten($hover-effect, 10%);
-        transform: scale(1.05);
+      h2.#{$theme}-theme {
+        @include heading-style($theme);
+        margin-bottom: 1rem;
+      }
+
+      p.#{$theme}-theme {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: $accent-sec;
+      }
+
+      button.#{$theme}-theme {
+        @include button-base($theme);
+        font-size: 1.2rem;
+
+        &:hover.#{$theme}-theme {
+          transform: scale(1.05);
+        }
       }
     }
   }
 }
 
-
-
-//light-theme
-.mock-test-container.light-theme {
-  max-width: 93.5vw;
-  padding: 2rem;
-  background-color: $background-light;
-  color: $text-primary;
-  position: relative;
-
-  .header.light-theme {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.8rem; /* Increased font size for better visibility */
-    margin-bottom: 1.5rem;
-
-    .timer.light-theme {
-      font-weight: bold;
-      color: $accent-secondary-light;
-    }
-  }
-
-  .section-switcher.light-theme {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-
-    button.light-theme {
-      padding: 0.75rem 2rem;
-      background-color: $hover-effect-light;
-      color: $text-primary-light;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-
-      &.active.light-theme {
-        background-color: $accent-primary-light;
-        color: $text-primary-light;
-        transform: scale(1.05); /* Highlight active button */
-      }
-
-      &:hover.light-theme {
-        background-color: lighten($hover-effect-light, 10%);
-        transform: scale(1.03);
-      }
-    }
-  }
-
-  .quiz-content.light-theme {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-
-    .question-box.light-theme {
-      flex: 3;
-      padding: 2rem;
-      background-color: $card-background-light;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      h3.light-theme {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.6rem;
-        color: $accent-primary-light;
-      }
-
-      .image-container.light-theme {
-        width: 100%;
-        max-width: 800px;
-        height: 400px;
-        background-color: white;
-        border-radius: 12px;
-        overflow: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-        min-width: 799px;
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-      }
-
-      .options {
-        display: flex;
-        justify-content: space-around;
-        gap: 1.5rem;
-
-        button.light-theme {
-          padding: 1rem 2.5rem;
-          background-color: $hover-effect-light;
-          color: $text-primary-light;
-          border: none;
-          border-radius: 12px;
-          font-size: 1.4rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          &.selected.light-theme {
-            background-color: $accent-secondary-light;
-          }
-
-          &:hover.light-theme {
-            background-color: lighten($hover-effect-light, 10%);
-            transform: scale(1.05);
-          }
-        }
-      }
-    }
-
-    .navigator.light-theme {
-      flex: 1;
-      padding: 1.5rem;
-      background-color: $card-background-light;
-      border-radius: 12px;
-
-      h3.light-theme {
-        margin-bottom: 1.5rem;
-        text-align: center;
-        font-size: 1.6rem;
-        color: $accent-primary-light;
-      }
-
-      .navigator-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 1rem;
-
-        button.light-theme {
-          width: 50px;
-          height: 50px;
-          border-radius: 12px;
-          background-color: $hover-effect-light;
-          color: $text-primary-light;
-          border: none;
-          cursor: pointer;
-          font-size: 1.2rem;
-
-          &.answered.light-theme {
-            background-color: $accent-secondary-light;
-          }
-
-          &.review.light-theme {
-            background-color: $accent-warning-light;
-          }
-
-          &:hover.light-theme {
-            background-color: lighten($hover-effect-light, 10%);
-          }
-        }
-      }
-    }
-  }
-
-  .navigation-buttons.light-theme {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    button.light-theme {
-      padding: 1rem 2.5rem;
-      background-color: $hover-effect-light;
-      color: $text-primary-light;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.4rem;
-      font-weight: bold;
-
-      &:hover.light-theme {
-        background-color: lighten($hover-effect-light, 10%);
-      }
-
-      &.submit-button.light-theme {
-        background-color: $accent-secondary-light;
-      }
-    }
-  }
-
-  .overlay.light-theme {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-
-    .overlay-content.light-theme {
-      background-color: $card-background-light;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      width: 400px;
-
-      h2.light-theme {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: $accent-primary-light;
-      }
-
-      form.light-theme {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        label.light-theme {
-          display: flex;
-          justify-content: space-between;
-          color: $text-primary-light;
-          font-size: 1.2rem;
-
-          input.light-theme {
-            width: 60%;
-            padding: 0.5rem;
-            border: 1px solid $hover-effect-light;
-            border-radius: 8px;
-            background-color: $background-light;
-            color: $text-primary-light;
-          }
-        }
-
-        button.light-theme {
-          padding: 0.75rem 2rem;
-          font-size: 1.2rem;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: bold;
-
-          &:first-of-type.light-theme {
-            background-color: $accent-secondary-light;
-            color: $text-primary-light;
-          }
-
-          &:last-of-type.light-theme {
-            background-color: $accent-danger-light;
-            color: $text-primary-light;
-          }
-
-          &:hover {
-            transform: scale(1.05);
-          }
-        }
-      }
-    }
-  }
-
-  .rank-display.light-theme {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: $card-background-light;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    z-index: 200;
-
-    h2.light-theme {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: $accent-primary-light;
-    }
-
-    p.light-theme {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: $accent-secondary-light;
-    }
-
-    button.light-theme {
-      padding: 0.75rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: $hover-effect-light;
-      color: $text-primary-light;
-
-      &:hover {
-        background-color: lighten($hover-effect-light, 10%);
-        transform: scale(1.05);
-      }
-    }
-  }
+// Apply themes
+.mock-test-container {
+  @include theme-styles('dark');
+  @include theme-styles('light');
 }

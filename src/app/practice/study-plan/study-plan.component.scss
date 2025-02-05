@@ -20,504 +20,221 @@ $accent-secondary-light: #51c29a;
 $hover-effect-light: #e9ecef; 
 $border-color-light: #dee2e6; 
 
-// Study Plan Container Dark Theme
-.study-plan-container.dark-theme {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 2rem;
-  background-color: $background-dark;
-  border-radius: 16px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-  text-align: center;
+// Mixins
+@mixin theme-colors($theme) {
+  @if $theme == 'dark' {
+    background-color: $background-dark;
+    color: $text-primary;
+  } @else {
+    background-color: $background-light;
+    color: $text-primary-light;
+  }
+}
 
-  h1.dark-theme {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: $accent-primary;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+@mixin card-style($theme) {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  @if $theme == 'dark' {
+    background-color: lighten($card-background, 5%);
+  } @else {
+    background-color: lighten($card-background-light, 5%);
   }
 
-  .input-section.dark-theme {
-    background-color: lighten($card-background, 5%);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  }
+}
 
-    p.dark-theme {
-      font-size: 1.2rem;
-      color: $text-secondary;
-      margin-bottom: 1.5rem;
-    }
+@mixin button-style($theme, $type: 'primary') {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-    mat-form-field.dark-theme {
-      width: 100%;
-      max-width: 300px;
-      margin: 1rem auto;
-      color: $text-secondary;
-
-      mat-label.dark-theme {
-        font-size: 1rem;
-        color: $text-secondary;
-      }
-
-      input.dark-theme {
-        color: $text-primary;
-      }
-    }
-
-    .preferences.dark-theme {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-
-      mat-form-field.dark-theme {
-        width: 100%;
-        max-width: 250px;
-
-        input.dark-theme {
-          color: $text-primary;
-        }
-      }
-    }
-
-    mat-checkbox.dark-theme {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      color: $text-secondary;
-
-      .mat-checkbox-label.dark-theme {
-        color: $text-secondary;
-      }
-    }
-
-    .btn-generate.dark-theme {
+  @if $theme == 'dark' {
+    @if $type == 'primary' {
       background-color: $accent-primary;
       color: $text-primary;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover.dark-theme {
-        background-color: lighten($accent-primary, 10%);
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  .study-plan-details.dark-theme {
-    display: grid;
-    gap: 1.5rem;
-
-    .btn-back.dark-theme {
-      grid-column: 1 / -1;
-      align-self: flex-start;
-      background-color: $hover-effect;
+    } @else {
+      background-color: $accent-secondary;
       color: $text-primary;
-      font-size: 1rem;
-      font-weight: bold;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover.dark-theme {
-        background-color: lighten($hover-effect, 10%);
-      }
     }
-
-    .day-grid.dark-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      justify-content: center;
-
-      .day-card.dark-theme {
-        background-color: lighten($card-background, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        &:hover.dark-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        h3.dark-theme {
-          font-size: 1.5rem;
-          color: $accent-primary;
-          margin-bottom: 0.5rem;
-        }
-
-        p.dark-theme {
-          font-size: 1rem;
-          color: $text-secondary;
-        }
-      }
-    }
-
-    .subject-grid.dark-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-
-      .subject-card.dark-theme {
-        background-color: lighten($card-background, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        &:hover.dark-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        h3.dark-theme {
-          font-size: 1.4rem;
-          color: $accent-primary;
-          margin-bottom: 0.5rem;
-        }
-
-        p.dark-theme {
-          font-size: 1rem;
-          color: $text-secondary;
-        }
-      }
-    }
-
-    .subtopic-grid.dark-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-
-      .subtopic-card.dark-theme {
-        background-color: lighten($card-background, 5%);
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-        p.dark-theme {
-          font-size: 1rem;
-          color: $text-secondary;
-          margin: 0.5rem 0;
-        }
-      }
-    }
-  }
-}
-.study-plan-details.dark-theme {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-
-  .btn-save.dark-theme, .btn-analysis.dark-theme {
-    background-color: $accent-primary;
-    color: $text-primary;
-    margin-top: 0.8vw;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.5rem 2rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover.dark-theme {
-      background-color: lighten($accent-primary, 10%);
-      transform: scale(1.05);
+  } @else {
+    @if $type == 'primary' {
+      background-color: $accent-primary-light;
+      color: $text-primary-light;
+    } @else {
+      background-color: $accent-secondary-light;
+      color: $text-primary-light;
     }
   }
 
-  .btn-analysis.dark-theme {
-    background-color: $accent-secondary;
-
-    &:hover.dark-theme {
-      background-color: lighten($accent-secondary, 10%);
-    }
-  }
-
-  /* Add this new container for buttons */
-  .button-container.dark-theme {
-    display: flex;
-    gap: 1rem; /* Space between buttons */
-    justify-content: center; /* Center the buttons horizontally */
-    width: 100%; /* Ensure the buttons stay centered */
-  }
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  .study-plan-container {
-    padding: 1.5rem;
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    .study-plan-details {
-      .day-card,
-      .subject-card,
-      .subtopic-card {
-        width: 100%;
-      }
+  &:hover {
+    transform: scale(1.05);
+    @if $theme == 'dark' {
+      background-color: lighten(if($type == 'primary', $accent-primary, $accent-secondary), 10%);
+    } @else {
+      background-color: lighten(if($type == 'primary', $accent-primary-light, $accent-secondary-light), 10%);
     }
   }
 }
 
+@mixin responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
 
-
-//light Theme
 // Study Plan Container
-.study-plan-container.light-theme {
+@mixin study-plan-container($theme) {
   max-width: 1200px;
   margin: 50px auto;
   padding: 2rem;
-  background-color: $background-light;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
+  @include theme-colors($theme);
 
-  h1.light-theme {
+  h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: $accent-primary-light;
+    color: if($theme == 'dark', $accent-primary, $accent-primary-light);
     margin-bottom: 2rem;
     text-transform: uppercase;
   }
 
-  .input-section.light-theme {
-    background-color: lighten($card-background-light, 5%);
+  .input-section {
+    @include card-style($theme);
     padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
 
-    p.light-theme {
+    p {
       font-size: 1.2rem;
-      color: $text-secondary-light;
+      color: if($theme == 'dark', $text-secondary, $text-secondary-light);
       margin-bottom: 1.5rem;
     }
 
-    mat-form-field.light-theme {
+    mat-form-field {
       width: 100%;
       max-width: 300px;
       margin: 1rem auto;
-      color: $text-secondary-light;
+      color: if($theme == 'dark', $text-secondary, $text-secondary-light);
 
-      mat-label.light-theme {
+      mat-label {
         font-size: 1rem;
-        color: $text-secondary-light;
+        color: if($theme == 'dark', $text-secondary, $text-secondary-light);
       }
 
-      input.light-theme {
-        color: $text-primary-light;
+      input {
+        color: if($theme == 'dark', $text-primary, $text-primary-light);
       }
     }
 
-    .preferences.light-theme {
+    .preferences {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
 
-      mat-form-field.light-theme {
+      mat-form-field {
         width: 100%;
         max-width: 250px;
-
-        input.light-theme {
-          color: $text-primary-light;
-        }
       }
     }
 
-    mat-checkbox.light-theme {
+    mat-checkbox {
       margin-top: 1.5rem;
       font-size: 1rem;
-      color: $text-secondary-light;
+      color: if($theme == 'dark', $text-secondary, $text-secondary-light);
 
-      .mat-checkbox-label.light-theme {
-        color: $text-secondary-light;
+      .mat-checkbox-label {
+        color: if($theme == 'dark', $text-secondary, $text-secondary-light);
       }
     }
 
-    .btn-generate.light-theme {
-      background-color: $accent-primary-light;
-      color: $text-primary-light;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover.light-theme {
-        background-color: lighten($accent-primary-light, 10%);
-        transform: scale(1.05);
-      }
+    .btn-generate {
+      @include button-style($theme);
     }
   }
 
-  .study-plan-details.light-theme {
-    display: grid;
-    gap: 1.5rem;
+  .study-plan-details {
+    @include responsive-grid;
 
-    .btn-back.light-theme {
+    .btn-back {
       grid-column: 1 / -1;
       align-self: flex-start;
-      background-color: $hover-effect-light;
-      color: $text-primary-light;
+      @include button-style($theme, 'secondary');
       font-size: 1rem;
-      font-weight: bold;
       padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      border: none;
+    }
+
+    .day-grid, .subject-grid, .subtopic-grid {
+      @include responsive-grid;
+    }
+
+    .day-card, .subject-card {
+      @include card-style($theme);
+      text-align: center;
       cursor: pointer;
-      transition: all 0.3s ease;
 
-      &:hover.light-theme {
-        background-color: lighten($hover-effect-light, 10%);
+      h3 {
+        font-size: 1.5rem;
+        color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: if($theme == 'dark', $text-secondary, $text-secondary-light);
       }
     }
 
-    .day-grid.light-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+    .subtopic-card {
+      @include card-style($theme);
+      padding: 1rem;
+
+      p {
+        font-size: 1rem;
+        color: if($theme == 'dark', $text-secondary, $text-secondary-light);
+        margin: 0.5rem 0;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      gap: 1rem;
       justify-content: center;
+      width: 100%;
+      flex-wrap: wrap;
 
-      .day-card.light-theme {
-        background-color: lighten($card-background-light, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        &:hover.light-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        h3.light-theme {
-          font-size: 1.5rem;
-          color: $accent-primary-light;
-          margin-bottom: 0.5rem;
-        }
-
-        p.light-theme {
-          font-size: 1rem;
-          color: $text-secondary-light;
-        }
+      .btn-save, .btn-analysis {
+        @include button-style($theme);
+        margin-top: 0.8vw;
       }
-    }
 
-    .subject-grid.light-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-
-      .subject-card.light-theme {
-        background-color: lighten($card-background-light, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        &:hover.light-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        h3.light-theme {
-          font-size: 1.4rem;
-          color: $accent-primary-light;
-          margin-bottom: 0.5rem;
-        }
-
-        p.light-theme {
-          font-size: 1rem;
-          color: $text-secondary-light;
-        }
-      }
-    }
-
-    .subtopic-grid.light-theme {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-
-      .subtopic-card.light-theme {
-        background-color: lighten($card-background-light, 5%);
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-        p.light-theme {
-          font-size: 1rem;
-          color: $text-secondary-light;
-          margin: 0.5rem 0;
-        }
+      .btn-analysis {
+        @include button-style($theme, 'secondary');
       }
     }
   }
 }
-.study-plan-details.light-theme {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 
-  .btn-save.light-theme, .btn-analysis.light-theme {
-    background-color: $accent-primary-light;
-    color: $text-primary;
-    margin-top: 0.8vw;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.5rem 2rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+// Dark Theme
+.study-plan-container.dark-theme {
+  @include study-plan-container('dark');
+}
 
-    &:hover.light-theme {
-      background-color: lighten($accent-primary-light, 10%);
-      transform: scale(1.05);
-    }
-  }
-
-  .btn-analysis.light-theme {
-    background-color: $accent-secondary-light;
-
-    &:hover.light-theme {
-      background-color: lighten($accent-secondary-light, 10%);
-    }
-  }
-
-  /* Add this new container for buttons */
-  .button-container.light-theme {
-    display: flex;
-    gap: 1rem; /* Space between buttons */
-    justify-content: center; /* Center the buttons horizontally */
-    width: 100%; /* Ensure the buttons stay centered */
-  }
+// Light Theme
+.study-plan-container.light-theme {
+  @include study-plan-container('light');
 }
 
 // Responsive Design
@@ -529,13 +246,18 @@ $border-color-light: #dee2e6;
       font-size: 2rem;
     }
 
+    .input-section {
+      .preferences {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
     .study-plan-details {
-      .day-card,
-      .subject-card,
-      .subtopic-card {
-        width: 100%;
+      .button-container {
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
 }
-

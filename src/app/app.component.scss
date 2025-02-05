@@ -24,36 +24,87 @@ $light-hover-effect: #e0e0e0;
 $light-border-color: #dddddd;
 $light-banner-background: #f8f8f8;
 
-// Global Body Styling
-body.dark-theme {
-  background-color: $dark-background;
-  color: $dark-text-primary;
-  font-family: 'Roboto', sans-serif;
+// Mixins
+@mixin theme-background($theme) {
+  background-color: if($theme == 'dark', $dark-background, $light-background);
+  color: if($theme == 'dark', $dark-text-primary, $light-text-primary);
   transition: background-color 0.3s, color 0.3s;
 }
 
-body.light-theme {
-  background-color: $light-background;
-  color: $light-text-primary;
+@mixin navbar-theme($theme) {
+  background-color: if($theme == 'dark', $dark-navbar-background, $light-navbar-background);
+  color: if($theme == 'dark', $dark-text-primary, $light-text-primary);
+  box-shadow: if($theme == 'dark', 
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@mixin dropdown-theme($theme) {
+  background-color: if($theme == 'dark', $dark-navbar-background, $light-navbar-background);
+  box-shadow: if($theme == 'dark',
+    0 4px 10px rgba(0, 0, 0, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1));
+
+  .dropdown-item {
+    color: if($theme == 'dark', $dark-text-primary, $light-text-primary);
+    &:hover {
+      background-color: if($theme == 'dark', $dark-accent-primary, $light-accent-primary);
+      color: if($theme == 'dark', $dark-background, $light-background);
+    }
+  }
+}
+
+@mixin button-theme($theme) {
+  background-color: if($theme == 'dark', $dark-accent-primary, $light-accent-primary);
+  color: if($theme == 'dark', $dark-text-primary, $light-text-primary);
+
+  &:hover {
+    background-color: if($theme == 'dark', 
+      lighten($dark-accent-primary, 10%),
+      lighten($light-accent-primary, 10%));
+    color: if($theme == 'dark', $dark-background, $light-background);
+  }
+}
+
+@mixin banner-theme($theme) {
+  background-color: if($theme == 'dark', $dark-banner-background, $light-banner-background);
+  color: if($theme == 'dark', $dark-text-primary, $light-text-primary);
+  box-shadow: if($theme == 'dark',
+    0 4px 6px rgba(0, 0, 0, 0.5),
+    0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+@mixin content-theme($theme) {
+  background-color: if($theme == 'dark', $dark-section-background, $light-section-background);
+  box-shadow: if($theme == 'dark',
+    0 4px 10px rgba(0, 0, 0, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+// Global Body Styling
+body {
   font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s, color 0.3s;
+  
+  &.dark-theme {
+    @include theme-background('dark');
+  }
+  
+  &.light-theme {
+    @include theme-background('light');
+  }
 }
 
 // Navbar
-body.dark-theme .navbar {
-  background-color: $dark-navbar-background;
-  color: $dark-text-primary;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-body.light-theme .navbar {
-  background-color: $light-navbar-background;
-  color: $light-text-primary;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .navbar {
   padding: 1rem;
+
+  body.dark-theme & {
+    @include navbar-theme('dark');
+  }
+
+  body.light-theme & {
+    @include navbar-theme('light');
+  }
 
   .navbar-brand {
     color: inherit;
@@ -73,11 +124,20 @@ body.light-theme .navbar {
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
 
-    &:hover {
-      color: $dark-accent-primary;
-      background-color: $dark-hover-effect;
-      border-radius: 8px;
+    body.dark-theme & {
+      &:hover {
+        color: $dark-accent-primary;
+        background-color: $dark-hover-effect;
+      }
+    }
+
+    body.light-theme & {
+      &:hover {
+        color: $light-accent-primary;
+        background-color: $light-hover-effect;
+      }
     }
   }
 
@@ -87,29 +147,11 @@ body.light-theme .navbar {
     padding: 0.5rem 0;
 
     body.dark-theme & {
-      background-color: $dark-navbar-background;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
-      .dropdown-item {
-        color: $dark-text-primary;
-        &:hover {
-          background-color: $dark-accent-primary;
-          color: $dark-background;
-        }
-      }
+      @include dropdown-theme('dark');
     }
 
     body.light-theme & {
-      background-color: $light-navbar-background;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-      .dropdown-item {
-        color: $light-text-primary;
-        &:hover {
-          background-color: $light-accent-primary;
-          color: $light-background;
-        }
-      }
+      @include dropdown-theme('light');
     }
   }
 }
@@ -123,57 +165,31 @@ body.light-theme .navbar {
   transition: all 0.3s ease;
 
   body.dark-theme & {
-    background-color: $dark-accent-primary;
-    color: $dark-text-primary;
-
-    &:hover {
-      background-color: lighten($dark-accent-primary, 10%);
-      color: $dark-background;
-    }
+    @include button-theme('dark');
   }
 
   body.light-theme & {
-    background-color: $light-accent-primary;
-    color: $light-text-primary;
-
-    &:hover {
-      background-color: lighten($light-accent-primary, 10%);
-      color: $light-background;
-    }
+    @include button-theme('light');
   }
 }
 
 // Limited Time Offer Banner
-body.dark-theme .banner {
-  background-color: $dark-banner-background;
-  color: $dark-text-primary;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-}
-
-body.light-theme .banner {
-  background-color: $light-banner-background;
-  color: $light-text-primary;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .banner {
   text-align: center;
   padding: 15px;
   font-size: 1.2rem;
   font-weight: bold;
+
+  body.dark-theme & {
+    @include banner-theme('dark');
+  }
+
+  body.light-theme & {
+    @include banner-theme('light');
+  }
 }
 
 // Main Content Section
-body.dark-theme .main-content {
-  background-color: $dark-section-background;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-body.light-theme .main-content {
-  background-color: $light-section-background;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 .main-content {
   padding: 2rem;
   margin: 1.5rem auto;
@@ -182,23 +198,31 @@ body.light-theme .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  body.dark-theme & {
+    @include content-theme('dark');
+  }
+
+  body.light-theme & {
+    @include content-theme('light');
+  }
 }
 
 // Footer
-body.dark-theme .footer {
-  background-color: $dark-navbar-background;
-  color: $dark-text-secondary;
-}
-
-body.light-theme .footer {
-  background-color: $light-navbar-background;
-  color: $light-text-secondary;
-}
-
 .footer {
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
+
+  body.dark-theme & {
+    background-color: $dark-navbar-background;
+    color: $dark-text-secondary;
+  }
+
+  body.light-theme & {
+    background-color: $light-navbar-background;
+    color: $light-text-secondary;
+  }
 
   p {
     margin: 0;

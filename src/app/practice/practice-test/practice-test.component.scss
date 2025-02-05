@@ -1,128 +1,128 @@
-// Global Variables
+// ====== Global Variables ======
 $card-background: #242424;
 $text-primary: #f5f5f5;
 $text-secondary: #c7c7c7;
 $accent-primary: #A78BFA;
 $accent-secondary: #4ADE80;
-$accent-warning: #FACC15; // Yellow for marked questions
-$accent-danger: #F87171; // Red for skipped questions
+$accent-warning: #FACC15;
+$accent-danger: #F87171;
 $hover-effect: #373737;
 $border-color: #3a3a3a;
 $background-dark: #181818;
 
-//light-theme
-// Light Theme Color Palette
-$background-light: #f3f4f6; 
-$card-background-light: #ffffff; 
-$text-primary-light: #212529; 
-$text-secondary-light: #495057; 
-$accent-primary-light: #8a5ddb; 
+// Light Theme Variables
+$background-light: #f3f4f6;
+$card-background-light: #ffffff;
+$text-primary-light: #212529;
+$text-secondary-light: #495057;
+$accent-primary-light: #8a5ddb;
 $accent-secondary-light: #51c29a;
-$accent-warning-light: #f9d46c; 
-$accent-danger-light: #f28b82; 
-$hover-effect-light: #e9ecef; 
+$accent-warning-light: #f9d46c;
+$accent-danger-light: #f28b82;
+$hover-effect-light: #e9ecef;
 $border-color-light: #dee2e6;
 
-// Global Variables
-$fixed-question-height: 400px; // Fixed height for question container
-$fixed-question-width: 100%; // Flexible width
+// Layout Variables
+$fixed-question-height: 400px;
+$fixed-question-width: 100%;
 $navigator-btn-size: 2rem;
 
-// Section Container
-.section-container.dark-theme {
+// ====== Mixins ======
+@mixin section-container($theme) {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: $background-dark;
+  background-color: map-get($theme, background);
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
 
-  // Overlay Section
-  .overlay.dark-theme {
+@mixin overlay($theme) {
+  .overlay {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 15vh;
     padding: 2rem;
 
-    .start-container.dark-theme {
+    .start-container {
       text-align: center;
       max-width: 600px;
-      background-color: lighten($card-background, 5%);
+      background-color: lighten(map-get($theme, card-background), 5%);
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 
-      h1.dark-theme {
+      h1 {
         font-size: 2rem;
-        color: $accent-primary;
+        color: map-get($theme, accent-primary);
         margin-bottom: 1rem;
       }
 
-      p.dark-theme {
+      p {
         font-size: 1rem;
-        color: $text-secondary;
+        color: map-get($theme, text-secondary);
         margin-bottom: 1rem;
       }
 
-      ul.dark-theme {
+      ul {
         text-align: left;
         padding-left: 20px;
 
-        li.dark-theme {
+        li {
           font-size: 1rem;
-          color: $text-secondary;
+          color: map-get($theme, text-secondary);
           margin-bottom: 0.5rem;
         }
       }
 
-      .btn-back.dark-theme {
+      .btn-back {
         margin-top: 1.5rem;
         display: inline-block;
         padding: 0.75rem 1.5rem;
-        background: $accent-primary;
-        color: $text-primary;
+        background: map-get($theme, accent-primary);
+        color: map-get($theme, text-primary);
         border: none;
         border-radius: 8px;
         font-weight: bold;
         transition: transform 0.2s ease, background-color 0.3s ease;
 
-        &:hover.dark-theme {
-          background-color: lighten($accent-primary, 10%);
-          color: $hover-effect;
+        &:hover {
+          background-color: lighten(map-get($theme, accent-primary), 10%);
+          color: map-get($theme, hover-effect);
           transform: scale(1.05);
         }
       }
     }
   }
+}
 
-  // Quiz Container
-  .quiz-container.dark-theme {
+@mixin quiz-container($theme) {
+  .quiz-container {
     padding: 2rem;
-    background-color: lighten($card-background, 5%);
+    background-color: lighten(map-get($theme, card-background), 5%);
     border-radius: 16px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 
-    // Header Section
-    .header.dark-theme {
+    .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.5rem;
 
-      h2.dark-theme {
+      h2 {
         font-size: 1.8rem;
-        color: $accent-primary;
+        color: map-get($theme, accent-primary);
         font-weight: bold;
       }
 
-      .section-switcher.dark-theme {
+      .section-switcher {
         display: flex;
         gap: 1rem;
 
-        button.dark-theme {
-          background-color: $hover-effect;
-          color: $text-primary;
+        button {
+          background-color: map-get($theme, hover-effect);
+          color: map-get($theme, text-primary);
           padding: 0.5rem 1.5rem;
           border-radius: 8px;
           font-size: 1rem;
@@ -131,68 +131,67 @@ $navigator-btn-size: 2rem;
           cursor: pointer;
           transition: all 0.3s ease;
 
-          &:hover.dark-theme {
-            background-color: lighten($hover-effect, 10%);
+          &:hover {
+            background-color: lighten(map-get($theme, hover-effect), 10%);
             transform: scale(1.05);
           }
 
-          &.active.dark-theme {
-            background-color: $accent-primary;
-            color: $text-primary;
+          &.active {
+            background-color: map-get($theme, accent-primary);
+            color: map-get($theme, text-primary);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
           }
         }
       }
 
-      .timer.dark-theme {
+      .timer {
         font-size: 1.4rem;
         font-weight: bold;
-        color: $accent-secondary;
+        color: map-get($theme, accent-secondary);
 
-        span.dark-theme {
+        span {
           font-size: 1.6rem;
         }
       }
     }
 
-    // Content Section
-    .content.dark-theme {
+    .content {
       display: flex;
       gap: 1.5rem;
 
-      .question-box.dark-theme {
+      .question-box {
         flex: 3;
         padding: 1.5rem;
-        background-color: $card-background;
+        background-color: map-get($theme, card-background);
         border-radius: 12px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        height: $fixed-question-height; // Fixed height
-        overflow-y: auto; // Enable scrolling for long content
+        height: $fixed-question-height;
+        overflow-y: auto;
         width: $fixed-question-width;
 
-        h3.dark-theme {
+        h3 {
           font-size: 1.4rem;
-          color: $accent-primary;
+          color: map-get($theme, accent-primary);
           margin-bottom: 1rem;
           font-weight: bold;
         }
 
-        p.dark-theme{
-          color: $text-secondary;
+        p {
+          color: map-get($theme, text-secondary);
           margin-bottom: 1.5rem;
           font-size: 1.1rem;
         }
 
-        .options.dark-theme {
+        .options {
           display: flex;
           flex-direction: column;
           gap: 1rem;
 
-          label.dark-theme {
+          label {
             display: flex;
             align-items: center;
             font-size: 1.2rem;
-            color: $text-secondary;
+            color: map-get($theme, text-secondary);
             cursor: pointer;
             transition: color 0.3s ease;
 
@@ -200,32 +199,32 @@ $navigator-btn-size: 2rem;
               margin-right: 0.8rem;
             }
 
-            &:hover.dark-theme {
-              color: $accent-primary;
+            &:hover {
+              color: map-get($theme, accent-primary);
             }
           }
         }
       }
 
-      .question-navigator.dark-theme {
+      .question-navigator {
         flex: 1;
         padding: 1.5rem;
-        background-color: lighten($card-background, 5%);
+        background-color: lighten(map-get($theme, card-background), 5%);
         border-radius: 12px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 
-        h3.dark-theme {
+        h3 {
           font-size: 1.4rem;
-          color: $accent-primary;
+          color: map-get($theme, accent-primary);
           margin-bottom: 1rem;
         }
 
-        .navigator.dark-theme {
+        .navigator {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax($navigator-btn-size, 1fr));
           gap: 0.8rem;
 
-          .navigator-btn.dark-theme {
+          .navigator-btn {
             width: $navigator-btn-size;
             height: $navigator-btn-size;
             border-radius: 8px;
@@ -234,42 +233,41 @@ $navigator-btn-size: 2rem;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            background-color: $hover-effect;
-            color: $text-primary;
+            background-color: map-get($theme, hover-effect);
+            color: map-get($theme, text-primary);
             border: none;
             transition: all 0.3s ease;
 
-            &.answered.dark-theme {
-              background-color: $accent-secondary;
-              color: $text-primary;
+            &.answered {
+              background-color: map-get($theme, accent-secondary);
+              color: map-get($theme, text-primary);
             }
 
-            &.review.dark-theme {
-              background-color: $accent-warning;
-              color: $card-background;
+            &.review {
+              background-color: map-get($theme, accent-warning);
+              color: map-get($theme, card-background);
             }
 
-            &.skipped.dark-theme {
-              background-color: $accent-danger;
-              color: $text-primary;
+            &.skipped {
+              background-color: map-get($theme, accent-danger);
+              color: map-get($theme, text-primary);
             }
 
-            &:hover.dark-theme {
+            &:hover {
               transform: scale(1.1);
-              background-color: lighten($hover-effect, 10%);
+              background-color: lighten(map-get($theme, hover-effect), 10%);
             }
           }
         }
       }
     }
 
-    // Navigation Buttons
-    .navigation-buttons.dark-theme {
+    .navigation-buttons {
       display: flex;
       justify-content: space-between;
       margin-top: 1.5rem;
 
-      .btn.dark-theme {
+      .btn {
         padding: 0.8rem 1.8rem;
         border-radius: 8px;
         font-size: 1.2rem;
@@ -278,40 +276,40 @@ $navigator-btn-size: 2rem;
         transition: all 0.3s ease;
 
         &-secondary {
-          background-color: $hover-effect;
-          color: $text-secondary;
+          background-color: map-get($theme, hover-effect);
+          color: map-get($theme, text-secondary);
 
-          &:hover.dark-theme {
-            background-color: lighten($hover-effect, 10%);
-            color: $text-primary;
+          &:hover {
+            background-color: lighten(map-get($theme, hover-effect), 10%);
+            color: map-get($theme, text-primary);
           }
         }
 
-        &-review.dark-theme {
-          background-color: $accent-warning;
-          color: $card-background;
+        &-review {
+          background-color: map-get($theme, accent-warning);
+          color: map-get($theme, card-background);
 
-          &:hover.dark-theme {
-            background-color: lighten($accent-warning, 10%);
-            color: $text-primary;
+          &:hover {
+            background-color: lighten(map-get($theme, accent-warning), 10%);
+            color: map-get($theme, text-primary);
           }
         }
 
-        &-primary.dark-theme {
-          background-color: $accent-primary;
-          color: $text-primary;
+        &-primary {
+          background-color: map-get($theme, accent-primary);
+          color: map-get($theme, text-primary);
 
-          &:hover.dark-theme {
-            background-color: lighten($accent-primary, 10%);
+          &:hover {
+            background-color: lighten(map-get($theme, accent-primary), 10%);
           }
         }
 
-        &-submit.dark-theme {
-          background-color: $accent-secondary;
-          color: $text-primary;
+        &-submit {
+          background-color: map-get($theme, accent-secondary);
+          color: map-get($theme, text-primary);
 
-          &:hover.dark-theme {
-            background-color: lighten($accent-secondary, 10%);
+          &:hover {
+            background-color: lighten(map-get($theme, accent-secondary), 10%);
           }
         }
       }
@@ -319,322 +317,47 @@ $navigator-btn-size: 2rem;
   }
 }
 
-// Responsive Adjustments
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-  }
+// ====== Theme Maps ======
+$dark-theme: (
+  background: $background-dark,
+  card-background: $card-background,
+  text-primary: $text-primary,
+  text-secondary: $text-secondary,
+  accent-primary: $accent-primary,
+  accent-secondary: $accent-secondary,
+  accent-warning: $accent-warning,
+  accent-danger: $accent-danger,
+  hover-effect: $hover-effect,
+  border-color: $border-color
+);
 
-  .question-box {
-    margin-bottom: 1rem;
-  }
+$light-theme: (
+  background: $background-light,
+  card-background: $card-background-light,
+  text-primary: $text-primary-light,
+  text-secondary: $text-secondary-light,
+  accent-primary: $accent-primary-light,
+  accent-secondary: $accent-secondary-light,
+  accent-warning: $accent-warning-light,
+  accent-danger: $accent-danger-light,
+  hover-effect: $hover-effect-light,
+  border-color: $border-color-light
+);
 
-  .navigation-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .question-navigator .navigator {
-    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
-    gap: 0.5rem;
-  }
+// ====== Theme Implementations ======
+.section-container.dark-theme {
+  @include section-container($dark-theme);
+  @include overlay($dark-theme);
+  @include quiz-container($dark-theme);
 }
 
-
-//light theme
-// Section Container
 .section-container.light-theme {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background-color: $background-light;
-  border-radius: 16px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-
-  // Overlay Section
-  .overlay.light-theme {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 15vh;
-    padding: 2rem;
-
-    .start-container.light-theme {
-      text-align: center;
-      max-width: 600px;
-      background-color: lighten($card-background-light, 5%);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-
-      h1.light-theme {
-        font-size: 2rem;
-        color: $accent-primary-light;
-        margin-bottom: 1rem;
-      }
-
-      p.light-theme {
-        font-size: 1rem;
-        color: $text-secondary-light;
-        margin-bottom: 1rem;
-      }
-
-      ul.light-theme {
-        text-align: left;
-        padding-left: 20px;
-
-        li.light-theme {
-          font-size: 1rem;
-          color: $text-secondary-light;
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      .btn-back.light-theme {
-        margin-top: 1.5rem;
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: $accent-primary-light;
-        color: $text-primary-light;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: transform 0.2s ease, background-color 0.3s ease;
-
-        &:hover.light-theme {
-          background-color: lighten($accent-primary-light, 10%);
-          color: $hover-effect-light;
-          transform: scale(1.05);
-        }
-      }
-    }
-  }
-
-  // Quiz Container
-  .quiz-container.light-theme {
-    padding: 2rem;
-    background-color: lighten($card-background-light, 5%);
-    border-radius: 16px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-
-    // Header Section
-    .header.light-theme {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-
-      h2.light-theme {
-        font-size: 1.8rem;
-        color: $accent-primary-light;
-        font-weight: bold;
-      }
-
-      .section-switcher.light-theme {
-        display: flex;
-        gap: 1rem;
-
-        button.light-theme {
-          background-color: $hover-effect-light;
-          color: $text-primary-light;
-          padding: 0.5rem 1.5rem;
-          border-radius: 8px;
-          font-size: 1rem;
-          font-weight: bold;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          &:hover.light-theme {
-            background-color: lighten($hover-effect-light, 10%);
-            transform: scale(1.05);
-          }
-
-          &.active.light-theme {
-            background-color: $accent-primary-light;
-            color: $text-primary-light;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          }
-        }
-      }
-
-      .timer.light-theme {
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: $accent-secondary-light;
-
-        span.light-theme {
-          font-size: 1.6rem;
-        }
-      }
-    }
-
-    // Content Section
-    .content.light-theme {
-      display: flex;
-      gap: 1.5rem;
-
-      .question-box.light-theme {
-        flex: 3;
-        padding: 1.5rem;
-        background-color: $card-background-light;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        height: $fixed-question-height; // Fixed height
-        overflow-y: auto; // Enable scrolling for long content
-        width: $fixed-question-width;
-
-        h3.light-theme {
-          font-size: 1.4rem;
-          color: $accent-primary-light;
-          margin-bottom: 1rem;
-          font-weight: bold;
-        }
-
-        p.light-theme {
-          color: $text-secondary-light;
-          margin-bottom: 1.5rem;
-          font-size: 1.1rem;
-        }
-
-        .options.light-theme {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-
-          label.light-theme {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            color: $text-secondary-light;
-            cursor: pointer;
-            transition: color 0.3s ease;
-
-            input[type="radio"] {
-              margin-right: 0.8rem;
-            }
-
-            &:hover.light-theme {
-              color: $accent-primary-light;
-            }
-          }
-        }
-      }
-
-      .question-navigator.light-theme {
-        flex: 1;
-        padding: 1.5rem;
-        background-color: lighten($card-background-light, 5%);
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-        h3.light-theme {
-          font-size: 1.4rem;
-          color: $accent-primary-light;
-          margin-bottom: 1rem;
-        }
-
-        .navigator.light-theme {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax($navigator-btn-size, 1fr));
-          gap: 0.8rem;
-
-          .navigator-btn.light-theme {
-            width: $navigator-btn-size;
-            height: $navigator-btn-size;
-            border-radius: 8px;
-            text-align: center;
-            line-height: $navigator-btn-size;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            background-color: $hover-effect-light;
-            color: $text-primary-light;
-            border: none;
-            transition: all 0.3s ease;
-          
-            &.answered.light-theme {
-              background-color: $accent-secondary-light;
-              color: $text-primary-light;
-            }
-          
-            &.review.light-theme {
-              background-color: $accent-warning-light;
-              color: $card-background-light;
-            }
-          
-            &.skipped.light-theme {
-              background-color: $accent-danger-light;
-              color: $text-primary-light;
-            }
-          
-            &:hover.light-theme {
-              transform: scale(1.1);
-              background-color: lighten($hover-effect-light, 10%);
-            }
-          }
-          
-        }
-      }
-    }
-
-    // Navigation Buttons
-    .navigation-buttons.light-theme {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1.5rem;
-
-      .btn.light-theme {
-        padding: 0.8rem 1.8rem;
-        border-radius: 8px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &-secondary.light-theme {
-          background-color: $hover-effect-light;
-          color: $text-secondary-light;
-
-          &:hover.light-theme {
-            background-color: lighten($hover-effect-light, 10%);
-            color: $text-primary-light;
-          }
-        }
-
-        &-review.light-theme {
-          background-color: $accent-warning-light;
-          color: $card-background-light;
-
-          &:hover.light-theme {
-            background-color: lighten($accent-warning-light, 10%);
-            color: $text-primary-light;
-          }
-        }
-
-        &-primary.light-theme {
-          background-color: $accent-primary-light;
-          color: $text-primary-light;
-
-          &:hover.light-theme {
-            background-color: lighten($accent-primary-light, 10%);
-          }
-        }
-
-        &-submit.light-theme {
-          background-color: $accent-secondary-light;
-          color: $text-primary-light;
-
-          &:hover.light-theme {
-            background-color: lighten($accent-secondary-light, 10%);
-          }
-        }
-      }
-    }
-  }
+  @include section-container($light-theme);
+  @include overlay($light-theme);
+  @include quiz-container($light-theme);
 }
 
-// Responsive Adjustments
+// ====== Responsive Adjustments ======
 @media (max-width: 768px) {
   .content {
     flex-direction: column;

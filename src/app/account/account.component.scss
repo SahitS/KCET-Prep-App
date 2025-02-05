@@ -1,5 +1,4 @@
-// Define reusable variables for consistency
-// Dark Theme
+// Dark Theme Colors
 $background-color: #181818;
 $container-bg: #242424;
 $card-bg: #2d2d2d;
@@ -10,7 +9,7 @@ $text-primary: #f5f5f5;
 $text-secondary: #c7c7c7;
 $hover-shadow: rgba(203, 13, 228, 0.3);
 
-// Light Theme
+// Light Theme Colors
 $background-color-light: #f9f9fa;
 $container-bg-light: #f2f3f5;
 $card-bg-light: #ffffff;
@@ -21,21 +20,71 @@ $text-primary-light: #212529;
 $text-secondary-light: #6c757d;
 $hover-shadow-light: rgba(138, 93, 219, 0.3);
 
-// General Layout
+// Mixins
+@mixin theme-colors($theme) {
+  $bg: if($theme == 'dark', $background-color, $background-color-light);
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  
+  background-color: $bg;
+  color: $text;
+}
+
+@mixin container-theme($theme) {
+  $bg: if($theme == 'dark', $container-bg, $container-bg-light);
+  background-color: $bg;
+}
+
+@mixin card-theme($theme) {
+  $bg: if($theme == 'dark', $card-bg, $card-bg-light);
+  $shadow: if($theme == 'dark', $hover-shadow, $hover-shadow-light);
+  
+  background-color: $bg;
+  box-shadow: 0 2px 4px $shadow;
+}
+
+@mixin input-theme($theme) {
+  $bg: if($theme == 'dark', $container-bg, $container-bg-light);
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  $border: if($theme == 'dark', $input-border, $input-border-light);
+  
+  background-color: $bg;
+  color: $text;
+  border: 1px solid $border;
+}
+
+@mixin button-theme($theme, $type: 'primary') {
+  $bg: if($type == 'primary',
+    if($theme == 'dark', $primary-color, $primary-color-light),
+    if($theme == 'dark', $secondary-color, $secondary-color-light));
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  
+  background-color: $bg;
+  color: $text;
+
+  &:hover {
+    background-color: lighten($bg, 10%);
+  }
+}
+
+@mixin heading-theme($theme) {
+  $color: if($theme == 'dark', $primary-color, $primary-color-light);
+  color: $color;
+}
+
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Base Styles
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 
-  &.dark-theme {
-    background-color: $background-color;
-    color: $text-primary;
-  }
-
-  &.light-theme {
-    background-color: $background-color-light;
-    color: $text-primary-light;
-  }
+  &.dark-theme { @include theme-colors('dark'); }
+  &.light-theme { @include theme-colors('light'); }
 }
 
 .account-container {
@@ -46,27 +95,16 @@ body {
   border-radius: 8px;
   box-sizing: border-box;
 
-  &.dark-theme {
-    background-color: $container-bg;
-  }
-
-  &.light-theme {
-    background-color: $container-bg-light;
-  }
+  &.dark-theme { @include container-theme('dark'); }
+  &.light-theme { @include container-theme('light'); }
 }
 
-/* Profile Picture Styling */
 .profile-picture-container {
   text-align: center;
   margin-bottom: 50px;
 
-  &.dark-theme {
-    color: $text-primary;
-  }
-
-  &.light-theme {
-    color: $text-primary-light;
-  }
+  &.dark-theme { color: $text-primary; }
+  &.light-theme { color: $text-primary-light; }
 
   .profile-picture-wrapper {
     display: inline-block;
@@ -77,13 +115,8 @@ body {
     margin-bottom: 10px;
     position: relative;
 
-    &.dark-theme {
-      border: 3px solid $secondary-color;
-    }
-
-    &.light-theme {
-      border: 3px solid $secondary-color-light;
-    }
+    &.dark-theme { border: 3px solid $secondary-color; }
+    &.light-theme { border: 3px solid $secondary-color-light; }
 
     img {
       width: 100%;
@@ -104,7 +137,6 @@ body {
   }
 }
 
-/* Section Layout */
 .info-layout {
   display: flex;
   flex-direction: column;
@@ -113,70 +145,39 @@ body {
   .box {
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px $hover-shadow;
 
-    &.dark-theme {
-      background-color: $card-bg;
-      box-shadow: 0 2px 4px $hover-shadow;
-    }
-
-    &.light-theme {
-      background-color: $card-bg-light;
-      box-shadow: 0 2px 4px $hover-shadow-light;
-    }
+    &.dark-theme { @include card-theme('dark'); }
+    &.light-theme { @include card-theme('light'); }
   }
 
   .row {
     display: flex;
     gap: 20px;
 
-    .box {
-      flex: 1;
-    }
+    .box { flex: 1; }
   }
 
-  h2,
-  h3 {
+  h2, h3 {
     font-size: 16px;
 
-    &.dark-theme {
-      color: $primary-color;
-    }
-
-    &.light-theme {
-      color: $primary-color-light;
-    }
+    &.dark-theme { @include heading-theme('dark'); }
+    &.light-theme { @include heading-theme('light'); }
   }
 
   p {
     font-size: 14px;
 
-    &.dark-theme {
-      color: $text-primary;
-    }
-
-    &.light-theme {
-      color: $text-primary-light;
-    }
+    &.dark-theme { color: $text-primary; }
+    &.light-theme { color: $text-primary-light; }
   }
 
-  input,
-  select {
+  input, select {
     width: 100%;
     padding: 8px;
     border-radius: 4px;
 
-    &.dark-theme {
-      background-color: $container-bg;
-      color: $text-primary;
-      border: 1px solid $input-border;
-    }
-
-    &.light-theme {
-      background-color: $container-bg-light;
-      color: $text-primary-light;
-      border: 1px solid $input-border-light;
-    }
+    &.dark-theme { @include input-theme('dark'); }
+    &.light-theme { @include input-theme('light'); }
   }
 
   button {
@@ -186,46 +187,23 @@ body {
     border-radius: 5px;
     cursor: pointer;
 
-    &.dark-theme {
-      background-color: $primary-color;
-      color: $text-primary;
-
-      &:hover {
-        background-color: lighten($primary-color, 10%);
-      }
-    }
-
-    &.light-theme {
-      background-color: $primary-color-light;
-      color: $text-primary-light;
-
-      &:hover {
-        background-color: lighten($primary-color-light, 10%);
-      }
-    }
+    &.dark-theme { @include button-theme('dark'); }
+    &.light-theme { @include button-theme('light'); }
   }
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-container;
   z-index: 1000;
   backdrop-filter: blur(8px);
 
-  &.dark-theme {
-    background: rgba(24, 24, 24, 0.85);
-  }
-
-  &.light-theme {
-    background: rgba(249, 249, 250, 0.85);
-  }
+  &.dark-theme { background: rgba(24, 24, 24, 0.85); }
+  &.light-theme { background: rgba(249, 249, 250, 0.85); }
 
   .overlay-content {
     width: 90%;
@@ -235,27 +213,15 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     text-align: center;
 
-    &.dark-theme {
-      background-color: $card-bg;
-      color: $text-primary;
-    }
-
-    &.light-theme {
-      background-color: $card-bg-light;
-      color: $text-primary-light;
-    }
+    &.dark-theme { @include card-theme('dark'); }
+    &.light-theme { @include card-theme('light'); }
 
     h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
 
-      &.dark-theme {
-        color: $primary-color;
-      }
-
-      &.light-theme {
-        color: $primary-color-light;
-      }
+      &.dark-theme { @include heading-theme('dark'); }
+      &.light-theme { @include heading-theme('light'); }
     }
 
     input[type="password"] {
@@ -265,17 +231,8 @@ body {
       border-radius: 6px;
       box-sizing: border-box;
 
-      &.dark-theme {
-        background-color: $container-bg;
-        color: $text-primary;
-        border: 1px solid $input-border;
-      }
-
-      &.light-theme {
-        background-color: $container-bg-light;
-        color: $text-primary-light;
-        border: 1px solid $input-border-light;
-      }
+      &.dark-theme { @include input-theme('dark'); }
+      &.light-theme { @include input-theme('light'); }
     }
 
     button {
@@ -286,37 +243,32 @@ body {
       transition: background-color 0.3s;
 
       &.dark-theme {
-        background-color: $primary-color;
-        color: $text-primary;
-
-        &:hover {
-          background-color: lighten($primary-color, 10%);
-        }
-
+        @include button-theme('dark');
         & + button {
           margin-top: 10px;
-          background-color: $secondary-color;
+          @include button-theme('dark', 'secondary');
         }
       }
 
       &.light-theme {
-        background-color: $primary-color-light;
-        color: $text-primary-light;
-
-        &:hover {
-          background-color: lighten($primary-color-light, 10%);
-        }
-
+        @include button-theme('light');
         & + button {
           margin-top: 10px;
-          background-color: $secondary-color-light;
+          @include button-theme('light', 'secondary');
         }
       }
     }
   }
 }
 
-/* Keyframes */
+@media (max-width: 768px) {
+  .info-layout {
+    .row {
+      flex-direction: column;
+    }
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

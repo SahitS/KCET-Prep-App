@@ -1,3 +1,4 @@
+// ====== Global Variables ======
 $card-background: #242424; // Global dark card background
 $text-primary: #f5f5f5; // Global light text
 $text-secondary: #c7c7c7; // Global grey text
@@ -7,593 +8,354 @@ $accent-warning: #FACC15; // Global yellow for warnings
 $hover-effect: #373737; // Hover background color
 $background-dark: #181818;
 
-//light theme
-
-$background-light: #f9f9fa; 
-$card-background-light: #ffffff; 
-$text-primary-light: #212529; 
+// Light Theme Variables
+$background-light: #f9f9fa;
+$card-background-light: #ffffff;
+$text-primary-light: #212529;
 $text-secondary-light: #6c757d;
-$accent-primary-light: #8a5ddb; 
-$accent-secondary-light: #51c29a; 
-$accent-warning-light: #fcd34d; 
-$hover-effect-light: #e9ecef; 
-$border-color-light: #dee2e6; 
+$accent-primary-light: #8a5ddb;
+$accent-secondary-light: #51c29a;
+$accent-warning-light: #fcd34d;
+$hover-effect-light: #e9ecef;
+$border-color-light: #dee2e6;
 
+// ====== Theme Maps ======
+$dark-theme: (
+  background: $background-dark,
+  card-background: $card-background,
+  text-primary: $text-primary,
+  text-secondary: $text-secondary,
+  accent-primary: $accent-primary,
+  accent-secondary: $accent-secondary,
+  accent-warning: $accent-warning,
+  hover-effect: $hover-effect,
+);
 
+$light-theme: (
+  background: $background-light,
+  card-background: $card-background-light,
+  text-primary: $text-primary-light,
+  text-secondary: $text-secondary-light,
+  accent-primary: $accent-primary-light,
+  accent-secondary: $accent-secondary-light,
+  accent-warning: $accent-warning-light,
+  hover-effect: $hover-effect-light,
+);
+
+// ====== Mixins ======
+@mixin results-container($theme) {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: map-get($theme, background);
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: map-get($theme, accent-primary);
+    margin-bottom: 1rem;
+  }
+
+  .total-score {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: map-get($theme, text-primary);
+    margin-bottom: 2rem;
+  }
+
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .subject-scores {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .subject-box {
+        background-color: lighten(map-get($theme, card-background), 5%);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: map-get($theme, accent-primary);
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+          font-weight: bold;
+          color: map-get($theme, accent-secondary);
+        }
+      }
+    }
+
+    .pie-chart-container {
+      flex: 1;
+      min-width: 300px;
+      background-color: lighten(map-get($theme, card-background), 5%);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .analysis-section {
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: map-get($theme, accent-primary);
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .subject-analysis {
+      .grid-container {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+
+        .topic-graph {
+          background-color: lighten(map-get($theme, card-background), 5%);
+          border-radius: 12px;
+          padding: 1.5rem;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+          display: flex;
+          flex-direction: column;
+
+          h4 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: map-get($theme, accent-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid map-get($theme, hover-effect);
+            text-align: center;
+          }
+
+          .subtopics-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .subtopic-item {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .bar-container {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                .bar-label {
+                  font-size: 1rem;
+                  color: map-get($theme, text-secondary);
+                  flex: 1;
+                  text-align: left;
+                  font-weight: 500;
+                }
+
+                .bar {
+                  flex: 2;
+                  height: 20px;
+                  border: 2px solid map-get($theme, hover-effect);
+                  border-radius: 10px;
+                  background-color: lighten(map-get($theme, card-background), 10%);
+                  position: relative;
+                  margin: 0 0.5rem;
+
+                  .bar-fill {
+                    height: 100%;
+                    background-color: map-get($theme, accent-secondary);
+                    border-radius: 8px;
+                    transition: width 0.3s ease-in-out;
+                  }
+                }
+
+                .percentage-label {
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: map-get($theme, text-primary);
+                  text-align: right;
+                  width: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .overlay-content {
+      background-color: map-get($theme, card-background);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      overflow-y: auto;
+      max-height: 80%;
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: map-get($theme, accent-primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .result-list {
+        .result-item {
+          background-color: lighten(map-get($theme, card-background), 5%);
+          border-radius: 8px;
+          padding: 1rem;
+          margin-bottom: 1rem;
+
+          p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+
+            &.correct {
+              color: map-get($theme, accent-secondary);
+              font-weight: bold;
+            }
+
+            &.incorrect {
+              color: map-get($theme, hover-effect);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .btn-back {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: map-get($theme, accent-primary);
+        color: map-get($theme, text-primary);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+          background-color: lighten(map-get($theme, accent-primary), 10%);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .btn-study-plan {
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    background-color: map-get($theme, accent-secondary);
+    color: map-get($theme, text-primary);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten(map-get($theme, accent-secondary), 10%);
+      transform: scale(1.05);
+    }
+  }
+
+  .btn-back {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: map-get($theme, hover-effect);
+    color: map-get($theme, text-secondary);
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten(map-get($theme, hover-effect), 10%);
+      color: map-get($theme, text-primary);
+      transform: scale(1.05);
+    }
+  }
+}
+
+// ====== Theme Implementations ======
 .results-container.dark-theme {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: $background-dark;
-  border-radius: 16px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-
-  // Header
-  h1.dark-theme {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: $accent-primary;
-    margin-bottom: 1rem;
-  }
-
-  .total-score.dark-theme {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: $text-primary;
-    margin-bottom: 2rem;
-  }
-
-  .main-content.dark-theme {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-
-    .subject-scores.dark-theme {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-
-      .subject-box.dark-theme {
-        background-color: lighten($card-background, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-        cursor: pointer;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        &:hover.dark-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        h3.dark-theme {
-          font-size: 1.8rem;
-          font-weight: bold;
-          color: $accent-primary;
-          margin-bottom: 0.5rem;
-        }
-
-        p.dark-theme {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: $accent-secondary;
-        }
-      }
-    }
-
-    .pie-chart-container.dark-theme {
-      flex: 1;
-      min-width: 300px;
-      background-color: lighten($card-background, 5%);
-      border-radius: 12px;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  .analysis-section.dark-theme {
-    margin-top: 2rem;
-  
-    h2.dark-theme {
-      font-size: 2rem;
-      font-weight: bold;
-      color: $accent-primary;
-      margin-bottom: 2rem;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  
-    .subject-analysis.dark-theme {
-      .grid-container.dark-theme {
-        display: grid;
-        grid-auto-rows: auto; // Allow dynamic height
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
-        gap: 1.5rem;
-  
-        .topic-graph.dark-theme {
-          background-color: lighten($card-background, 5%);
-          border-radius: 12px;
-          padding: 1.5rem;
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-          display: flex;
-          flex-direction: column;
-  
-          h4.dark-theme {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: $accent-primary;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid $hover-effect;
-            text-align: center;
-          }
-  
-          .subtopics-list.dark-theme {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-  
-            .subtopic-item.dark-theme {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-  
-              .bar-container.dark-theme {
-                display: flex;
-                align-items: center;
-                width: 100%;
-  
-                .bar-label.dark-theme {
-                  font-size: 1rem;
-                  color: $text-secondary;
-                  flex: 1;
-                  text-align: left;
-                  font-weight: 500;
-                }
-  
-                .bar.dark-theme {
-                  flex: 2;
-                  height: 20px;
-                  border: 2px solid $hover-effect;
-                  border-radius: 10px;
-                  background-color: lighten($card-background, 10%);
-                  position: relative;
-                  margin: 0 0.5rem;
-  
-                  .bar-fill.dark-theme {
-                    height: 100%;
-                    background-color: $accent-secondary;
-                    border-radius: 8px;
-                    transition: width 0.3s ease-in-out;
-                  }
-                }
-  
-                .percentage-label.dark-theme {
-                  font-size: 1rem;
-                  font-weight: bold;
-                  color: $text-primary;
-                  text-align: right;
-                  width: 50px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }    
-
-  .overlay.dark-theme {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-
-    .overlay-content.dark-theme {
-      background-color: $card-background;
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 800px;
-      width: 90%;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-      overflow-y: auto;
-      max-height: 80%;
-
-      h2.dark-theme {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: $accent-primary;
-        margin-bottom: 1.5rem;
-      }
-
-      .result-list.dark-theme {
-        .result-item.dark-theme{
-          background-color: lighten($card-background, 5%);
-          border-radius: 8px;
-          padding: 1rem;
-          margin-bottom: 1rem;
-
-          p.dark-theme {
-            margin: 0.5rem 0;
-            font-size: 1rem;
-
-            &.correct.dark-theme {
-              color: $accent-secondary;
-              font-weight: bold;
-            }
-
-            &.incorrect.dark-theme {
-              color: $hover-effect;
-              font-weight: bold;
-            }
-          }
-        }
-      }
-
-      .btn-back.dark-theme {
-        margin-top: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        background-color: $accent-primary;
-        color: $text-primary;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-
-        &:hover.dark-theme {
-          background-color: lighten($accent-primary, 10%);
-          transform: scale(1.05);
-        }
-      }
-    }
-  }
-
-  .btn-study-plan.dark-theme {
-    margin: 2rem auto 0;
-    padding: 1rem 2rem;
-    background-color: $accent-secondary;
-    color: $text-primary;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    display: block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
-    &:hover.dark-theme {
-      background-color: lighten($accent-secondary, 10%);
-      transform: scale(1.05);
-    }
-  }
-
-  .btn-back.dark-theme {
-    margin-top: 1.5rem;
-    padding: 1rem 2rem;
-    background-color: $hover-effect;
-    color: $text-secondary;
-    border-radius: 8px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
-    &:hover.dark-theme {
-      background-color: lighten($hover-effect, 10%);
-      color: $text-primary;
-      transform: scale(1.05);
-    }
-  }
+  @include results-container($dark-theme);
 }
 
-//light theme
 .results-container.light-theme {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: $background-light;
-  border-radius: 16px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  @include results-container($light-theme);
+}
 
-  // Header
-  h1.light-theme {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: $accent-primary-light;
+// ====== Responsive Adjustments ======
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .subject-box {
     margin-bottom: 1rem;
   }
 
-  .total-score.light-theme {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: $text-primary-light;
-    margin-bottom: 2rem;
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .main-content.light-theme {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-
-    .subject-scores.light-theme {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-
-      .subject-box.light-theme {
-        background-color: lighten($card-background-light, 5%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-        cursor: pointer;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        &:hover.light-theme {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        h3.light-theme {
-          font-size: 1.8rem;
-          font-weight: bold;
-          color: $accent-primary-light;
-          margin-bottom: 0.5rem;
-        }
-
-        p.light-theme {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: $accent-secondary-light;
-        }
-      }
-    }
-
-    .pie-chart-container.light-theme {
-      flex: 1;
-      min-width: 300px;
-      background-color: lighten($card-background-light, 5%);
-      border-radius: 12px;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  .analysis-section.light-theme {
-    margin-top: 2rem;
-  
-    h2.light-theme {
-      font-size: 2rem;
-      font-weight: bold;
-      color: $accent-primary-light;
-      margin-bottom: 2rem;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  
-    .subject-analysis.light-theme {
-      .grid-container.light-theme {
-        display: grid;
-        grid-auto-rows: auto; // Allow dynamic height
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
-        gap: 1.5rem;
-  
-        .topic-graph.light-theme {
-          background-color: lighten($card-background-light, 5%);
-          border-radius: 12px;
-          padding: 1.5rem;
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-          display: flex;
-          flex-direction: column;
-  
-          h4.light-theme {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: $accent-primary-light;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid $hover-effect-light;
-            text-align: center;
-          }
-  
-          .subtopics-list.light-theme {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-  
-            .subtopic-item.light-theme {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-  
-              .bar-container.light-theme {
-                display: flex;
-                align-items: center;
-                width: 100%;
-  
-                .bar-label.light-theme {
-                  font-size: 1rem;
-                  color: $text-secondary-light;
-                  flex: 1;
-                  text-align: left;
-                  font-weight: 500;
-                }
-  
-                .bar.light-theme {
-                  flex: 2;
-                  height: 20px;
-                  border: 2px solid $hover-effect-light;
-                  border-radius: 10px;
-                  background-color: lighten($card-background-light, 10%);
-                  position: relative;
-                  margin: 0 0.5rem;
-  
-                  .bar-fill.light-theme {
-                    height: 100%;
-                    background-color: $accent-secondary-light;
-                    border-radius: 8px;
-                    transition: width 0.3s ease-in-out;
-                  }
-                }
-  
-                .percentage-label.light-theme {
-                  font-size: 1rem;
-                  font-weight: bold;
-                  color: $text-primary-light;
-                  text-align: right;
-                  width: 50px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }    
-
-  .overlay.light-theme {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-
-    .overlay-content.light-theme {
-      background-color: $card-background-light;
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 800px;
-      width: 90%;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-      overflow-y: auto;
-      max-height: 80%;
-
-      h2.light-theme {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: $accent-primary-light;
-        margin-bottom: 1.5rem;
-      }
-
-      .result-list.light-theme {
-        .result-item.light-theme {
-          background-color: lighten($card-background-light, 5%);
-          border-radius: 8px;
-          padding: 1rem;
-          margin-bottom: 1rem;
-
-          p.light-theme {
-            margin: 0.5rem 0;
-            font-size: 1rem;
-
-            &.correct.light-theme {
-              color: $accent-secondary-light;
-              font-weight: bold;
-            }
-
-            &.incorrect.light-theme {
-              color: $hover-effect-light;
-              font-weight: bold;
-            }
-          }
-        }
-      }
-
-      .btn-back.light-theme {
-        margin-top: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        background-color: $accent-primary-light;
-        color: $text-primary-light;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-
-        &:hover.light-theme {
-          background-color: lighten($accent-primary-light, 10%);
-          transform: scale(1.05);
-        }
-      }
-    }
-  }
-
-  .btn-study-plan.light-theme {
-    margin: 2rem auto 0;
-    padding: 1rem 2rem;
-    background-color: $accent-secondary-light;
-    color: $text-primary-light;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    display: block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
-    &:hover.light-theme {
-      background-color: lighten($accent-secondary-light, 10%);
-      transform: scale(1.05);
-    }
-  }
-
-  .btn-back.light-theme {
-    margin-top: 1.5rem;
-    padding: 1rem 2rem;
-    background-color: $hover-effect-light;
-    color: $text-secondary-light;
-    border-radius: 8px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
-    &:hover.light-theme {
-      background-color: lighten($hover-effect, 10%);
-      color: $text-primary-light;
-      transform: scale(1.05);
-    }
+  .question-navigator .navigator {
+    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
+    gap: 0.5rem;
   }
 }
-

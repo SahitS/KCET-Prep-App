@@ -1,354 +1,202 @@
 // Adjusted Dark Color Palette
-$background-dark: #181818; // Global dark background
-$section-background: #242424; // Lighter grey for sections
-$card-background: #2d2d2d; // Medium grey for cards and containers
-$text-primary: #f5f5f5; // Softer white for text
-$text-secondary: #c7c7c7; // Softer grey for secondary text
-$accent-primary: #A78BFA; // Softer purple
-$accent-secondary: #4ADE80; // Soft teal
-$border-color: #3a3a3a; // Subtle borders
-$hover-effect: #373737; // Hover background for cards/buttons
+$background-dark: #181818;
+$section-background: #242424;
+$card-background: #2d2d2d;
+$text-primary: #f5f5f5;
+$text-secondary: #c7c7c7;
+$accent-primary: #A78BFA;
+$accent-secondary: #4ADE80;
+$border-color: #3a3a3a;
+$hover-effect: #373737;
 
-// Adjusted Adjusted light Color Palette
-$background-light: #f5f5f5; // Softer light grey for global background
-$section-background-light: #e8e8e8; // Muted light grey for sections
-$card-background-light: #dcdcdc; // Medium grey for cards and containers
-$text-primary-light: #000000; // Black for primary text
-$text-secondary-light: #333333; // Dark grey for secondary text
-$accent-primary-light: #6a5acd; // Muted purple for accents
-$accent-secondary-light: #20c997; // Muted teal for accents
-$border-color-light: #bbbbbb; // Subtle grey for borders
-$hover-effect-light: #d1d1d1; // Soft hover effect for cards/buttons
+// Adjusted light Color Palette
+$background-light: #f5f5f5;
+$section-background-light: #e8e8e8;
+$card-background-light: #dcdcdc;
+$text-primary-light: #000000;
+$text-secondary-light: #333333;
+$accent-primary-light: #6a5acd;
+$accent-secondary-light: #20c997;
+$border-color-light: #bbbbbb;
+$hover-effect-light: #d1d1d1;
 
-
-
-// Global Background
-body.dark-theme {
-  background-color: $background-dark;
-  color: $text-primary;
-}
-body.light-theme {
-  background-color: $background-light;
-  color: $text-primary;
+// Mixins
+@mixin section-base($theme) {
+  $bg: if($theme == 'dark', $section-background, $section-background-light);
+  
+  background-color: $bg;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+  margin: 2rem 0;
 }
 
-// Hero Section Styles
-.hero-section.dark-theme  {
-  background-color: $section-background;
+@mixin section-title($theme) {
+  $color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+  
   text-align: center;
-  padding: 3rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: $accent-primary;
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    margin: 1rem 0;
-    color: $text-secondary;
-  }
-
-  .btn-primary {
-    background-color: $accent-primary;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    color: $text-primary;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: lighten($accent-primary, 10%);
-      color: $background-dark;
-      transform: scale(1.05);
-    }
-  }
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: $color;
 }
 
-// Hero Section Styles
-.hero-section.light-theme  {
-  background-color: $section-background-light;
-  text-align: center;
-  padding: 3rem 1rem;
+@mixin card-base($theme) {
+  $bg: if($theme == 'dark', $card-background, $card-background-light);
+  $hover: if($theme == 'dark', $hover-effect, $hover-effect-light);
+  
+  background-color: $bg;
   border-radius: 10px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: $accent-primary-light;
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    margin: 1rem 0;
-    color: $text-secondary-light;
-  }
-
-  .btn-primary {
-    background-color: $accent-primary-light;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    color: $text-primary;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: lighten($accent-primary-light, 10%);
-      color: $background-dark;
-      transform: scale(1.05);
-    }
-  }
-}
-
-// Features Section
-.features-section.dark-theme {
-  background-color: $section-background;
-  padding: 3rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $accent-primary;
-    font-size: 2rem;
-  }
-
-  .feature-card {
-    background-color: $card-background;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-
-    &:hover {
-      background-color: $hover-effect;
-      transform: scale(1.03);
-    }
-
-    h3 {
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: $accent-secondary;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: $text-secondary;
-    }
-  }
-}
-
-// Features Section
-.features-section.light-theme {
-  background-color: $section-background-light;
-  padding: 3rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $accent-primary-light;
-    font-size: 2rem;
-  }
-
-  .feature-card {
-    background-color: $card-background-light;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-
-    &:hover {
-      background-color: $hover-effect-light;
-      transform: scale(1.03);
-    }
-
-    h3 {
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: $accent-secondary-light;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: $text-secondary-light;
-    }
-  }
-}
-
-// Testimonials Section
-.testimonials-section.dark-theme {
-  background-color: $section-background;
-  padding: 3rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: $accent-primary;
-  }
-
-  .testimonial-card {
-    background-color: $card-background;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    margin: 1rem;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $hover-effect;
-    }
-
-    p {
-      font-style: italic;
-      color: $text-primary;
-    }
-
-    footer {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: $accent-secondary;
-    }
-  }
-}
-
-// Testimonials Section
-.testimonials-section.light-theme {
-  background-color: $section-background-light;
-  padding: 3rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: $accent-primary-light;
-  }
-
-  .testimonial-card.light-theme {
-    background-color: $card-background-light;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    margin: 1rem;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $hover-effect-light;
-    }
-
-    p {
-      font-style: italic;
-      color: $text-primary-light;
-    }
-
-    footer {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: $accent-secondary-light;
-    }
-  }
-}
-
-// Call-to-Action Section
-.cta-section.dark-theme {
-  background-color: $section-background;
-  text-align: center;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-  h2 {
-    font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: $accent-primary;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: $text-secondary;
-  }
-
-  .btn-primary {
-    background-color: $accent-secondary;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    color: $text-primary;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: lighten($accent-secondary, 10%);
-      color: $background-dark;
-      transform: scale(1.05);
-    }
-  }
-}
-
-// Call-to-Action Section
-.cta-section.light-theme {
-  background-color: $section-background-light;
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 
-  h2 {
-    font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: $accent-primary-light;
+  &:hover {
+    background-color: $hover;
+    transform: scale(1.03);
+  }
+}
+
+@mixin button-primary($theme) {
+  $bg: if($theme == 'dark', $accent-primary, $accent-primary-light);
+  $text: if($theme == 'dark', $text-primary, $text-primary-light);
+  $hover-bg: if($theme == 'dark', $background-dark, $background-light);
+  
+  background-color: $bg;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  color: $text;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($bg, 10%);
+    color: $hover-bg;
+    transform: scale(1.05);
+  }
+}
+
+@mixin theme-styles($theme) {
+  $text-sec: if($theme == 'dark', $text-secondary, $text-secondary-light);
+  $accent-sec: if($theme == 'dark', $accent-secondary, $accent-secondary-light);
+  $text-main: if($theme == 'dark', $text-primary, $text-primary-light);
+  $bg: if($theme == 'dark', $background-dark, $background-light);
+
+  body.#{$theme}-theme {
+    background-color: if($theme == 'dark', $background-dark, $background-light);
+    color: $text-main;
   }
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: $text-secondary-light;
+  .hero-section.#{$theme}-theme {
+    @include section-base($theme);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+    }
+
+    .hero-text {
+      font-size: 1.25rem;
+      margin: 1rem 0;
+      color: $text-sec;
+    }
+
+    .btn-primary {
+      @include button-primary($theme);
+    }
   }
 
-  .btn-primary {
-    background-color: $accent-secondary-light;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    color: $text-primary-light;
-    transition: all 0.3s ease;
+  .features-section.#{$theme}-theme {
+    @include section-base($theme);
 
-    &:hover {
-      background-color: lighten($accent-secondary-light, 10%);
-      color: $background-light;
-      transform: scale(1.05);
+    h2 {
+      @include section-title($theme);
+    }
+
+    .feature-card {
+      @include card-base($theme);
+
+      h3 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: $accent-sec;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $text-sec;
+      }
+    }
+  }
+
+  .testimonials-section.#{$theme}-theme {
+    @include section-base($theme);
+
+    h2 {
+      @include section-title($theme);
+    }
+
+    .testimonial-card {
+      @include card-base($theme);
+      padding: 1.5rem;
+      margin: 1rem;
+
+      p {
+        font-style: italic;
+        color: $text-main;
+      }
+
+      footer {
+        margin-top: 1rem;
+        font-weight: bold;
+        color: $accent-sec;
+      }
+    }
+  }
+
+  .cta-section.#{$theme}-theme {
+    @include section-base($theme);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: $text-sec;
+    }
+
+    .btn-primary {
+      background-color: $accent-sec;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      color: $text-main;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: lighten($accent-sec, 10%);
+        color: $bg;
+        transform: scale(1.05);
+      }
     }
   }
 }
 
+// Apply themes
+@include theme-styles('dark');
+@include theme-styles('light');

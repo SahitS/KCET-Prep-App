@@ -1,4 +1,4 @@
-// Global Color Palette Dark-The,e
+// Global Color Palette
 $background-dark: #181818;
 $section-background: #242424;
 $card-background: #2d2d2d;
@@ -9,7 +9,6 @@ $accent-secondary: #4ADE80;
 $hover-effect: #373737;
 $border-color: #3a3a3a;
 
-//Light-Theme
 $background-light: #f2f3f5; 
 $section-background-light: #e9ecef; 
 $card-background-light: #e6e6e6; 
@@ -20,197 +19,159 @@ $accent-secondary-light: #4ADE80;
 $hover-effect-light: #d1d1d1;
 $border-color-light: #d6d6d9; 
 
+// Mixins
+@mixin theme-colors($theme) {
+  @if $theme == 'dark' {
+    background-color: $background-dark;
+    color: $text-primary;
+  } @else {
+    background-color: $background-light;
+    color: $text-primary-light;
+  }
+}
+
+@mixin card-style($theme) {
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @if $theme == 'dark' {
+    background-color: $card-background;
+  } @else {
+    background-color: $card-background-light;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@mixin button-style($theme) {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  @if $theme == 'dark' {
+    background-color: $accent-primary;
+    color: $text-primary;
+
+    &:hover {
+      background-color: lighten($accent-primary, 10%);
+      color: $background-dark;
+    }
+  } @else {
+    background-color: $accent-primary-light;
+    color: $text-primary-light;
+
+    &:hover {
+      background-color: lighten($accent-primary-light, 10%);
+      color: $background-light;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
 
 // Global Styles
+@mixin body-style($theme) {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  @include theme-colors($theme);
+}
+
+// Lessons Container
+@mixin lessons-container($theme) {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .lessons-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Lessons Grid
+@mixin lessons-grid($theme) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+
+  .lesson-box {
+    @include card-style($theme);
+    flex: 1 1 calc(33.33% - 2rem);
+    max-width: calc(33.33% - 2rem);
+    text-align: center;
+
+    h2 {
+      color: if($theme == 'dark', $accent-primary, $accent-primary-light);
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: if($theme == 'dark', $text-secondary, $text-secondary-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      @include button-style($theme);
+    }
+  }
+}
+
+// Dark Theme
 body.dark-theme {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: $background-dark;
-  color: $text-primary;
+  @include body-style('dark');
 }
 
-// Lessons Container
 .lessons-container.dark-theme {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  .lessons-header {
-    text-align: center;
-    margin-bottom: 2rem;
-
-    h1.dark-theme {
-      color: $accent-primary;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-  }
+  @include lessons-container('dark');
 }
 
-// Lessons Grid
 .lessons-grid.dark-theme {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-
-  .lesson-box.dark-theme {
-    background-color: $card-background;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    flex: 1 1 calc(33.33% - 2rem);
-    max-width: calc(33.33% - 2rem);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    h2.dark-theme {
-      color: $accent-primary;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    p.dark-theme {
-      color: $text-secondary;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn.dark-theme {
-      background-color: $accent-primary;
-      color: $text-primary;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-
-      &:hover.dark-theme {
-        background-color: lighten($accent-primary, 10%);
-        color: $background-dark;
-        transform: scale(1.05);
-      }
-    }
-  }
+  @include lessons-grid('dark');
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  .lessons-grid {
-    flex-direction: column;
-  }
-
-  .lesson-box {
-    max-width: 100%;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-
-
-//light-theme
+// Light Theme
 body.light-theme {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: $background-light;
-  color: $text-primary-light;
+  @include body-style('light');
 }
 
-// Lessons Container
 .lessons-container.light-theme {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  .lessons-header {
-    text-align: center;
-    margin-bottom: 2rem;
-
-    h1.light-theme {
-      color: $accent-primary-light;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-  }
+  @include lessons-container('light');
 }
 
-// Lessons Grid
 .lessons-grid.light-theme {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-
-  .lesson-box.light-theme {
-    background-color: $card-background-light;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    flex: 1 1 calc(33.33% - 2rem);
-    max-width: calc(33.33% - 2rem);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    h2.light-theme {
-      color: $accent-primary-light;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    p.light-theme {
-      color: $text-secondary-light;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn.light-theme {
-      background-color: $accent-primary-light;
-      color: $text-primary-light;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-
-      &:hover.light-theme {
-        background-color: lighten($accent-primary-light, 10%);
-        color: $background-light;
-        transform: scale(1.05);
-      }
-    }
-  }
+  @include lessons-grid('light');
 }
 
 // Responsive Design
 @media (max-width: 768px) {
   .lessons-grid {
     flex-direction: column;
-  }
 
-  .lesson-box {
-    max-width: 100%;
+    .lesson-box {
+      max-width: 100%;
+    }
   }
 
   .btn {
@@ -218,4 +179,3 @@ body.light-theme {
     padding: 0.6rem 1rem;
   }
 }
-
