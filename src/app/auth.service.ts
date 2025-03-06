@@ -227,6 +227,4 @@ export class AuthService {
       headers: { Authorization: token },
     });
   }
-  
-
 }

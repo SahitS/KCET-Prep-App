@@ -114,6 +114,16 @@ export class PracticeTestComponent implements OnInit,SectionAnswers {
   }
 
   nextQuestion(): void {
+    // Check if current question is unanswered and mark it as skipped
+    const currentAnswers = 
+      this.currentSection === 'physics' ? this.physicsAnswers :
+      this.currentSection === 'chemistry' ? this.chemistryAnswers : 
+      this.mathAnswers;
+    
+    if (!currentAnswers[this.currentQuestionIndex]) {
+      this.answerStatus[this.currentSection][this.currentQuestionIndex] = 'skipped';
+    }
+    
     if (this.currentQuestionIndex < this.quiz[this.currentSection].length - 1) {
       this.currentQuestionIndex++;
     } else {

@@ -1,11 +1,11 @@
 from datetime import datetime as dt, timedelta
-from flask import Flask, request, jsonify
+import json
+import os
+from flask import Flask, request, jsonify 
 from flask_cors import CORS
 import pandas as pd
 from pymongo import MongoClient
 import google.generativeai as genai 
-import json
-import os
 import random
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor

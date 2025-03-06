@@ -11,7 +11,7 @@ from sklearn.svm import SVR
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, explained_variance_score
 
 # Load the dataset
-dataset_path = "C:/Users/sahits/Downloads/kcet_rank_prediction_enhanced_dataset.csv"
+dataset_path = "C:/Users/Sahit/Desktop/codebase/KCET-Prep-App/backend/datasets/kcet_rank_prediction_enhanced_dataset.csv"
 rank_prediction_data = pd.read_csv(dataset_path)
 
 # Prepare the dataset
