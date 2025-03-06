@@ -201,6 +201,10 @@ $hover-effect-light: #d6d6d9;
               background-color: $accent-warn;
             }
 
+            &.skipped.#{$theme}-theme {
+              background-color: $accent-dang;
+            }
+
             &:hover.#{$theme}-theme {
               background-color: lighten($hover, 10%);
             }

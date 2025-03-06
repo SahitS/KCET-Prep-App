@@ -19,6 +19,7 @@ export class MockTestComponent implements OnInit {
   chemistryAnswers: any[] = [];
   mathAnswers: any[] = [];
   markedForReview: Set<number> = new Set();
+  skippedQuestions: Set<number> = new Set(); // New property to track skipped questions
   timer: number = 3 * 60 * 60 * 1000; // 3 hours
   timerInterval: any;
   showOverlay: boolean = false;
@@ -76,6 +77,9 @@ export class MockTestComponent implements OnInit {
       this.updateAnswer(this.mathAnswers, answer);
     }
 
+    // Remove from skipped questions if it was previously skipped
+    this.skippedQuestions.delete(questionIndex);
+
     console.log(
       `Answer selected for ${this.currentSection} Question ${questionIndex}: ${selectedOption}`
     );
@@ -104,6 +108,11 @@ export class MockTestComponent implements OnInit {
     }
   }
 
+  markAsSkipped(questionIndex: number): void {
+    this.skippedQuestions.add(questionIndex);
+    console.log(`Question ${questionIndex} marked as skipped.`);
+  }
+
   getQuestionClass(index: number): string {
     const questionIndex = this.quiz[this.currentSection][index]?.questionIndex;
 
@@ -119,7 +128,13 @@ export class MockTestComponent implements OnInit {
       (this.currentSection === 'mathematics' &&
         this.mathAnswers.some((ans) => ans.questionIndex === questionIndex));
 
-    return isAnswered ? 'answered' : ''; // Green for answered
+    if (isAnswered) {
+      return 'answered'; // Green for answered
+    } else if (this.skippedQuestions.has(questionIndex)) {
+      return 'skipped'; // Red for skipped
+    }
+    
+    return ''; // Default state
   }
 
   getAnswerForCurrentQuestion(): any {
@@ -140,6 +155,39 @@ export class MockTestComponent implements OnInit {
       );
     }
     return null;
+  }
+
+  nextQuestion(): void {
+    // Check if current question is unanswered and mark it as skipped
+    const currentQuestion = this.quiz[this.currentSection][this.currentQuestionIndex];
+    const questionIndex = currentQuestion?.questionIndex;
+    
+    const isAnswered = 
+      (this.currentSection === 'physics' && 
+        this.physicsAnswers.some(ans => ans.questionIndex === questionIndex)) ||
+      (this.currentSection === 'chemistry' && 
+        this.chemistryAnswers.some(ans => ans.questionIndex === questionIndex)) ||
+      (this.currentSection === 'mathematics' && 
+        this.mathAnswers.some(ans => ans.questionIndex === questionIndex));
+        
+    if (!isAnswered && !this.markedForReview.has(questionIndex)) {
+      this.markAsSkipped(questionIndex);
+    }
+
+    const sectionQuestions = this.quiz[this.currentSection];
+    if (this.currentQuestionIndex < sectionQuestions.length - 1) {
+      this.currentQuestionIndex++;
+    } else {
+      alert('You are at the last question of this section.');
+    }
+  }
+
+  previousQuestion(): void {
+    if (this.currentQuestionIndex > 0) {
+      this.currentQuestionIndex--;
+    } else {
+      alert('You are at the first question of this section.');
+    }
   }
 
   submitQuiz(): void {
@@ -200,23 +248,6 @@ export class MockTestComponent implements OnInit {
     console.log(`Navigated to ${section} section.`);
   }
 
-  nextQuestion(): void {
-    const sectionQuestions = this.quiz[this.currentSection];
-    if (this.currentQuestionIndex < sectionQuestions.length - 1) {
-      this.currentQuestionIndex++;
-    } else {
-      alert('You are at the last question of this section.');
-    }
-  }
-
-  previousQuestion(): void {
-    if (this.currentQuestionIndex > 0) {
-      this.currentQuestionIndex--;
-    } else {
-      alert('You are at the first question of this section.');
-    }
-  }
-
   getFormattedTime(): string {
     const hours = Math.floor(this.timer / (1000 * 60 * 60));
     const minutes = Math.floor((this.timer % (1000 * 60 * 60)) / (1000 * 60));
@@ -242,5 +273,4 @@ export class MockTestComponent implements OnInit {
       this.currentTheme = event.newValue;
     }
   };
-  
 }
